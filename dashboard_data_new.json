@@ -1,0 +1,1125 @@
+{
+  "last_updated": "2025-12-26T14:59:37.410460",
+  "data_coverage": {
+    "sbir_years": "2020-2024",
+    "categorization": "Dual-dimension: Technology Type + Platform/Domain"
+  },
+  "tech_trends": {
+    "Artificial Intelligence": {
+      "award_counts": {
+        "2020": 472,
+        "2021": 382,
+        "2022": 416,
+        "2023": 447,
+        "2024": 493
+      },
+      "funding_millions": {
+        "2020": 219.5,
+        "2021": 170.3,
+        "2022": 274.8,
+        "2023": 302.7,
+        "2024": 413.4
+      },
+      "total_awards": 2210,
+      "recent_growth": 10.3
+    },
+    "Biotechnology & Medical": {
+      "award_counts": {
+        "2020": 166,
+        "2021": 172,
+        "2022": 200,
+        "2023": 170,
+        "2024": 153
+      },
+      "funding_millions": {
+        "2020": 109.9,
+        "2021": 90.7,
+        "2022": 143.0,
+        "2023": 107.2,
+        "2024": 109.6
+      },
+      "total_awards": 861,
+      "recent_growth": -10.0
+    },
+    "Command & Control": {
+      "award_counts": {
+        "2020": 11,
+        "2021": 9,
+        "2022": 2,
+        "2023": 5,
+        "2024": 8
+      },
+      "funding_millions": {
+        "2020": 6.3,
+        "2021": 6.9,
+        "2022": 2.4,
+        "2023": 4.9,
+        "2024": 9.0
+      },
+      "total_awards": 35,
+      "recent_growth": 60.0
+    },
+    "Communications": {
+      "award_counts": {
+        "2020": 266,
+        "2021": 264,
+        "2022": 211,
+        "2023": 212,
+        "2024": 275
+      },
+      "funding_millions": {
+        "2020": 128.1,
+        "2021": 139.7,
+        "2022": 158.6,
+        "2023": 127.2,
+        "2024": 270.6
+      },
+      "total_awards": 1228,
+      "recent_growth": 29.7
+    },
+    "Computing & Software": {
+      "award_counts": {
+        "2020": 1048,
+        "2021": 874,
+        "2022": 850,
+        "2023": 775,
+        "2024": 854
+      },
+      "funding_millions": {
+        "2020": 473.5,
+        "2021": 468.4,
+        "2022": 588.6,
+        "2023": 561.8,
+        "2024": 674.8
+      },
+      "total_awards": 4401,
+      "recent_growth": 10.2
+    },
+    "Cybersecurity": {
+      "award_counts": {
+        "2020": 229,
+        "2021": 233,
+        "2022": 173,
+        "2023": 212,
+        "2024": 243
+      },
+      "funding_millions": {
+        "2020": 106.7,
+        "2021": 115.3,
+        "2022": 118.5,
+        "2023": 148.0,
+        "2024": 207.0
+      },
+      "total_awards": 1090,
+      "recent_growth": 14.6
+    },
+    "Directed Energy": {
+      "award_counts": {
+        "2020": 43,
+        "2021": 40,
+        "2022": 51,
+        "2023": 36,
+        "2024": 42
+      },
+      "funding_millions": {
+        "2020": 18.3,
+        "2021": 14.5,
+        "2022": 34.2,
+        "2023": 19.6,
+        "2024": 30.3
+      },
+      "total_awards": 212,
+      "recent_growth": 16.7
+    },
+    "Electronic Warfare": {
+      "award_counts": {
+        "2020": 27,
+        "2021": 24,
+        "2022": 21,
+        "2023": 21,
+        "2024": 28
+      },
+      "funding_millions": {
+        "2020": 12.0,
+        "2021": 11.2,
+        "2022": 14.5,
+        "2023": 11.9,
+        "2024": 13.7
+      },
+      "total_awards": 121,
+      "recent_growth": 33.3
+    },
+    "Guidance & Control": {
+      "award_counts": {
+        "2020": 60,
+        "2021": 62,
+        "2022": 68,
+        "2023": 55,
+        "2024": 96
+      },
+      "funding_millions": {
+        "2020": 27.1,
+        "2021": 24.7,
+        "2022": 64.5,
+        "2023": 39.2,
+        "2024": 77.6
+      },
+      "total_awards": 341,
+      "recent_growth": 74.5
+    },
+    "Manufacturing & Production": {
+      "award_counts": {
+        "2020": 170,
+        "2021": 189,
+        "2022": 166,
+        "2023": 181,
+        "2024": 156
+      },
+      "funding_millions": {
+        "2020": 83.2,
+        "2021": 80.3,
+        "2022": 99.9,
+        "2023": 110.8,
+        "2024": 100.6
+      },
+      "total_awards": 862,
+      "recent_growth": -13.8
+    },
+    "Materials & Structures": {
+      "award_counts": {
+        "2020": 440,
+        "2021": 384,
+        "2022": 421,
+        "2023": 367,
+        "2024": 352
+      },
+      "funding_millions": {
+        "2020": 211.6,
+        "2021": 159.6,
+        "2022": 244.3,
+        "2023": 227.7,
+        "2024": 232.6
+      },
+      "total_awards": 1964,
+      "recent_growth": -4.1
+    },
+    "Modeling & Simulation": {
+      "award_counts": {
+        "2020": 152,
+        "2021": 152,
+        "2022": 184,
+        "2023": 172,
+        "2024": 160
+      },
+      "funding_millions": {
+        "2020": 87.7,
+        "2021": 89.2,
+        "2022": 113.4,
+        "2023": 119.2,
+        "2024": 109.5
+      },
+      "total_awards": 820,
+      "recent_growth": -7.0
+    },
+    "Navigation & PNT": {
+      "award_counts": {
+        "2020": 123,
+        "2021": 140,
+        "2022": 142,
+        "2023": 128,
+        "2024": 171
+      },
+      "funding_millions": {
+        "2020": 59.5,
+        "2021": 57.4,
+        "2022": 81.8,
+        "2023": 116.1,
+        "2024": 157.0
+      },
+      "total_awards": 704,
+      "recent_growth": 33.6
+    },
+    "Power & Energy Storage": {
+      "award_counts": {
+        "2020": 409,
+        "2021": 383,
+        "2022": 332,
+        "2023": 316,
+        "2024": 354
+      },
+      "funding_millions": {
+        "2020": 181.9,
+        "2021": 169.0,
+        "2022": 263.2,
+        "2023": 263.4,
+        "2024": 237.3
+      },
+      "total_awards": 1794,
+      "recent_growth": 12.0
+    },
+    "Propulsion & Engines": {
+      "award_counts": {
+        "2020": 615,
+        "2021": 443,
+        "2022": 480,
+        "2023": 422,
+        "2024": 501
+      },
+      "funding_millions": {
+        "2020": 286.1,
+        "2021": 208.7,
+        "2022": 371.4,
+        "2023": 456.7,
+        "2024": 501.4
+      },
+      "total_awards": 2461,
+      "recent_growth": 18.7
+    },
+    "Sensors & Imaging": {
+      "award_counts": {
+        "2020": 1340,
+        "2021": 1148,
+        "2022": 1086,
+        "2023": 1076,
+        "2024": 1128
+      },
+      "funding_millions": {
+        "2020": 651.3,
+        "2021": 584.2,
+        "2022": 730.4,
+        "2023": 725.7,
+        "2024": 856.6
+      },
+      "total_awards": 5778,
+      "recent_growth": 4.8
+    },
+    "Thermal & Environmental": {
+      "award_counts": {
+        "2020": 86,
+        "2021": 92,
+        "2022": 90,
+        "2023": 94,
+        "2024": 82
+      },
+      "funding_millions": {
+        "2020": 45.5,
+        "2021": 38.6,
+        "2022": 49.2,
+        "2023": 49.8,
+        "2024": 54.6
+      },
+      "total_awards": 444,
+      "recent_growth": -12.8
+    },
+    "Warheads & Energetics": {
+      "award_counts": {
+        "2020": 29,
+        "2021": 32,
+        "2022": 37,
+        "2023": 21,
+        "2024": 19
+      },
+      "funding_millions": {
+        "2020": 17.3,
+        "2021": 16.6,
+        "2022": 17.7,
+        "2023": 15.0,
+        "2024": 12.7
+      },
+      "total_awards": 138,
+      "recent_growth": -9.5
+    }
+  },
+  "tech_scores": {
+    "Artificial Intelligence": {
+      "score": 18.0,
+      "total_sbir_awards": 2210,
+      "sbir_yoy": "+10.3%",
+      "status": "Growth"
+    },
+    "Biotechnology & Medical": {
+      "score": 5.0,
+      "total_sbir_awards": 861,
+      "sbir_yoy": "-10.0%",
+      "status": "Decline"
+    },
+    "Command & Control": {
+      "score": 30.2,
+      "total_sbir_awards": 35,
+      "sbir_yoy": "+60.0%",
+      "status": "Strong Growth"
+    },
+    "Communications": {
+      "score": 22.0,
+      "total_sbir_awards": 1228,
+      "sbir_yoy": "+29.7%",
+      "status": "Strong Growth"
+    },
+    "Computing & Software": {
+      "score": 30.6,
+      "total_sbir_awards": 4401,
+      "sbir_yoy": "+10.2%",
+      "status": "Growth"
+    },
+    "Cybersecurity": {
+      "score": 13.6,
+      "total_sbir_awards": 1090,
+      "sbir_yoy": "+14.6%",
+      "status": "Growth"
+    },
+    "Directed Energy": {
+      "score": 9.6,
+      "total_sbir_awards": 212,
+      "sbir_yoy": "+16.7%",
+      "status": "Growth"
+    },
+    "Electronic Warfare": {
+      "score": 17.4,
+      "total_sbir_awards": 121,
+      "sbir_yoy": "+33.3%",
+      "status": "Strong Growth"
+    },
+    "Guidance & Control": {
+      "score": 39.2,
+      "total_sbir_awards": 341,
+      "sbir_yoy": "+74.5%",
+      "status": "Strong Growth"
+    },
+    "Manufacturing & Production": {
+      "score": 5.0,
+      "total_sbir_awards": 862,
+      "sbir_yoy": "-13.8%",
+      "status": "Decline"
+    },
+    "Materials & Structures": {
+      "score": 11.4,
+      "total_sbir_awards": 1964,
+      "sbir_yoy": "-4.1%",
+      "status": "Decline"
+    },
+    "Modeling & Simulation": {
+      "score": 4.7,
+      "total_sbir_awards": 820,
+      "sbir_yoy": "-7.0%",
+      "status": "Decline"
+    },
+    "Navigation & PNT": {
+      "score": 20.9,
+      "total_sbir_awards": 704,
+      "sbir_yoy": "+33.6%",
+      "status": "Strong Growth"
+    },
+    "Power & Energy Storage": {
+      "score": 16.4,
+      "total_sbir_awards": 1794,
+      "sbir_yoy": "+12.0%",
+      "status": "Growth"
+    },
+    "Propulsion & Engines": {
+      "score": 23.6,
+      "total_sbir_awards": 2461,
+      "sbir_yoy": "+18.7%",
+      "status": "Growth"
+    },
+    "Sensors & Imaging": {
+      "score": 35.9,
+      "total_sbir_awards": 5778,
+      "sbir_yoy": "+4.8%",
+      "status": "Stable"
+    },
+    "Thermal & Environmental": {
+      "score": 2.6,
+      "total_sbir_awards": 444,
+      "sbir_yoy": "-12.8%",
+      "status": "Decline"
+    },
+    "Warheads & Energetics": {
+      "score": 0.8,
+      "total_sbir_awards": 138,
+      "sbir_yoy": "-9.5%",
+      "status": "Decline"
+    }
+  },
+  "tech_categories": [
+    "Artificial Intelligence",
+    "Biotechnology & Medical",
+    "Command & Control",
+    "Communications",
+    "Computing & Software",
+    "Cybersecurity",
+    "Directed Energy",
+    "Electronic Warfare",
+    "Guidance & Control",
+    "Manufacturing & Production",
+    "Materials & Structures",
+    "Modeling & Simulation",
+    "Navigation & PNT",
+    "Power & Energy Storage",
+    "Propulsion & Engines",
+    "Sensors & Imaging",
+    "Thermal & Environmental",
+    "Warheads & Energetics"
+  ],
+  "platform_trends": {
+    "Aerospace": {
+      "award_counts": {
+        "2020": 2102,
+        "2021": 1901,
+        "2022": 1844,
+        "2023": 1720,
+        "2024": 1916
+      },
+      "funding_millions": {
+        "2020": 993.7,
+        "2021": 910.4,
+        "2022": 1285.6,
+        "2023": 1311.2,
+        "2024": 1539.0
+      },
+      "total_awards": 9483,
+      "recent_growth": 11.4
+    },
+    "Enterprise/Infrastructure": {
+      "award_counts": {
+        "2020": 1051,
+        "2021": 914,
+        "2022": 807,
+        "2023": 768,
+        "2024": 815
+      },
+      "funding_millions": {
+        "2020": 478.0,
+        "2021": 442.7,
+        "2022": 543.3,
+        "2023": 504.8,
+        "2024": 701.2
+      },
+      "total_awards": 4355,
+      "recent_growth": 6.1
+    },
+    "Ground Vehicles": {
+      "award_counts": {
+        "2020": 115,
+        "2021": 87,
+        "2022": 93,
+        "2023": 105,
+        "2024": 134
+      },
+      "funding_millions": {
+        "2020": 47.4,
+        "2021": 40.8,
+        "2022": 65.7,
+        "2023": 111.2,
+        "2024": 81.7
+      },
+      "total_awards": 534,
+      "recent_growth": 27.6
+    },
+    "Missiles & Munitions": {
+      "award_counts": {
+        "2020": 133,
+        "2021": 127,
+        "2022": 141,
+        "2023": 99,
+        "2024": 117
+      },
+      "funding_millions": {
+        "2020": 76.5,
+        "2021": 64.8,
+        "2022": 87.1,
+        "2023": 80.0,
+        "2024": 80.9
+      },
+      "total_awards": 617,
+      "recent_growth": 18.2
+    },
+    "Naval Surface": {
+      "award_counts": {
+        "2020": 111,
+        "2021": 76,
+        "2022": 74,
+        "2023": 60,
+        "2024": 106
+      },
+      "funding_millions": {
+        "2020": 59.0,
+        "2021": 40.1,
+        "2022": 62.2,
+        "2023": 33.3,
+        "2024": 52.1
+      },
+      "total_awards": 427,
+      "recent_growth": 76.7
+    },
+    "Soldier/Dismounted": {
+      "award_counts": {
+        "2020": 237,
+        "2021": 249,
+        "2022": 243,
+        "2023": 265,
+        "2024": 249
+      },
+      "funding_millions": {
+        "2020": 140.4,
+        "2021": 124.4,
+        "2022": 186.6,
+        "2023": 208.8,
+        "2024": 169.8
+      },
+      "total_awards": 1243,
+      "recent_growth": -6.0
+    },
+    "Space": {
+      "award_counts": {
+        "2020": 100,
+        "2021": 136,
+        "2022": 189,
+        "2023": 187,
+        "2024": 192
+      },
+      "funding_millions": {
+        "2020": 53.6,
+        "2021": 71.0,
+        "2022": 104.9,
+        "2023": 145.1,
+        "2024": 173.7
+      },
+      "total_awards": 804,
+      "recent_growth": 2.7
+    },
+    "Undersea": {
+      "award_counts": {
+        "2020": 128,
+        "2021": 102,
+        "2022": 98,
+        "2023": 72,
+        "2024": 75
+      },
+      "funding_millions": {
+        "2020": 49.5,
+        "2021": 74.5,
+        "2022": 71.7,
+        "2023": 46.9,
+        "2024": 41.9
+      },
+      "total_awards": 475,
+      "recent_growth": 4.2
+    }
+  },
+  "platform_scores": {
+    "Aerospace": {
+      "score": 60.6,
+      "total_sbir_awards": 9483,
+      "sbir_yoy": "+11.4%",
+      "status": "Growth"
+    },
+    "Enterprise/Infrastructure": {
+      "score": 28.3,
+      "total_sbir_awards": 4355,
+      "sbir_yoy": "+6.1%",
+      "status": "Stable"
+    },
+    "Ground Vehicles": {
+      "score": 16.9,
+      "total_sbir_awards": 534,
+      "sbir_yoy": "+27.6%",
+      "status": "Strong Growth"
+    },
+    "Missiles & Munitions": {
+      "score": 12.7,
+      "total_sbir_awards": 617,
+      "sbir_yoy": "+18.2%",
+      "status": "Growth"
+    },
+    "Naval Surface": {
+      "score": 40.8,
+      "total_sbir_awards": 427,
+      "sbir_yoy": "+76.7%",
+      "status": "Strong Growth"
+    },
+    "Soldier/Dismounted": {
+      "score": 7.2,
+      "total_sbir_awards": 1243,
+      "sbir_yoy": "-6.0%",
+      "status": "Decline"
+    },
+    "Space": {
+      "score": 6.0,
+      "total_sbir_awards": 804,
+      "sbir_yoy": "+2.7%",
+      "status": "Stable"
+    },
+    "Undersea": {
+      "score": 4.9,
+      "total_sbir_awards": 475,
+      "sbir_yoy": "+4.2%",
+      "status": "Stable"
+    }
+  },
+  "platform_categories": [
+    "Aerospace",
+    "Enterprise/Infrastructure",
+    "Ground Vehicles",
+    "Missiles & Munitions",
+    "Naval Surface",
+    "Soldier/Dismounted",
+    "Space",
+    "Undersea"
+  ],
+  "sbir_trends": {
+    "Artificial Intelligence": {
+      "award_counts": {
+        "2020": 472,
+        "2021": 382,
+        "2022": 416,
+        "2023": 447,
+        "2024": 493
+      },
+      "funding_millions": {
+        "2020": 219.5,
+        "2021": 170.3,
+        "2022": 274.8,
+        "2023": 302.7,
+        "2024": 413.4
+      },
+      "total_awards": 2210,
+      "recent_growth": 10.3
+    },
+    "Biotechnology & Medical": {
+      "award_counts": {
+        "2020": 166,
+        "2021": 172,
+        "2022": 200,
+        "2023": 170,
+        "2024": 153
+      },
+      "funding_millions": {
+        "2020": 109.9,
+        "2021": 90.7,
+        "2022": 143.0,
+        "2023": 107.2,
+        "2024": 109.6
+      },
+      "total_awards": 861,
+      "recent_growth": -10.0
+    },
+    "Command & Control": {
+      "award_counts": {
+        "2020": 11,
+        "2021": 9,
+        "2022": 2,
+        "2023": 5,
+        "2024": 8
+      },
+      "funding_millions": {
+        "2020": 6.3,
+        "2021": 6.9,
+        "2022": 2.4,
+        "2023": 4.9,
+        "2024": 9.0
+      },
+      "total_awards": 35,
+      "recent_growth": 60.0
+    },
+    "Communications": {
+      "award_counts": {
+        "2020": 266,
+        "2021": 264,
+        "2022": 211,
+        "2023": 212,
+        "2024": 275
+      },
+      "funding_millions": {
+        "2020": 128.1,
+        "2021": 139.7,
+        "2022": 158.6,
+        "2023": 127.2,
+        "2024": 270.6
+      },
+      "total_awards": 1228,
+      "recent_growth": 29.7
+    },
+    "Computing & Software": {
+      "award_counts": {
+        "2020": 1048,
+        "2021": 874,
+        "2022": 850,
+        "2023": 775,
+        "2024": 854
+      },
+      "funding_millions": {
+        "2020": 473.5,
+        "2021": 468.4,
+        "2022": 588.6,
+        "2023": 561.8,
+        "2024": 674.8
+      },
+      "total_awards": 4401,
+      "recent_growth": 10.2
+    },
+    "Cybersecurity": {
+      "award_counts": {
+        "2020": 229,
+        "2021": 233,
+        "2022": 173,
+        "2023": 212,
+        "2024": 243
+      },
+      "funding_millions": {
+        "2020": 106.7,
+        "2021": 115.3,
+        "2022": 118.5,
+        "2023": 148.0,
+        "2024": 207.0
+      },
+      "total_awards": 1090,
+      "recent_growth": 14.6
+    },
+    "Directed Energy": {
+      "award_counts": {
+        "2020": 43,
+        "2021": 40,
+        "2022": 51,
+        "2023": 36,
+        "2024": 42
+      },
+      "funding_millions": {
+        "2020": 18.3,
+        "2021": 14.5,
+        "2022": 34.2,
+        "2023": 19.6,
+        "2024": 30.3
+      },
+      "total_awards": 212,
+      "recent_growth": 16.7
+    },
+    "Electronic Warfare": {
+      "award_counts": {
+        "2020": 27,
+        "2021": 24,
+        "2022": 21,
+        "2023": 21,
+        "2024": 28
+      },
+      "funding_millions": {
+        "2020": 12.0,
+        "2021": 11.2,
+        "2022": 14.5,
+        "2023": 11.9,
+        "2024": 13.7
+      },
+      "total_awards": 121,
+      "recent_growth": 33.3
+    },
+    "Guidance & Control": {
+      "award_counts": {
+        "2020": 60,
+        "2021": 62,
+        "2022": 68,
+        "2023": 55,
+        "2024": 96
+      },
+      "funding_millions": {
+        "2020": 27.1,
+        "2021": 24.7,
+        "2022": 64.5,
+        "2023": 39.2,
+        "2024": 77.6
+      },
+      "total_awards": 341,
+      "recent_growth": 74.5
+    },
+    "Manufacturing & Production": {
+      "award_counts": {
+        "2020": 170,
+        "2021": 189,
+        "2022": 166,
+        "2023": 181,
+        "2024": 156
+      },
+      "funding_millions": {
+        "2020": 83.2,
+        "2021": 80.3,
+        "2022": 99.9,
+        "2023": 110.8,
+        "2024": 100.6
+      },
+      "total_awards": 862,
+      "recent_growth": -13.8
+    },
+    "Materials & Structures": {
+      "award_counts": {
+        "2020": 440,
+        "2021": 384,
+        "2022": 421,
+        "2023": 367,
+        "2024": 352
+      },
+      "funding_millions": {
+        "2020": 211.6,
+        "2021": 159.6,
+        "2022": 244.3,
+        "2023": 227.7,
+        "2024": 232.6
+      },
+      "total_awards": 1964,
+      "recent_growth": -4.1
+    },
+    "Modeling & Simulation": {
+      "award_counts": {
+        "2020": 152,
+        "2021": 152,
+        "2022": 184,
+        "2023": 172,
+        "2024": 160
+      },
+      "funding_millions": {
+        "2020": 87.7,
+        "2021": 89.2,
+        "2022": 113.4,
+        "2023": 119.2,
+        "2024": 109.5
+      },
+      "total_awards": 820,
+      "recent_growth": -7.0
+    },
+    "Navigation & PNT": {
+      "award_counts": {
+        "2020": 123,
+        "2021": 140,
+        "2022": 142,
+        "2023": 128,
+        "2024": 171
+      },
+      "funding_millions": {
+        "2020": 59.5,
+        "2021": 57.4,
+        "2022": 81.8,
+        "2023": 116.1,
+        "2024": 157.0
+      },
+      "total_awards": 704,
+      "recent_growth": 33.6
+    },
+    "Power & Energy Storage": {
+      "award_counts": {
+        "2020": 409,
+        "2021": 383,
+        "2022": 332,
+        "2023": 316,
+        "2024": 354
+      },
+      "funding_millions": {
+        "2020": 181.9,
+        "2021": 169.0,
+        "2022": 263.2,
+        "2023": 263.4,
+        "2024": 237.3
+      },
+      "total_awards": 1794,
+      "recent_growth": 12.0
+    },
+    "Propulsion & Engines": {
+      "award_counts": {
+        "2020": 615,
+        "2021": 443,
+        "2022": 480,
+        "2023": 422,
+        "2024": 501
+      },
+      "funding_millions": {
+        "2020": 286.1,
+        "2021": 208.7,
+        "2022": 371.4,
+        "2023": 456.7,
+        "2024": 501.4
+      },
+      "total_awards": 2461,
+      "recent_growth": 18.7
+    },
+    "Sensors & Imaging": {
+      "award_counts": {
+        "2020": 1340,
+        "2021": 1148,
+        "2022": 1086,
+        "2023": 1076,
+        "2024": 1128
+      },
+      "funding_millions": {
+        "2020": 651.3,
+        "2021": 584.2,
+        "2022": 730.4,
+        "2023": 725.7,
+        "2024": 856.6
+      },
+      "total_awards": 5778,
+      "recent_growth": 4.8
+    },
+    "Thermal & Environmental": {
+      "award_counts": {
+        "2020": 86,
+        "2021": 92,
+        "2022": 90,
+        "2023": 94,
+        "2024": 82
+      },
+      "funding_millions": {
+        "2020": 45.5,
+        "2021": 38.6,
+        "2022": 49.2,
+        "2023": 49.8,
+        "2024": 54.6
+      },
+      "total_awards": 444,
+      "recent_growth": -12.8
+    },
+    "Warheads & Energetics": {
+      "award_counts": {
+        "2020": 29,
+        "2021": 32,
+        "2022": 37,
+        "2023": 21,
+        "2024": 19
+      },
+      "funding_millions": {
+        "2020": 17.3,
+        "2021": 16.6,
+        "2022": 17.7,
+        "2023": 15.0,
+        "2024": 12.7
+      },
+      "total_awards": 138,
+      "recent_growth": -9.5
+    }
+  },
+  "current_scores": {
+    "Artificial Intelligence": {
+      "score": 18.0,
+      "total_sbir_awards": 2210,
+      "sbir_yoy": "+10.3%",
+      "status": "Growth"
+    },
+    "Biotechnology & Medical": {
+      "score": 5.0,
+      "total_sbir_awards": 861,
+      "sbir_yoy": "-10.0%",
+      "status": "Decline"
+    },
+    "Command & Control": {
+      "score": 30.2,
+      "total_sbir_awards": 35,
+      "sbir_yoy": "+60.0%",
+      "status": "Strong Growth"
+    },
+    "Communications": {
+      "score": 22.0,
+      "total_sbir_awards": 1228,
+      "sbir_yoy": "+29.7%",
+      "status": "Strong Growth"
+    },
+    "Computing & Software": {
+      "score": 30.6,
+      "total_sbir_awards": 4401,
+      "sbir_yoy": "+10.2%",
+      "status": "Growth"
+    },
+    "Cybersecurity": {
+      "score": 13.6,
+      "total_sbir_awards": 1090,
+      "sbir_yoy": "+14.6%",
+      "status": "Growth"
+    },
+    "Directed Energy": {
+      "score": 9.6,
+      "total_sbir_awards": 212,
+      "sbir_yoy": "+16.7%",
+      "status": "Growth"
+    },
+    "Electronic Warfare": {
+      "score": 17.4,
+      "total_sbir_awards": 121,
+      "sbir_yoy": "+33.3%",
+      "status": "Strong Growth"
+    },
+    "Guidance & Control": {
+      "score": 39.2,
+      "total_sbir_awards": 341,
+      "sbir_yoy": "+74.5%",
+      "status": "Strong Growth"
+    },
+    "Manufacturing & Production": {
+      "score": 5.0,
+      "total_sbir_awards": 862,
+      "sbir_yoy": "-13.8%",
+      "status": "Decline"
+    },
+    "Materials & Structures": {
+      "score": 11.4,
+      "total_sbir_awards": 1964,
+      "sbir_yoy": "-4.1%",
+      "status": "Decline"
+    },
+    "Modeling & Simulation": {
+      "score": 4.7,
+      "total_sbir_awards": 820,
+      "sbir_yoy": "-7.0%",
+      "status": "Decline"
+    },
+    "Navigation & PNT": {
+      "score": 20.9,
+      "total_sbir_awards": 704,
+      "sbir_yoy": "+33.6%",
+      "status": "Strong Growth"
+    },
+    "Power & Energy Storage": {
+      "score": 16.4,
+      "total_sbir_awards": 1794,
+      "sbir_yoy": "+12.0%",
+      "status": "Growth"
+    },
+    "Propulsion & Engines": {
+      "score": 23.6,
+      "total_sbir_awards": 2461,
+      "sbir_yoy": "+18.7%",
+      "status": "Growth"
+    },
+    "Sensors & Imaging": {
+      "score": 35.9,
+      "total_sbir_awards": 5778,
+      "sbir_yoy": "+4.8%",
+      "status": "Stable"
+    },
+    "Thermal & Environmental": {
+      "score": 2.6,
+      "total_sbir_awards": 444,
+      "sbir_yoy": "-12.8%",
+      "status": "Decline"
+    },
+    "Warheads & Energetics": {
+      "score": 0.8,
+      "total_sbir_awards": 138,
+      "sbir_yoy": "-9.5%",
+      "status": "Decline"
+    }
+  },
+  "categories": [
+    "Artificial Intelligence",
+    "Biotechnology & Medical",
+    "Command & Control",
+    "Communications",
+    "Computing & Software",
+    "Cybersecurity",
+    "Directed Energy",
+    "Electronic Warfare",
+    "Guidance & Control",
+    "Manufacturing & Production",
+    "Materials & Structures",
+    "Modeling & Simulation",
+    "Navigation & PNT",
+    "Power & Energy Storage",
+    "Propulsion & Engines",
+    "Sensors & Imaging",
+    "Thermal & Environmental",
+    "Warheads & Energetics"
+  ]
+}

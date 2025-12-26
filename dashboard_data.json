@@ -1,0 +1,446 @@
+{
+  "last_updated": "2025-12-18T23:08:45.254995",
+  "data_coverage": {
+    "sbir_years": "2020-2024",
+    "ndaa_years": "FY2021-FY2025",
+    "topics_years": "2021-2024"
+  },
+  "sbir_trends": {
+    "Space Systems": {
+      "award_counts": {
+        "2020": 195,
+        "2021": 243,
+        "2022": 271,
+        "2023": 273,
+        "2024": 334
+      },
+      "funding_millions": {
+        "2020": 105.2,
+        "2021": 111.9,
+        "2022": 175.6,
+        "2023": 225.0,
+        "2024": 281.9
+      },
+      "total_awards": 1316,
+      "recent_growth": 22.3
+    },
+    "Autonomous Systems": {
+      "award_counts": {
+        "2020": 202,
+        "2021": 208,
+        "2022": 207,
+        "2023": 208,
+        "2024": 275
+      },
+      "funding_millions": {
+        "2020": 106.0,
+        "2021": 82.3,
+        "2022": 137.8,
+        "2023": 221.6,
+        "2024": 194.8
+      },
+      "total_awards": 1100,
+      "recent_growth": 32.2
+    },
+    "Cybersecurity": {
+      "award_counts": {
+        "2020": 22,
+        "2021": 19,
+        "2022": 19,
+        "2023": 31,
+        "2024": 42
+      },
+      "funding_millions": {
+        "2020": 12.2,
+        "2021": 9.0,
+        "2022": 5.5,
+        "2023": 21.7,
+        "2024": 31.2
+      },
+      "total_awards": 133,
+      "recent_growth": 35.5
+    },
+    "AI/Machine Learning": {
+      "award_counts": {
+        "2020": 1145,
+        "2021": 849,
+        "2022": 763,
+        "2023": 776,
+        "2024": 900
+      },
+      "funding_millions": {
+        "2020": 547.0,
+        "2021": 374.6,
+        "2022": 504.7,
+        "2023": 525.6,
+        "2024": 666.0
+      },
+      "total_awards": 4433,
+      "recent_growth": 16.0
+    },
+    "Electronic Warfare": {
+      "award_counts": {
+        "2020": 127,
+        "2021": 115,
+        "2022": 138,
+        "2023": 123,
+        "2024": 157
+      },
+      "funding_millions": {
+        "2020": 64.0,
+        "2021": 58.1,
+        "2022": 75.0,
+        "2023": 80.2,
+        "2024": 113.9
+      },
+      "total_awards": 660,
+      "recent_growth": 27.6
+    },
+    "Communications": {
+      "award_counts": {
+        "2020": 183,
+        "2021": 189,
+        "2022": 130,
+        "2023": 134,
+        "2024": 180
+      },
+      "funding_millions": {
+        "2020": 94.1,
+        "2021": 96.7,
+        "2022": 89.8,
+        "2023": 80.5,
+        "2024": 200.9
+      },
+      "total_awards": 816,
+      "recent_growth": 34.3
+    },
+    "Quantum": {
+      "award_counts": {
+        "2020": 65,
+        "2021": 46,
+        "2022": 27,
+        "2023": 21,
+        "2024": 36
+      },
+      "funding_millions": {
+        "2020": 18.0,
+        "2021": 32.0,
+        "2022": 17.2,
+        "2023": 15.3,
+        "2024": 22.9
+      },
+      "total_awards": 195,
+      "recent_growth": 71.4
+    },
+    "Hypersonics": {
+      "award_counts": {
+        "2020": 57,
+        "2021": 84,
+        "2022": 85,
+        "2023": 109,
+        "2024": 113
+      },
+      "funding_millions": {
+        "2020": 25.1,
+        "2021": 53.7,
+        "2022": 43.0,
+        "2023": 88.0,
+        "2024": 71.2
+      },
+      "total_awards": 448,
+      "recent_growth": 3.7
+    },
+    "Sensors": {
+      "award_counts": {
+        "2020": 414,
+        "2021": 380,
+        "2022": 347,
+        "2023": 362,
+        "2024": 403
+      },
+      "funding_millions": {
+        "2020": 187.4,
+        "2021": 199.9,
+        "2022": 204.1,
+        "2023": 228.5,
+        "2024": 288.5
+      },
+      "total_awards": 1906,
+      "recent_growth": 11.3
+    },
+    "Directed Energy": {
+      "award_counts": {
+        "2020": 82,
+        "2021": 79,
+        "2022": 86,
+        "2023": 93,
+        "2024": 87
+      },
+      "funding_millions": {
+        "2020": 35.6,
+        "2021": 44.8,
+        "2022": 51.0,
+        "2023": 69.3,
+        "2024": 71.0
+      },
+      "total_awards": 427,
+      "recent_growth": -6.5
+    },
+    "Advanced Materials": {
+      "award_counts": {
+        "2020": 94,
+        "2021": 100,
+        "2022": 93,
+        "2023": 78,
+        "2024": 86
+      },
+      "funding_millions": {
+        "2020": 38.2,
+        "2021": 37.8,
+        "2022": 59.4,
+        "2023": 52.2,
+        "2024": 59.2
+      },
+      "total_awards": 451,
+      "recent_growth": 10.3
+    },
+    "Biotechnology": {
+      "award_counts": {
+        "2020": 159,
+        "2021": 152,
+        "2022": 169,
+        "2023": 152,
+        "2024": 166
+      },
+      "funding_millions": {
+        "2020": 78.4,
+        "2021": 78.9,
+        "2022": 125.5,
+        "2023": 167.6,
+        "2024": 128.8
+      },
+      "total_awards": 798,
+      "recent_growth": 9.2
+    },
+    "Energy/Power": {
+      "award_counts": {
+        "2020": 51,
+        "2021": 50,
+        "2022": 57,
+        "2023": 44,
+        "2024": 55
+      },
+      "funding_millions": {
+        "2020": 22.3,
+        "2021": 18.7,
+        "2022": 42.5,
+        "2023": 80.0,
+        "2024": 32.9
+      },
+      "total_awards": 257,
+      "recent_growth": 25.0
+    },
+    "Manufacturing": {
+      "award_counts": {
+        "2020": 120,
+        "2021": 121,
+        "2022": 144,
+        "2023": 142,
+        "2024": 103
+      },
+      "funding_millions": {
+        "2020": 52.3,
+        "2021": 47.7,
+        "2022": 96.7,
+        "2023": 97.1,
+        "2024": 74.3
+      },
+      "total_awards": 630,
+      "recent_growth": -27.5
+    }
+  },
+  "congress_priorities": {
+    "AI/Machine Learning": {
+      "mentions": 158,
+      "fiscal_year": 2025
+    },
+    "Hypersonics": {
+      "mentions": 24,
+      "fiscal_year": 2025
+    },
+    "Quantum": {
+      "mentions": 22,
+      "fiscal_year": 2025
+    },
+    "Directed Energy": {
+      "mentions": 13,
+      "fiscal_year": 2025
+    },
+    "Cybersecurity": {
+      "mentions": 71,
+      "fiscal_year": 2025
+    },
+    "Space Systems": {
+      "mentions": 237,
+      "fiscal_year": 2025
+    },
+    "Autonomous Systems": {
+      "mentions": 173,
+      "fiscal_year": 2025
+    },
+    "Electronic Warfare": {
+      "mentions": 27,
+      "fiscal_year": 2025
+    }
+  },
+  "topics_pipeline": {
+    "AI/Machine Learning": {
+      "count": 186,
+      "year": "2024"
+    },
+    "Hypersonics": {
+      "count": 83,
+      "year": "2024"
+    },
+    "Quantum": {
+      "count": 42,
+      "year": "2024"
+    },
+    "Directed Energy": {
+      "count": 41,
+      "year": "2024"
+    },
+    "Cybersecurity": {
+      "count": 47,
+      "year": "2024"
+    },
+    "Space Systems": {
+      "count": 281,
+      "year": "2024"
+    },
+    "Autonomous Systems": {
+      "count": 151,
+      "year": "2024"
+    },
+    "Electronic Warfare": {
+      "count": 58,
+      "year": "2024"
+    }
+  },
+  "current_scores": {
+    "Space Systems": {
+      "score": 84.7,
+      "congress_mentions": 237,
+      "total_sbir_awards": 1316,
+      "sbir_yoy": "22.3%",
+      "trend": "\ud83d\udd25"
+    },
+    "Autonomous Systems": {
+      "score": 69.9,
+      "congress_mentions": 173,
+      "total_sbir_awards": 1100,
+      "sbir_yoy": "32.2%",
+      "trend": "\ud83d\udd25"
+    },
+    "Cybersecurity": {
+      "score": 67.9,
+      "congress_mentions": 71,
+      "total_sbir_awards": 133,
+      "sbir_yoy": "35.5%",
+      "trend": "\ud83d\udd25"
+    },
+    "AI/Machine Learning": {
+      "score": 62.6,
+      "congress_mentions": 158,
+      "total_sbir_awards": 4433,
+      "sbir_yoy": "16.0%",
+      "trend": "\ud83d\udd25"
+    },
+    "Electronic Warfare": {
+      "score": 51.6,
+      "congress_mentions": 27,
+      "total_sbir_awards": 660,
+      "sbir_yoy": "27.6%",
+      "trend": "\ud83d\udd25"
+    },
+    "Communications": {
+      "score": 47.3,
+      "congress_mentions": 0,
+      "total_sbir_awards": 816,
+      "sbir_yoy": "34.3%",
+      "trend": "\ud83d\udd25"
+    },
+    "Quantum": {
+      "score": 46.9,
+      "congress_mentions": 22,
+      "total_sbir_awards": 195,
+      "sbir_yoy": "71.4%",
+      "trend": "\ud83d\udd25"
+    },
+    "Hypersonics": {
+      "score": 45.8,
+      "congress_mentions": 24,
+      "total_sbir_awards": 448,
+      "sbir_yoy": "3.7%",
+      "trend": "\u27a1\ufe0f"
+    },
+    "Sensors": {
+      "score": 39.9,
+      "congress_mentions": 0,
+      "total_sbir_awards": 1906,
+      "sbir_yoy": "11.3%",
+      "trend": "\ud83d\udcc8"
+    },
+    "Directed Energy": {
+      "score": 37.8,
+      "congress_mentions": 13,
+      "total_sbir_awards": 427,
+      "sbir_yoy": "-6.5%",
+      "trend": "\u27a1\ufe0f"
+    },
+    "Advanced Materials": {
+      "score": 35.2,
+      "congress_mentions": 0,
+      "total_sbir_awards": 451,
+      "sbir_yoy": "10.3%",
+      "trend": "\ud83d\udcc8"
+    },
+    "Biotechnology": {
+      "score": 35.0,
+      "congress_mentions": 0,
+      "total_sbir_awards": 798,
+      "sbir_yoy": "9.2%",
+      "trend": "\ud83d\udcc8"
+    },
+    "Energy/Power": {
+      "score": 34.7,
+      "congress_mentions": 0,
+      "total_sbir_awards": 257,
+      "sbir_yoy": "25.0%",
+      "trend": "\ud83d\udd25"
+    },
+    "Manufacturing": {
+      "score": 23.7,
+      "congress_mentions": 0,
+      "total_sbir_awards": 630,
+      "sbir_yoy": "-27.5%",
+      "trend": "\u27a1\ufe0f"
+    }
+  },
+  "categories": [
+    "AI/Machine Learning",
+    "Advanced Materials",
+    "Autonomous Systems",
+    "Biotechnology",
+    "Communications",
+    "Cybersecurity",
+    "Directed Energy",
+    "Electronic Warfare",
+    "Energy/Power",
+    "Hypersonics",
+    "Manufacturing",
+    "Quantum",
+    "Sensors",
+    "Space Systems"
+  ]
+}

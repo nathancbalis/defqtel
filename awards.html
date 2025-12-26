@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards Browser | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <div class="flex items-baseline justify-between">
+                <div class="flex items-baseline gap-12">
+                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+                    <nav class="flex gap-8 text-sm">
+                        <div class="relative group">
+                            <a href="#" class="text-white">Data &#9662;</a>
+                            <div class="absolute left-0 top-full mt-[26px] w-[720px] bg-black border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </nav>
+                </div>
+                <div class="relative" id="globalSearchContainer">
+                    <input type="text" id="globalSearch" placeholder="Search companies, states, categories..."
+                        class="w-64 bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-gray-300 focus:outline-none focus:border-blue-500">
+                    <div id="globalSearchResults" class="absolute right-0 mt-1 w-80 bg-gray-900 border border-gray-800 rounded-lg shadow-xl z-50" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="max-w-7xl mx-auto px-8 py-24 text-center">
+        <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-500 border-r-transparent"></div>
+        <div class="text-sm text-gray-500 mt-4">Loading awards data</div>
+    </div>
+
+    <div id="content" style="display: none;">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h1 class="text-3xl font-light mb-2">Awards Browser</h1>
+                    <p class="text-sm text-gray-500" id="resultsCount">Search and filter SBIR awards</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 border border-gray-800 p-4 mb-6">
+                <div class="grid grid-cols-6 gap-4">
+                    <div class="col-span-2">
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Search</label>
+                        <input type="text" id="searchInput" placeholder="Company, title, or keyword..."
+                            class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">State</label>
+                        <select id="stateFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                            <option value="">All States</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Technology</label>
+                        <select id="techFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                            <option value="">All Tech</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Platform</label>
+                        <select id="platformFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                            <option value="">All Platforms</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Year</label>
+                        <select id="yearFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                            <option value="">All Years</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mt-4">
+                    <div class="flex gap-4">
+                        <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
+                            <input type="checkbox" id="phase1Filter" class="accent-blue-500">
+                            Phase I
+                        </label>
+                        <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
+                            <input type="checkbox" id="phase2Filter" class="accent-blue-500">
+                            Phase II
+                        </label>
+                    </div>
+                    <button id="clearFilters" class="text-sm text-blue-400 hover:text-blue-300">Clear Filters</button>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 border border-gray-800">
+                <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">Awards</h2>
+                    <div class="flex items-center gap-4">
+                        <select id="sortBy" class="bg-gray-800 text-gray-300 text-xs border border-gray-700 rounded px-2 py-1">
+                            <option value="amount-desc">Highest Amount</option>
+                            <option value="amount-asc">Lowest Amount</option>
+                            <option value="year-desc">Most Recent</option>
+                            <option value="year-asc">Oldest</option>
+                            <option value="company-asc">Company A-Z</option>
+                        </select>
+                        <span class="text-xs text-gray-600" id="showingCount">Showing 0</span>
+                    </div>
+                </div>
+                <div id="awardsList" class="divide-y divide-gray-800 overflow-y-auto" style="max-height: 600px;"></div>
+                <div id="loadMore" class="px-6 py-4 text-center border-t border-gray-800" style="display: none;">
+                    <button onclick="loadMoreAwards()" class="text-sm text-blue-400 hover:text-blue-300">Load More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-12">
+            <div class="max-w-7xl mx-auto px-8 py-6">
+                <div class="flex justify-between text-xs text-gray-600">
+                    <div>Data: SBIR.gov (2020-2024)</div>
+                    <div>Click company name for more awards</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allAwards = [];
+        let filteredAwards = [];
+        let displayedCount = 0;
+        const PAGE_SIZE = 50;
+
+        function formatAmount(amount) {
+            if (amount >= 1000000) {
+                return '$' + (amount / 1000000).toFixed(2) + 'M';
+            } else if (amount >= 1000) {
+                return '$' + (amount / 1000).toFixed(0) + 'K';
+            }
+            return '$' + amount.toFixed(0);
+        }
+
+        function getFilters() {
+            return {
+                search: document.getElementById('searchInput').value.toLowerCase(),
+                state: document.getElementById('stateFilter').value,
+                tech: document.getElementById('techFilter').value,
+                platform: document.getElementById('platformFilter').value,
+                year: document.getElementById('yearFilter').value,
+                phase1: document.getElementById('phase1Filter').checked,
+                phase2: document.getElementById('phase2Filter').checked
+            };
+        }
+
+        function filterAwards() {
+            const filters = getFilters();
+
+            filteredAwards = allAwards.filter(award => {
+                // Text search
+                if (filters.search) {
+                    const searchText = `${award.company} ${award.title}`.toLowerCase();
+                    if (!searchText.includes(filters.search)) return false;
+                }
+
+                // State filter
+                if (filters.state && award.state !== filters.state) return false;
+
+                // Tech category filter
+                if (filters.tech) {
+                    const techCats = award.tech || [];
+                    if (!techCats.includes(filters.tech)) return false;
+                }
+
+                // Platform category filter
+                if (filters.platform) {
+                    const platformCats = award.platform || [];
+                    if (!platformCats.includes(filters.platform)) return false;
+                }
+
+                // Year filter
+                if (filters.year && award.year !== parseInt(filters.year)) return false;
+
+                // Phase filter
+                if (filters.phase1 || filters.phase2) {
+                    if (filters.phase1 && !filters.phase2 && award.phase !== 'Phase I') return false;
+                    if (filters.phase2 && !filters.phase1 && award.phase !== 'Phase II') return false;
+                }
+
+                return true;
+            });
+
+            // Sort
+            const sortBy = document.getElementById('sortBy').value;
+            filteredAwards.sort((a, b) => {
+                switch (sortBy) {
+                    case 'amount-desc': return b.amount - a.amount;
+                    case 'amount-asc': return a.amount - b.amount;
+                    case 'year-desc': return b.year - a.year;
+                    case 'year-asc': return a.year - b.year;
+                    case 'company-asc': return a.company.localeCompare(b.company);
+                    default: return 0;
+                }
+            });
+
+            displayedCount = 0;
+            document.getElementById('awardsList').innerHTML = '';
+            loadMoreAwards();
+
+            document.getElementById('resultsCount').textContent =
+                `${filteredAwards.length.toLocaleString()} awards found`;
+        }
+
+        function loadMoreAwards() {
+            const container = document.getElementById('awardsList');
+            const end = Math.min(displayedCount + PAGE_SIZE, filteredAwards.length);
+
+            for (let i = displayedCount; i < end; i++) {
+                const award = filteredAwards[i];
+                const div = document.createElement('div');
+                div.className = 'px-6 py-4 hover:bg-gray-800';
+                const techTags = (award.tech || []).slice(0, 2).map(t =>
+                    `<span class="text-xs px-1.5 py-0.5 bg-gray-800 text-gray-400 rounded">${t}</span>`
+                ).join(' ');
+                const platformTags = (award.platform || []).slice(0, 2).map(p =>
+                    `<span class="text-xs px-1.5 py-0.5 bg-purple-900/50 text-purple-300 rounded">${p}</span>`
+                ).join(' ');
+
+                div.innerHTML = `
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-2 mb-1">
+                                <a href="awards.html?company=${encodeURIComponent(award.company)}"
+                                   class="text-sm font-medium text-blue-400 hover:text-blue-300 truncate">${award.company}</a>
+                                <span class="text-xs px-2 py-0.5 rounded ${award.phase === 'Phase II' ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'}">${award.phase}</span>
+                            </div>
+                            <div class="text-sm text-gray-300 mb-1">${award.title}</div>
+                            <div class="flex flex-wrap items-center gap-1 mb-1">
+                                ${techTags} ${platformTags}
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                ${award.city}, ${award.state} · ${award.year}
+                            </div>
+                        </div>
+                        <div class="text-right flex-shrink-0">
+                            <div class="text-sm font-medium">${formatAmount(award.amount)}</div>
+                            <div class="text-xs text-gray-500">${award.branch || award.agency}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            }
+
+            displayedCount = end;
+            document.getElementById('showingCount').textContent =
+                `Showing ${displayedCount.toLocaleString()} of ${filteredAwards.length.toLocaleString()}`;
+
+            document.getElementById('loadMore').style.display =
+                displayedCount < filteredAwards.length ? 'block' : 'none';
+        }
+
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('stateFilter').value = '';
+            document.getElementById('techFilter').value = '';
+            document.getElementById('platformFilter').value = '';
+            document.getElementById('yearFilter').value = '';
+            document.getElementById('phase1Filter').checked = false;
+            document.getElementById('phase2Filter').checked = false;
+            filterAwards();
+        }
+
+        // Initialize
+        fetch('awards_data.json')
+            .then(res => res.json())
+            .then(data => {
+                allAwards = data.awards;
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+                // Populate filters
+                const stateSelect = document.getElementById('stateFilter');
+                data.filters.states.forEach(state => {
+                    const option = document.createElement('option');
+                    option.value = state;
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+
+                const techSelect = document.getElementById('techFilter');
+                (data.filters.tech_categories || data.filters.categories).forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat;
+                    option.textContent = cat;
+                    techSelect.appendChild(option);
+                });
+
+                const platformSelect = document.getElementById('platformFilter');
+                (data.filters.platform_categories || []).forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat;
+                    option.textContent = cat;
+                    platformSelect.appendChild(option);
+                });
+
+                const yearSelect = document.getElementById('yearFilter');
+                data.filters.years.reverse().forEach(year => {
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = year;
+                    yearSelect.appendChild(option);
+                });
+
+                // Check for URL params
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('company')) {
+                    document.getElementById('searchInput').value = urlParams.get('company');
+                }
+                if (urlParams.has('state')) {
+                    document.getElementById('stateFilter').value = urlParams.get('state');
+                }
+                if (urlParams.has('tech')) {
+                    document.getElementById('techFilter').value = urlParams.get('tech');
+                }
+                if (urlParams.has('platform')) {
+                    document.getElementById('platformFilter').value = urlParams.get('platform');
+                }
+
+                // Event listeners
+                document.getElementById('searchInput').addEventListener('input', debounce(filterAwards, 300));
+                document.getElementById('stateFilter').addEventListener('change', filterAwards);
+                document.getElementById('techFilter').addEventListener('change', filterAwards);
+                document.getElementById('platformFilter').addEventListener('change', filterAwards);
+                document.getElementById('yearFilter').addEventListener('change', filterAwards);
+                document.getElementById('phase1Filter').addEventListener('change', filterAwards);
+                document.getElementById('phase2Filter').addEventListener('change', filterAwards);
+                document.getElementById('sortBy').addEventListener('change', filterAwards);
+                document.getElementById('clearFilters').addEventListener('click', clearFilters);
+
+                filterAwards();
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('loading').innerHTML = `
+                    <div class="text-sm text-red-400">Connection failed</div>
+                    <div class="text-xs text-gray-600 mt-2">Ensure server is running</div>
+                `;
+            });
+
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        // Global Search Functionality
+        let searchData = { companies: [], states: [], categories: [] };
+
+        async function initGlobalSearch(data) {
+            try {
+                searchData.companies = data.filters.companies;
+                searchData.categories = data.filters.tech_categories || data.filters.categories;
+                searchData.states = data.filters.states;
+            } catch (e) {
+                console.error('Failed to load search data:', e);
+            }
+        }
+
+        // Initialize after data loads
+        fetch('awards_data.json')
+            .then(res => res.json())
+            .then(data => initGlobalSearch(data));
+
+        const globalSearchInput = document.getElementById('globalSearch');
+        const globalSearchResults = document.getElementById('globalSearchResults');
+
+        globalSearchInput.addEventListener('input', debounce(function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            if (query.length < 2) {
+                globalSearchResults.style.display = 'none';
+                return;
+            }
+
+            const results = [];
+
+            // Search states
+            searchData.states.filter(s =>
+                s.toLowerCase().includes(query)
+            ).slice(0, 3).forEach(s => {
+                results.push({ type: 'state', name: s });
+            });
+
+            // Search categories
+            searchData.categories.filter(c =>
+                c.toLowerCase().includes(query)
+            ).slice(0, 3).forEach(c => {
+                results.push({ type: 'category', name: c });
+            });
+
+            // Search companies
+            searchData.companies.filter(c =>
+                c.toLowerCase().includes(query)
+            ).slice(0, 5).forEach(c => {
+                results.push({ type: 'company', name: c });
+            });
+
+            if (results.length === 0) {
+                globalSearchResults.innerHTML = '<div class="px-4 py-3 text-sm text-gray-500">No results found</div>';
+            } else {
+                globalSearchResults.innerHTML = results.map(r => {
+                    const typeLabel = r.type === 'state' ? 'State' : r.type === 'category' ? 'Category' : 'Company';
+                    const typeColor = r.type === 'state' ? 'text-blue-400' : r.type === 'category' ? 'text-green-400' : 'text-purple-400';
+                    let href;
+                    if (r.type === 'state') {
+                        href = `geo.html?state=${encodeURIComponent(r.name)}`;
+                    } else if (r.type === 'category') {
+                        href = `data.html?category=${encodeURIComponent(r.name)}`;
+                    } else {
+                        href = `awards.html?company=${encodeURIComponent(r.name)}`;
+                    }
+                    return `
+                        <a href="${href}" class="block px-4 py-2 hover:bg-gray-800 transition-colors">
+                            <div class="text-sm text-gray-200">${r.name}</div>
+                            <div class="text-xs ${typeColor}">${typeLabel}</div>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            globalSearchResults.style.display = 'block';
+        }, 200));
+
+        globalSearchInput.addEventListener('focus', () => {
+            if (globalSearchInput.value.length >= 2) {
+                globalSearchResults.style.display = 'block';
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('globalSearchContainer').contains(e.target)) {
+                globalSearchResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

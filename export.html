@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Data | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .pricing-card { transition: all 0.2s; }
+        .pricing-card:hover { border-color: #374151; }
+        /* Hide Gumroad's injected logo */
+        .gumroad-button-logo { display: none !important; }
+        .gumroad-button .logo { display: none !important; }
+        .gumroad-button span.logo { display: none !important; }
+        .gumroad-button span[class*="logo"] { display: none !important; }
+        .gumroad-button > span:not(:first-child) { display: none !important; }
+        .gumroad-button svg { display: none !important; }
+        .gumroad-button img { display: none !important; }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <div class="flex items-baseline justify-between">
+                <div class="flex items-baseline gap-12">
+                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+                    <nav class="flex gap-8 text-sm">
+                        <div class="relative group">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                Data ▾
+                            </a>
+                            <div class="absolute left-0 top-full mt-[26px] w-[720px] bg-black border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="export.html" class="text-white">Export</a>
+                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-8 py-16">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-light mb-4">Export Data</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Download the complete categorized SBIR dataset for your own analysis.
+                Each award includes dual-dimension classification across 18 technology types and 8 platform domains.
+            </p>
+        </div>
+
+        <!-- What's Included -->
+        <div class="bg-gray-900 border border-gray-800 p-8 mb-16">
+            <h2 class="text-lg font-medium mb-6">What's Included</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <div class="text-sm font-medium text-gray-300 mb-3">Data Fields</div>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>Company name and location (city, state).</li>
+                        <li>Award title and description.</li>
+                        <li>Award amount and date.</li>
+                        <li>Agency and branch (Army, Navy, Air Force, etc.).</li>
+                        <li>Phase (I, II, III) and program.</li>
+                        <li>Contract number and tracking ID.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-sm font-medium text-gray-300 mb-3">AI Classification</div>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li>Technology categories (1-3 per award).</li>
+                        <li>Platform categories (1-3 per award).</li>
+                        <li>Primary technology classification.</li>
+                        <li>Primary platform classification.</li>
+                        <li>Classification via Claude AI (Anthropic).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-800">
+                <div class="text-sm text-gray-500">
+                    <span class="text-gray-400 font-medium">Formats:</span> CSV and JSON included with each purchase
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="mb-8">
+            <h2 class="text-lg font-medium mb-6">Individual Years</h2>
+            <div class="grid grid-cols-5 gap-4">
+
+                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-2xl font-light mb-1">2020</div>
+                    <div class="text-sm text-gray-500 mb-4">3,853 awards</div>
+                    <div class="text-xl font-medium mb-1">$29</div>
+                    <div class="text-xs text-gray-600 mb-4">$1.85B in funding</div>
+                    <a href="https://defqtel.gumroad.com/l/tpmfpr" class="gumroad-button block text-center bg-gray-800 hover:bg-gray-700 text-white text-sm py-2 px-4 transition-colors">
+                        Purchase
+                    </a>
+                </div>
+
+                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-2xl font-light mb-1">2021</div>
+                    <div class="text-sm text-gray-500 mb-4">3,482 awards</div>
+                    <div class="text-xl font-medium mb-1">$29</div>
+                    <div class="text-xs text-gray-600 mb-4">$1.72B in funding</div>
+                    <a href="https://defqtel.gumroad.com/l/tpnnb" class="gumroad-button block text-center bg-gray-800 hover:bg-gray-700 text-white text-sm py-2 px-4 transition-colors">
+                        Purchase
+                    </a>
+                </div>
+
+                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-2xl font-light mb-1">2022</div>
+                    <div class="text-sm text-gray-500 mb-4">3,344 awards</div>
+                    <div class="text-xl font-medium mb-1">$29</div>
+                    <div class="text-xs text-gray-600 mb-4">$2.29B in funding</div>
+                    <a href="https://defqtel.gumroad.com/l/cuali" class="gumroad-button block text-center bg-gray-800 hover:bg-gray-700 text-white text-sm py-2 px-4 transition-colors">
+                        Purchase
+                    </a>
+                </div>
+
+                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-2xl font-light mb-1">2023</div>
+                    <div class="text-sm text-gray-500 mb-4">3,164 awards</div>
+                    <div class="text-xl font-medium mb-1">$29</div>
+                    <div class="text-xs text-gray-600 mb-4">$2.33B in funding</div>
+                    <a href="https://defqtel.gumroad.com/l/mcoyvj" class="gumroad-button block text-center bg-gray-800 hover:bg-gray-700 text-white text-sm py-2 px-4 transition-colors">
+                        Purchase
+                    </a>
+                </div>
+
+                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-2xl font-light mb-1">2024</div>
+                    <div class="text-sm text-gray-500 mb-4">3,422 awards</div>
+                    <div class="text-xl font-medium mb-1">$29</div>
+                    <div class="text-xs text-gray-600 mb-4">$2.73B in funding</div>
+                    <a href="https://defqtel.gumroad.com/l/mfmpsa" class="gumroad-button block text-center bg-gray-800 hover:bg-gray-700 text-white text-sm py-2 px-4 transition-colors">
+                        Purchase
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Full Bundle -->
+        <div class="mb-16">
+            <h2 class="text-lg font-medium mb-6">Complete Dataset</h2>
+            <div class="pricing-card bg-gray-900 border border-gray-800 p-8">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="text-2xl font-light mb-2">2020-2024 Complete</div>
+                        <div class="text-sm text-gray-500 mb-4">Full 5-year dataset with all 17,265 awards.</div>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>All technology and platform classifications.</li>
+                            <li>$10.9B in total funding analyzed.</li>
+                            <li>CSV + JSON formats.</li>
+                        </ul>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-medium mb-4">$99</div>
+                        <a href="https://defqtel.gumroad.com/l/agzyq" class="gumroad-button inline-block bg-gray-800 hover:bg-gray-700 text-white text-sm py-3 px-8 transition-colors">
+                            Purchase
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample Data -->
+        <div class="mb-16">
+            <h2 class="text-lg font-medium mb-6">Sample Data</h2>
+            <div class="bg-gray-900 border border-gray-800 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs whitespace-nowrap">
+                        <thead>
+                            <tr class="border-b border-gray-800 bg-gray-950">
+                                <th class="text-left p-3 text-gray-500 font-medium">Company</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">State</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">Award Title</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">Amount</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">Year</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">Agency</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">Phase</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">Tech Categories</th>
+                                <th class="text-left p-3 text-gray-500 font-medium">Platform Categories</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-400">
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3">Whisper Aero Inc.</td>
+                                <td class="p-3">TN</td>
+                                <td class="p-3">eQ Propulsor for Drone Applications</td>
+                                <td class="p-3">$1,249,970</td>
+                                <td class="p-3">2023</td>
+                                <td class="p-3">Air Force</td>
+                                <td class="p-3">II</td>
+                                <td class="p-3">Propulsion & Engines</td>
+                                <td class="p-3">Aerospace</td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3">Shield AI</td>
+                                <td class="p-3">CA</td>
+                                <td class="p-3">Autonomous Navigation in GPS-Denied...</td>
+                                <td class="p-3">$749,999</td>
+                                <td class="p-3">2022</td>
+                                <td class="p-3">Navy</td>
+                                <td class="p-3">II</td>
+                                <td class="p-3">Artificial Intelligence</td>
+                                <td class="p-3">Aerospace</td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="p-3">Anduril Industries</td>
+                                <td class="p-3">CA</td>
+                                <td class="p-3">Counter-UAS Detection and Tracking...</td>
+                                <td class="p-3">$999,998</td>
+                                <td class="p-3">2021</td>
+                                <td class="p-3">Army</td>
+                                <td class="p-3">II</td>
+                                <td class="p-3">Sensors & Imaging</td>
+                                <td class="p-3">Aerospace</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-gray-600" colspan="9">+ 17,262 more records</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="mb-16">
+            <h2 class="text-lg font-medium mb-6">Use Cases</h2>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-sm font-medium text-gray-300 mb-2">Market Research</div>
+                    <p class="text-sm text-gray-500">Analyze funding trends, identify growth areas, and understand DoD investment priorities.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-sm font-medium text-gray-300 mb-2">Competitive Intelligence</div>
+                    <p class="text-sm text-gray-500">Track competitor activity, identify new entrants, and monitor category leaders.</p>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-sm font-medium text-gray-300 mb-2">Business Development</div>
+                    <p class="text-sm text-gray-500">Find partnership opportunities, identify potential customers, and validate market demand.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div>
+            <h2 class="text-lg font-medium mb-6">Questions</h2>
+            <div class="space-y-6 text-sm">
+                <div>
+                    <div class="font-medium text-gray-300 mb-2">What format is the data in?</div>
+                    <p class="text-gray-500">Each purchase includes both CSV and JSON formats. CSV is compatible with Excel, Google Sheets, and most data tools. JSON is ideal for programmatic use.</p>
+                </div>
+                <div>
+                    <div class="font-medium text-gray-300 mb-2">How accurate is the AI classification?</div>
+                    <p class="text-gray-500">Classification is performed by Claude AI (Anthropic) with an estimated accuracy of 90-95%. Each award is tagged with both technology type and platform domain.</p>
+                </div>
+                <div>
+                    <div class="font-medium text-gray-300 mb-2">Can I use this data commercially?</div>
+                    <p class="text-gray-500">Yes. The underlying SBIR award data is public. You're purchasing the categorized, structured dataset and may use it for internal analysis, research, or commercial purposes.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="border-t border-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto px-8 py-8 text-center text-xs text-gray-600">
+            Data: SBIR.gov | AI Classification: Claude (Anthropic) | Coverage: 2020-2024
+        </div>
+    </div>
+
+</body>
+</html>

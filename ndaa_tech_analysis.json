@@ -1,0 +1,16 @@
+{
+  "bill": "HR 5009",
+  "congress": 118,
+  "tech_counts": {
+    "AI/Machine Learning": 158,
+    "Hypersonics": 24,
+    "Quantum": 22,
+    "Directed Energy": 13,
+    "Cybersecurity": 71,
+    "Space Systems": 237,
+    "Autonomous Systems": 173,
+    "Electronic Warfare": 27
+  },
+  "text_length": 2709784,
+  "version": "Enrolled Bill"
+}

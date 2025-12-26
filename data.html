@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBIR Awards | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .stat-card { transition: all 0.2s; }
+        .stat-card:hover { transform: translateY(-2px); }
+        .category-row { 
+            transition: all 0.15s; 
+            border-left: 3px solid transparent; 
+            cursor: pointer;
+        }
+        .category-row:hover { 
+            border-left-color: #3b82f6; 
+            background: rgba(59, 130, 246, 0.05); 
+        }
+
+        .legend-item {
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        .legend-item.inactive {
+            opacity: 0.3;
+        }
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+    
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <div class="flex items-baseline justify-between">
+                <div class="flex items-baseline gap-12">
+                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+                    <nav class="flex gap-8 text-sm">
+                        <div class="relative group">
+                            <a href="#" class="text-white">
+                                Data ▾
+                            </a>
+                            <div class="absolute left-0 top-full mt-[26px] w-[720px] bg-black border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative" id="globalSearchContainer">
+                        <input type="text" id="globalSearch" placeholder="Search..."
+                            class="w-48 bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-gray-300 focus:outline-none focus:border-blue-500">
+                        <div id="globalSearchResults" class="absolute right-0 mt-1 w-72 bg-gray-900 border border-gray-800 rounded-lg shadow-xl z-50" style="display: none;"></div>
+                    </div>
+                    <div class="text-xs text-gray-600" id="lastUpdated">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="max-w-7xl mx-auto px-8 py-24 text-center">
+        <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-500 border-r-transparent"></div>
+        <div class="text-sm text-gray-500 mt-4">Loading data</div>
+    </div>
+    
+    <div id="overview" style="display: none;">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <div class="grid grid-cols-3 gap-6">
+                <div class="stat-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">SBIR Awards</div>
+                    <div class="text-3xl font-light">17,265</div>
+                    <div class="text-xs text-gray-600 mt-1">2020-2024</div>
+                </div>
+                <div class="stat-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Categories</div>
+                    <div class="text-3xl font-light" id="categoryCount">18 / 8</div>
+                    <div class="text-xs text-gray-600 mt-1">Tech types / Platforms</div>
+                </div>
+                <div class="stat-card bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Multi-Category</div>
+                    <div class="text-3xl font-light">41.5%</div>
+                    <div class="text-xs text-gray-600 mt-1">Cross-domain awards</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 pb-8">
+            <div class="bg-gray-900 border border-gray-800">
+                <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400" id="dimensionTitle">Technology Areas by Volume</h2>
+                        <p class="text-xs text-gray-600 mt-1">Sorted by total awards • Click for details</p>
+                    </div>
+                    <div class="flex bg-gray-800 rounded-lg p-1">
+                        <button id="techBtn" onclick="switchDimension('tech')"
+                            class="px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white">
+                            Technology
+                        </button>
+                        <button id="platformBtn" onclick="switchDimension('platform')"
+                            class="px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white">
+                            Platform
+                        </button>
+                    </div>
+                </div>
+                <div class="divide-y divide-gray-800" id="rankings"></div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-8 pb-8">
+            <div class="bg-gray-900 border border-gray-800">
+                <div class="px-6 py-4 border-b border-gray-800">
+                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">Award Trends (2020-2024)</h2>
+                </div>
+                <div class="p-6">
+                    <div id="trendsChart"></div>
+                    <div id="customLegend" class="grid grid-cols-4 gap-2 mt-6 text-xs"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-12">
+            <div class="max-w-7xl mx-auto px-8 py-6">
+                <div class="flex justify-between text-xs text-gray-600">
+                    <div>Data: SBIR.gov</div>
+                    <div>AI Classification: Claude (Anthropic)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detail" style="display: none;">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <button onclick="showOverview()" class="text-sm text-gray-400 hover:text-white mb-6">← Back</button>
+            
+            <div class="mb-8">
+                <h2 class="text-3xl font-light" id="detailTitle">Loading...</h2>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 mb-8">
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Awards</div>
+                    <div class="text-3xl font-light" id="detailAwards">-</div>
+                    <div class="text-xs text-gray-600 mt-1">2020-2024</div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Recent Growth</div>
+                    <div class="text-3xl font-light" id="detailGrowth">-</div>
+                    <div class="text-xs text-gray-600 mt-1">2023 → 2024</div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Status</div>
+                    <div class="text-3xl font-light" id="detailStatus">-</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 mb-8">
+                <div class="bg-gray-900 border border-gray-800">
+                    <div class="px-6 py-4 border-b border-gray-800">
+                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-400">Award Count Trend</h3>
+                    </div>
+                    <div class="p-6">
+                        <div id="detailAwardChart"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800">
+                    <div class="px-6 py-4 border-b border-gray-800">
+                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-400">Funding Trend ($M)</h3>
+                    </div>
+                    <div class="p-6">
+                        <div id="detailFundingChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        let globalData = null;
+        let trendsChart = null;
+        let visibleSeries = new Set();
+        let currentDimension = 'tech';
+
+        function showOverview() {
+            document.getElementById('detail').style.display = 'none';
+            document.getElementById('overview').style.display = 'block';
+        }
+
+        function switchDimension(dim) {
+            currentDimension = dim;
+
+            // Update button styles
+            const techBtn = document.getElementById('techBtn');
+            const platformBtn = document.getElementById('platformBtn');
+
+            if (dim === 'tech') {
+                techBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white';
+                platformBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white';
+                document.getElementById('dimensionTitle').textContent = 'Technology Areas by Volume';
+            } else {
+                platformBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white';
+                techBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white';
+                document.getElementById('dimensionTitle').textContent = 'Platform/Domain by Volume';
+            }
+
+            renderRankings(globalData, dim);
+            renderTrendsChart(globalData, dim);
+        }
+
+        function renderRankings(data, dimension) {
+            const scores = dimension === 'tech' ? data.tech_scores : data.platform_scores;
+            const sorted = Object.entries(scores)
+                .sort((a, b) => b[1].total_sbir_awards - a[1].total_sbir_awards);
+
+            const getStatusColor = (status) => {
+                if (status === 'Strong Growth') return 'text-green-400';
+                if (status === 'Growth') return 'text-green-500';
+                if (status === 'Stable') return 'text-blue-400';
+                return 'text-red-400';
+            };
+
+            const rankingsHTML = sorted.map(([category, score], idx) => {
+                return `
+                    <div class="category-row px-6 py-4 flex items-center justify-between" onclick="showDetail('${category}', '${dimension}')">
+                        <div class="flex items-center gap-6 flex-1">
+                            <div class="text-xs text-gray-600 font-mono w-8">${String(idx + 1).padStart(2, '0')}</div>
+                            <div class="flex-1">
+                                <div class="text-sm font-medium">${category}</div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    ${score.total_sbir_awards.toLocaleString()} awards •
+                                    <span class="${getStatusColor(score.status)}">${score.sbir_yoy} YoY</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs text-gray-500 uppercase tracking-wide">Status</div>
+                            <div class="text-xs ${getStatusColor(score.status)} font-medium mt-1">${score.status}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('rankings').innerHTML = rankingsHTML;
+        }
+
+        function renderTrendsChart(data, dimension) {
+            const trends = dimension === 'tech' ? data.tech_trends : data.platform_trends;
+            const scores = dimension === 'tech' ? data.tech_scores : data.platform_scores;
+
+            const sorted = Object.entries(scores)
+                .sort((a, b) => b[1].total_sbir_awards - a[1].total_sbir_awards);
+
+            const allCategories = sorted.map(x => x[0]);
+            const years = ['2020', '2021', '2022', '2023', '2024'];
+
+            const series = allCategories.map(cat => ({
+                name: cat,
+                data: years.map(year => (trends[cat] && trends[cat].award_counts[year]) || 0)
+            }));
+
+            const colors = [
+                '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6',
+                '#ec4899', '#06b6d4', '#84cc16', '#f43f5e',
+                '#6366f1', '#14b8a6', '#f97316', '#a855f7',
+                '#e11d48', '#0ea5e9', '#22c55e', '#eab308',
+                '#d946ef', '#0284c7'
+            ];
+
+            visibleSeries.clear();
+            allCategories.forEach(cat => visibleSeries.add(cat));
+
+            if (trendsChart) {
+                trendsChart.destroy();
+            }
+
+            trendsChart = new ApexCharts(document.getElementById('trendsChart'), {
+                chart: {
+                    type: 'line',
+                    height: 450,
+                    background: 'transparent',
+                    toolbar: { show: false }
+                },
+                series: series,
+                xaxis: {
+                    categories: years,
+                    labels: { style: { colors: '#6b7280', fontSize: '11px' } }
+                },
+                yaxis: {
+                    labels: { style: { colors: '#6b7280', fontSize: '11px' } }
+                },
+                stroke: { curve: 'smooth', width: 2 },
+                colors: colors.slice(0, allCategories.length),
+                grid: { borderColor: '#1f2937', strokeDashArray: 3 },
+                legend: { show: false },
+                tooltip: { theme: 'dark', style: { fontSize: '12px' } }
+            });
+
+            trendsChart.render();
+
+            const legendHTML = allCategories.map((cat, idx) => {
+                return `
+                    <div class="legend-item" data-category="${cat}" onclick="toggleSeries('${cat}')">
+                        <div class="legend-color" style="background-color: ${colors[idx]}"></div>
+                        <div>${cat}</div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('customLegend').innerHTML = legendHTML;
+        }
+        
+        function showDetail(category, dimension = 'tech') {
+            const data = globalData;
+            const scores = dimension === 'tech' ? data.tech_scores : data.platform_scores;
+            const trends = dimension === 'tech' ? data.tech_trends : data.platform_trends;
+            const score = scores[category];
+            const categoryTrends = trends[category];
+            
+            document.getElementById('detailTitle').textContent = category;
+            document.getElementById('detailAwards').textContent = score.total_sbir_awards.toLocaleString();
+            document.getElementById('detailGrowth').textContent = score.sbir_yoy;
+            document.getElementById('detailStatus').textContent = score.status;
+
+            const years = Object.keys(categoryTrends.award_counts).sort();
+            const awardCounts = years.map(y => categoryTrends.award_counts[y]);
+            
+            document.getElementById('detailAwardChart').innerHTML = '';
+            new ApexCharts(document.getElementById('detailAwardChart'), {
+                chart: { type: 'area', height: 250, background: 'transparent', toolbar: { show: false } },
+                series: [{ name: 'Awards', data: awardCounts }],
+                xaxis: { categories: years, labels: { style: { colors: '#6b7280' } } },
+                yaxis: { labels: { style: { colors: '#6b7280' } } },
+                stroke: { curve: 'smooth', width: 2, colors: ['#3b82f6'] },
+                fill: { type: 'gradient', gradient: { opacityFrom: 0.4, opacityTo: 0 } },
+                colors: ['#3b82f6'],
+                grid: { borderColor: '#1f2937' },
+                tooltip: { theme: 'dark' }
+            }).render();
+
+            const fundingAmounts = years.map(y => categoryTrends.funding_millions[y]);
+            
+            document.getElementById('detailFundingChart').innerHTML = '';
+            new ApexCharts(document.getElementById('detailFundingChart'), {
+                chart: { type: 'bar', height: 250, background: 'transparent', toolbar: { show: false } },
+                series: [{ name: 'Funding ($M)', data: fundingAmounts }],
+                xaxis: { categories: years, labels: { style: { colors: '#6b7280' } } },
+                yaxis: { labels: { style: { colors: '#6b7280' } } },
+                colors: ['#10b981'],
+                grid: { borderColor: '#1f2937' },
+                tooltip: { theme: 'dark' },
+                plotOptions: { bar: { borderRadius: 4 } }
+            }).render();
+            
+            document.getElementById('overview').style.display = 'none';
+            document.getElementById('detail').style.display = 'block';
+        }
+        
+        function toggleSeries(categoryName) {
+            trendsChart.toggleSeries(categoryName);
+            
+            if (visibleSeries.has(categoryName)) {
+                visibleSeries.delete(categoryName);
+                document.querySelector(`[data-category="${categoryName}"]`).classList.add('inactive');
+            } else {
+                visibleSeries.add(categoryName);
+                document.querySelector(`[data-category="${categoryName}"]`).classList.remove('inactive');
+            }
+        }
+        
+        fetch('dashboard_data_new.json')
+            .then(res => res.json())
+            .then(data => {
+                globalData = data;
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('overview').style.display = 'block';
+
+                const date = new Date(data.last_updated);
+                document.getElementById('lastUpdated').textContent =
+                    `Last updated: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+
+                // Update category counts
+                document.getElementById('categoryCount').textContent =
+                    `${data.tech_categories.length} / ${data.platform_categories.length}`;
+
+                // Render with default dimension (tech)
+                renderRankings(data, 'tech');
+                renderTrendsChart(data, 'tech');
+
+                // Check for category URL param
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('category')) {
+                    const catParam = urlParams.get('category');
+                    if (data.tech_scores[catParam]) {
+                        showDetail(catParam, 'tech');
+                    } else if (data.platform_scores[catParam]) {
+                        switchDimension('platform');
+                        showDetail(catParam, 'platform');
+                    }
+                }
+            })
+            .catch(err => {
+                document.getElementById('loading').innerHTML = `
+                    <div class="text-sm text-red-400">Connection failed</div>
+                    <div class="text-xs text-gray-600 mt-2">Ensure server is running</div>
+                `;
+            });
+
+        // Global Search Functionality
+        let searchData = { companies: [], states: [], categories: [] };
+
+        fetch('awards_data.json')
+            .then(res => res.json())
+            .then(data => {
+                searchData.companies = data.filters.companies;
+                searchData.categories = data.filters.categories;
+                searchData.states = data.filters.states;
+            });
+
+        function debounce(func, wait) {
+            let timeout;
+            return function(e) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(e), wait);
+            };
+        }
+
+        const globalSearchInput = document.getElementById('globalSearch');
+        const globalSearchResults = document.getElementById('globalSearchResults');
+
+        globalSearchInput.addEventListener('input', debounce(function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            if (query.length < 2) {
+                globalSearchResults.style.display = 'none';
+                return;
+            }
+
+            const results = [];
+
+            // Search states
+            searchData.states.filter(s =>
+                s.toLowerCase().includes(query)
+            ).slice(0, 3).forEach(s => {
+                results.push({ type: 'state', name: s });
+            });
+
+            // Search categories
+            searchData.categories.filter(c =>
+                c.toLowerCase().includes(query)
+            ).slice(0, 3).forEach(c => {
+                results.push({ type: 'category', name: c });
+            });
+
+            // Search companies
+            searchData.companies.filter(c =>
+                c.toLowerCase().includes(query)
+            ).slice(0, 5).forEach(c => {
+                results.push({ type: 'company', name: c });
+            });
+
+            if (results.length === 0) {
+                globalSearchResults.innerHTML = '<div class="px-4 py-3 text-sm text-gray-500">No results found</div>';
+            } else {
+                globalSearchResults.innerHTML = results.map(r => {
+                    const typeLabel = r.type === 'state' ? 'State' : r.type === 'category' ? 'Category' : 'Company';
+                    const typeColor = r.type === 'state' ? 'text-blue-400' : r.type === 'category' ? 'text-green-400' : 'text-purple-400';
+                    let href;
+                    if (r.type === 'state') {
+                        href = `geo.html?state=${encodeURIComponent(r.name)}`;
+                    } else if (r.type === 'category') {
+                        href = `data.html?category=${encodeURIComponent(r.name)}`;
+                    } else {
+                        href = `awards.html?company=${encodeURIComponent(r.name)}`;
+                    }
+                    return `
+                        <a href="${href}" class="block px-4 py-2 hover:bg-gray-800 transition-colors">
+                            <div class="text-sm text-gray-200">${r.name}</div>
+                            <div class="text-xs ${typeColor}">${typeLabel}</div>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            globalSearchResults.style.display = 'block';
+        }, 200));
+
+        globalSearchInput.addEventListener('focus', () => {
+            if (globalSearchInput.value.length >= 2) {
+                globalSearchResults.style.display = 'block';
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('globalSearchContainer').contains(e.target)) {
+                globalSearchResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

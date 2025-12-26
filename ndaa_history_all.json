@@ -1,0 +1,92 @@
+[
+  {
+    "fiscal_year": 2021,
+    "congress": 116,
+    "bill": "HR 6395",
+    "version": "Enrolled Bill",
+    "date": null,
+    "text_length": 4843162,
+    "tech_counts": {
+      "AI/Machine Learning": 263,
+      "Hypersonics": 58,
+      "Quantum": 34,
+      "Directed Energy": 32,
+      "Cybersecurity": 485,
+      "Space Systems": 414,
+      "Autonomous Systems": 152,
+      "Electronic Warfare": 22
+    }
+  },
+  {
+    "fiscal_year": 2022,
+    "congress": 117,
+    "bill": "S 1605",
+    "version": "Enrolled Bill",
+    "date": null,
+    "text_length": 3096559,
+    "tech_counts": {
+      "AI/Machine Learning": 61,
+      "Hypersonics": 50,
+      "Quantum": 46,
+      "Directed Energy": 24,
+      "Cybersecurity": 259,
+      "Space Systems": 179,
+      "Autonomous Systems": 65,
+      "Electronic Warfare": 25
+    }
+  },
+  {
+    "fiscal_year": 2023,
+    "congress": 117,
+    "bill": "HR 7776",
+    "version": "Enrolled Bill",
+    "date": null,
+    "text_length": 5778830,
+    "tech_counts": {
+      "AI/Machine Learning": 216,
+      "Hypersonics": 97,
+      "Quantum": 15,
+      "Directed Energy": 14,
+      "Cybersecurity": 322,
+      "Space Systems": 160,
+      "Autonomous Systems": 191,
+      "Electronic Warfare": 44
+    }
+  },
+  {
+    "fiscal_year": 2024,
+    "congress": 118,
+    "bill": "HR 2670",
+    "version": "Enrolled Bill",
+    "date": null,
+    "text_length": 3271650,
+    "tech_counts": {
+      "AI/Machine Learning": 169,
+      "Hypersonics": 44,
+      "Quantum": 58,
+      "Directed Energy": 17,
+      "Cybersecurity": 161,
+      "Space Systems": 635,
+      "Autonomous Systems": 142,
+      "Electronic Warfare": 46
+    }
+  },
+  {
+    "fiscal_year": 2025,
+    "congress": 118,
+    "bill": "HR 5009",
+    "version": "Enrolled Bill",
+    "date": null,
+    "text_length": 2709784,
+    "tech_counts": {
+      "AI/Machine Learning": 158,
+      "Hypersonics": 24,
+      "Quantum": 22,
+      "Directed Energy": 13,
+      "Cybersecurity": 71,
+      "Space Systems": 237,
+      "Autonomous Systems": 173,
+      "Electronic Warfare": 27
+    }
+  }
+]

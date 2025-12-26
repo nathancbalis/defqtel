@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geographic Analysis | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        .state {
+            stroke: #1f2937;
+            stroke-width: 1;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .state:hover {
+            stroke: #3b82f6;
+            stroke-width: 2;
+            filter: brightness(1.2);
+        }
+        .state.selected {
+            stroke: #3b82f6;
+            stroke-width: 2;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: #111827;
+            border: 1px solid #374151;
+            padding: 12px 16px;
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: 100;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <div class="flex items-baseline justify-between">
+                <div class="flex items-baseline gap-12">
+                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+                    <nav class="flex gap-8 text-sm">
+                        <div class="relative group">
+                            <a href="#" class="text-white">Data &#9662;</a>
+                            <div class="absolute left-0 top-full mt-[26px] w-[720px] bg-black border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </nav>
+                </div>
+                <div class="relative" id="globalSearchContainer">
+                    <input type="text" id="globalSearch" placeholder="Search companies, states, categories..."
+                        class="w-64 bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-gray-300 focus:outline-none focus:border-blue-500">
+                    <div id="globalSearchResults" class="absolute right-0 mt-1 w-80 bg-gray-900 border border-gray-800 rounded-lg shadow-xl z-50" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="max-w-7xl mx-auto px-8 py-24 text-center">
+        <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-500 border-r-transparent"></div>
+        <div class="text-sm text-gray-500 mt-4">Loading geographic data</div>
+    </div>
+
+    <div id="content" style="display: none;">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h1 class="text-3xl font-light mb-2">Geographic Analysis</h1>
+                    <p class="text-sm text-gray-500" id="pageSubtitle">SBIR award distribution by state (2020-2024)</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <select id="categoryFilter" class="bg-gray-800 text-gray-300 text-sm border border-gray-700 rounded px-3 py-2">
+                        <option value="all">All Categories</option>
+                    </select>
+                    <div class="relative">
+                        <button id="yearFilterBtn" class="bg-gray-800 text-gray-300 text-sm border border-gray-700 rounded px-3 py-2 flex items-center gap-2">
+                            <span id="yearFilterLabel">All Years</span>
+                            <span>&#9662;</span>
+                        </button>
+                        <div id="yearDropdown" class="absolute right-0 mt-1 w-48 bg-gray-800 border border-gray-700 rounded shadow-lg z-20" style="display: none;">
+                            <div class="p-2 border-b border-gray-700">
+                                <label class="flex items-center gap-2 cursor-pointer hover:bg-gray-700 p-1 rounded">
+                                    <input type="checkbox" id="yearAll" checked class="accent-blue-500">
+                                    <span class="text-sm text-gray-300">All Years</span>
+                                </label>
+                            </div>
+                            <div id="yearCheckboxes" class="p-2 space-y-1"></div>
+                        </div>
+                    </div>
+                    <select id="metricFilter" class="bg-gray-800 text-gray-300 text-sm border border-gray-700 rounded px-3 py-2">
+                        <option value="awards">By Awards</option>
+                        <option value="funding">By Funding</option>
+                        <option value="conversion">By Conversion Rate</option>
+                    </select>
+                    <button id="downloadCsv" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded flex items-center gap-2 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Export CSV
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-6 mb-8">
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Awards</div>
+                    <div class="text-3xl font-light" id="totalAwards">-</div>
+                    <div class="text-xs text-gray-600 mt-1">Across all states</div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Funding</div>
+                    <div class="text-3xl font-light" id="totalFunding">-</div>
+                    <div class="text-xs text-gray-600 mt-1">2020-2024</div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">States Active</div>
+                    <div class="text-3xl font-light" id="statesActive">-</div>
+                    <div class="text-xs text-gray-600 mt-1">With SBIR awards</div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 p-6">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Top State</div>
+                    <div class="text-3xl font-light" id="topState">-</div>
+                    <div class="text-xs text-gray-600 mt-1" id="topStateDetail">-</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <div class="col-span-2 bg-gray-900 border border-gray-800">
+                    <div class="px-6 py-4 border-b border-gray-800">
+                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">Award Distribution Map</h2>
+                    </div>
+                    <div class="p-6">
+                        <div id="mapContainer" class="relative">
+                            <svg id="usMap" viewBox="0 0 975 610" class="w-full h-auto" preserveAspectRatio="xMidYMid meet"></svg>
+                        </div>
+                        <div class="flex items-center justify-center gap-2 mt-4 text-xs text-gray-500">
+                            <span>Fewer</span>
+                            <div class="flex">
+                                <div class="w-8 h-3" style="background: #1e3a5f"></div>
+                                <div class="w-8 h-3" style="background: #2563eb"></div>
+                                <div class="w-8 h-3" style="background: #3b82f6"></div>
+                                <div class="w-8 h-3" style="background: #60a5fa"></div>
+                                <div class="w-8 h-3" style="background: #93c5fd"></div>
+                            </div>
+                            <span>More</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 border border-gray-800 flex flex-col">
+                    <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">All States</h2>
+                        <div class="flex items-center gap-3">
+                            <div class="flex text-xs">
+                                <button id="sortStatesAwards" class="px-2 py-1 bg-blue-600 text-white rounded-l">Awards</button>
+                                <button id="sortStatesFunding" class="px-2 py-1 bg-gray-700 text-gray-400 hover:bg-gray-600">Funding</button>
+                                <button id="sortStatesConversion" class="px-2 py-1 bg-gray-700 text-gray-400 rounded-r hover:bg-gray-600">Conv %</button>
+                            </div>
+                            <span class="text-xs text-gray-600" id="stateCount">0 states</span>
+                        </div>
+                    </div>
+                    <div class="divide-y divide-gray-800 overflow-y-auto" id="stateRankings" style="max-height: 480px;"></div>
+                </div>
+            </div>
+
+            <div id="stateDetail" class="mt-6 bg-gray-900 border border-gray-800" style="display: none;">
+                <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
+                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">
+                        <span id="detailStateName">State</span> Details
+                    </h2>
+                    <button onclick="closeDetail()" class="text-gray-500 hover:text-white text-sm">Close</button>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-6 gap-6 mb-6">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Awards</div>
+                            <div class="text-2xl font-light" id="detailAwards">-</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Funding</div>
+                            <div class="text-2xl font-light" id="detailFunding">-</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Phase I</div>
+                            <div class="text-2xl font-light" id="detailPhase1">-</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Phase II</div>
+                            <div class="text-2xl font-light" id="detailPhase2">-</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Conversion Rate</div>
+                            <div class="text-2xl font-light" id="detailConversion">-</div>
+                            <div class="text-xs text-gray-600 mt-1">Phase I → II</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">National Rank</div>
+                            <div class="text-lg font-light" id="detailRank">-</div>
+                            <div class="text-sm text-gray-500" id="detailRankFunding">-</div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-3">Categories <span id="detailCatCount" class="text-gray-600"></span></div>
+                            <div id="detailCategories" class="space-y-2 overflow-y-auto" style="max-height: 300px;"></div>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-xs text-gray-500 uppercase tracking-wider">Companies <span id="detailCompanyCount" class="text-gray-600"></span></div>
+                                <div class="flex text-xs">
+                                    <button id="sortCompaniesAwards" class="px-2 py-1 bg-blue-600 text-white rounded-l">Awards</button>
+                                    <button id="sortCompaniesFunding" class="px-2 py-1 bg-gray-700 text-gray-400 rounded-r hover:bg-gray-600">Funding</button>
+                                </div>
+                            </div>
+                            <input type="text" id="companySearch" placeholder="Search companies..." class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm text-gray-300 mb-2 focus:outline-none focus:border-gray-600">
+                            <div id="detailCompanies" class="space-y-2 overflow-y-auto" style="max-height: 280px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-12">
+            <div class="max-w-7xl mx-auto px-8 py-6">
+                <div class="flex justify-between text-xs text-gray-600">
+                    <div>Data: SBIR.gov (2020-2024)</div>
+                    <div>Click a state for details</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tooltip" class="tooltip" style="display: none;"></div>
+
+    <script>
+        let geoData = null;
+        let currentCategory = 'all';
+        let currentMetric = 'awards';
+        let selectedYears = []; // empty means all years
+        let allYears = [];
+        let selectedState = null;
+        let stateSortBy = 'awards'; // 'awards' or 'funding'
+        let companySortBy = 'awards'; // 'awards' or 'funding'
+        let companySearchTerm = '';
+
+        // Load US Map from external source for proper alignment
+        const US_MAP_URL = 'https://unpkg.com/us-atlas@3/states-albers-10m.json';
+
+        function getColorScale(value, max) {
+            const normalized = Math.min(value / max, 1);
+            const colors = [
+                { pos: 0, color: [30, 58, 95] },
+                { pos: 0.25, color: [37, 99, 235] },
+                { pos: 0.5, color: [59, 130, 246] },
+                { pos: 0.75, color: [96, 165, 250] },
+                { pos: 1, color: [147, 197, 253] }
+            ];
+
+            let lower = colors[0], upper = colors[colors.length - 1];
+            for (let i = 0; i < colors.length - 1; i++) {
+                if (normalized >= colors[i].pos && normalized <= colors[i + 1].pos) {
+                    lower = colors[i];
+                    upper = colors[i + 1];
+                    break;
+                }
+            }
+
+            const range = upper.pos - lower.pos;
+            const factor = range === 0 ? 0 : (normalized - lower.pos) / range;
+
+            const r = Math.round(lower.color[0] + factor * (upper.color[0] - lower.color[0]));
+            const g = Math.round(lower.color[1] + factor * (upper.color[1] - lower.color[1]));
+            const b = Math.round(lower.color[2] + factor * (upper.color[2] - lower.color[2]));
+
+            return `rgb(${r},${g},${b})`;
+        }
+
+        function getStateValue(stateData, category, metric) {
+            const yearsToUse = selectedYears.length > 0 ? selectedYears : allYears;
+
+            // For conversion rate, we use overall state data (not year-filtered)
+            if (metric === 'conversion') {
+                if (category === 'all') {
+                    return stateData.conversion_rate || 0;
+                }
+                // For specific category, calculate from category data
+                const catData = stateData.categories[category];
+                if (!catData || catData.phase1 === 0) return 0;
+                return Math.round(catData.phase2 / catData.phase1 * 1000) / 10;
+            }
+
+            if (category === 'all') {
+                // Sum across selected years
+                let total = 0;
+                yearsToUse.forEach(year => {
+                    const yearData = stateData.years[year];
+                    if (yearData) {
+                        total += metric === 'awards' ? yearData.awards : yearData.funding_millions;
+                    }
+                });
+                return total;
+            }
+
+            // For specific category, we need year-level category data
+            // Since we don't have that granularity, we'll approximate by scaling
+            const catData = stateData.categories[category];
+            if (!catData) return 0;
+
+            // If all years selected, return full value
+            if (selectedYears.length === 0) {
+                return metric === 'awards' ? catData.awards : catData.funding_millions;
+            }
+
+            // Otherwise, calculate proportion based on year totals
+            let selectedTotal = 0;
+            let allTotal = 0;
+            allYears.forEach(year => {
+                const yearData = stateData.years[year];
+                if (yearData) {
+                    const val = metric === 'awards' ? yearData.awards : yearData.funding_millions;
+                    allTotal += val;
+                    if (selectedYears.includes(year)) {
+                        selectedTotal += val;
+                    }
+                }
+            });
+
+            if (allTotal === 0) return 0;
+            const proportion = selectedTotal / allTotal;
+            const catValue = metric === 'awards' ? catData.awards : catData.funding_millions;
+            return Math.round(catValue * proportion * 10) / 10;
+        }
+
+        function updateMap() {
+            const category = currentCategory;
+            const metric = currentMetric;
+
+            // Calculate max value for scaling
+            let maxValue = 0;
+            Object.values(geoData.states).forEach(state => {
+                const value = getStateValue(state, category, metric);
+                if (value > maxValue) maxValue = value;
+            });
+
+            // Update state colors using D3
+            d3.selectAll('.state').each(function() {
+                const abbrev = d3.select(this).attr('id');
+                const state = geoData.states[abbrev];
+                if (state) {
+                    const value = getStateValue(state, category, metric);
+                    d3.select(this).style('fill', value > 0 ? getColorScale(value, maxValue) : '#111827');
+                } else {
+                    d3.select(this).style('fill', '#111827');
+                }
+            });
+
+            // Update rankings - show ALL states
+            const rankings = Object.values(geoData.states)
+                .map(state => ({
+                    ...state,
+                    awardValue: getStateValue(state, category, 'awards'),
+                    fundingValue: getStateValue(state, category, 'funding'),
+                    conversionValue: getStateValue(state, category, 'conversion')
+                }))
+                .filter(s => s.awardValue > 0 || s.fundingValue > 0)
+                .sort((a, b) => {
+                    if (stateSortBy === 'awards') return b.awardValue - a.awardValue;
+                    if (stateSortBy === 'funding') return b.fundingValue - a.fundingValue;
+                    return b.conversionValue - a.conversionValue;
+                });
+
+            const rankingsHTML = rankings.map((state, idx) => {
+                let displayValue;
+                if (stateSortBy === 'awards') {
+                    displayValue = Math.round(state.awardValue).toLocaleString() + ' awards';
+                } else if (stateSortBy === 'funding') {
+                    displayValue = '$' + state.fundingValue.toFixed(1) + 'M';
+                } else {
+                    displayValue = state.conversionValue.toFixed(1) + '% conv.';
+                }
+                return `
+                <div class="px-4 py-3 flex items-center justify-between hover:bg-gray-800 cursor-pointer" onclick="showStateDetail('${state.abbrev}')">
+                    <div class="flex items-center gap-3">
+                        <div class="text-xs text-gray-600 font-mono w-6">${idx + 1}</div>
+                        <div class="text-sm">${state.name}</div>
+                    </div>
+                    <div class="text-sm text-gray-400">${displayValue}</div>
+                </div>
+            `}).join('');
+
+            document.getElementById('stateRankings').innerHTML = rankingsHTML;
+            document.getElementById('stateCount').textContent = `${rankings.length} states`;
+
+            // Update summary stats (respecting year filter)
+            let totalAwards = 0, totalFunding = 0;
+            Object.values(geoData.states).forEach(state => {
+                const stateAwards = getStateValue(state, category, 'awards');
+                const stateFunding = getStateValue(state, category, 'funding');
+                totalAwards += stateAwards;
+                totalFunding += stateFunding;
+            });
+
+            document.getElementById('totalAwards').textContent = Math.round(totalAwards).toLocaleString();
+            document.getElementById('totalFunding').textContent = '$' + totalFunding.toFixed(1) + 'M';
+            document.getElementById('statesActive').textContent = rankings.length;
+
+            // Update subtitle with year range
+            const yearsToShow = selectedYears.length > 0 ? selectedYears.sort() : allYears;
+            let yearText;
+            if (selectedYears.length === 0 || selectedYears.length === allYears.length) {
+                yearText = `${allYears[0]}-${allYears[allYears.length - 1]}`;
+            } else if (selectedYears.length === 1) {
+                yearText = selectedYears[0];
+            } else {
+                yearText = yearsToShow.join(', ');
+            }
+            document.getElementById('pageSubtitle').textContent = `SBIR award distribution by state (${yearText})`;
+
+            if (rankings.length > 0) {
+                document.getElementById('topState').textContent = rankings[0].name;
+                let topDetail;
+                if (metric === 'awards') {
+                    topDetail = Math.round(rankings[0].awardValue).toLocaleString() + ' awards';
+                } else if (metric === 'funding') {
+                    topDetail = '$' + rankings[0].fundingValue.toFixed(1) + 'M funding';
+                } else {
+                    topDetail = rankings[0].conversionValue.toFixed(1) + '% conversion';
+                }
+                document.getElementById('topStateDetail').textContent = topDetail;
+            }
+        }
+
+        function showStateDetail(abbrev) {
+            const state = geoData.states[abbrev];
+            if (!state) return;
+
+            selectedState = abbrev;
+
+            // Reset company search
+            companySearchTerm = '';
+            document.getElementById('companySearch').value = '';
+
+            // Highlight selected state
+            d3.selectAll('.state').classed('selected', false);
+            d3.select('#' + abbrev).classed('selected', true);
+
+            document.getElementById('detailStateName').textContent = state.name;
+            document.getElementById('detailAwards').textContent = state.total_awards.toLocaleString();
+            document.getElementById('detailFunding').textContent = '$' + state.total_funding_millions.toFixed(1) + 'M';
+            document.getElementById('detailPhase1').textContent = state.phase1.toLocaleString();
+            document.getElementById('detailPhase2').textContent = state.phase2.toLocaleString();
+            document.getElementById('detailConversion').textContent = state.conversion_rate + '%';
+            document.getElementById('detailRank').textContent = '#' + state.rank_awards + ' awards';
+            document.getElementById('detailRankFunding').textContent = '#' + state.rank_funding + ' funding · #' + (state.rank_conversion || '-') + ' conv.';
+
+            // All categories (sorted by awards)
+            const allCats = Object.entries(state.categories)
+                .sort((a, b) => b[1].awards - a[1].awards);
+
+            document.getElementById('detailCatCount').textContent = `(${allCats.length})`;
+            document.getElementById('detailCategories').innerHTML = allCats.map(([cat, data], idx) => `
+                <div class="flex justify-between text-sm py-1 ${idx > 0 ? 'border-t border-gray-800' : ''}">
+                    <span class="text-gray-400">${cat}</span>
+                    <span>${data.awards.toLocaleString()} awards</span>
+                </div>
+            `).join('');
+
+            // All companies (sorted by current setting)
+            updateCompaniesDisplay(state);
+
+            document.getElementById('stateDetail').style.display = 'block';
+        }
+
+        function closeDetail() {
+            document.getElementById('stateDetail').style.display = 'none';
+            d3.selectAll('.state').classed('selected', false);
+            selectedState = null;
+        }
+
+        function updateCompaniesDisplay(state) {
+            const allCompanies = (state.top_companies || []).slice().sort((a, b) =>
+                companySortBy === 'awards' ? b.awards - a.awards : b.funding_millions - a.funding_millions
+            );
+
+            // Filter by search term
+            const searchTerm = companySearchTerm.toLowerCase();
+            const filteredCompanies = searchTerm
+                ? allCompanies.filter(c => c.name.toLowerCase().includes(searchTerm))
+                : allCompanies;
+
+            const countText = searchTerm
+                ? `(${filteredCompanies.length} of ${allCompanies.length})`
+                : `(${allCompanies.length})`;
+            document.getElementById('detailCompanyCount').textContent = countText;
+
+            document.getElementById('detailCompanies').innerHTML = filteredCompanies.map((company, idx) => `
+                <div class="flex justify-between text-sm py-1 ${idx > 0 ? 'border-t border-gray-800' : ''}">
+                    <a href="awards.html?company=${encodeURIComponent(company.name)}"
+                       class="text-blue-400 hover:text-blue-300 truncate mr-2" style="max-width: 200px" title="${company.name}">${company.name}</a>
+                    <span>${companySortBy === 'awards' ? company.awards : '$' + company.funding_millions.toFixed(2) + 'M'}</span>
+                </div>
+            `).join('') || '<div class="text-sm text-gray-500">No matching companies</div>';
+        }
+
+        function showTooltip(e, abbrev) {
+            const state = geoData.states[abbrev];
+            if (!state) return;
+
+            const value = getStateValue(state, currentCategory, currentMetric);
+            const tooltip = document.getElementById('tooltip');
+
+            let metricDisplay;
+            if (currentMetric === 'awards') {
+                metricDisplay = value.toLocaleString() + ' awards';
+            } else if (currentMetric === 'funding') {
+                metricDisplay = '$' + value.toFixed(1) + 'M';
+            } else {
+                metricDisplay = value.toFixed(1) + '% conversion';
+            }
+
+            tooltip.innerHTML = `
+                <div class="text-sm font-medium mb-1">${state.name}</div>
+                <div class="text-xs text-gray-400">${metricDisplay}</div>
+                <div class="text-xs text-gray-500 mt-1">
+                    Phase I: ${state.phase1.toLocaleString()} · Phase II: ${state.phase2.toLocaleString()}
+                </div>
+                <div class="text-xs text-gray-600 mt-1">Click for details</div>
+            `;
+
+            tooltip.style.display = 'block';
+            tooltip.style.left = (e.pageX + 10) + 'px';
+            tooltip.style.top = (e.pageY + 10) + 'px';
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+
+        // FIPS code to state abbreviation mapping
+        const fipsToAbbrev = {
+            '01': 'AL', '02': 'AK', '04': 'AZ', '05': 'AR', '06': 'CA', '08': 'CO', '09': 'CT',
+            '10': 'DE', '11': 'DC', '12': 'FL', '13': 'GA', '15': 'HI', '16': 'ID', '17': 'IL',
+            '18': 'IN', '19': 'IA', '20': 'KS', '21': 'KY', '22': 'LA', '23': 'ME', '24': 'MD',
+            '25': 'MA', '26': 'MI', '27': 'MN', '28': 'MS', '29': 'MO', '30': 'MT', '31': 'NE',
+            '32': 'NV', '33': 'NH', '34': 'NJ', '35': 'NM', '36': 'NY', '37': 'NC', '38': 'ND',
+            '39': 'OH', '40': 'OK', '41': 'OR', '42': 'PA', '44': 'RI', '45': 'SC', '46': 'SD',
+            '47': 'TN', '48': 'TX', '49': 'UT', '50': 'VT', '51': 'VA', '53': 'WA', '54': 'WV',
+            '55': 'WI', '56': 'WY', '72': 'PR'
+        };
+
+        // Initialize
+        Promise.all([
+            fetch('geo_data.json').then(res => res.json()),
+            fetch(US_MAP_URL).then(res => res.json())
+        ])
+        .then(([data, us]) => {
+            geoData = data;
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+
+            // Build SVG map using D3 and TopoJSON
+            const svg = d3.select('#usMap');
+            const width = 959;
+            const height = 593;
+
+            // The Albers USA projection is already baked into the TopoJSON
+            const path = d3.geoPath();
+
+            // Get states from TopoJSON
+            const states = topojson.feature(us, us.objects.states).features;
+
+            svg.selectAll('path')
+                .data(states)
+                .enter()
+                .append('path')
+                .attr('d', path)
+                .attr('id', d => fipsToAbbrev[d.id] || d.id)
+                .attr('class', 'state')
+                .style('fill', '#111827')
+                .on('click', function(event, d) {
+                    const abbrev = fipsToAbbrev[d.id];
+                    if (abbrev) showStateDetail(abbrev);
+                })
+                .on('mouseenter', function(event, d) {
+                    const abbrev = fipsToAbbrev[d.id];
+                    if (abbrev) showTooltip(event, abbrev);
+                })
+                .on('mousemove', function(event, d) {
+                    const abbrev = fipsToAbbrev[d.id];
+                    if (abbrev) showTooltip(event, abbrev);
+                })
+                .on('mouseleave', hideTooltip);
+
+            // Populate category filter
+            const categorySelect = document.getElementById('categoryFilter');
+            data.categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                categorySelect.appendChild(option);
+            });
+
+            // Populate year filter
+            allYears = data.years;
+            const yearCheckboxes = document.getElementById('yearCheckboxes');
+            data.years.forEach(year => {
+                const label = document.createElement('label');
+                label.className = 'flex items-center gap-2 cursor-pointer hover:bg-gray-700 p-1 rounded';
+                label.innerHTML = `
+                    <input type="checkbox" class="year-checkbox accent-blue-500" value="${year}">
+                    <span class="text-sm text-gray-300">${year}</span>
+                `;
+                yearCheckboxes.appendChild(label);
+            });
+
+            // Year dropdown toggle
+            const yearFilterBtn = document.getElementById('yearFilterBtn');
+            const yearDropdown = document.getElementById('yearDropdown');
+
+            yearFilterBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                yearDropdown.style.display = yearDropdown.style.display === 'none' ? 'block' : 'none';
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!yearDropdown.contains(e.target) && e.target !== yearFilterBtn) {
+                    yearDropdown.style.display = 'none';
+                }
+            });
+
+            // "All Years" checkbox handling
+            const yearAllCheckbox = document.getElementById('yearAll');
+            yearAllCheckbox.addEventListener('change', () => {
+                const checkboxes = document.querySelectorAll('.year-checkbox');
+                if (yearAllCheckbox.checked) {
+                    selectedYears = [];
+                    checkboxes.forEach(cb => cb.checked = false);
+                    document.getElementById('yearFilterLabel').textContent = 'All Years';
+                }
+                updateMap();
+            });
+
+            // Individual year checkbox handling
+            document.querySelectorAll('.year-checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    updateYearSelection();
+                });
+            });
+
+            function updateYearSelection() {
+                const checkboxes = document.querySelectorAll('.year-checkbox:checked');
+                selectedYears = Array.from(checkboxes).map(cb => cb.value);
+
+                const yearAllCheckbox = document.getElementById('yearAll');
+                const yearFilterLabel = document.getElementById('yearFilterLabel');
+
+                if (selectedYears.length === 0) {
+                    yearAllCheckbox.checked = true;
+                    yearFilterLabel.textContent = 'All Years';
+                } else {
+                    yearAllCheckbox.checked = false;
+                    if (selectedYears.length === 1) {
+                        yearFilterLabel.textContent = selectedYears[0];
+                    } else if (selectedYears.length === allYears.length) {
+                        yearFilterLabel.textContent = 'All Years';
+                        selectedYears = [];
+                        yearAllCheckbox.checked = true;
+                        document.querySelectorAll('.year-checkbox').forEach(cb => cb.checked = false);
+                    } else {
+                        yearFilterLabel.textContent = `${selectedYears.length} Years`;
+                    }
+                }
+                updateMap();
+            }
+
+            // Event listeners
+            categorySelect.addEventListener('change', (e) => {
+                currentCategory = e.target.value;
+                updateMap();
+            });
+
+            document.getElementById('metricFilter').addEventListener('change', (e) => {
+                currentMetric = e.target.value;
+                updateMap();
+            });
+
+            // State sort toggle
+            function updateStateSortButtons() {
+                const awards = document.getElementById('sortStatesAwards');
+                const funding = document.getElementById('sortStatesFunding');
+                const conversion = document.getElementById('sortStatesConversion');
+
+                awards.className = 'px-2 py-1 rounded-l ' + (stateSortBy === 'awards' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-gray-600');
+                funding.className = 'px-2 py-1 ' + (stateSortBy === 'funding' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-gray-600');
+                conversion.className = 'px-2 py-1 rounded-r ' + (stateSortBy === 'conversion' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-gray-600');
+            }
+
+            document.getElementById('sortStatesAwards').addEventListener('click', () => {
+                stateSortBy = 'awards';
+                updateStateSortButtons();
+                updateMap();
+            });
+
+            document.getElementById('sortStatesFunding').addEventListener('click', () => {
+                stateSortBy = 'funding';
+                updateStateSortButtons();
+                updateMap();
+            });
+
+            document.getElementById('sortStatesConversion').addEventListener('click', () => {
+                stateSortBy = 'conversion';
+                updateStateSortButtons();
+                updateMap();
+            });
+
+            // Company sort toggle
+            document.getElementById('sortCompaniesAwards').addEventListener('click', () => {
+                companySortBy = 'awards';
+                document.getElementById('sortCompaniesAwards').className = 'px-2 py-1 bg-blue-600 text-white rounded-l';
+                document.getElementById('sortCompaniesFunding').className = 'px-2 py-1 bg-gray-700 text-gray-400 rounded-r hover:bg-gray-600';
+                if (selectedState && geoData.states[selectedState]) {
+                    updateCompaniesDisplay(geoData.states[selectedState]);
+                }
+            });
+
+            document.getElementById('sortCompaniesFunding').addEventListener('click', () => {
+                companySortBy = 'funding';
+                document.getElementById('sortCompaniesAwards').className = 'px-2 py-1 bg-gray-700 text-gray-400 rounded-l hover:bg-gray-600';
+                document.getElementById('sortCompaniesFunding').className = 'px-2 py-1 bg-blue-600 text-white rounded-r';
+                if (selectedState && geoData.states[selectedState]) {
+                    updateCompaniesDisplay(geoData.states[selectedState]);
+                }
+            });
+
+            // Company search
+            document.getElementById('companySearch').addEventListener('input', (e) => {
+                companySearchTerm = e.target.value;
+                if (selectedState && geoData.states[selectedState]) {
+                    updateCompaniesDisplay(geoData.states[selectedState]);
+                }
+            });
+
+            // CSV Download
+            document.getElementById('downloadCsv').addEventListener('click', () => {
+                downloadCSV();
+            });
+
+            function downloadCSV() {
+                const category = currentCategory;
+                const metric = currentMetric;
+                const yearsLabel = selectedYears.length > 0 ? selectedYears.sort().join('-') : 'all-years';
+                const catLabel = category === 'all' ? 'all-categories' : category.toLowerCase().replace(/[^a-z0-9]/g, '-');
+
+                // Build CSV content
+                let csvContent = '';
+
+                // Header info
+                csvContent += `"Defense Innovation Velocity Tracker - Geographic Analysis"\n`;
+                csvContent += `"Generated: ${new Date().toLocaleString()}"\n`;
+                csvContent += `"Filters: Category=${category === 'all' ? 'All Categories' : category}, Years=${selectedYears.length > 0 ? selectedYears.join(', ') : 'All Years'}, Metric=${metric}"\n`;
+                csvContent += `\n`;
+
+                // State rankings section
+                csvContent += `"STATE RANKINGS"\n`;
+                csvContent += `"Rank","State","Abbreviation","Awards","Funding ($M)"\n`;
+
+                const rankings = Object.values(geoData.states)
+                    .map(state => ({
+                        ...state,
+                        awards: getStateValue(state, category, 'awards'),
+                        funding: getStateValue(state, category, 'funding')
+                    }))
+                    .filter(s => s.awards > 0 || s.funding > 0)
+                    .sort((a, b) => b.awards - a.awards);
+
+                rankings.forEach((state, idx) => {
+                    csvContent += `${idx + 1},"${state.name}","${state.abbrev}",${Math.round(state.awards)},${state.funding.toFixed(2)}\n`;
+                });
+
+                csvContent += `\n`;
+
+                // Category breakdown by state
+                csvContent += `"CATEGORY BREAKDOWN BY STATE"\n`;
+                csvContent += `"State","Category","Awards","Funding ($M)"\n`;
+
+                rankings.forEach(state => {
+                    const stateData = geoData.states[state.abbrev];
+                    if (stateData && stateData.categories) {
+                        Object.entries(stateData.categories)
+                            .sort((a, b) => b[1].awards - a[1].awards)
+                            .forEach(([cat, data]) => {
+                                csvContent += `"${state.name}","${cat}",${data.awards},${data.funding_millions.toFixed(2)}\n`;
+                            });
+                    }
+                });
+
+                csvContent += `\n`;
+
+                // Top companies by state
+                csvContent += `"TOP COMPANIES BY STATE"\n`;
+                csvContent += `"State","Company","Awards","Funding ($M)"\n`;
+
+                rankings.forEach(state => {
+                    const stateData = geoData.states[state.abbrev];
+                    if (stateData && stateData.top_companies) {
+                        stateData.top_companies.forEach(company => {
+                            csvContent += `"${state.name}","${company.name.replace(/"/g, '""')}",${company.awards},${company.funding_millions.toFixed(2)}\n`;
+                        });
+                    }
+                });
+
+                // Create and trigger download
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', `sbir-geographic-${catLabel}-${yearsLabel}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
+            updateMap();
+
+            // Initialize global search
+            initGlobalSearch();
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('loading').innerHTML = `
+                <div class="text-sm text-red-400">Connection failed</div>
+                <div class="text-xs text-gray-600 mt-2">Ensure server is running</div>
+            `;
+        });
+
+        // Global Search Functionality
+        let searchData = { companies: [], states: [], categories: [] };
+
+        async function initGlobalSearch() {
+            try {
+                // Load awards data for company search
+                const awardsRes = await fetch('awards_data.json');
+                const awardsData = await awardsRes.json();
+                searchData.companies = awardsData.filters.companies;
+                searchData.categories = awardsData.filters.categories;
+
+                // States from geo data
+                if (geoData) {
+                    searchData.states = Object.values(geoData.states).map(s => ({
+                        name: s.name,
+                        abbrev: s.abbrev
+                    }));
+                }
+            } catch (e) {
+                console.error('Failed to load search data:', e);
+            }
+        }
+
+        const globalSearchInput = document.getElementById('globalSearch');
+        const globalSearchResults = document.getElementById('globalSearchResults');
+
+        globalSearchInput.addEventListener('input', debounceSearch(function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            if (query.length < 2) {
+                globalSearchResults.style.display = 'none';
+                return;
+            }
+
+            const results = [];
+
+            // Search states
+            searchData.states.filter(s =>
+                s.name.toLowerCase().includes(query) || s.abbrev.toLowerCase().includes(query)
+            ).slice(0, 3).forEach(s => {
+                results.push({ type: 'state', name: s.name, abbrev: s.abbrev });
+            });
+
+            // Search categories
+            searchData.categories.filter(c =>
+                c.toLowerCase().includes(query)
+            ).slice(0, 3).forEach(c => {
+                results.push({ type: 'category', name: c });
+            });
+
+            // Search companies
+            searchData.companies.filter(c =>
+                c.toLowerCase().includes(query)
+            ).slice(0, 5).forEach(c => {
+                results.push({ type: 'company', name: c });
+            });
+
+            if (results.length === 0) {
+                globalSearchResults.innerHTML = '<div class="px-4 py-3 text-sm text-gray-500">No results found</div>';
+            } else {
+                globalSearchResults.innerHTML = results.map(r => {
+                    const typeLabel = r.type === 'state' ? 'State' : r.type === 'category' ? 'Category' : 'Company';
+                    const typeColor = r.type === 'state' ? 'text-blue-400' : r.type === 'category' ? 'text-green-400' : 'text-purple-400';
+                    let href;
+                    if (r.type === 'state') {
+                        href = `geo.html?state=${r.abbrev}`;
+                    } else if (r.type === 'category') {
+                        href = `data.html?category=${encodeURIComponent(r.name)}`;
+                    } else {
+                        href = `awards.html?company=${encodeURIComponent(r.name)}`;
+                    }
+                    return `
+                        <a href="${href}" class="block px-4 py-2 hover:bg-gray-800 transition-colors">
+                            <div class="text-sm text-gray-200">${r.name}</div>
+                            <div class="text-xs ${typeColor}">${typeLabel}</div>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            globalSearchResults.style.display = 'block';
+        }, 200));
+
+        globalSearchInput.addEventListener('focus', () => {
+            if (globalSearchInput.value.length >= 2) {
+                globalSearchResults.style.display = 'block';
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('globalSearchContainer').contains(e.target)) {
+                globalSearchResults.style.display = 'none';
+            }
+        });
+
+        function debounceSearch(func, wait) {
+            let timeout;
+            return function(e) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func(e), wait);
+            };
+        }
+
+        // Check for state URL param
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('state')) {
+            const stateParam = urlParams.get('state');
+            // Wait for data to load then show state
+            const checkData = setInterval(() => {
+                if (geoData && geoData.states[stateParam]) {
+                    clearInterval(checkData);
+                    showStateDetail(stateParam);
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>

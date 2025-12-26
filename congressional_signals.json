@@ -1,0 +1,221 @@
+{
+  "years": [
+    "FY2021",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025"
+  ],
+  "categories": [
+    "Artificial Intelligence",
+    "Autonomous Systems",
+    "Space Systems",
+    "Cybersecurity",
+    "Quantum Technologies",
+    "Hypersonic Systems",
+    "Directed Energy",
+    "Electronic Warfare",
+    "Communications & Networks",
+    "Sensors & ISR",
+    "Advanced Materials",
+    "Power & Energy",
+    "Advanced Manufacturing",
+    "Biotechnology & Medical",
+    "Command & Control",
+    "Modeling & Simulation"
+  ],
+  "trends": {
+    "Artificial Intelligence": {
+      "counts": {
+        "FY2021": 278,
+        "FY2022": 55,
+        "FY2023": 225,
+        "FY2024": 173,
+        "FY2025": 77
+      },
+      "total": 808,
+      "yoy_change": -55.5,
+      "trend": "decrease"
+    },
+    "Autonomous Systems": {
+      "counts": {
+        "FY2021": 227,
+        "FY2022": 125,
+        "FY2023": 289,
+        "FY2024": 208,
+        "FY2025": 188
+      },
+      "total": 1037,
+      "yoy_change": -9.6,
+      "trend": "decrease"
+    },
+    "Space Systems": {
+      "counts": {
+        "FY2021": 1356,
+        "FY2022": 695,
+        "FY2023": 805,
+        "FY2024": 1688,
+        "FY2025": 683
+      },
+      "total": 5227,
+      "yoy_change": -59.5,
+      "trend": "decrease"
+    },
+    "Cybersecurity": {
+      "counts": {
+        "FY2021": 1488,
+        "FY2022": 868,
+        "FY2023": 1263,
+        "FY2024": 631,
+        "FY2025": 263
+      },
+      "total": 4513,
+      "yoy_change": -58.3,
+      "trend": "decrease"
+    },
+    "Quantum Technologies": {
+      "counts": {
+        "FY2021": 40,
+        "FY2022": 66,
+        "FY2023": 14,
+        "FY2024": 69,
+        "FY2025": 13
+      },
+      "total": 202,
+      "yoy_change": -81.2,
+      "trend": "decrease"
+    },
+    "Hypersonic Systems": {
+      "counts": {
+        "FY2021": 73,
+        "FY2022": 56,
+        "FY2023": 125,
+        "FY2024": 49,
+        "FY2025": 22
+      },
+      "total": 325,
+      "yoy_change": -55.1,
+      "trend": "decrease"
+    },
+    "Directed Energy": {
+      "counts": {
+        "FY2021": 33,
+        "FY2022": 23,
+        "FY2023": 13,
+        "FY2024": 17,
+        "FY2025": 28
+      },
+      "total": 114,
+      "yoy_change": 64.7,
+      "trend": "decrease"
+    },
+    "Electronic Warfare": {
+      "counts": {
+        "FY2021": 26,
+        "FY2022": 25,
+        "FY2023": 42,
+        "FY2024": 55,
+        "FY2025": 25
+      },
+      "total": 173,
+      "yoy_change": -54.5,
+      "trend": "decrease"
+    },
+    "Communications & Networks": {
+      "counts": {
+        "FY2021": 737,
+        "FY2022": 463,
+        "FY2023": 547,
+        "FY2024": 430,
+        "FY2025": 262
+      },
+      "total": 2439,
+      "yoy_change": -39.1,
+      "trend": "decrease"
+    },
+    "Sensors & ISR": {
+      "counts": {
+        "FY2021": 401,
+        "FY2022": 247,
+        "FY2023": 290,
+        "FY2024": 284,
+        "FY2025": 160
+      },
+      "total": 1382,
+      "yoy_change": -43.7,
+      "trend": "decrease"
+    },
+    "Advanced Materials": {
+      "counts": {
+        "FY2021": 360,
+        "FY2022": 315,
+        "FY2023": 515,
+        "FY2024": 525,
+        "FY2025": 215
+      },
+      "total": 1930,
+      "yoy_change": -59.0,
+      "trend": "decrease"
+    },
+    "Power & Energy": {
+      "counts": {
+        "FY2021": 621,
+        "FY2022": 426,
+        "FY2023": 663,
+        "FY2024": 383,
+        "FY2025": 228
+      },
+      "total": 2321,
+      "yoy_change": -40.5,
+      "trend": "decrease"
+    },
+    "Advanced Manufacturing": {
+      "counts": {
+        "FY2021": 150,
+        "FY2022": 87,
+        "FY2023": 101,
+        "FY2024": 81,
+        "FY2025": 69
+      },
+      "total": 488,
+      "yoy_change": -14.8,
+      "trend": "decrease"
+    },
+    "Biotechnology & Medical": {
+      "counts": {
+        "FY2021": 338,
+        "FY2022": 323,
+        "FY2023": 410,
+        "FY2024": 154,
+        "FY2025": 216
+      },
+      "total": 1441,
+      "yoy_change": 40.3,
+      "trend": "decrease"
+    },
+    "Command & Control": {
+      "counts": {
+        "FY2021": 156,
+        "FY2022": 124,
+        "FY2023": 105,
+        "FY2024": 91,
+        "FY2025": 73
+      },
+      "total": 549,
+      "yoy_change": -19.8,
+      "trend": "decrease"
+    },
+    "Modeling & Simulation": {
+      "counts": {
+        "FY2021": 73,
+        "FY2022": 55,
+        "FY2023": 60,
+        "FY2024": 50,
+        "FY2025": 33
+      },
+      "total": 271,
+      "yoy_change": -34.0,
+      "trend": "decrease"
+    }
+  }
+}

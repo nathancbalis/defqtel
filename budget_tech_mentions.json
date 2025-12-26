@@ -1,0 +1,225 @@
+[
+  {
+    "fiscal_year": "2021",
+    "tech_counts": {
+      "AI/Machine Learning": 8,
+      "Hypersonics": 8,
+      "Quantum": 0,
+      "Directed Energy": 14,
+      "Cybersecurity": 10,
+      "Space Systems": 246,
+      "Autonomous Systems": 64,
+      "Electronic Warfare": 24
+    },
+    "sample_programs": {
+      "AI/Machine Learning": [
+        "           7,021  U                   Unmanned System Common Development       104 0604532D8Z Joint Artificial Intelligence      04       12,968                                                        ",
+        "           2,787  U                   Unmanned System Common Development       104 0604532D8Z Joint Artificial Intelligence      04                                                                     "
+      ],
+      "Hypersonics": [
+        "           Demonstration, Prototype                   Development, and Testing       109 0604182A   Hypersonics                        04                    404,000                                   4",
+        "           Demonstration, Prototype                   Development, and Testing       109 0604182A   Hypersonics                        04      801,417                                                 8"
+      ],
+      "Directed Energy": [
+        "                        51,341  U                   Landing Systems -  Dem/Val        74 0603925N   Directed Energy and Electric       04      138,988       135,919                                   1",
+        "                        33,612  U                   Landing Systems -  Dem/Val        74 0603925N   Directed Energy and Electric       04      128,845                                                 1"
+      ],
+      "Cybersecurity": [
+        "   4,544                                     4,544  U                   (GATM)       254 0305103F   Cyber Security Initiative          07                                                               ",
+        "                                             4,645  U                   (GATM)       254 0305103F   Cyber Security Initiative          07          384                                                  "
+      ],
+      "Space Systems": [
+        ", AF                  41,419,014    45,566,955                     128,248    45,695,203      RDTE, Space Force      Research, Development, Test & Eval, DW                  24,300,844    25,938,027   ",
+        ", AF                  37,391,826                       5,304         5,304    37,397,130      RDTE, Space Force                                       10,327,595                                        "
+      ],
+      "Autonomous Systems": [
+        "        9,396        10,023                                    10,023  U        99 0604101A   Small Unmanned Aerial Vehicle      04                                                                     ",
+        "       10,082                                                  10,082  U        99 0604101A   Small Unmanned Aerial Vehicle      04        1,378                                                   1,378"
+      ],
+      "Electronic Warfare": [
+        "    02                     18,947                                    18,947  U        23 0602270A   Electronic Warfare Technology      02       25,127                                                  ",
+        "    02       18,816                                                  18,816  U        23 0602270A   Electronic Warfare Technology      02                                                               "
+      ]
+    }
+  },
+  {
+    "fiscal_year": "2022",
+    "tech_counts": {
+      "AI/Machine Learning": 10,
+      "Hypersonics": 7,
+      "Quantum": 0,
+      "Directed Energy": 11,
+      "Cybersecurity": 8,
+      "Space Systems": 129,
+      "Autonomous Systems": 36,
+      "Electronic Warfare": 15
+    },
+    "sample_programs": {
+      "AI/Machine Learning": [
+        "                         01        4,982         5,077         5,067  U                5 0601601A   Artificial Intelligence and Machine Learning Basic Research         01                              ",
+        "                        02       93,937       107,584        19,316  U                17 0602180A   Artificial Intelligence and Machine Learning Technologies           02                              "
+      ],
+      "Hypersonics": [
+        "           13,326        13,379  U                          and Testing               80 0604182A   Hypersonics                                                         04      394,619       832,166   ",
+        "                          05                                  188,452  U             148 0605232A   Hypersonics EMD                                                     05                              "
+      ],
+      "Directed Energy": [
+        " -  Dem/Val              04       47,417        33,612        24,450  U               75 0603925N   Directed Energy and Electric Weapon Systems                         04      136,535       126,325   ",
+        "                        02      132,090       127,193       151,757  U                13 0602605F   Directed Energy Technology                                          02      114,297       130,375   "
+      ],
+      "Cybersecurity": [
+        "     06       10,920           999           918  U             183 0606771D8Z Cyber Resiliency and Cybersecurity Policy                           06                                   31,638  U       ",
+        "    06        3,193         3,200         2,897  U              183 0606771D8Z Cyber Resiliency and Cybersecurity Policy                           06                                   31,638  U       "
+      ],
+      "Space Systems": [
+        "                                            45,801,963    36,360,842    39,184,328            RDTE, Space Force                                                                                      10,",
+        "                                                     845,439       806,596       689,649            Space                                                                                     6,679,809 "
+      ],
+      "Autonomous Systems": [
+        "                  04        9,811         9,714        10,091  U                71 0604101A   Small Unmanned Aerial Vehicle (SUAV) (6.4)                          04                      1,328         ",
+        "        04                      1,328           926  U                72 0604113A   Future Tactical Unmanned Aircraft System (FTUAS)                    04       40,745        57,083        69,697  U  "
+      ],
+      "Electronic Warfare": [
+        "                         04                                   50,674  U               66 0604021A   Electronic Warfare Technology Maturation (MIP)                      04       23,043        15,034   ",
+        "                         05        8,069         7,011         6,654  U               90 0604270A   Electronic Warfare Development                                      05       57,090        56,624   "
+      ]
+    }
+  },
+  {
+    "fiscal_year": "2023",
+    "tech_counts": {
+      "AI/Machine Learning": 14,
+      "Hypersonics": 9,
+      "Quantum": 0,
+      "Directed Energy": 11,
+      "Cybersecurity": 10,
+      "Space Systems": 108,
+      "Autonomous Systems": 35,
+      "Electronic Warfare": 16
+    },
+    "sample_programs": {
+      "AI/Machine Learning": [
+        "                         01        5,077         5,067         5,355  U                5 0601601A   Artificial Intelligence and Machine Learning Basic Research         01                     15,183   ",
+        "                        02      107,584        93,549        27,016  U                18 0602180A   Artificial Intelligence and Machine Learning Technologies           02                     15,034   "
+      ],
+      "Hypersonics": [
+        "                         04                                  404,291  U               83 0604182A   Hypersonics                                                         04      841,666       315,131   ",
+        "                         05                    188,452       259,506  U              146 0605232A   Hypersonics EMD                                                     05                    111,473   "
+      ],
+      "Directed Energy": [
+        " -  Dem/Val              04       30,853        22,950        18,628  U               74 0603925N   Directed Energy and Electric Weapon Systems                         04      123,403        81,803   ",
+        "                        02      118,541       151,757       137,303  U                13 0602605F   Directed Energy Technology                                          02      122,816       116,456   "
+      ],
+      "Cybersecurity": [
+        "     06          999           918                U             179 0606771D8Z Cyber Resiliency and Cybersecurity Policy                           06                     31,460        32,306  U       ",
+        "    06                                    2,532  U              179 0606771D8Z Cyber Resiliency and Cybersecurity Policy                           06                     31,460        32,306  U       "
+      ],
+      "Space Systems": [
+        "                                            36,022,139    41,640,413    44,134,301            RDTE, Space Force                                                                        10,506,868    11,",
+        "                                                     806,596       850,263       816,413            Space                                                                                     7,470,266 "
+      ],
+      "Autonomous Systems": [
+        "                         04      869,740     1,524,667     1,657,733  U               57 0207179F   Autonomous Collaborative Platforms                                  04                              ",
+        "                  04        9,714        10,091        10,659  U                73 0604101A   Small Unmanned Aerial Vehicle (SUAV) (6.4)                          04        1,328           926         "
+      ],
+      "Electronic Warfare": [
+        "ment & Prototyping      04                                  106,000  U                68 0604021A   Electronic Warfare Technology Maturation (MIP)                      04       15,034                 ",
+        "                        05        7,011         6,654         3,335  U                91 0604270A   Electronic Warfare Development                                      05       56,624        30,840   "
+      ]
+    }
+  },
+  {
+    "fiscal_year": "2024",
+    "tech_counts": {
+      "AI/Machine Learning": 14,
+      "Hypersonics": 9,
+      "Quantum": 2,
+      "Directed Energy": 9,
+      "Cybersecurity": 10,
+      "Space Systems": 112,
+      "Autonomous Systems": 36,
+      "Electronic Warfare": 15
+    },
+    "sample_programs": {
+      "AI/Machine Learning": [
+        "21,160 108,946 40601121A Cyber Collaborative Research Alliance 01U 5,067 5,355 5,355 5,459 50601601AArtificial Intelligence and Machine Learning Basic  Research 01U 15,172 10,078 10,078 10,708 Basic R",
+        ",348 73,844 170602150A Air and Missile Defense Technology 02U 92,926 88,768 88,768 33,301 180602180AArtificial Intelligence and Machine Learning  Technologies 02U 14,486 16,068 16,068 24,142 *Includes"
+      ],
+      "Hypersonics": [
+        "891 14,840 14,840 16,426 830604135A Strategic Mid-Range Fires 04U 404,291 404,291 31,559 840604182A Hypersonics 04U 305,406 238,168 238,168 43,435 850604403A Future Interceptor 04U 6,643 8,179 8,179 8",
+        "Request 1460605231A Precision Strike Missile (PrSM) 05U 181,574 259,506 259,506 272,786 1470605232A Hypersonics EMD 05U 107,404 633,499 633,499 900,920 1480605233A Accessions Information Environment ("
+      ],
+      "Quantum": [
+        "430603289D8Z Advanced Innovative Analysis and Concepts 03U 45,050 53,176 53,176 55,626 440603330D8Z Quantum Application 03U 75,000 450603338D8Z Defense Modernization and Prototyping 03U 93,463 4606033",
+        "430603289D8Z Advanced Innovative Analysis and Concepts 03U 45,050 53,176 53,176 55,626 440603330D8Z Quantum Application 03U 75,000 450603338D8Z Defense Modernization and Prototyping 03U 93,463 4606033"
+      ],
+      "Directed Energy": [
+        "NJoint Precision Approach and Landing Systems -  Dem/Val 04U 20,223 18,628 18,628 22,590 730603925N Directed Energy and Electric Weapon Systems 04U 80,055 65,080 65,080 52,129 *Includes enacted fundin",
+        "8,856 8,856 10,303 120602602F Conventional Munitions 02U 142,906 144,303 144,303 160,599 130602605F Directed Energy Technology 02U 109,529 120,947 120,947 129,961 140602788F Dominant Information Scien"
+      ],
+      "Cybersecurity": [
+        "9D8W Defense Digital Service (DDS) Development Support 06U 6,218 1860606771D8Z Cyber Resiliency and Cybersecurity Policy 06U 34,450 51,901 51,901 45,194 1870606853BR Management, Technical & Internatio",
+        "0 2,500 2,352 1840606301D8Z Aviation Safety Technologies 06U 213 1860606771D8Z Cyber Resiliency and Cybersecurity Policy 06U 34,450 51,901 51,901 45,194 1880203345D8Z Defense Operations Security Initi"
+      ],
+      "Space Systems": [
+        "ce 41,507,268 44,913,984 284,846 45,198,830 46,565,356 Research, Development, Test, and Evaluation, Space Force 11,567,016 16,615,963 16,615,963 19,199,340 Research, Development, Test and Evaluation, ",
+        "*FY 2023 Total  EnactedFY 2024  Request Special Operations Forces 875,416 998,082 998,082 1,218,563 Space 8,798,916 11,274,534 11,274,534 13,567,977 29,495,396 33,731,422 397,368 34,128,790 33,398,984"
+      ],
+      "Autonomous Systems": [
+        "875 610207110F Next Generation Air Dominance 04U 1,452,934 1,657,635 1,657,635 2,326,128 620207179F Autonomous Collaborative Platforms 04U 51,747 51,747 118,826 630207420F Combat Identification 04U 1,",
+        " 863 863 10,626 720604100A Analysis Of Alternatives 04U 9,723 10,659 10,659 11,095 730604101A Small Unmanned Aerial Vehicle (SUAV) (6.4) 04U 892 1,425 1,425 5,144 740604103AElectronic Warfare Planning"
+      ],
+      "Electronic Warfare": [
+        "59 11,095 730604101A Small Unmanned Aerial Vehicle (SUAV) (6.4) 04U 892 1,425 1,425 5,144 740604103AElectronic Warfare Planning and Management Tool  (EWPMT) 04U 2,260 *Includes enacted funding in the ",
+        ",111 6,000 4,637,111 4,420,315 910604201A Aircraft Avionics 05U 6,411 3,335 3,335 13,673 920604270A Electronic Warfare Development 05U 29,683 4,140 4,140 12,789 930604601A Infantry Support Weapons 05U"
+      ]
+    }
+  },
+  {
+    "fiscal_year": "2025",
+    "tech_counts": {
+      "AI/Machine Learning": 4,
+      "Hypersonics": 9,
+      "Quantum": 2,
+      "Directed Energy": 8,
+      "Cybersecurity": 10,
+      "Space Systems": 100,
+      "Autonomous Systems": 37,
+      "Electronic Warfare": 2
+    },
+    "sample_programs": {
+      "AI/Machine Learning": [
+        "ber Collaborative  Research  Alliance 01U 5,355 5,459 5,525 50601601A Artificial  Intelligence  and Machine Learning  Basic Research 01U 7,985 10,708 10,309 Basic Research 616,802 497,455 513,917 6060",
+        "ir and Missile Defense Technology 02U 94,972 33,301 39,188 170602180A Artificial  Intelligence  and Machine Learning  Technologies 02U 15,481 24,142 20,319 *A full-year  FY 2024 appropriation  for thi"
+      ],
+      "Hypersonics": [
+        "sting 04U 14,298 16,426 17,341 830604135A Strategic  Mid-Range  Fires 04U 379,535 31,559 840604182A Hypersonics 04U 309,068 43,435 850604386A Biotechnology  for Materials  - Dem/Val 04U 20,862 8606044",
+        " 41,003 18,913 1440605231A Precision  Strike Missile (PrSM) 05U 250,034 272,786 184,046 1450605232A Hypersonics  EMD 05U 533,520 900,920 538,017 1460605233A Accessions  Information  Environment  (AIE)"
+      ],
+      "Quantum": [
+        "594 450603289D8Z Advanced  Innovative  Analysis  and Concepts 03U 51,696 55,626 56,390 460603330D8Z Quantum Application 03U 75,000 69,290 470603342D8Z Defense Innovation  Unit (DIU) 03U 67,646 104,729",
+        "594 450603289D8Z Advanced  Innovative  Analysis  and Concepts 03U 51,696 55,626 56,390 460603330D8Z Quantum Application 03U 75,000 69,290 470603342D8Z Defense Innovation  Unit (DIU) 03U 67,646 104,729"
+      ],
+      "Directed Energy": [
+        "U 16,172 14,761 15,311 20601101E Defense Research  Sciences 01U 376,978 311,531 303,830 30601108D8Z High Energy Laser Research  Initiatives 01U 20,789 16,329 16,518 40601110D8Z Basic Research  Initiat",
+        "51D8Z Software  Engineering  Institute  (SEI) Applied Research 02U 9,788 11,168 11,310 260602890D8Z High Energy Laser Research 02U 47,624 48,804 48,640 270602891D8Z FSRM Modelling 02U 2,000 1,897 2811"
+      ],
+      "Cybersecurity": [
+        "6,536 1920606301D8Z Aviation  Safety Technologies 06U 213 1,885 1930606771D8Z Cyber Resiliency  and Cybersecurity  Policy 06U 50,077 45,194 40,401 1940606774D8Z Defense Civilian  Training  Corps 06U 2",
+        "6,536 1920606301D8Z Aviation  Safety Technologies 06U 213 1,885 1930606771D8Z Cyber Resiliency  and Cybersecurity  Policy 06U 50,077 45,194 40,401 1940606774D8Z Defense Civilian  Training  Corps 06U 2"
+      ],
+      "Space Systems": [
+        "uation,  Air Force 45,014,265 44,913,984 49,108,771 Research,  Development,  Test, and Evaluation,  Space Force 16,996,236 16,615,963 18,700,153 Research,  Development,  Test and Evaluation,  Defense-",
+        "Support of Other Nations 2,593 3,917 4,590 Special Operations  Forces 1,002,082 1,218,563 1,349,512 Space 11,613,096 13,567,977 13,293,105 Classified  Programs 34,018,513 33,398,984 35,102,506 Total R"
+      ],
+      "Autonomous Systems": [
+        "Office 04U 2 640207110F Next Generation  Air Dominance 04U 1,608,787 2,326,128 3,306,355 650207179F Autonomous  Collaborative  Platforms 04U 54,954 118,826 51,666 660207420F Combat Identification 04U ",
+        "04U 863 10,626 4,317 720604100A Analysis  Of Alternatives 04U 10,270 11,095 11,234 730604101A Small Unmanned  Aerial Vehicle (SUAV) (6.4) 04U 1,373 5,144 1,800 740604103A Electronic  Warfare Planning "
+      ],
+      "Electronic Warfare": [
+        "sident's  Budget  Total Obligational  Authority (Dollars  in Thousands)Mar 2024 1500605242A Theater SIGINT System (TSIGS) 05U 6,660 1510605244A Joint Reduced Range Rocket (JR3) 05U 13,565 1520605247A ",
+        "0F Strategic  Mission Planning  & Execution  System (SMPES) 07U 64,944 69,441 2430304260F Airborne  SIGINT Enterprise 07U 98,297 108,947 85,284 2440304310F Commercial  Economic  Analysis 07U 4,054 4,6"
+      ]
+    }
+  }
+]
