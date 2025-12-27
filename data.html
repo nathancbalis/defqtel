@@ -99,17 +99,17 @@
     <div id="overview" style="display: none;">
         <div class="max-w-7xl mx-auto px-8 py-8">
             <div class="grid grid-cols-3 gap-6">
-                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="0">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">SBIR Awards</div>
                     <div class="text-3xl font-light">17,265</div>
                     <div class="text-xs text-gray-600 mt-1">2020-2024</div>
                 </div>
-                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Categories</div>
                     <div class="text-3xl font-light" id="categoryCount">18 / 8</div>
                     <div class="text-xs text-gray-600 mt-1">Tech types / Platforms</div>
                 </div>
-                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Multi-Category</div>
                     <div class="text-3xl font-light">41.5%</div>
                     <div class="text-xs text-gray-600 mt-1">Cross-domain awards</div>
@@ -117,7 +117,7 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-8 pb-8" data-aos="fade-up" data-aos-delay="300">
+        <div class="max-w-7xl mx-auto px-8 pb-8" data-aos="fade-right" data-aos-delay="300">
             <div class="bg-gray-900 border border-gray-800">
                 <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
                     <div>
@@ -139,7 +139,7 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-8 pb-8" data-aos="fade-up" data-aos-delay="400">
+        <div class="max-w-7xl mx-auto px-8 pb-8" data-aos="fade-left" data-aos-delay="400">
             <div class="bg-gray-900 border border-gray-800">
                 <div class="px-6 py-4 border-b border-gray-800">
                     <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">Award Trends (2020-2024)</h2>
@@ -407,6 +407,7 @@
                 globalData = data;
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('overview').style.display = 'block';
+                AOS.refresh();
 
                 const date = new Date(data.last_updated);
                 document.getElementById('lastUpdated').textContent =
