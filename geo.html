@@ -582,9 +582,6 @@
             geoData = data;
             document.getElementById('loading').style.display = 'none';
             document.getElementById('content').style.display = 'block';
-            setTimeout(() => {
-                AOS.init({ once: true, duration: 600 });
-            }, 50);
 
             // Build SVG map using D3 and TopoJSON
             const svg = d3.select('#usMap');
@@ -854,6 +851,11 @@
 
             // Initialize global search
             initGlobalSearch();
+
+            // Initialize AOS after all content is ready
+            setTimeout(() => {
+                AOS.init({ once: true, duration: 600 });
+            }, 100);
         })
         .catch(err => {
             console.error(err);
