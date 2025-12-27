@@ -6,6 +6,7 @@
     <title>Export Data | DefqTel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://gumroad.com/js/gumroad.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -60,7 +61,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-8 py-16">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16" data-aos="fade-up">
             <h1 class="text-4xl font-light mb-4">Export Data</h1>
             <p class="text-gray-400 max-w-2xl mx-auto">
                 Download the complete categorized SBIR dataset for your own analysis.
@@ -69,7 +70,7 @@
         </div>
 
         <!-- What's Included -->
-        <div class="bg-gray-900 border border-gray-800 p-8 mb-16">
+        <div class="bg-gray-900 border border-gray-800 p-8 mb-16" data-aos="fade-up">
             <h2 class="text-lg font-medium mb-6">What's Included</h2>
             <div class="grid grid-cols-2 gap-8">
                 <div>
@@ -291,5 +292,7 @@
         </div>
     </div>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, duration: 600 });</script>
 </body>
 </html>
