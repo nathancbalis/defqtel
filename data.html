@@ -403,10 +403,6 @@
                     AOS.init({ once: true, duration: 600 });
                 }, 50);
 
-                const date = new Date(data.last_updated);
-                document.getElementById('lastUpdated').textContent =
-                    `Last updated: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-
                 // Update category counts
                 document.getElementById('categoryCount').textContent =
                     `${data.tech_categories.length} / ${data.platform_categories.length}`;
