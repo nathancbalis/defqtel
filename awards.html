@@ -295,7 +295,9 @@
                 allAwards = data.awards;
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
-                AOS.refresh();
+                setTimeout(() => {
+                    AOS.init({ once: true, duration: 600 });
+                }, 50);
 
                 // Populate filters
                 const stateSelect = document.getElementById('stateFilter');
@@ -464,6 +466,5 @@
         });
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 600 });</script>
 </body>
 </html>

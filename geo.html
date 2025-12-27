@@ -582,7 +582,9 @@
             geoData = data;
             document.getElementById('loading').style.display = 'none';
             document.getElementById('content').style.display = 'block';
-            AOS.refresh();
+            setTimeout(() => {
+                AOS.init({ once: true, duration: 600 });
+            }, 50);
 
             // Build SVG map using D3 and TopoJSON
             const svg = d3.select('#usMap');
@@ -977,6 +979,5 @@
         }
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 600 });</script>
 </body>
 </html>

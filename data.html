@@ -407,7 +407,9 @@
                 globalData = data;
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('overview').style.display = 'block';
-                AOS.refresh();
+                setTimeout(() => {
+                    AOS.init({ once: true, duration: 600 });
+                }, 50);
 
                 const date = new Date(data.last_updated);
                 document.getElementById('lastUpdated').textContent =
@@ -531,6 +533,5 @@
         });
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, duration: 600 });</script>
 </body>
 </html>
