@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/topojson-client@3"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -87,7 +88,7 @@
 
     <div id="content" style="display: none;">
         <div class="max-w-7xl mx-auto px-8 py-8">
-            <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center justify-between mb-6" data-aos="fade-up">
                 <div>
                     <h1 class="text-3xl font-light mb-2">Geographic Analysis</h1>
                     <p class="text-sm text-gray-500" id="pageSubtitle">SBIR award distribution by state (2020-2024)</p>
@@ -974,5 +975,7 @@
             }, 100);
         }
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, duration: 600 });</script>
 </body>
 </html>
