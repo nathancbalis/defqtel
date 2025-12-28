@@ -23,26 +23,11 @@
             background: rgba(59, 130, 246, 0.05); 
         }
 
-        .legend-item {
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .legend-item:hover {
-            background: rgba(59, 130, 246, 0.1);
-        }
         .legend-item.inactive {
             opacity: 0.3;
         }
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            border-radius: 2px;
-            flex-shrink: 0;
+        .legend-item.inactive span:last-child {
+            text-decoration: line-through;
         }
         </style>
 </head>
@@ -90,67 +75,103 @@
     </div>
     
     <div id="overview" style="display: none;">
-        <div class="max-w-7xl mx-auto px-8 py-8">
-            <div class="grid grid-cols-3 gap-6">
-                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">SBIR Awards</div>
-                    <div class="text-3xl font-light">17,265</div>
-                    <div class="text-xs text-gray-600 mt-1">2020-2024</div>
-                </div>
-                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Categories</div>
-                    <div class="text-3xl font-light" id="categoryCount">18 / 8</div>
-                    <div class="text-xs text-gray-600 mt-1">Tech types / Platforms</div>
-                </div>
-                <div class="stat-card bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Multi-Category</div>
-                    <div class="text-3xl font-light">41.5%</div>
-                    <div class="text-xs text-gray-600 mt-1">Cross-domain awards</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-8 pb-8" data-aos="fade-right" data-aos-delay="300">
-            <div class="bg-gray-900 border border-gray-800">
-                <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
-                    <div>
-                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400" id="dimensionTitle">Technology Areas by Volume</h2>
-                        <p class="text-xs text-gray-600 mt-1">Sorted by total awards • Click for details</p>
-                    </div>
-                    <div class="flex bg-gray-800 rounded-lg p-1">
-                        <button id="techBtn" onclick="switchDimension('tech')"
-                            class="px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white">
-                            Technology
-                        </button>
-                        <button id="platformBtn" onclick="switchDimension('platform')"
-                            class="px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white">
-                            Platform
-                        </button>
+        <!-- Compact Header with Inline Stats -->
+        <div class="max-w-7xl mx-auto px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <h1 class="text-2xl font-light">SBIR Awards</h1>
+                    <div class="flex items-center gap-6 text-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="text-gray-500">Awards:</span>
+                            <span class="font-medium">17,265</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-gray-500">Categories:</span>
+                            <span class="font-medium" id="categoryCount">18 / 8</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-gray-500">Period:</span>
+                            <span class="font-medium">2020-2024</span>
+                        </div>
                     </div>
                 </div>
-                <div class="divide-y divide-gray-800" id="rankings"></div>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-8 pb-8" data-aos="fade-left" data-aos-delay="400">
-            <div class="bg-gray-900 border border-gray-800">
-                <div class="px-6 py-4 border-b border-gray-800">
-                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">Award Trends (2020-2024)</h2>
-                </div>
-                <div class="p-6">
-                    <div id="trendsChart"></div>
-                    <div id="customLegend" class="grid grid-cols-4 gap-2 mt-6 text-xs"></div>
+                <div class="flex bg-gray-800 rounded-lg p-1">
+                    <button id="techBtn" onclick="switchDimension('tech')"
+                        class="px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white">
+                        Technology
+                    </button>
+                    <button id="platformBtn" onclick="switchDimension('platform')"
+                        class="px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white">
+                        Platform
+                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="border-t border-gray-800 mt-12">
-            <div class="max-w-7xl mx-auto px-8 py-6">
+        <div class="max-w-7xl mx-auto px-8 pb-6">
+            <div class="grid grid-cols-12 gap-5">
+                <!-- Left Column: Rankings -->
+                <div class="col-span-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="bg-gray-900/50 border border-gray-800 h-full flex flex-col rounded-lg overflow-hidden">
+                        <div class="px-4 py-3 border-b border-gray-800 bg-gray-900">
+                            <h2 class="text-xs font-medium uppercase tracking-wider text-gray-400" id="dimensionTitle">Technology Areas</h2>
+                        </div>
+                        <div class="divide-y divide-gray-800/50 overflow-y-auto flex-1" id="rankings" style="max-height: 480px;"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Chart -->
+                <div class="col-span-8" data-aos="fade-left" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+                        <div class="px-5 py-3 border-b border-gray-800 flex items-center justify-between bg-gray-900/80">
+                            <div>
+                                <h2 class="text-sm font-medium text-gray-200">Award Trends</h2>
+                                <p class="text-xs text-gray-500">5-year comparison by category</p>
+                            </div>
+                            <button onclick="toggleChartFullscreen()" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 bg-gray-800 px-3 py-1.5 rounded-md hover:bg-gray-700">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                                </svg>
+                                Expand
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <div id="trendsChart"></div>
+                            <div id="customLegend" class="flex flex-wrap gap-x-3 gap-y-1 mt-3 justify-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-4">
+            <div class="max-w-7xl mx-auto px-8 py-4">
                 <div class="flex justify-between text-xs text-gray-600">
                     <div>Data: SBIR.gov</div>
                     <div>AI Classification: Claude (Anthropic)</div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Chart Modal -->
+    <div id="chartModal" class="fixed inset-0 bg-black/98 z-50 hidden">
+        <div class="h-full flex flex-col p-6">
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <h2 class="text-xl font-light">Award Trends</h2>
+                    <p class="text-sm text-gray-500">All categories • 2020-2024</p>
+                </div>
+                <button onclick="toggleChartFullscreen()" class="text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700 p-2 rounded-lg transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex-1 bg-gradient-to-br from-gray-900 to-gray-900/80 border border-gray-800 rounded-lg p-6">
+                <div id="fullscreenChart" class="h-full"></div>
+            </div>
+            <div id="fullscreenLegend" class="flex flex-wrap justify-center gap-x-2 gap-y-1 mt-4"></div>
         </div>
     </div>
 
@@ -205,8 +226,10 @@
     <script>
         let globalData = null;
         let trendsChart = null;
+        let fullscreenChart = null;
         let visibleSeries = new Set();
         let currentDimension = 'tech';
+        let isFullscreen = false;
 
         function showOverview() {
             document.getElementById('detail').style.display = 'none';
@@ -223,11 +246,11 @@
             if (dim === 'tech') {
                 techBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white';
                 platformBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white';
-                document.getElementById('dimensionTitle').textContent = 'Technology Areas by Volume';
+                document.getElementById('dimensionTitle').textContent = 'Technology Areas';
             } else {
                 platformBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white';
                 techBtn.className = 'px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white';
-                document.getElementById('dimensionTitle').textContent = 'Platform/Domain by Volume';
+                document.getElementById('dimensionTitle').textContent = 'Platform / Domain';
             }
 
             renderRankings(globalData, dim);
@@ -248,21 +271,17 @@
 
             const rankingsHTML = sorted.map(([category, score], idx) => {
                 return `
-                    <div class="category-row px-6 py-4 flex items-center justify-between" onclick="showDetail('${category}', '${dimension}')">
-                        <div class="flex items-center gap-6 flex-1">
-                            <div class="text-xs text-gray-600 font-mono w-8">${String(idx + 1).padStart(2, '0')}</div>
-                            <div class="flex-1">
-                                <div class="text-sm font-medium">${category}</div>
-                                <div class="text-xs text-gray-500 mt-1">
-                                    ${score.total_sbir_awards.toLocaleString()} awards •
-                                    <span class="${getStatusColor(score.status)}">${score.sbir_yoy} YoY</span>
+                    <div class="category-row px-4 py-3 flex items-center justify-between" onclick="showDetail('${category}', '${dimension}')">
+                        <div class="flex items-center gap-3 flex-1 min-w-0">
+                            <div class="text-xs text-gray-600 font-mono w-6">${String(idx + 1).padStart(2, '0')}</div>
+                            <div class="flex-1 min-w-0">
+                                <div class="text-sm font-medium truncate">${category}</div>
+                                <div class="text-xs text-gray-500">
+                                    ${score.total_sbir_awards.toLocaleString()} • <span class="${getStatusColor(score.status)}">${score.sbir_yoy}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <div class="text-xs text-gray-500 uppercase tracking-wide">Status</div>
-                            <div class="text-xs ${getStatusColor(score.status)} font-medium mt-1">${score.status}</div>
-                        </div>
+                        <div class="text-xs ${getStatusColor(score.status)} font-medium ml-2 flex-shrink-0">${score.status}</div>
                     </div>
                 `;
             }).join('');
@@ -277,24 +296,24 @@
             const sorted = Object.entries(scores)
                 .sort((a, b) => b[1].total_sbir_awards - a[1].total_sbir_awards);
 
+            // Show top 8 categories by default for cleaner visualization
+            const topCategories = sorted.slice(0, 8).map(x => x[0]);
             const allCategories = sorted.map(x => x[0]);
             const years = ['2020', '2021', '2022', '2023', '2024'];
 
-            const series = allCategories.map(cat => ({
+            const series = topCategories.map(cat => ({
                 name: cat,
                 data: years.map(year => (trends[cat] && trends[cat].award_counts[year]) || 0)
             }));
 
+            // Premium color palette
             const colors = [
-                '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6',
-                '#ec4899', '#06b6d4', '#84cc16', '#f43f5e',
-                '#6366f1', '#14b8a6', '#f97316', '#a855f7',
-                '#e11d48', '#0ea5e9', '#22c55e', '#eab308',
-                '#d946ef', '#0284c7'
+                '#60a5fa', '#34d399', '#fbbf24', '#a78bfa',
+                '#f472b6', '#22d3ee', '#a3e635', '#fb7185'
             ];
 
             visibleSeries.clear();
-            allCategories.forEach(cat => visibleSeries.add(cat));
+            topCategories.forEach(cat => visibleSeries.add(cat));
 
             if (trendsChart) {
                 trendsChart.destroy();
@@ -302,33 +321,84 @@
 
             trendsChart = new ApexCharts(document.getElementById('trendsChart'), {
                 chart: {
-                    type: 'line',
-                    height: 450,
+                    type: 'area',
+                    height: 320,
                     background: 'transparent',
-                    toolbar: { show: false }
+                    toolbar: { show: false },
+                    fontFamily: 'Inter, sans-serif',
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 800
+                    },
+                    dropShadow: {
+                        enabled: true,
+                        top: 3,
+                        left: 0,
+                        blur: 4,
+                        opacity: 0.1
+                    }
                 },
                 series: series,
                 xaxis: {
                     categories: years,
-                    labels: { style: { colors: '#6b7280', fontSize: '11px' } }
+                    labels: {
+                        style: { colors: '#9ca3af', fontSize: '11px', fontWeight: 500 }
+                    },
+                    axisBorder: { show: false },
+                    axisTicks: { show: false }
                 },
                 yaxis: {
-                    labels: { style: { colors: '#6b7280', fontSize: '11px' } }
+                    labels: {
+                        style: { colors: '#6b7280', fontSize: '10px' },
+                        formatter: (val) => val.toLocaleString()
+                    }
                 },
-                stroke: { curve: 'smooth', width: 2 },
-                colors: colors.slice(0, allCategories.length),
-                grid: { borderColor: '#1f2937', strokeDashArray: 3 },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2.5,
+                    lineCap: 'round'
+                },
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.4,
+                        opacityTo: 0.05,
+                        stops: [0, 90, 100]
+                    }
+                },
+                colors: colors,
+                grid: {
+                    borderColor: '#1f2937',
+                    strokeDashArray: 0,
+                    xaxis: { lines: { show: false } },
+                    yaxis: { lines: { show: true } },
+                    padding: { top: 0, right: 0, bottom: 0, left: 10 }
+                },
                 legend: { show: false },
-                tooltip: { theme: 'dark', style: { fontSize: '12px' } }
+                tooltip: {
+                    theme: 'dark',
+                    style: { fontSize: '12px' },
+                    y: {
+                        formatter: (val) => val.toLocaleString() + ' awards'
+                    }
+                },
+                dataLabels: { enabled: false },
+                markers: {
+                    size: 0,
+                    hover: { size: 5 }
+                }
             });
 
             trendsChart.render();
 
-            const legendHTML = allCategories.map((cat, idx) => {
+            // Compact inline legend
+            const legendHTML = topCategories.map((cat, idx) => {
                 return `
-                    <div class="legend-item" data-category="${cat}" onclick="toggleSeries('${cat}')">
-                        <div class="legend-color" style="background-color: ${colors[idx]}"></div>
-                        <div>${cat}</div>
+                    <div class="legend-item inline-flex items-center gap-1.5 px-2 py-1 text-xs cursor-pointer hover:bg-gray-800/50 rounded" data-category="${cat}" onclick="toggleSeries('${cat}')">
+                        <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${colors[idx]}"></span>
+                        <span class="text-gray-400 truncate" style="max-width: 120px">${cat}</span>
                     </div>
                 `;
             }).join('');
@@ -384,7 +454,7 @@
         
         function toggleSeries(categoryName) {
             trendsChart.toggleSeries(categoryName);
-            
+
             if (visibleSeries.has(categoryName)) {
                 visibleSeries.delete(categoryName);
                 document.querySelector(`[data-category="${categoryName}"]`).classList.add('inactive');
@@ -393,7 +463,134 @@
                 document.querySelector(`[data-category="${categoryName}"]`).classList.remove('inactive');
             }
         }
-        
+
+        function toggleChartFullscreen() {
+            const modal = document.getElementById('chartModal');
+
+            if (isFullscreen) {
+                modal.classList.add('hidden');
+                if (fullscreenChart) {
+                    fullscreenChart.destroy();
+                    fullscreenChart = null;
+                }
+                isFullscreen = false;
+            } else {
+                modal.classList.remove('hidden');
+                isFullscreen = true;
+                renderFullscreenChart();
+            }
+        }
+
+        function renderFullscreenChart() {
+            const data = globalData;
+            const trends = currentDimension === 'tech' ? data.tech_trends : data.platform_trends;
+            const scores = currentDimension === 'tech' ? data.tech_scores : data.platform_scores;
+
+            const sorted = Object.entries(scores)
+                .sort((a, b) => b[1].total_sbir_awards - a[1].total_sbir_awards);
+
+            const allCategories = sorted.map(x => x[0]);
+            const years = ['2020', '2021', '2022', '2023', '2024'];
+
+            const series = allCategories.map(cat => ({
+                name: cat,
+                data: years.map(year => (trends[cat] && trends[cat].award_counts[year]) || 0)
+            }));
+
+            // Extended color palette for all categories
+            const colors = [
+                '#60a5fa', '#34d399', '#fbbf24', '#a78bfa',
+                '#f472b6', '#22d3ee', '#a3e635', '#fb7185',
+                '#818cf8', '#2dd4bf', '#facc15', '#c084fc',
+                '#f9a8d4', '#67e8f9', '#bef264', '#fda4af',
+                '#93c5fd', '#6ee7b7'
+            ];
+
+            document.getElementById('fullscreenChart').innerHTML = '';
+
+            fullscreenChart = new ApexCharts(document.getElementById('fullscreenChart'), {
+                chart: {
+                    type: 'area',
+                    height: '100%',
+                    background: 'transparent',
+                    toolbar: {
+                        show: true,
+                        tools: {
+                            download: true,
+                            selection: true,
+                            zoom: true,
+                            zoomin: true,
+                            zoomout: true,
+                            pan: true,
+                            reset: true
+                        }
+                    },
+                    fontFamily: 'Inter, sans-serif',
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 600
+                    }
+                },
+                series: series,
+                xaxis: {
+                    categories: years,
+                    labels: { style: { colors: '#9ca3af', fontSize: '13px', fontWeight: 500 } },
+                    axisBorder: { show: false },
+                    axisTicks: { show: false }
+                },
+                yaxis: {
+                    labels: {
+                        style: { colors: '#6b7280', fontSize: '12px' },
+                        formatter: (val) => val.toLocaleString()
+                    }
+                },
+                stroke: { curve: 'smooth', width: 2.5 },
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.3,
+                        opacityTo: 0.05,
+                        stops: [0, 90, 100]
+                    }
+                },
+                colors: colors.slice(0, allCategories.length),
+                grid: {
+                    borderColor: '#1f2937',
+                    xaxis: { lines: { show: false } },
+                    yaxis: { lines: { show: true } }
+                },
+                legend: { show: false },
+                tooltip: {
+                    theme: 'dark',
+                    style: { fontSize: '13px' },
+                    y: { formatter: (val) => val.toLocaleString() + ' awards' }
+                },
+                markers: { size: 0, hover: { size: 6 } }
+            });
+
+            fullscreenChart.render();
+
+            const legendHTML = allCategories.map((cat, idx) => {
+                return `
+                    <div class="inline-flex items-center gap-1.5 px-2 py-1 text-xs cursor-pointer hover:bg-gray-800/50 rounded">
+                        <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background-color: ${colors[idx]}"></span>
+                        <span class="text-gray-300">${cat}</span>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('fullscreenLegend').innerHTML = legendHTML;
+        }
+
+        // ESC key to close modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isFullscreen) {
+                toggleChartFullscreen();
+            }
+        });
+
         fetch('dashboard_data_new.json')
             .then(res => res.json())
             .then(data => {
