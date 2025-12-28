@@ -362,8 +362,8 @@
         let cityMarkersGroup = null;
         let originalTransform = null;
 
-        // Load US Map from external source for proper alignment
-        const US_MAP_URL = 'https://unpkg.com/us-atlas@3/states-albers-10m.json';
+        // Load US Map from external source - using unprojected version so we can apply consistent projection
+        const US_MAP_URL = 'https://unpkg.com/us-atlas@3/states-10m.json';
 
         function getColorScale(value, max) {
             const normalized = Math.min(value / max, 1);
@@ -663,11 +663,12 @@
             zoomedStateAbbrev = abbrev;
 
             const svg = d3.select('#usMap');
-            const width = 975;
-            const height = 610;
+            const width = 959;
+            const height = 593;
 
-            // Get the bounding box of the state
-            const bounds = d3.geoPath().bounds(stateFeature);
+            // Get the bounding box of the state using the same projection
+            const path = d3.geoPath().projection(projection);
+            const bounds = path.bounds(stateFeature);
             const dx = bounds[1][0] - bounds[0][0];
             const dy = bounds[1][1] - bounds[0][1];
             const x = (bounds[0][0] + bounds[1][0]) / 2;
@@ -815,8 +816,13 @@
             const width = 959;
             const height = 593;
 
-            // The Albers USA projection is already baked into the TopoJSON
-            const path = d3.geoPath();
+            // Create Albers USA projection - used for both states and city markers
+            projection = d3.geoAlbersUsa()
+                .scale(1200)
+                .translate([width / 2, height / 2]);
+
+            // Create path generator using the projection
+            const path = d3.geoPath().projection(projection);
 
             // Get states from TopoJSON
             const states = topojson.feature(us, us.objects.states).features;
@@ -824,9 +830,6 @@
             // Store references for zoom
             mapGroup = svg.select('#mapGroup');
             cityMarkersGroup = svg.select('#cityMarkers');
-
-            // Create Albers USA projection for city markers
-            projection = d3.geoAlbersUsa().scale(1300).translate([width / 2, height / 2]);
 
             mapGroup.selectAll('path')
                 .data(states)
