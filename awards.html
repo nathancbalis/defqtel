@@ -156,6 +156,10 @@
             return '$' + amount.toFixed(0);
         }
 
+        function toTitleCase(str) {
+            return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+        }
+
         function getFilters() {
             return {
                 search: document.getElementById('searchInput').value.toLowerCase(),
@@ -254,7 +258,7 @@
                                 ${techTags} ${platformTags}
                             </div>
                             <div class="text-xs text-gray-500">
-                                ${award.city}, ${award.state} · ${award.year}
+                                ${toTitleCase(award.city)}, ${award.state} · ${award.year}
                             </div>
                         </div>
                         <div class="text-right flex-shrink-0">
