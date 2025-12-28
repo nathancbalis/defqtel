@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="LogoAircraft.png">
+    <title>Company Profile | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <div class="flex items-baseline justify-between">
+                <div class="flex items-baseline gap-12">
+                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+                    <nav class="flex gap-8 text-sm">
+                        <div class="relative group">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                Data ▾
+                            </a>
+                            <div class="absolute left-0 top-full mt-[26px] w-[720px] bg-black border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="max-w-7xl mx-auto px-8 py-24 text-center">
+        <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-500 border-r-transparent"></div>
+        <div class="text-sm text-gray-500 mt-4">Loading company data</div>
+    </div>
+
+    <div id="notFound" class="max-w-7xl mx-auto px-8 py-24 text-center" style="display: none;">
+        <div class="text-xl text-gray-400 mb-4">Company not found</div>
+        <a href="awards.html" class="text-blue-400 hover:text-blue-300 text-sm">Browse all awards</a>
+    </div>
+
+    <div id="content" style="display: none;">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <!-- Header -->
+            <div class="mb-6" data-aos="fade-up">
+                <a href="awards.html" class="text-sm text-gray-500 hover:text-gray-300 mb-2 inline-block">← Back to Awards</a>
+                <h1 class="text-3xl font-light mb-2" id="companyName">Company Name</h1>
+                <div class="flex items-center gap-4 text-sm text-gray-400">
+                    <span id="companyLocation">Location</span>
+                    <span class="text-gray-600">•</span>
+                    <span id="companyYears">Years Active</span>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-5 gap-4 mb-6">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Awards</div>
+                    <div class="text-2xl font-light" id="totalAwards">-</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Funding</div>
+                    <div class="text-2xl font-light" id="totalFunding">-</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Phase I</div>
+                    <div class="text-2xl font-light" id="phase1Count">-</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Phase II</div>
+                    <div class="text-2xl font-light" id="phase2Count">-</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Conversion</div>
+                    <div class="text-2xl font-light" id="conversionRate">-</div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="grid grid-cols-12 gap-5 mb-6">
+                <!-- Funding by Year Chart -->
+                <div class="col-span-7" data-aos="fade-right" data-aos-delay="100">
+                    <div class="bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-lg overflow-hidden h-full">
+                        <div class="px-5 py-3 border-b border-gray-800 bg-gray-900/80">
+                            <h2 class="text-sm font-medium text-gray-200">Funding by Year</h2>
+                        </div>
+                        <div class="p-4">
+                            <div id="fundingChart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="col-span-5" data-aos="fade-left" data-aos-delay="150">
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden h-full flex flex-col">
+                        <div class="px-4 py-3 border-b border-gray-800 bg-gray-900">
+                            <h2 class="text-xs font-medium uppercase tracking-wider text-gray-400">Technology Focus</h2>
+                        </div>
+                        <div class="p-4 flex-1 overflow-y-auto" id="techCategories" style="max-height: 240px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Tags & Branch Breakdown -->
+            <div class="grid grid-cols-2 gap-5 mb-6">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="px-4 py-3 border-b border-gray-800 bg-gray-900">
+                        <h2 class="text-xs font-medium uppercase tracking-wider text-gray-400">Platforms</h2>
+                    </div>
+                    <div class="p-4" id="platformTags"></div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+                    <div class="px-4 py-3 border-b border-gray-800 bg-gray-900">
+                        <h2 class="text-xs font-medium uppercase tracking-wider text-gray-400">DoD Branches</h2>
+                    </div>
+                    <div class="p-4" id="branchBreakdown"></div>
+                </div>
+            </div>
+
+            <!-- Awards List -->
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                <div class="px-5 py-3 border-b border-gray-800 bg-gray-900 flex items-center justify-between">
+                    <h2 class="text-sm font-medium text-gray-200">All Awards</h2>
+                    <span class="text-xs text-gray-500" id="awardsCount">0 awards</span>
+                </div>
+                <div class="divide-y divide-gray-800/50" id="awardsList"></div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8">
+            <div class="max-w-7xl mx-auto px-8 py-4">
+                <div class="flex justify-between text-xs text-gray-600">
+                    <div>Data: SBIR.gov (2020-2024)</div>
+                    <div>AI Classification: Claude (Anthropic)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formatAmount(amount) {
+            if (amount >= 1000000) {
+                return '$' + (amount / 1000000).toFixed(2) + 'M';
+            } else if (amount >= 1000) {
+                return '$' + (amount / 1000).toFixed(0) + 'K';
+            }
+            return '$' + amount.toFixed(0);
+        }
+
+        function toTitleCase(str) {
+            return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        // Get company name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const companyName = urlParams.get('name');
+
+        if (!companyName) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('notFound').style.display = 'block';
+        } else {
+            fetch('awards_data.json')
+                .then(res => res.json())
+                .then(data => {
+                    // Filter awards for this company (case-insensitive)
+                    const companyAwards = data.awards.filter(a =>
+                        a.company.toLowerCase() === companyName.toLowerCase()
+                    );
+
+                    if (companyAwards.length === 0) {
+                        document.getElementById('loading').style.display = 'none';
+                        document.getElementById('notFound').style.display = 'block';
+                        return;
+                    }
+
+                    // Calculate stats
+                    const totalFunding = companyAwards.reduce((sum, a) => sum + a.amount, 0);
+                    const phase1 = companyAwards.filter(a => a.phase === 'Phase I');
+                    const phase2 = companyAwards.filter(a => a.phase === 'Phase II');
+                    const conversionRate = phase1.length > 0 ? Math.round(phase2.length / phase1.length * 100) : 0;
+
+                    // Get unique locations
+                    const locations = [...new Set(companyAwards.map(a => `${toTitleCase(a.city)}, ${a.state}`))];
+
+                    // Get year range
+                    const years = [...new Set(companyAwards.map(a => a.year))].sort();
+                    const yearRange = years.length === 1 ? years[0] : `${years[0]}-${years[years.length - 1]}`;
+
+                    // Update page title
+                    document.title = `${companyAwards[0].company} | DefqTel`;
+
+                    // Update header
+                    document.getElementById('companyName').textContent = companyAwards[0].company;
+                    document.getElementById('companyLocation').textContent = locations.join(' | ');
+                    document.getElementById('companyYears').textContent = yearRange;
+
+                    // Update stats
+                    document.getElementById('totalAwards').textContent = companyAwards.length;
+                    document.getElementById('totalFunding').textContent = formatAmount(totalFunding);
+                    document.getElementById('phase1Count').textContent = phase1.length;
+                    document.getElementById('phase2Count').textContent = phase2.length;
+                    document.getElementById('conversionRate').textContent = conversionRate + '%';
+
+                    // Funding by year chart
+                    const fundingByYear = {};
+                    companyAwards.forEach(a => {
+                        fundingByYear[a.year] = (fundingByYear[a.year] || 0) + a.amount;
+                    });
+
+                    const chartYears = Object.keys(fundingByYear).sort();
+                    const chartData = chartYears.map(y => Math.round(fundingByYear[y] / 1000000 * 100) / 100);
+
+                    new ApexCharts(document.getElementById('fundingChart'), {
+                        chart: {
+                            type: 'bar',
+                            height: 220,
+                            background: 'transparent',
+                            toolbar: { show: false },
+                            fontFamily: 'Inter, sans-serif'
+                        },
+                        series: [{ name: 'Funding', data: chartData }],
+                        xaxis: {
+                            categories: chartYears,
+                            labels: { style: { colors: '#9ca3af', fontSize: '11px' } },
+                            axisBorder: { show: false },
+                            axisTicks: { show: false }
+                        },
+                        yaxis: {
+                            labels: {
+                                style: { colors: '#6b7280', fontSize: '10px' },
+                                formatter: (val) => '$' + val.toFixed(1) + 'M'
+                            }
+                        },
+                        colors: ['#60a5fa'],
+                        grid: {
+                            borderColor: '#1f2937',
+                            xaxis: { lines: { show: false } }
+                        },
+                        tooltip: {
+                            theme: 'dark',
+                            y: { formatter: (val) => '$' + val.toFixed(2) + 'M' }
+                        },
+                        plotOptions: {
+                            bar: {
+                                borderRadius: 4,
+                                columnWidth: '60%'
+                            }
+                        },
+                        dataLabels: { enabled: false }
+                    }).render();
+
+                    // Technology categories
+                    const techCounts = {};
+                    companyAwards.forEach(a => {
+                        (a.tech || []).forEach(t => {
+                            techCounts[t] = (techCounts[t] || 0) + 1;
+                        });
+                    });
+
+                    const sortedTech = Object.entries(techCounts).sort((a, b) => b[1] - a[1]);
+                    const maxTech = sortedTech[0]?.[1] || 1;
+
+                    document.getElementById('techCategories').innerHTML = sortedTech.map(([cat, count]) => {
+                        const pct = Math.round(count / maxTech * 100);
+                        return `
+                            <div class="mb-3">
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-300">${cat}</span>
+                                    <span class="text-gray-500">${count}</span>
+                                </div>
+                                <div class="h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-blue-500 rounded-full" style="width: ${pct}%"></div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    // Platform tags
+                    const platformCounts = {};
+                    companyAwards.forEach(a => {
+                        (a.platform || []).forEach(p => {
+                            platformCounts[p] = (platformCounts[p] || 0) + 1;
+                        });
+                    });
+
+                    const sortedPlatforms = Object.entries(platformCounts).sort((a, b) => b[1] - a[1]);
+                    document.getElementById('platformTags').innerHTML = sortedPlatforms.map(([plat, count]) => {
+                        return `<span class="inline-block px-3 py-1.5 bg-purple-900/30 text-purple-300 text-xs rounded-full mr-2 mb-2">${plat} <span class="text-purple-400/60">(${count})</span></span>`;
+                    }).join('');
+
+                    // Branch breakdown
+                    const branchCounts = {};
+                    companyAwards.forEach(a => {
+                        const branch = a.branch || a.agency;
+                        branchCounts[branch] = (branchCounts[branch] || 0) + 1;
+                    });
+
+                    const sortedBranches = Object.entries(branchCounts).sort((a, b) => b[1] - a[1]);
+                    document.getElementById('branchBreakdown').innerHTML = sortedBranches.map(([branch, count]) => {
+                        return `<span class="inline-block px-3 py-1.5 bg-gray-800 text-gray-300 text-xs rounded-full mr-2 mb-2">${branch} <span class="text-gray-500">(${count})</span></span>`;
+                    }).join('');
+
+                    // Awards list
+                    document.getElementById('awardsCount').textContent = `${companyAwards.length} awards`;
+
+                    const sortedAwards = companyAwards.sort((a, b) => b.year - a.year || b.amount - a.amount);
+                    document.getElementById('awardsList').innerHTML = sortedAwards.map(award => {
+                        const techTags = (award.tech || []).slice(0, 2).map(t =>
+                            `<span class="text-xs px-1.5 py-0.5 bg-gray-800 text-gray-400 rounded">${t}</span>`
+                        ).join(' ');
+
+                        return `
+                            <div class="px-5 py-4 hover:bg-gray-800/30">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center gap-2 mb-1">
+                                            <span class="text-sm font-medium text-gray-200">${award.title}</span>
+                                            <span class="text-xs px-2 py-0.5 rounded ${award.phase === 'Phase II' ? 'bg-green-900/50 text-green-300' : 'bg-blue-900/50 text-blue-300'}">${award.phase}</span>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-1 mb-1">
+                                            ${techTags}
+                                        </div>
+                                        <div class="text-xs text-gray-500">
+                                            ${award.branch || award.agency} • ${award.year}
+                                        </div>
+                                    </div>
+                                    <div class="text-right flex-shrink-0">
+                                        <div class="text-sm font-medium">${formatAmount(award.amount)}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    // Show content
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+
+                    setTimeout(() => {
+                        AOS.init({ once: true, duration: 600 });
+                    }, 50);
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById('loading').innerHTML = `
+                        <div class="text-sm text-red-400">Failed to load data</div>
+                    `;
+                });
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

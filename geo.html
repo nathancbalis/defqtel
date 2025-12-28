@@ -518,7 +518,7 @@
 
             document.getElementById('detailCompanies').innerHTML = filteredCompanies.map((company, idx) => `
                 <div class="flex justify-between text-sm py-1 ${idx > 0 ? 'border-t border-gray-800' : ''}">
-                    <a href="awards.html?company=${encodeURIComponent(company.name)}"
+                    <a href="company.html?name=${encodeURIComponent(company.name)}"
                        class="text-blue-400 hover:text-blue-300 truncate mr-2" style="max-width: 200px" title="${company.name}">${company.name}</a>
                     <span>${companySortBy === 'awards' ? company.awards : '$' + company.funding_millions.toFixed(2) + 'M'}</span>
                 </div>
