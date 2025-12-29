@@ -678,10 +678,13 @@
             const scale = Math.min(0.9 / Math.max(dx / width, dy / height), 8);
             const translate = [width / 2 - scale * x, height / 2 - scale * y];
 
-            // Dim other states
+            // Dim other states and bring selected state to front
             mapGroup.selectAll('.state')
                 .classed('zoomed-out', d => d.id !== stateFeature.id)
                 .classed('selected', d => d.id === stateFeature.id);
+
+            // Raise selected state to front (SVG draws in DOM order)
+            d3.select(stateElement).raise();
 
             // Zoom the map
             mapGroup.transition()
