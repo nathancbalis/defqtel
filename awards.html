@@ -222,9 +222,9 @@
             const filters = getFilters();
 
             filteredAwards = allAwards.filter(award => {
-                // Text search
+                // Text search (company, title, and city)
                 if (filters.search) {
-                    const searchText = `${award.company} ${award.title}`.toLowerCase();
+                    const searchText = `${award.company} ${award.title} ${award.city || ''}`.toLowerCase();
                     if (!searchText.includes(filters.search)) return false;
                 }
 
@@ -383,6 +383,10 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 if (urlParams.has('company')) {
                     document.getElementById('searchInput').value = urlParams.get('company');
+                }
+                if (urlParams.has('city')) {
+                    // Filter by city name in search field
+                    document.getElementById('searchInput').value = urlParams.get('city');
                 }
                 if (urlParams.has('state')) {
                     document.getElementById('stateFilter').value = urlParams.get('state');

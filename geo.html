@@ -784,8 +784,8 @@
                     .on('mouseleave', hideTooltip)
                     .on('click', function(event) {
                         event.stopPropagation();
-                        // Could navigate to awards filtered by city
-                        window.location.href = `awards.html?search=${encodeURIComponent(city.city)}`;
+                        // Navigate to awards filtered by city and state
+                        window.location.href = `awards.html?city=${encodeURIComponent(city.city)}&state=${abbrev}`;
                     });
             });
         }
