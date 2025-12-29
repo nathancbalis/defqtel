@@ -784,8 +784,9 @@
                     .on('mouseleave', hideTooltip)
                     .on('click', function(event) {
                         event.stopPropagation();
-                        // Navigate to awards filtered by city and state
-                        window.location.href = `awards.html?city=${encodeURIComponent(city.city)}&state=${abbrev}`;
+                        // Navigate to awards filtered by city and state (use full state name for filter)
+                        const stateName = geoData.states[abbrev]?.name || abbrev;
+                        window.location.href = `awards.html?city=${encodeURIComponent(city.city)}&state=${encodeURIComponent(stateName)}`;
                     });
             });
         }
