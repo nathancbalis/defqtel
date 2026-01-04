@@ -10,6 +10,46 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        /* Refined content panels */
+        .content-panel {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(17, 24, 39, 0.3) 100%);
+            border: 1px solid rgba(75, 85, 99, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .content-panel-solid {
+            background: rgba(17, 24, 39, 0.4);
+            border-left: 2px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Subtle stat cards */
+        .stat-item {
+            position: relative;
+        }
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(75, 85, 99, 0.3), transparent);
+        }
+        .stat-item:last-child::after {
+            display: none;
+        }
+
+        /* Clean table styling */
+        .clean-table tr {
+            border-bottom: 1px solid rgba(75, 85, 99, 0.15);
+        }
+        .clean-table tr:last-child {
+            border-bottom: none;
+        }
+        .clean-table tr:hover {
+            background: rgba(59, 130, 246, 0.03);
+        }
     </style>
 </head>
 <body class="bg-black text-gray-100 antialiased">
@@ -65,24 +105,24 @@
 
             <!-- Data Source -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Data Source</h2>
-                <div class="bg-gray-900 border border-gray-800 p-6">
-                    <p class="text-gray-400 leading-relaxed mb-4">
-                        All data is sourced from <a href="https://www.sbir.gov" class="text-blue-400 hover:text-blue-300">SBIR.gov</a>,
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Data Source</h2>
+                <div class="content-panel-solid p-6 rounded-sm">
+                    <p class="text-gray-400 leading-relaxed text-[15px]">
+                        All data is sourced from <a href="https://www.sbir.gov" class="text-blue-400 hover:text-blue-300 underline underline-offset-2 decoration-blue-400/30">SBIR.gov</a>,
                         the official U.S. government repository for Small Business Innovation Research and Small Business Technology Transfer awards.
                     </p>
-                    <div class="grid grid-cols-3 gap-6 mt-6 pt-6 border-t border-gray-800">
-                        <div>
-                            <div class="text-2xl font-light">17,265</div>
-                            <div class="text-sm text-gray-500">Total Awards</div>
+                    <div class="grid grid-cols-3 gap-8 mt-8 pt-6">
+                        <div class="stat-item">
+                            <div class="text-2xl font-light text-white tracking-tight">17,265</div>
+                            <div class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Total Awards</div>
                         </div>
-                        <div>
-                            <div class="text-2xl font-light">2020-2024</div>
-                            <div class="text-sm text-gray-500">Date Range</div>
+                        <div class="stat-item">
+                            <div class="text-2xl font-light text-white tracking-tight">2020–2024</div>
+                            <div class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Date Range</div>
                         </div>
-                        <div>
-                            <div class="text-2xl font-light">DoD</div>
-                            <div class="text-sm text-gray-500">Agency Filter</div>
+                        <div class="stat-item">
+                            <div class="text-2xl font-light text-white tracking-tight">DoD</div>
+                            <div class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Agency Filter</div>
                         </div>
                     </div>
                 </div>
@@ -90,58 +130,58 @@
 
             <!-- Classification System -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Dual-Dimension Classification</h2>
-                <p class="text-gray-400 leading-relaxed mb-6">
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Dual-Dimension Classification</h2>
+                <p class="text-gray-400 leading-relaxed mb-8 text-[15px] max-w-3xl">
                     Each award is classified along two independent dimensions. This enables analysis by
                     technology type (what is being developed), platform domain (where it will be applied), or both dimensions together.
                 </p>
 
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-gray-900 border border-gray-800 p-6">
-                        <div class="text-xs uppercase tracking-wider text-blue-400 mb-3">Dimension 1</div>
-                        <div class="text-lg font-medium mb-2">Technology Type</div>
-                        <p class="text-sm text-gray-500 mb-4">The underlying technology or capability being developed.</p>
-                        <div class="text-sm text-gray-400">18 categories.</div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="content-panel p-6 rounded-sm">
+                        <div class="text-[11px] uppercase tracking-widest text-blue-400/80 mb-3 font-medium">Dimension 1</div>
+                        <div class="text-lg font-medium mb-2 text-white">Technology Type</div>
+                        <p class="text-sm text-gray-500 leading-relaxed">The underlying technology or capability being developed.</p>
+                        <div class="text-xs text-gray-600 mt-4 pt-4 border-t border-gray-800/50">18 categories</div>
                     </div>
-                    <div class="bg-gray-900 border border-gray-800 p-6">
-                        <div class="text-xs uppercase tracking-wider text-purple-400 mb-3">Dimension 2</div>
-                        <div class="text-lg font-medium mb-2">Platform Domain</div>
-                        <p class="text-sm text-gray-500 mb-4">The application environment or system type.</p>
-                        <div class="text-sm text-gray-400">8 categories.</div>
+                    <div class="content-panel p-6 rounded-sm">
+                        <div class="text-[11px] uppercase tracking-widest text-purple-400/80 mb-3 font-medium">Dimension 2</div>
+                        <div class="text-lg font-medium mb-2 text-white">Platform Domain</div>
+                        <p class="text-sm text-gray-500 leading-relaxed">The application environment or system type.</p>
+                        <div class="text-xs text-gray-600 mt-4 pt-4 border-t border-gray-800/50">8 categories</div>
                     </div>
                 </div>
             </section>
 
             <!-- Technology Categories -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Technology Categories (18)</h2>
-                <div class="bg-gray-900 border border-gray-800">
-                    <table class="w-full text-sm">
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Technology Categories <span class="text-gray-600 font-normal">(18)</span></h2>
+                <div class="content-panel rounded-sm overflow-hidden">
+                    <table class="w-full text-sm clean-table">
                         <thead>
-                            <tr class="border-b border-gray-800">
-                                <th class="text-left p-4 text-gray-500 font-medium">Category</th>
-                                <th class="text-left p-4 text-gray-500 font-medium">Description</th>
+                            <tr class="bg-gray-900/50">
+                                <th class="text-left px-5 py-3 text-[11px] text-gray-500 font-medium uppercase tracking-wider">Category</th>
+                                <th class="text-left px-5 py-3 text-[11px] text-gray-500 font-medium uppercase tracking-wider">Description</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-400">
-                            <tr class="border-b border-gray-800"><td class="p-4">Sensors & Imaging</td><td class="p-4">Radar, lidar, cameras, infrared, multispectral, acoustic sensors</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Computing & Software</td><td class="p-4">Processors, embedded systems, algorithms, mission software</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Propulsion & Engines</td><td class="p-4">Jet engines, rockets, electric propulsion, turbines</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Artificial Intelligence</td><td class="p-4">Machine learning, neural networks, computer vision, autonomy</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Materials & Structures</td><td class="p-4">Composites, armor, coatings, structural materials</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Power & Energy Storage</td><td class="p-4">Batteries, fuel cells, power generation, energy harvesting</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Communications</td><td class="p-4">Radio, networks, data links, antennas, spectrum</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Cybersecurity</td><td class="p-4">Network defense, encryption, threat detection</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Manufacturing & Production</td><td class="p-4">Additive manufacturing, machining, quality control</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Biotechnology & Medical</td><td class="p-4">Medical devices, biosensors, human performance</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Modeling & Simulation</td><td class="p-4">Digital twins, training systems, physics simulation</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Navigation & PNT</td><td class="p-4">GPS, inertial navigation, positioning, timing</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Thermal & Environmental</td><td class="p-4">Heat management, cooling, thermal protection</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Guidance & Control</td><td class="p-4">Flight control, targeting, stabilization, seekers</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Directed Energy</td><td class="p-4">Lasers, high-power microwave, particle beams</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Electronic Warfare</td><td class="p-4">Jamming, SIGINT, electronic attack/protection</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Warheads & Energetics</td><td class="p-4">Explosives, munitions, warhead design</td></tr>
-                            <tr><td class="p-4">Command & Control</td><td class="p-4">Battle management, decision support, C2 systems</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Sensors & Imaging</td><td class="px-5 py-3">Radar, lidar, cameras, infrared, multispectral, acoustic sensors</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Computing & Software</td><td class="px-5 py-3">Processors, embedded systems, algorithms, mission software</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Propulsion & Engines</td><td class="px-5 py-3">Jet engines, rockets, electric propulsion, turbines</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Artificial Intelligence</td><td class="px-5 py-3">Machine learning, neural networks, computer vision, autonomy</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Materials & Structures</td><td class="px-5 py-3">Composites, armor, coatings, structural materials</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Power & Energy Storage</td><td class="px-5 py-3">Batteries, fuel cells, power generation, energy harvesting</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Communications</td><td class="px-5 py-3">Radio, networks, data links, antennas, spectrum</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Cybersecurity</td><td class="px-5 py-3">Network defense, encryption, threat detection</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Manufacturing & Production</td><td class="px-5 py-3">Additive manufacturing, machining, quality control</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Biotechnology & Medical</td><td class="px-5 py-3">Medical devices, biosensors, human performance</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Modeling & Simulation</td><td class="px-5 py-3">Digital twins, training systems, physics simulation</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Navigation & PNT</td><td class="px-5 py-3">GPS, inertial navigation, positioning, timing</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Thermal & Environmental</td><td class="px-5 py-3">Heat management, cooling, thermal protection</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Guidance & Control</td><td class="px-5 py-3">Flight control, targeting, stabilization, seekers</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Directed Energy</td><td class="px-5 py-3">Lasers, high-power microwave, particle beams</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Electronic Warfare</td><td class="px-5 py-3">Jamming, SIGINT, electronic attack/protection</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Warheads & Energetics</td><td class="px-5 py-3">Explosives, munitions, warhead design</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Command & Control</td><td class="px-5 py-3">Battle management, decision support, C2 systems</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -149,24 +189,24 @@
 
             <!-- Platform Categories -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Platform Categories (8)</h2>
-                <div class="bg-gray-900 border border-gray-800">
-                    <table class="w-full text-sm">
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Platform Categories <span class="text-gray-600 font-normal">(8)</span></h2>
+                <div class="content-panel rounded-sm overflow-hidden">
+                    <table class="w-full text-sm clean-table">
                         <thead>
-                            <tr class="border-b border-gray-800">
-                                <th class="text-left p-4 text-gray-500 font-medium">Category</th>
-                                <th class="text-left p-4 text-gray-500 font-medium">Description</th>
+                            <tr class="bg-gray-900/50">
+                                <th class="text-left px-5 py-3 text-[11px] text-gray-500 font-medium uppercase tracking-wider">Category</th>
+                                <th class="text-left px-5 py-3 text-[11px] text-gray-500 font-medium uppercase tracking-wider">Description</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-400">
-                            <tr class="border-b border-gray-800"><td class="p-4">Aerospace</td><td class="p-4">Fixed-wing aircraft, rotorcraft, UAVs, eVTOL</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Space</td><td class="p-4">Satellites, launch vehicles, orbital systems</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Ground Vehicles</td><td class="p-4">Tanks, trucks, unmanned ground vehicles</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Naval Surface</td><td class="p-4">Ships, boats, surface vessels</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Undersea</td><td class="p-4">Submarines, UUVs, torpedoes</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Missiles & Munitions</td><td class="p-4">Guided missiles, bombs, projectiles</td></tr>
-                            <tr class="border-b border-gray-800"><td class="p-4">Soldier/Dismounted</td><td class="p-4">Individual equipment, wearables, infantry systems</td></tr>
-                            <tr><td class="p-4">Enterprise/Infrastructure</td><td class="p-4">Networks, data centers, logistics, facilities</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Aerospace</td><td class="px-5 py-3">Fixed-wing aircraft, rotorcraft, UAVs, eVTOL</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Space</td><td class="px-5 py-3">Satellites, launch vehicles, orbital systems</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Ground Vehicles</td><td class="px-5 py-3">Tanks, trucks, unmanned ground vehicles</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Naval Surface</td><td class="px-5 py-3">Ships, boats, surface vessels</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Undersea</td><td class="px-5 py-3">Submarines, UUVs, torpedoes</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Missiles & Munitions</td><td class="px-5 py-3">Guided missiles, bombs, projectiles</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Soldier/Dismounted</td><td class="px-5 py-3">Individual equipment, wearables, infantry systems</td></tr>
+                            <tr><td class="px-5 py-3 text-gray-300">Enterprise/Infrastructure</td><td class="px-5 py-3">Networks, data centers, logistics, facilities</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -174,72 +214,86 @@
 
             <!-- Classification Method -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Classification Method</h2>
-                <div class="bg-gray-900 border border-gray-800 p-6">
-                    <p class="text-gray-400 leading-relaxed mb-4">
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Classification Method</h2>
+                <div class="content-panel-solid p-6 rounded-sm">
+                    <p class="text-gray-400 leading-relaxed text-[15px] mb-5">
                         Awards are classified using Anthropic's Claude AI.
                         Each award title is analyzed and assigned to one or more categories in each dimension based on semantic understanding of the content.
                     </p>
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-xs text-gray-500">Powered by</span>
-                        <img src="claude-logo.png" alt="Claude" class="h-5 bg-white rounded px-2 py-1">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">Powered by</span>
+                        <img src="claude-logo.png" alt="Claude" class="h-5 bg-white/90 rounded px-2 py-1">
                     </div>
-                    <div class="grid grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-800">
+                    <div class="grid grid-cols-2 gap-8 mt-8 pt-6 border-t border-gray-800/30">
                         <div>
-                            <div class="text-sm font-medium text-gray-300 mb-2">Model</div>
-                            <div class="text-sm text-gray-500">Claude 3 Haiku</div>
+                            <div class="text-xs font-medium text-gray-500 mb-1 uppercase tracking-wider">Model</div>
+                            <div class="text-sm text-gray-300">Claude 3 Haiku</div>
                         </div>
                         <div>
-                            <div class="text-sm font-medium text-gray-300 mb-2">Success Rate</div>
-                            <div class="text-sm text-gray-500">99.8% (17,233 of 17,265)</div>
+                            <div class="text-xs font-medium text-gray-500 mb-1 uppercase tracking-wider">Success Rate</div>
+                            <div class="text-sm text-gray-300">99.8% <span class="text-gray-500">(17,233 of 17,265)</span></div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-4 text-sm text-gray-500">
-                    <p class="mb-2"><strong class="text-gray-400">Why AI classification?</strong></p>
-                    <ul class="space-y-1 ml-4">
-                        <li>Semantic understanding captures context beyond keyword matching.</li>
-                        <li>Consistent classification criteria across all 17,265 awards.</li>
-                        <li>Ability to assign multiple categories when appropriate.</li>
-                        <li>Handles domain-specific terminology and acronyms.</li>
+                <div class="mt-8 text-[15px] text-gray-500">
+                    <p class="mb-4 text-gray-400 font-medium">Why AI classification?</p>
+                    <ul class="space-y-2 text-gray-500">
+                        <li class="flex gap-3"><span class="text-gray-600">→</span> Semantic understanding captures context beyond keyword matching</li>
+                        <li class="flex gap-3"><span class="text-gray-600">→</span> Consistent classification criteria across all 17,265 awards</li>
+                        <li class="flex gap-3"><span class="text-gray-600">→</span> Ability to assign multiple categories when appropriate</li>
+                        <li class="flex gap-3"><span class="text-gray-600">→</span> Handles domain-specific terminology and acronyms</li>
                     </ul>
                 </div>
             </section>
 
             <!-- Limitations -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Limitations</h2>
-                <div class="space-y-3 text-sm text-gray-400">
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">1.</span>
-                        <span><strong class="text-gray-300">Title-based classification.</strong> Analysis is based on award titles only. Full abstracts are not consistently available in the source data.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">2.</span>
-                        <span><strong class="text-gray-300">AI classification accuracy.</strong> While the model achieves high consistency, some edge cases may be misclassified. Classification is frequently checked.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">3.</span>
-                        <span><strong class="text-gray-300">Category boundaries.</strong> Some technologies span multiple categories. The classification reflects the primary focus of each award.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">4.</span>
-                        <span><strong class="text-gray-300">SBIR scope.</strong> SBIR awards represent early-stage R&D investments and do not capture total DoD technology spending.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">5.</span>
-                        <span><strong class="text-gray-300">Classified programs.</strong> Awards for classified programs may have generic or obscured titles, affecting classification accuracy.</span>
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Limitations</h2>
+                <div class="content-panel-solid p-6 rounded-sm">
+                    <div class="space-y-4 text-[15px] text-gray-400">
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">1.</span>
+                            <span><span class="text-gray-300">Title-based classification.</span> Analysis is based on award titles only. Full abstracts are not consistently available in the source data.</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">2.</span>
+                            <span><span class="text-gray-300">AI classification accuracy.</span> While the model achieves high consistency, some edge cases may be misclassified. Classification is frequently checked.</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">3.</span>
+                            <span><span class="text-gray-300">Category boundaries.</span> Some technologies span multiple categories. The classification reflects the primary focus of each award.</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">4.</span>
+                            <span><span class="text-gray-300">SBIR scope.</span> SBIR awards represent early-stage R&D investments and do not capture total DoD technology spending.</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">5.</span>
+                            <span><span class="text-gray-300">Classified programs.</span> Awards for classified programs may have generic or obscured titles, affecting classification accuracy.</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Updates -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Data Updates</h2>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Data is manually refreshed from SBIR.gov on a periodic basis. The current dataset includes awards through December 2024.
-                    Classification is re-run when new data is added to ensure consistency across the full dataset.
-                </p>
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Data Updates</h2>
+                <div class="content-panel-solid p-6 rounded-sm">
+                    <p class="text-gray-400 leading-relaxed text-[15px]">
+                        Data is manually refreshed from SBIR.gov on a periodic basis. The current dataset includes awards through December 2024.
+                        Classification is re-run when new data is added to ensure consistency across the full dataset.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 mt-6 pt-5 border-t border-gray-800/30">
+                        <div>
+                            <div class="text-xs font-medium text-gray-500 mb-1 uppercase tracking-wider">Last Updated</div>
+                            <div class="text-sm text-gray-300">January 2025</div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-medium text-gray-500 mb-1 uppercase tracking-wider">Coverage</div>
+                            <div class="text-sm text-gray-300">2020–2024</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
         </div>
