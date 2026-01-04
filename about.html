@@ -10,6 +10,32 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        /* Refined content panels */
+        .content-panel {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(17, 24, 39, 0.3) 100%);
+            border: 1px solid rgba(75, 85, 99, 0.2);
+            backdrop-filter: blur(4px);
+        }
+        .content-panel-solid {
+            background: rgba(17, 24, 39, 0.4);
+            border-left: 2px solid rgba(59, 130, 246, 0.3);
+        }
+        .stat-item {
+            position: relative;
+        }
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(75, 85, 99, 0.3), transparent);
+        }
+        .stat-item:last-child::after {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-black text-gray-100 antialiased">
@@ -65,20 +91,22 @@
 
             <!-- Purpose -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Purpose</h2>
-                <p class="text-gray-400 leading-relaxed">
-                    DefqTel provides AI-powered analysis of Department of Defense
-                    SBIR (Small Business Innovation Research) awards. By classifying awards across technology and
-                    platform dimensions, it enables stakeholders to identify investment trends, growth areas, and
-                    emerging priorities in defense R&D.
-                </p>
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Purpose</h2>
+                <div class="content-panel-solid p-6 rounded-sm">
+                    <p class="text-gray-400 leading-relaxed text-[15px]">
+                        DefqTel provides AI-powered analysis of Department of Defense
+                        SBIR (Small Business Innovation Research) awards. By classifying awards across technology and
+                        platform dimensions, it enables stakeholders to identify investment trends, growth areas, and
+                        emerging priorities in defense R&D.
+                    </p>
+                </div>
             </section>
 
             <!-- What SBIR Data Reveals -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">What SBIR Data Reveals</h2>
-                <div class="bg-gray-900 border border-gray-800 p-6">
-                    <p class="text-gray-400 leading-relaxed mb-6">
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">What SBIR Data Reveals</h2>
+                <div class="content-panel p-6 rounded-sm">
+                    <p class="text-gray-400 leading-relaxed text-[15px] mb-6">
                         SBIR awards represent early-stage R&D investments where the DoD is actively seeking
                         innovative solutions. Award patterns indicate:
                     </p>
@@ -105,51 +133,53 @@
 
             <!-- Target Audience -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Target Audience</h2>
-                <div class="space-y-4">
-                    <div class="flex gap-4">
-                        <div class="w-32 text-sm font-medium text-gray-300">Contractors</div>
-                        <div class="text-sm text-gray-500 flex-1">Identify growth areas for R&D investment, understand competitive landscape, and align capabilities with DoD priorities.</div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="w-32 text-sm font-medium text-gray-300">Investors</div>
-                        <div class="text-sm text-gray-500 flex-1">Validate market demand for defense technology startups and identify emerging investment themes.</div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="w-32 text-sm font-medium text-gray-300">Researchers</div>
-                        <div class="text-sm text-gray-500 flex-1">Track DoD priorities and identify funding opportunities aligned with research capabilities.</div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="w-32 text-sm font-medium text-gray-300">Analysts</div>
-                        <div class="text-sm text-gray-500 flex-1">Access structured data for defense market analysis and technology trend reporting.</div>
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Target Audience</h2>
+                <div class="content-panel-solid p-6 rounded-sm">
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="w-32 text-sm font-medium text-gray-300">Contractors</div>
+                            <div class="text-[15px] text-gray-400 flex-1">Identify growth areas for R&D investment, understand competitive landscape, and align capabilities with DoD priorities.</div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-32 text-sm font-medium text-gray-300">Investors</div>
+                            <div class="text-[15px] text-gray-400 flex-1">Validate market demand for defense technology startups and identify emerging investment themes.</div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-32 text-sm font-medium text-gray-300">Researchers</div>
+                            <div class="text-[15px] text-gray-400 flex-1">Track DoD priorities and identify funding opportunities aligned with research capabilities.</div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-32 text-sm font-medium text-gray-300">Analysts</div>
+                            <div class="text-[15px] text-gray-400 flex-1">Access structured data for defense market analysis and technology trend reporting.</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Data Scope -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Data Scope</h2>
-                <div class="bg-gray-900 border border-gray-800">
-                    <div class="grid grid-cols-4 divide-x divide-gray-800">
-                        <div class="p-6 text-center">
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Data Scope</h2>
+                <div class="content-panel rounded-sm overflow-hidden">
+                    <div class="grid grid-cols-4">
+                        <div class="p-6 text-center stat-item">
                             <div class="text-2xl font-light mb-1">17,265</div>
                             <div class="text-xs text-gray-500 uppercase tracking-wider">Awards</div>
                         </div>
-                        <div class="p-6 text-center">
+                        <div class="p-6 text-center stat-item">
                             <div class="text-2xl font-light mb-1">$10.8B</div>
                             <div class="text-xs text-gray-500 uppercase tracking-wider">Total Value</div>
                         </div>
-                        <div class="p-6 text-center">
+                        <div class="p-6 text-center stat-item">
                             <div class="text-2xl font-light mb-1">5 Years</div>
                             <div class="text-xs text-gray-500 uppercase tracking-wider">Coverage</div>
                         </div>
-                        <div class="p-6 text-center">
+                        <div class="p-6 text-center stat-item">
                             <div class="text-2xl font-light mb-1">DoD</div>
                             <div class="text-xs text-gray-500 uppercase tracking-wider">Agency</div>
                         </div>
                     </div>
                 </div>
-                <p class="text-sm text-gray-500 mt-4">
+                <p class="text-[15px] text-gray-500 mt-4">
                     Current dataset covers DoD SBIR awards from 2020 through 2024. Data is sourced from SBIR.gov,
                     the official U.S. government repository.
                 </p>
@@ -157,46 +187,50 @@
 
             <!-- What This Is Not -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Scope Limitations</h2>
-                <div class="space-y-3 text-sm text-gray-400">
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">-</span>
-                        <span>This tracker covers SBIR awards only, not total DoD R&D spending or procurement contracts.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">-</span>
-                        <span>Classification is automated and may not reflect official DoD categorization schemes.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">-</span>
-                        <span>Awards for classified programs may have generic titles that affect classification accuracy.</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <span class="text-gray-600">-</span>
-                        <span>This is an independent analysis tool, not affiliated with the Department of Defense.</span>
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Scope Limitations</h2>
+                <div class="content-panel-solid p-6 rounded-sm">
+                    <div class="space-y-4 text-[15px] text-gray-400">
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">-</span>
+                            <span>This tracker covers SBIR awards only, not total DoD R&D spending or procurement contracts.</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">-</span>
+                            <span>Classification is automated and may not reflect official DoD categorization schemes.</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">-</span>
+                            <span>Awards for classified programs may have generic titles that affect classification accuracy.</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-gray-600 font-medium">-</span>
+                            <span>This is an independent analysis tool, not affiliated with the Department of Defense.</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Technical Implementation -->
             <section data-aos="fade-up">
-                <h2 class="text-xl font-medium mb-4 text-gray-200">Technical Implementation</h2>
-                <div class="grid grid-cols-2 gap-6 text-sm">
-                    <div>
-                        <div class="text-gray-500 mb-1">Data Source</div>
-                        <div class="text-gray-300">SBIR.gov API</div>
-                    </div>
-                    <div>
-                        <div class="text-gray-500 mb-1">Classification</div>
-                        <div class="text-gray-300">Claude AI (Anthropic)</div>
-                    </div>
-                    <div>
-                        <div class="text-gray-500 mb-1">Taxonomy</div>
-                        <div class="text-gray-300">18 Technology + 8 Platform categories</div>
-                    </div>
-                    <div>
-                        <div class="text-gray-500 mb-1">Update Frequency</div>
-                        <div class="text-gray-300">Periodic manual refresh</div>
+                <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Technical Implementation</h2>
+                <div class="content-panel p-6 rounded-sm">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Data Source</div>
+                            <div class="text-sm text-gray-300">SBIR.gov API</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Classification</div>
+                            <div class="text-sm text-gray-300">Claude AI (Anthropic)</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Taxonomy</div>
+                            <div class="text-sm text-gray-300">18 Technology + 8 Platform categories</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-wider mb-1">Update Frequency</div>
+                            <div class="text-sm text-gray-300">Periodic manual refresh</div>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -12,7 +12,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
         .pricing-card { transition: all 0.2s; }
-        .pricing-card:hover { border-color: #374151; }
+        .pricing-card:hover { border-color: rgba(75, 85, 99, 0.4); }
+
+        /* Refined content panels */
+        .content-panel {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(17, 24, 39, 0.3) 100%);
+            border: 1px solid rgba(75, 85, 99, 0.2);
+            backdrop-filter: blur(4px);
+        }
+        .content-panel-solid {
+            background: rgba(17, 24, 39, 0.4);
+            border-left: 2px solid rgba(59, 130, 246, 0.3);
+        }
         /* Hide Gumroad's injected logo */
         .gumroad-button-logo { display: none !important; }
         .gumroad-button .logo { display: none !important; }
@@ -77,8 +88,8 @@
     <div class="max-w-7xl mx-auto px-8 py-8">
 
         <!-- What's Included -->
-        <div class="bg-gray-900 border border-gray-800 p-8 mb-16" data-aos="fade-up">
-            <h2 class="text-lg font-medium mb-6">What's Included</h2>
+        <div class="content-panel p-8 rounded-sm mb-16" data-aos="fade-up">
+            <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">What's Included</h2>
             <div class="grid grid-cols-2 gap-8">
                 <div>
                     <div class="text-sm font-medium text-gray-300 mb-3">Data Fields</div>
@@ -102,7 +113,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="mt-6 pt-6 border-t border-gray-800">
+            <div class="mt-6 pt-6 border-t border-gray-800/30">
                 <div class="text-sm text-gray-500">
                     <span class="text-gray-400 font-medium">Formats:</span> CSV and JSON included with each purchase.
                 </div>
@@ -111,10 +122,10 @@
 
         <!-- Pricing Cards -->
         <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-lg font-medium mb-6">Individual Years</h2>
+            <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Individual Years</h2>
             <div class="grid grid-cols-5 gap-4">
 
-                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                <div class="pricing-card content-panel p-6 rounded-sm">
                     <div class="text-2xl font-light mb-1">2020</div>
                     <div class="text-sm text-gray-500 mb-4">3,853 awards</div>
                     <div class="text-xl font-medium mb-1">$29</div>
@@ -124,7 +135,7 @@
                     </a>
                 </div>
 
-                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                <div class="pricing-card content-panel p-6 rounded-sm">
                     <div class="text-2xl font-light mb-1">2021</div>
                     <div class="text-sm text-gray-500 mb-4">3,482 awards</div>
                     <div class="text-xl font-medium mb-1">$29</div>
@@ -134,7 +145,7 @@
                     </a>
                 </div>
 
-                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                <div class="pricing-card content-panel p-6 rounded-sm">
                     <div class="text-2xl font-light mb-1">2022</div>
                     <div class="text-sm text-gray-500 mb-4">3,344 awards</div>
                     <div class="text-xl font-medium mb-1">$29</div>
@@ -144,7 +155,7 @@
                     </a>
                 </div>
 
-                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                <div class="pricing-card content-panel p-6 rounded-sm">
                     <div class="text-2xl font-light mb-1">2023</div>
                     <div class="text-sm text-gray-500 mb-4">3,164 awards</div>
                     <div class="text-xl font-medium mb-1">$29</div>
@@ -154,7 +165,7 @@
                     </a>
                 </div>
 
-                <div class="pricing-card bg-gray-900 border border-gray-800 p-6">
+                <div class="pricing-card content-panel p-6 rounded-sm">
                     <div class="text-2xl font-light mb-1">2024</div>
                     <div class="text-sm text-gray-500 mb-4">3,422 awards</div>
                     <div class="text-xl font-medium mb-1">$29</div>
@@ -169,8 +180,8 @@
 
         <!-- Full Bundle -->
         <div class="mb-16" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="text-lg font-medium mb-6">Complete Dataset</h2>
-            <div class="pricing-card bg-gray-900 border border-gray-800 p-8">
+            <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Complete Dataset</h2>
+            <div class="pricing-card content-panel p-8 rounded-sm">
                 <div class="flex justify-between items-start">
                     <div>
                         <div class="text-2xl font-light mb-2">2020-2024 Complete</div>
@@ -193,8 +204,8 @@
 
         <!-- Sample Data -->
         <div class="mb-16" data-aos="fade-up" data-aos-delay="300">
-            <h2 class="text-lg font-medium mb-6">Sample Data</h2>
-            <div class="bg-gray-900 border border-gray-800 overflow-hidden">
+            <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Sample Data</h2>
+            <div class="content-panel rounded-sm overflow-hidden">
                 <div class="overflow-x-auto">
                     <table class="w-full text-xs whitespace-nowrap">
                         <thead>
@@ -255,17 +266,17 @@
 
         <!-- Use Cases -->
         <div class="mb-16" data-aos="fade-up">
-            <h2 class="text-lg font-medium mb-6">Use Cases</h2>
+            <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Use Cases</h2>
             <div class="grid grid-cols-3 gap-6">
-                <div class="bg-gray-900 border border-gray-800 p-6">
+                <div class="content-panel p-6 rounded-sm">
                     <div class="text-sm font-medium text-gray-300 mb-2">Market Research</div>
                     <p class="text-sm text-gray-500">Analyze funding trends, identify growth areas, and understand DoD investment priorities.</p>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-6">
+                <div class="content-panel p-6 rounded-sm">
                     <div class="text-sm font-medium text-gray-300 mb-2">Competitive Intelligence</div>
                     <p class="text-sm text-gray-500">Track competitor activity, identify new entrants, and monitor category leaders.</p>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-6">
+                <div class="content-panel p-6 rounded-sm">
                     <div class="text-sm font-medium text-gray-300 mb-2">Business Development</div>
                     <p class="text-sm text-gray-500">Find partnership opportunities, identify potential customers, and validate market demand.</p>
                 </div>
@@ -274,19 +285,21 @@
 
         <!-- FAQ -->
         <div data-aos="fade-up">
-            <h2 class="text-lg font-medium mb-6">Questions</h2>
-            <div class="space-y-6 text-sm">
-                <div>
-                    <div class="font-medium text-gray-300 mb-2">What format is the data in?</div>
-                    <p class="text-gray-500">Each purchase includes both CSV and JSON formats. CSV is compatible with Excel, Google Sheets, and most data tools. JSON is ideal for programmatic use.</p>
-                </div>
-                <div>
-                    <div class="font-medium text-gray-300 mb-2">How accurate is the AI classification?</div>
-                    <p class="text-gray-500">Classification is performed by Claude AI (Anthropic) with an estimated accuracy of 90-95%. Each award is tagged with both technology type and platform domain.</p>
-                </div>
-                <div>
-                    <div class="font-medium text-gray-300 mb-2">Can I use this data commercially?</div>
-                    <p class="text-gray-500">Yes. The underlying SBIR award data is public. You're purchasing the categorized, structured dataset and may use it for internal analysis, research, or commercial purposes.</p>
+            <h2 class="text-lg font-medium mb-6 text-gray-300 tracking-wide">Questions</h2>
+            <div class="content-panel-solid p-6 rounded-sm">
+                <div class="space-y-6 text-[15px]">
+                    <div>
+                        <div class="font-medium text-gray-300 mb-2">What format is the data in?</div>
+                        <p class="text-gray-400">Each purchase includes both CSV and JSON formats. CSV is compatible with Excel, Google Sheets, and most data tools. JSON is ideal for programmatic use.</p>
+                    </div>
+                    <div>
+                        <div class="font-medium text-gray-300 mb-2">How accurate is the AI classification?</div>
+                        <p class="text-gray-400">Classification is performed by Claude AI (Anthropic) with an estimated accuracy of 90-95%. Each award is tagged with both technology type and platform domain.</p>
+                    </div>
+                    <div>
+                        <div class="font-medium text-gray-300 mb-2">Can I use this data commercially?</div>
+                        <p class="text-gray-400">Yes. The underlying SBIR award data is public. You're purchasing the categorized, structured dataset and may use it for internal analysis, research, or commercial purposes.</p>
+                    </div>
                 </div>
             </div>
         </div>
