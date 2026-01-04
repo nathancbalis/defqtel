@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SBIR award category rankings, funding trends, and year-over-year growth rates across defense technology areas.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://defqtel.com/data.html">
+    <meta property="og:title" content="SBIR Awards | DefqTel">
+    <meta property="og:description" content="SBIR award category rankings, funding trends, and year-over-year growth rates across defense technology areas.">
+    <meta property="og:image" content="https://defqtel.com/F22.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SBIR Awards | DefqTel">
+    <meta name="twitter:description" content="SBIR award category rankings, funding trends, and year-over-year growth rates across defense technology areas.">
+    <meta name="twitter:image" content="https://defqtel.com/F22.jpg">
+
     <link rel="icon" type="image/png" href="LogoAircraft.png">
     <title>SBIR Awards | DefqTel</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,42 +59,64 @@
 <body class="bg-black text-gray-100 antialiased">
     
     <div class="border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-8 py-6">
-            <div class="flex items-baseline justify-between">
-                <div class="flex items-baseline gap-12">
-                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
-                    <nav class="flex gap-8 text-sm">
-                        <div class="relative group">
-                            <a href="#" class="text-white">
-                                Data ▾
-                            </a>
-                            <div class="fixed left-0 right-0 top-[73px] bg-black border-t border-b border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                <div class="max-w-7xl mx-auto px-8">
-                                    <div class="grid grid-cols-3 divide-x divide-gray-800">
-                                        <a href="data.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
-                                            <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
-                                            <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
-                                        </a>
-                                        <a href="geo.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
-                                            <div class="text-xl text-white font-light mb-3">Geographic</div>
-                                            <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
-                                        </a>
-                                        <a href="awards.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
-                                            <div class="text-xl text-white font-light mb-3">Awards Browser</div>
-                                            <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
-                                        </a>
-                                    </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 sm:py-6">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <nav class="hidden md:flex items-center gap-8 text-sm">
+                    <div class="relative group">
+                        <a href="#" class="text-white">Data ▾</a>
+                        <div class="fixed left-0 right-0 top-[65px] bg-black border-t border-b border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="max-w-7xl mx-auto px-8">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
-                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
-                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
-                    </nav>
+                    </div>
+                    <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                    <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                </nav>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-800">
+                <div class="flex flex-col gap-4">
+                    <div class="text-xs uppercase tracking-wider text-gray-500 mb-1">Data</div>
+                    <a href="data.html" class="text-white pl-3">SBIR Awards</a>
+                    <a href="geo.html" class="text-gray-300 hover:text-white pl-3">Geographic</a>
+                    <a href="awards.html" class="text-gray-300 hover:text-white pl-3">Awards Browser</a>
+                    <div class="border-t border-gray-800 my-2"></div>
+                    <a href="export.html" class="text-gray-300 hover:text-white">Export</a>
+                    <a href="methodology.html" class="text-gray-300 hover:text-white">Methodology</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white">About</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
 
     <div id="loading" class="max-w-7xl mx-auto px-8 py-4">
         <!-- Skeleton Header -->
