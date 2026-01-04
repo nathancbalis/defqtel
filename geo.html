@@ -13,6 +13,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
 
+        /* Content panels */
+        .content-panel {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(17, 24, 39, 0.3) 100%);
+            border: 1px solid rgba(75, 85, 99, 0.2);
+            backdrop-filter: blur(4px);
+        }
+        .content-panel-solid {
+            background: rgba(17, 24, 39, 0.4);
+            border: 1px solid rgba(75, 85, 99, 0.15);
+        }
+
         .state {
             stroke: #1f2937;
             stroke-width: 1;
@@ -199,22 +210,22 @@
             </div>
 
             <div class="grid grid-cols-4 gap-6 mb-8">
-                <div class="bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="content-panel-solid p-6 rounded-sm" data-aos="zoom-in" data-aos-delay="100">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Awards</div>
                     <div class="text-3xl font-light" id="totalAwards">-</div>
                     <div class="text-xs text-gray-600 mt-1">Across all states</div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="200">
+                <div class="content-panel-solid p-6 rounded-sm" data-aos="zoom-in" data-aos-delay="200">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Funding</div>
                     <div class="text-3xl font-light" id="totalFunding">-</div>
                     <div class="text-xs text-gray-600 mt-1">2020-2024</div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="300">
+                <div class="content-panel-solid p-6 rounded-sm" data-aos="zoom-in" data-aos-delay="300">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">States Active</div>
                     <div class="text-3xl font-light" id="statesActive">-</div>
                     <div class="text-xs text-gray-600 mt-1">With SBIR awards</div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-6" data-aos="zoom-in" data-aos-delay="400">
+                <div class="content-panel-solid p-6 rounded-sm" data-aos="zoom-in" data-aos-delay="400">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Top State</div>
                     <div class="text-3xl font-light" id="topState">-</div>
                     <div class="text-xs text-gray-600 mt-1" id="topStateDetail">-</div>
@@ -222,9 +233,9 @@
             </div>
 
             <div class="grid grid-cols-3 gap-6">
-                <div class="col-span-2 bg-gray-900 border border-gray-800" data-aos="fade-right" data-aos-delay="500">
-                    <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
-                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400" id="mapTitle">Award Distribution Map</h2>
+                <div class="col-span-2 content-panel rounded-sm" data-aos="fade-right" data-aos-delay="500">
+                    <div class="px-6 py-4 border-b border-gray-800/30 flex items-center justify-between">
+                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-500" id="mapTitle">Award Distribution Map</h2>
                         <div id="zoomInfo" class="text-xs text-blue-400" style="display: none;">
                             Viewing state • Click cities for details
                         </div>
@@ -258,9 +269,9 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-900 border border-gray-800 flex flex-col" data-aos="fade-left" data-aos-delay="600">
-                    <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
-                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">All States</h2>
+                <div class="content-panel rounded-sm flex flex-col" data-aos="fade-left" data-aos-delay="600">
+                    <div class="px-6 py-4 border-b border-gray-800/30 flex items-center justify-between">
+                        <h2 class="text-sm font-medium uppercase tracking-wider text-gray-500">All States</h2>
                         <div class="flex items-center gap-3">
                             <div class="flex text-xs">
                                 <button id="sortStatesAwards" class="px-2 py-1 bg-blue-600 text-white rounded-l">Awards</button>
@@ -270,13 +281,13 @@
                             <span class="text-xs text-gray-600" id="stateCount">0 states</span>
                         </div>
                     </div>
-                    <div class="divide-y divide-gray-800 overflow-y-auto" id="stateRankings" style="max-height: 480px;"></div>
+                    <div class="divide-y divide-gray-800/30 overflow-y-auto" id="stateRankings" style="max-height: 480px;"></div>
                 </div>
             </div>
 
-            <div id="stateDetail" class="mt-6 bg-gray-900 border border-gray-800" style="display: none;">
-                <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
-                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">
+            <div id="stateDetail" class="mt-6 content-panel rounded-sm" style="display: none;">
+                <div class="px-6 py-4 border-b border-gray-800/30 flex items-center justify-between">
+                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-500">
                         <span id="detailStateName">State</span> Details
                     </h2>
                     <button onclick="closeDetail()" class="text-gray-500 hover:text-white text-sm">Close</button>
@@ -331,10 +342,10 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-800 mt-12">
+        <div class="border-t border-gray-800/50 mt-12">
             <div class="max-w-7xl mx-auto px-8 py-6">
                 <div class="flex justify-between text-xs text-gray-600">
-                    <div>Data: SBIR.gov (2020-2024)</div>
+                    <div>Data: SBIR.gov · 2020-2024</div>
                     <div>Click a state for details</div>
                 </div>
             </div>

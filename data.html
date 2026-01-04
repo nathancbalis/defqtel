@@ -11,16 +11,26 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
-        .stat-card { transition: all 0.2s; }
-        .stat-card:hover { transform: translateY(-2px); }
-        .category-row { 
-            transition: all 0.15s; 
-            border-left: 3px solid transparent; 
+
+        /* Content panels */
+        .content-panel {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(17, 24, 39, 0.3) 100%);
+            border: 1px solid rgba(75, 85, 99, 0.2);
+            backdrop-filter: blur(4px);
+        }
+        .content-panel-solid {
+            background: rgba(17, 24, 39, 0.4);
+            border: 1px solid rgba(75, 85, 99, 0.15);
+        }
+
+        .category-row {
+            transition: all 0.15s;
+            border-left: 3px solid transparent;
             cursor: pointer;
         }
-        .category-row:hover { 
-            border-left-color: #3b82f6; 
-            background: rgba(59, 130, 246, 0.05); 
+        .category-row:hover {
+            border-left-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.05);
         }
 
         .legend-item.inactive {
@@ -159,23 +169,23 @@
             <div class="grid grid-cols-12 gap-5">
                 <!-- Left Column: Rankings -->
                 <div class="col-span-4" data-aos="fade-right" data-aos-delay="100">
-                    <div class="bg-gray-900/50 border border-gray-800 h-full flex flex-col rounded-lg overflow-hidden">
-                        <div class="px-4 py-3 border-b border-gray-800 bg-gray-900">
-                            <h2 class="text-xs font-medium uppercase tracking-wider text-gray-400" id="dimensionTitle">Technology Areas</h2>
+                    <div class="content-panel h-full flex flex-col rounded-sm overflow-hidden">
+                        <div class="px-4 py-3 border-b border-gray-800/50 bg-gray-900/50">
+                            <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500" id="dimensionTitle">Technology Areas</h2>
                         </div>
-                        <div class="divide-y divide-gray-800/50 overflow-y-auto flex-1" id="rankings" style="max-height: 480px;"></div>
+                        <div class="divide-y divide-gray-800/30 overflow-y-auto flex-1" id="rankings" style="max-height: 480px;"></div>
                     </div>
                 </div>
 
                 <!-- Right Column: Chart -->
                 <div class="col-span-8" data-aos="fade-left" data-aos-delay="200">
-                    <div class="bg-gradient-to-br from-gray-900 to-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
-                        <div class="px-5 py-3 border-b border-gray-800 flex items-center justify-between bg-gray-900/80">
+                    <div class="content-panel rounded-sm overflow-hidden">
+                        <div class="px-5 py-3 border-b border-gray-800/50 flex items-center justify-between bg-gray-900/30">
                             <div>
-                                <h2 class="text-sm font-medium text-gray-200">Award Trends</h2>
+                                <h2 class="text-sm font-medium text-gray-300">Award Trends</h2>
                                 <p class="text-xs text-gray-500">5-year comparison by category</p>
                             </div>
-                            <button onclick="toggleChartFullscreen()" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 bg-gray-800 px-3 py-1.5 rounded-md hover:bg-gray-700">
+                            <button onclick="toggleChartFullscreen()" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 bg-gray-800/50 px-3 py-1.5 rounded hover:bg-gray-700/50">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
                                 </svg>
@@ -191,10 +201,10 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-800 mt-4">
-            <div class="max-w-7xl mx-auto px-8 py-4">
+        <div class="border-t border-gray-800/50 mt-4">
+            <div class="max-w-7xl mx-auto px-8 py-6">
                 <div class="flex justify-between text-xs text-gray-600">
-                    <div>Data: SBIR.gov</div>
+                    <div>Data: SBIR.gov · 2020-2024</div>
                     <div>AI Classification: Claude (Anthropic)</div>
                 </div>
             </div>
@@ -231,34 +241,34 @@
             </div>
 
             <div class="grid grid-cols-3 gap-6 mb-8">
-                <div class="bg-gray-900 border border-gray-800 p-6">
+                <div class="content-panel-solid p-6 rounded-sm">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Awards</div>
                     <div class="text-3xl font-light" id="detailAwards">-</div>
                     <div class="text-xs text-gray-600 mt-1">2020-2024</div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-6">
+                <div class="content-panel-solid p-6 rounded-sm">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Recent Growth</div>
                     <div class="text-3xl font-light" id="detailGrowth">-</div>
                     <div class="text-xs text-gray-600 mt-1">2023 → 2024</div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 p-6">
+                <div class="content-panel-solid p-6 rounded-sm">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Status</div>
                     <div class="text-3xl font-light" id="detailStatus">-</div>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-6 mb-8">
-                <div class="bg-gray-900 border border-gray-800">
-                    <div class="px-6 py-4 border-b border-gray-800">
-                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-400">Award Count Trend</h3>
+                <div class="content-panel rounded-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-800/30">
+                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-500">Award Count Trend</h3>
                     </div>
                     <div class="p-6">
                         <div id="detailAwardChart"></div>
                     </div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800">
-                    <div class="px-6 py-4 border-b border-gray-800">
-                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-400">Funding Trend ($M)</h3>
+                <div class="content-panel rounded-sm overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-800/30">
+                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-500">Funding Trend ($M)</h3>
                     </div>
                     <div class="p-6">
                         <div id="detailFundingChart"></div>

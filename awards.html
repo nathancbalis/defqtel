@@ -10,6 +10,17 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; }
+
+        /* Content panels */
+        .content-panel {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(17, 24, 39, 0.3) 100%);
+            border: 1px solid rgba(75, 85, 99, 0.2);
+            backdrop-filter: blur(4px);
+        }
+        .content-panel-solid {
+            background: rgba(17, 24, 39, 0.4);
+            border: 1px solid rgba(75, 85, 99, 0.15);
+        }
     </style>
 </head>
 <body class="bg-black text-gray-100 antialiased">
@@ -109,45 +120,45 @@
                 </div>
             </div>
 
-            <div class="bg-gray-900 border border-gray-800 p-4 mb-6" data-aos="fade-right" data-aos-delay="100">
+            <div class="content-panel-solid p-4 mb-6 rounded-sm" data-aos="fade-right" data-aos-delay="100">
                 <div class="grid grid-cols-7 gap-4">
                     <div class="col-span-2">
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Search</label>
                         <input type="text" id="searchInput" placeholder="Company, title, or keyword..."
-                            class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-blue-500">
+                            class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-blue-500/50">
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">State</label>
-                        <select id="stateFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                        <select id="stateFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-3 py-2 text-sm text-gray-300">
                             <option value="">All States</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">City</label>
-                        <select id="cityFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                        <select id="cityFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-3 py-2 text-sm text-gray-300">
                             <option value="">All Cities</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Technology</label>
-                        <select id="techFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                        <select id="techFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-3 py-2 text-sm text-gray-300">
                             <option value="">All Tech</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Platform</label>
-                        <select id="platformFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                        <select id="platformFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-3 py-2 text-sm text-gray-300">
                             <option value="">All Platforms</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Year</label>
-                        <select id="yearFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                        <select id="yearFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-3 py-2 text-sm text-gray-300">
                             <option value="">All Years</option>
                         </select>
                     </div>
                 </div>
-                <div class="flex items-center justify-between mt-4">
+                <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-800/30">
                     <div class="flex gap-4">
                         <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
                             <input type="checkbox" id="phase1Filter" class="accent-blue-500">
@@ -162,9 +173,9 @@
                 </div>
             </div>
 
-            <div class="bg-gray-900 border border-gray-800" data-aos="fade-left" data-aos-delay="200">
-                <div class="px-6 py-4 border-b border-gray-800 flex items-center justify-between">
-                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-400">Awards</h2>
+            <div class="content-panel rounded-sm" data-aos="fade-left" data-aos-delay="200">
+                <div class="px-6 py-4 border-b border-gray-800/30 flex items-center justify-between">
+                    <h2 class="text-sm font-medium uppercase tracking-wider text-gray-500">Awards</h2>
                     <div class="flex items-center gap-4">
                         <select id="sortBy" class="bg-gray-800 text-gray-300 text-xs border border-gray-700 rounded px-2 py-1">
                             <option value="amount-desc">Highest Amount</option>
@@ -176,18 +187,18 @@
                         <span class="text-xs text-gray-600" id="showingCount">Showing 0</span>
                     </div>
                 </div>
-                <div id="awardsList" class="divide-y divide-gray-800 overflow-y-auto" style="max-height: 600px;"></div>
-                <div id="loadMore" class="px-6 py-4 text-center border-t border-gray-800" style="display: none;">
+                <div id="awardsList" class="divide-y divide-gray-800/30 overflow-y-auto" style="max-height: 600px;"></div>
+                <div id="loadMore" class="px-6 py-4 text-center border-t border-gray-800/30" style="display: none;">
                     <button onclick="loadMoreAwards()" class="text-sm text-blue-400 hover:text-blue-300">Load More</button>
                 </div>
             </div>
         </div>
 
-        <div class="border-t border-gray-800 mt-12">
+        <div class="border-t border-gray-800/50 mt-12">
             <div class="max-w-7xl mx-auto px-8 py-6">
                 <div class="flex justify-between text-xs text-gray-600">
-                    <div>Data: SBIR.gov (2020-2024)</div>
-                    <div>Click company name for more awards</div>
+                    <div>Data: SBIR.gov · 2020-2024</div>
+                    <div>Click company name for details</div>
                 </div>
             </div>
         </div>
