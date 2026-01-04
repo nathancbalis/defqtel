@@ -110,7 +110,7 @@
             </div>
 
             <div class="bg-gray-900 border border-gray-800 p-4 mb-6" data-aos="fade-right" data-aos-delay="100">
-                <div class="grid grid-cols-6 gap-4">
+                <div class="grid grid-cols-7 gap-4">
                     <div class="col-span-2">
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Search</label>
                         <input type="text" id="searchInput" placeholder="Company, title, or keyword..."
@@ -120,6 +120,12 @@
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">State</label>
                         <select id="stateFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
                             <option value="">All States</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">City</label>
+                        <select id="cityFilter" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300">
+                            <option value="">All Cities</option>
                         </select>
                     </div>
                     <div>
@@ -210,6 +216,7 @@
             return {
                 search: document.getElementById('searchInput').value.toLowerCase(),
                 state: document.getElementById('stateFilter').value,
+                city: document.getElementById('cityFilter').value,
                 tech: document.getElementById('techFilter').value,
                 platform: document.getElementById('platformFilter').value,
                 year: document.getElementById('yearFilter').value,
@@ -230,6 +237,9 @@
 
                 // State filter
                 if (filters.state && award.state !== filters.state) return false;
+
+                // City filter (case-insensitive comparison)
+                if (filters.city && award.city?.toUpperCase() !== filters.city.toUpperCase()) return false;
 
                 // Tech category filter
                 if (filters.tech) {
@@ -327,12 +337,40 @@
         function clearFilters() {
             document.getElementById('searchInput').value = '';
             document.getElementById('stateFilter').value = '';
+            document.getElementById('cityFilter').value = '';
+            updateCityDropdown(''); // Reset city dropdown
             document.getElementById('techFilter').value = '';
             document.getElementById('platformFilter').value = '';
             document.getElementById('yearFilter').value = '';
             document.getElementById('phase1Filter').checked = false;
             document.getElementById('phase2Filter').checked = false;
             filterAwards();
+        }
+
+        // Update city dropdown based on selected state
+        function updateCityDropdown(selectedState, selectedCity = '') {
+            const citySelect = document.getElementById('cityFilter');
+            citySelect.innerHTML = '<option value="">All Cities</option>';
+
+            if (!selectedState) return;
+
+            // Get unique cities for the selected state
+            const cities = [...new Set(allAwards
+                .filter(a => a.state === selectedState && a.city)
+                .map(a => a.city.toUpperCase())
+            )].sort();
+
+            cities.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city;
+                option.textContent = toTitleCase(city);
+                citySelect.appendChild(option);
+            });
+
+            // Set selected city if provided
+            if (selectedCity) {
+                citySelect.value = selectedCity.toUpperCase();
+            }
         }
 
         // Initialize
@@ -384,12 +422,14 @@
                 if (urlParams.has('company')) {
                     document.getElementById('searchInput').value = urlParams.get('company');
                 }
-                if (urlParams.has('city')) {
-                    // Filter by city name in search field
-                    document.getElementById('searchInput').value = urlParams.get('city');
-                }
                 if (urlParams.has('state')) {
                     document.getElementById('stateFilter').value = urlParams.get('state');
+                    // Populate city dropdown for this state
+                    updateCityDropdown(urlParams.get('state'), urlParams.get('city') || '');
+                }
+                if (urlParams.has('city') && !urlParams.has('state')) {
+                    // If only city is provided without state, use search
+                    document.getElementById('searchInput').value = urlParams.get('city');
                 }
                 if (urlParams.has('tech')) {
                     document.getElementById('techFilter').value = urlParams.get('tech');
@@ -400,7 +440,11 @@
 
                 // Event listeners
                 document.getElementById('searchInput').addEventListener('input', debounce(filterAwards, 300));
-                document.getElementById('stateFilter').addEventListener('change', filterAwards);
+                document.getElementById('stateFilter').addEventListener('change', function() {
+                    updateCityDropdown(this.value);
+                    filterAwards();
+                });
+                document.getElementById('cityFilter').addEventListener('change', filterAwards);
                 document.getElementById('techFilter').addEventListener('change', filterAwards);
                 document.getElementById('platformFilter').addEventListener('change', filterAwards);
                 document.getElementById('yearFilter').addEventListener('change', filterAwards);
