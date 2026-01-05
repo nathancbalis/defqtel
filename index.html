@@ -273,7 +273,7 @@
             <div class="max-w-xl">
                 <h2 class="text-xl font-light mb-3">Feedback</h2>
                 <p class="text-sm text-gray-500 mb-6">Found a bug? Have a suggestion? Let me know.</p>
-                <form action="https://formspree.io/f/xzdzqrkb" method="POST" class="space-y-4">
+                <form id="feedbackForm" class="space-y-4">
                     <div>
                         <input type="email" name="email" placeholder="Your email" required
                             class="w-full bg-gray-900 border border-gray-800 px-4 py-3 text-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-gray-700">
@@ -282,10 +282,36 @@
                         <textarea name="message" rows="4" placeholder="Your feedback..." required
                             class="w-full bg-gray-900 border border-gray-800 px-4 py-3 text-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-gray-700 resize-none"></textarea>
                     </div>
-                    <button type="submit" class="bg-white text-black px-6 py-2 text-sm hover:bg-gray-200 transition-colors">
+                    <button type="submit" id="feedbackBtn" class="bg-white text-black px-6 py-2 text-sm hover:bg-gray-200 transition-colors">
                         Send Feedback
                     </button>
                 </form>
+                <div id="feedbackSuccess" class="hidden py-4">
+                    <p class="text-sm text-green-400">Thanks for your feedback!</p>
+                </div>
+                <script>
+                    document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const btn = document.getElementById('feedbackBtn');
+                        btn.textContent = 'Sending...';
+                        btn.disabled = true;
+
+                        const formData = new FormData(this);
+                        try {
+                            await fetch('https://formspree.io/f/xzdzqrkb', {
+                                method: 'POST',
+                                body: formData,
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            document.getElementById('feedbackForm').classList.add('hidden');
+                            document.getElementById('feedbackSuccess').classList.remove('hidden');
+                        } catch (err) {
+                            btn.textContent = 'Send Feedback';
+                            btn.disabled = false;
+                            alert('Something went wrong. Please try again.');
+                        }
+                    });
+                </script>
             </div>
         </div>
     </div>
