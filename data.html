@@ -10,13 +10,13 @@
     <meta property="og:url" content="https://defqtel.com/data.html">
     <meta property="og:title" content="SBIR Awards | DefqTel">
     <meta property="og:description" content="SBIR award category rankings, funding trends, and year-over-year growth rates across defense technology areas.">
-    <meta property="og:image" content="https://defqtel.com/F22.jpg">
+    <meta property="og:image" content="https://defqtel.com/og-image.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SBIR Awards | DefqTel">
     <meta name="twitter:description" content="SBIR award category rankings, funding trends, and year-over-year growth rates across defense technology areas.">
-    <meta name="twitter:image" content="https://defqtel.com/F22.jpg">
+    <meta name="twitter:image" content="https://defqtel.com/og-image.png">
 
     <link rel="icon" type="image/png" href="LogoAircraft.png">
     <title>SBIR Awards | DefqTel</title>
@@ -118,22 +118,17 @@
         });
     </script>
 
-    <div id="loading" class="max-w-7xl mx-auto px-8 py-4">
+    <div id="loading" class="max-w-7xl mx-auto px-4 md:px-8 py-4">
         <!-- Skeleton Header -->
-        <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+            <div class="flex items-center gap-4 md:gap-8">
                 <div class="h-8 w-32 bg-gray-800 rounded animate-pulse"></div>
-                <div class="flex items-center gap-6">
-                    <div class="h-4 w-24 bg-gray-800 rounded animate-pulse"></div>
-                    <div class="h-4 w-24 bg-gray-800 rounded animate-pulse"></div>
-                    <div class="h-4 w-24 bg-gray-800 rounded animate-pulse"></div>
-                </div>
             </div>
             <div class="h-8 w-40 bg-gray-800 rounded-lg animate-pulse"></div>
         </div>
         <!-- Skeleton Content -->
-        <div class="grid grid-cols-12 gap-5">
-            <div class="col-span-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+            <div class="lg:col-span-4">
                 <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
                     <div class="px-4 py-3 border-b border-gray-800 bg-gray-900">
                         <div class="h-3 w-28 bg-gray-800 rounded animate-pulse"></div>
@@ -143,27 +138,17 @@
                         <div class="h-12 bg-gray-800 rounded animate-pulse"></div>
                         <div class="h-12 bg-gray-800 rounded animate-pulse"></div>
                         <div class="h-12 bg-gray-800 rounded animate-pulse"></div>
-                        <div class="h-12 bg-gray-800 rounded animate-pulse"></div>
-                        <div class="h-12 bg-gray-800 rounded animate-pulse"></div>
-                        <div class="h-12 bg-gray-800 rounded animate-pulse"></div>
-                        <div class="h-12 bg-gray-800 rounded animate-pulse"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-span-8">
+            <div class="lg:col-span-8">
                 <div class="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
                     <div class="px-5 py-3 border-b border-gray-800 bg-gray-900 flex justify-between">
                         <div class="h-4 w-24 bg-gray-800 rounded animate-pulse"></div>
                         <div class="h-6 w-20 bg-gray-800 rounded animate-pulse"></div>
                     </div>
                     <div class="p-4">
-                        <div class="h-[320px] bg-gray-800/50 rounded animate-pulse"></div>
-                        <div class="flex justify-center gap-3 mt-4">
-                            <div class="h-6 w-24 bg-gray-800 rounded animate-pulse"></div>
-                            <div class="h-6 w-24 bg-gray-800 rounded animate-pulse"></div>
-                            <div class="h-6 w-24 bg-gray-800 rounded animate-pulse"></div>
-                            <div class="h-6 w-24 bg-gray-800 rounded animate-pulse"></div>
-                        </div>
+                        <div class="h-[250px] md:h-[320px] bg-gray-800/50 rounded animate-pulse"></div>
                     </div>
                 </div>
             </div>
@@ -172,11 +157,11 @@
     
     <div id="overview" style="display: none;">
         <!-- Compact Header with Inline Stats -->
-        <div class="max-w-7xl mx-auto px-8 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-8">
-                    <h1 class="text-2xl font-light">SBIR Awards</h1>
-                    <div class="flex items-center gap-6 text-sm">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8">
+                    <h1 class="text-xl md:text-2xl font-light">SBIR Awards</h1>
+                    <div class="hidden md:flex items-center gap-6 text-sm">
                         <div class="flex items-center gap-2">
                             <span class="text-gray-500">Awards:</span>
                             <span class="font-medium">17,265</span>
@@ -191,49 +176,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex bg-gray-800 rounded-lg p-1">
+                <div class="flex bg-gray-800 rounded-lg p-1 self-start md:self-auto">
                     <button id="techBtn" onclick="switchDimension('tech')"
-                        class="px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white">
+                        class="px-3 md:px-4 py-1.5 text-xs font-medium rounded-md transition-all bg-blue-600 text-white">
                         Technology
                     </button>
                     <button id="platformBtn" onclick="switchDimension('platform')"
-                        class="px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white">
+                        class="px-3 md:px-4 py-1.5 text-xs font-medium rounded-md transition-all text-gray-400 hover:text-white">
                         Platform
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-8 pb-6">
-            <div class="grid grid-cols-12 gap-5">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 pb-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
                 <!-- Left Column: Rankings -->
-                <div class="col-span-4" data-aos="fade-right" data-aos-delay="100">
+                <div class="lg:col-span-4 order-2 lg:order-1" data-aos="fade-right" data-aos-delay="100">
                     <div class="content-panel h-full flex flex-col rounded-sm overflow-hidden">
                         <div class="px-4 py-3 border-b border-gray-800/50 bg-gray-900/50">
                             <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500" id="dimensionTitle">Technology Areas</h2>
                         </div>
-                        <div class="divide-y divide-gray-800/30 overflow-y-auto flex-1" id="rankings" style="max-height: 480px;"></div>
+                        <div class="divide-y divide-gray-800/30 overflow-y-auto flex-1" id="rankings" style="max-height: 400px;"></div>
                     </div>
                 </div>
 
                 <!-- Right Column: Chart -->
-                <div class="col-span-8" data-aos="fade-left" data-aos-delay="200">
+                <div class="lg:col-span-8 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="200">
                     <div class="content-panel rounded-sm overflow-hidden">
-                        <div class="px-5 py-3 border-b border-gray-800/50 flex items-center justify-between bg-gray-900/30">
+                        <div class="px-4 md:px-5 py-3 border-b border-gray-800/50 flex items-center justify-between bg-gray-900/30">
                             <div>
                                 <h2 class="text-sm font-medium text-gray-300">Award Trends</h2>
-                                <p class="text-xs text-gray-500">5-year comparison by category</p>
+                                <p class="text-xs text-gray-500 hidden sm:block">5-year comparison by category</p>
                             </div>
-                            <button onclick="toggleChartFullscreen()" class="text-xs text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 bg-gray-800/50 px-3 py-1.5 rounded hover:bg-gray-700/50">
+                            <button onclick="toggleChartFullscreen()" class="hidden md:flex text-xs text-gray-400 hover:text-white transition-colors items-center gap-1.5 bg-gray-800/50 px-3 py-1.5 rounded hover:bg-gray-700/50">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
                                 </svg>
                                 Expand
                             </button>
                         </div>
-                        <div class="p-4">
+                        <div class="p-3 md:p-4">
                             <div id="trendsChart"></div>
-                            <div id="customLegend" class="flex flex-wrap gap-x-3 gap-y-1 mt-3 justify-center"></div>
+                            <div id="customLegend" class="flex flex-wrap gap-x-2 gap-y-1 mt-3 justify-center text-xs"></div>
                         </div>
                     </div>
                 </div>
@@ -241,8 +226,8 @@
         </div>
 
         <div class="border-t border-gray-800/50 mt-4">
-            <div class="max-w-7xl mx-auto px-8 py-6">
-                <div class="flex justify-between text-xs text-gray-600">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
+                <div class="flex flex-col sm:flex-row justify-between gap-2 text-xs text-gray-600 text-center sm:text-left">
                     <div>Data: SBIR.gov · 2020-2024</div>
                     <div>AI Classification: Claude (Anthropic)</div>
                 </div>
@@ -272,44 +257,44 @@
     </div>
 
     <div id="detail" style="display: none;">
-        <div class="max-w-7xl mx-auto px-8 py-8">
-            <button onclick="showOverview()" class="text-sm text-gray-400 hover:text-white mb-6">← Back</button>
-            
-            <div class="mb-8">
-                <h2 class="text-3xl font-light" id="detailTitle">Loading...</h2>
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
+            <button onclick="showOverview()" class="text-sm text-gray-400 hover:text-white mb-4 md:mb-6">← Back</button>
+
+            <div class="mb-6 md:mb-8">
+                <h2 class="text-2xl md:text-3xl font-light" id="detailTitle">Loading...</h2>
             </div>
 
-            <div class="grid grid-cols-3 gap-6 mb-8">
-                <div class="content-panel-solid p-6 rounded-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+                <div class="content-panel-solid p-4 md:p-6 rounded-sm">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Awards</div>
-                    <div class="text-3xl font-light" id="detailAwards">-</div>
+                    <div class="text-2xl md:text-3xl font-light" id="detailAwards">-</div>
                     <div class="text-xs text-gray-600 mt-1">2020-2024</div>
                 </div>
-                <div class="content-panel-solid p-6 rounded-sm">
+                <div class="content-panel-solid p-4 md:p-6 rounded-sm">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Recent Growth</div>
-                    <div class="text-3xl font-light" id="detailGrowth">-</div>
+                    <div class="text-2xl md:text-3xl font-light" id="detailGrowth">-</div>
                     <div class="text-xs text-gray-600 mt-1">2023 → 2024</div>
                 </div>
-                <div class="content-panel-solid p-6 rounded-sm">
+                <div class="content-panel-solid p-4 md:p-6 rounded-sm">
                     <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Status</div>
-                    <div class="text-3xl font-light" id="detailStatus">-</div>
+                    <div class="text-2xl md:text-3xl font-light" id="detailStatus">-</div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
                 <div class="content-panel rounded-sm overflow-hidden">
-                    <div class="px-6 py-4 border-b border-gray-800/30">
-                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-500">Award Count Trend</h3>
+                    <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800/30">
+                        <h3 class="text-xs md:text-sm font-medium uppercase tracking-wider text-gray-500">Award Count Trend</h3>
                     </div>
-                    <div class="p-6">
+                    <div class="p-4 md:p-6">
                         <div id="detailAwardChart"></div>
                     </div>
                 </div>
                 <div class="content-panel rounded-sm overflow-hidden">
-                    <div class="px-6 py-4 border-b border-gray-800/30">
-                        <h3 class="text-sm font-medium uppercase tracking-wider text-gray-500">Funding Trend ($M)</h3>
+                    <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800/30">
+                        <h3 class="text-xs md:text-sm font-medium uppercase tracking-wider text-gray-500">Funding Trend ($M)</h3>
                     </div>
-                    <div class="p-6">
+                    <div class="p-4 md:p-6">
                         <div id="detailFundingChart"></div>
                     </div>
                 </div>
