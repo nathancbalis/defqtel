@@ -263,11 +263,69 @@
         </div>
     </div>
 
+    <!-- Feedback Section -->
+    <div id="feedback" class="border-t border-gray-800 bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 py-12 md:px-8 md:py-16">
+            <div class="max-w-xl">
+                <h2 class="text-xl font-light mb-3">Feedback</h2>
+                <p class="text-sm text-gray-500 mb-6">Found a bug? Have a suggestion? Let me know.</p>
+                <form action="https://formspree.io/f/xyzgwqvp" method="POST" class="space-y-4">
+                    <div>
+                        <input type="email" name="email" placeholder="Your email" required
+                            class="w-full bg-gray-900 border border-gray-800 px-4 py-3 text-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-gray-700">
+                    </div>
+                    <div>
+                        <textarea name="message" rows="4" placeholder="Your feedback..." required
+                            class="w-full bg-gray-900 border border-gray-800 px-4 py-3 text-sm text-gray-300 placeholder-gray-600 focus:outline-none focus:border-gray-700 resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="bg-white text-black px-6 py-2 text-sm hover:bg-gray-200 transition-colors">
+                        Send Feedback
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <div class="border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 py-6 md:px-8 md:py-8">
-            <div class="text-xs text-gray-600 text-center md:text-left">
-                Data: SBIR.gov | AI Classification: Claude (Anthropic) | Coverage: 2020-2024
+        <div class="max-w-7xl mx-auto px-4 py-8 md:px-8 md:py-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-4">Data</div>
+                    <div class="space-y-2">
+                        <a href="data.html" class="block text-sm text-gray-400 hover:text-white">SBIR Awards</a>
+                        <a href="geo.html" class="block text-sm text-gray-400 hover:text-white">Geographic</a>
+                        <a href="awards.html" class="block text-sm text-gray-400 hover:text-white">Awards Browser</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-4">Resources</div>
+                    <div class="space-y-2">
+                        <a href="export.html" class="block text-sm text-gray-400 hover:text-white">Export</a>
+                        <a href="methodology.html" class="block text-sm text-gray-400 hover:text-white">Methodology</a>
+                        <a href="about.html" class="block text-sm text-gray-400 hover:text-white">About</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-4">Source</div>
+                    <div class="space-y-2">
+                        <a href="https://www.sbir.gov" target="_blank" class="block text-sm text-gray-400 hover:text-white">SBIR.gov</a>
+                        <span class="block text-sm text-gray-600">Data: 2020–2024</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-4">Built With</div>
+                    <div class="space-y-2">
+                        <span class="block text-sm text-gray-600">Claude (Anthropic)</span>
+                        <span class="block text-sm text-gray-600">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-gray-800/50">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <span class="text-sm text-gray-600">DefqTel</span>
+                    <span class="text-xs text-gray-700">AI-powered defense R&D intelligence</span>
+                </div>
             </div>
         </div>
     </div>
