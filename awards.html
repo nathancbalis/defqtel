@@ -152,11 +152,17 @@
             </div>
 
             <div class="content-panel-solid p-3 md:p-4 mb-6 " data-aos="fade-right" data-aos-delay="100">
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
                     <div class="col-span-2">
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Search</label>
                         <input type="text" id="searchInput" placeholder="Company, title, or keyword..."
                             class="w-full bg-gray-800/50 border border-gray-700/50 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-blue-500/50">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Branch</label>
+                        <select id="branchFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
+                            <option value="">All Branches</option>
+                        </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">State</label>
@@ -264,6 +270,7 @@
         function getFilters() {
             return {
                 search: document.getElementById('searchInput').value.toLowerCase(),
+                branch: document.getElementById('branchFilter').value,
                 state: document.getElementById('stateFilter').value,
                 city: document.getElementById('cityFilter').value,
                 tech: document.getElementById('techFilter').value,
@@ -283,6 +290,9 @@
                     const searchText = `${award.company} ${award.title} ${award.city || ''}`.toLowerCase();
                     if (!searchText.includes(filters.search)) return false;
                 }
+
+                // Branch filter
+                if (filters.branch && award.branch !== filters.branch) return false;
 
                 // State filter
                 if (filters.state && award.state !== filters.state) return false;
@@ -385,6 +395,7 @@
 
         function clearFilters() {
             document.getElementById('searchInput').value = '';
+            document.getElementById('branchFilter').value = '';
             document.getElementById('stateFilter').value = '';
             document.getElementById('cityFilter').value = '';
             updateCityDropdown(''); // Reset city dropdown
@@ -434,6 +445,16 @@
                 }, 50);
 
                 // Populate filters
+                // Extract unique branches from awards
+                const branches = [...new Set(data.awards.map(a => a.branch).filter(Boolean))].sort();
+                const branchSelect = document.getElementById('branchFilter');
+                branches.forEach(branch => {
+                    const option = document.createElement('option');
+                    option.value = branch;
+                    option.textContent = branch;
+                    branchSelect.appendChild(option);
+                });
+
                 const stateSelect = document.getElementById('stateFilter');
                 data.filters.states.forEach(state => {
                     const option = document.createElement('option');
@@ -471,6 +492,9 @@
                 if (urlParams.has('company')) {
                     document.getElementById('searchInput').value = urlParams.get('company');
                 }
+                if (urlParams.has('branch')) {
+                    document.getElementById('branchFilter').value = urlParams.get('branch');
+                }
                 if (urlParams.has('state')) {
                     document.getElementById('stateFilter').value = urlParams.get('state');
                     // Populate city dropdown for this state
@@ -489,6 +513,7 @@
 
                 // Event listeners
                 document.getElementById('searchInput').addEventListener('input', debounce(filterAwards, 300));
+                document.getElementById('branchFilter').addEventListener('change', filterAwards);
                 document.getElementById('stateFilter').addEventListener('change', function() {
                     updateCityDropdown(this.value);
                     filterAwards();
