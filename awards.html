@@ -147,40 +147,40 @@
                 </div>
             </div>
 
-            <div class="content-panel-solid p-3 md:p-4 mb-6 rounded-sm" data-aos="fade-right" data-aos-delay="100">
+            <div class="content-panel-solid p-3 md:p-4 mb-6 " data-aos="fade-right" data-aos-delay="100">
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-4">
                     <div class="col-span-2">
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Search</label>
                         <input type="text" id="searchInput" placeholder="Company, title, or keyword..."
-                            class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-blue-500/50">
+                            class="w-full bg-gray-800/50 border border-gray-700/50 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-blue-500/50">
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">State</label>
-                        <select id="stateFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-2 md:px-3 py-2 text-sm text-gray-300">
+                        <select id="stateFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
                             <option value="">All States</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">City</label>
-                        <select id="cityFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-2 md:px-3 py-2 text-sm text-gray-300">
+                        <select id="cityFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
                             <option value="">All Cities</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Technology</label>
-                        <select id="techFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-2 md:px-3 py-2 text-sm text-gray-300">
+                        <select id="techFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
                             <option value="">All Tech</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Platform</label>
-                        <select id="platformFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-2 md:px-3 py-2 text-sm text-gray-300">
+                        <select id="platformFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
                             <option value="">All Platforms</option>
                         </select>
                     </div>
                     <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Year</label>
-                        <select id="yearFilter" class="w-full bg-gray-800/50 border border-gray-700/50 rounded px-2 md:px-3 py-2 text-sm text-gray-300">
+                        <select id="yearFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
                             <option value="">All Years</option>
                         </select>
                     </div>
@@ -200,11 +200,11 @@
                 </div>
             </div>
 
-            <div class="content-panel rounded-sm" data-aos="fade-left" data-aos-delay="200">
+            <div class="content-panel " data-aos="fade-left" data-aos-delay="200">
                 <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <h2 class="text-xs md:text-sm font-medium uppercase tracking-wider text-gray-500">Awards</h2>
                     <div class="flex items-center gap-2 md:gap-4">
-                        <select id="sortBy" class="bg-gray-800 text-gray-300 text-xs border border-gray-700 rounded px-2 py-1">
+                        <select id="sortBy" class="bg-gray-800 text-gray-300 text-xs border border-gray-700 px-2 py-1">
                             <option value="amount-desc">Highest Amount</option>
                             <option value="amount-asc">Lowest Amount</option>
                             <option value="year-desc">Most Recent</option>
@@ -333,10 +333,10 @@
                 const div = document.createElement('div');
                 div.className = 'px-6 py-4 hover:bg-gray-800';
                 const techTags = (award.tech || []).slice(0, 2).map(t =>
-                    `<span class="text-xs px-1.5 py-0.5 bg-gray-800 text-gray-400 rounded">${t}</span>`
+                    `<span class="text-xs px-1.5 py-0.5 bg-gray-800 text-gray-400">${t}</span>`
                 ).join(' ');
                 const platformTags = (award.platform || []).slice(0, 2).map(p =>
-                    `<span class="text-xs px-1.5 py-0.5 bg-purple-900/50 text-purple-300 rounded">${p}</span>`
+                    `<span class="text-xs px-1.5 py-0.5 bg-purple-900/50 text-purple-300">${p}</span>`
                 ).join(' ');
 
                 div.innerHTML = `
@@ -345,7 +345,7 @@
                             <div class="flex items-center gap-2 mb-1">
                                 <a href="company.html?name=${encodeURIComponent(award.company)}"
                                    class="text-sm font-medium text-blue-400 hover:text-blue-300 truncate">${award.company}</a>
-                                <span class="text-xs px-2 py-0.5 rounded ${award.phase === 'Phase II' ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'}">${award.phase}</span>
+                                <span class="text-xs px-2 py-0.5 ${award.phase === 'Phase II' ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'}">${award.phase}</span>
                             </div>
                             <div class="text-sm text-gray-300 mb-1">${award.title}</div>
                             <div class="flex flex-wrap items-center gap-1 mb-1">
