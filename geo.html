@@ -179,26 +179,25 @@
                 <div class="h-6 md:h-8 w-24 bg-gray-800 rounded animate-pulse"></div>
             </div>
         </div>
-        <!-- Skeleton Map & Rankings -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
-            <div class="lg:col-span-2 bg-gray-900 border border-gray-800">
-                <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800">
-                    <div class="h-4 w-40 bg-gray-800 rounded animate-pulse"></div>
-                </div>
-                <div class="p-4 md:p-6">
-                    <div class="h-[250px] md:h-[400px] bg-gray-800/50 rounded animate-pulse"></div>
-                </div>
+        <!-- Skeleton Map -->
+        <div class="bg-gray-900 border border-gray-800 mb-6">
+            <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800">
+                <div class="h-4 w-40 bg-gray-800 rounded animate-pulse"></div>
             </div>
-            <div class="bg-gray-900 border border-gray-800">
-                <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800">
-                    <div class="h-4 w-24 bg-gray-800 rounded animate-pulse"></div>
-                </div>
-                <div class="p-3 md:p-4 space-y-3">
-                    <div class="h-10 bg-gray-800 rounded animate-pulse"></div>
-                    <div class="h-10 bg-gray-800 rounded animate-pulse"></div>
-                    <div class="h-10 bg-gray-800 rounded animate-pulse"></div>
-                    <div class="h-10 bg-gray-800 rounded animate-pulse"></div>
-                </div>
+            <div class="p-4 md:p-6">
+                <div class="h-[300px] md:h-[450px] bg-gray-800/50 rounded animate-pulse"></div>
+            </div>
+        </div>
+        <!-- Skeleton Rankings -->
+        <div class="bg-gray-900 border border-gray-800">
+            <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800">
+                <div class="h-4 w-24 bg-gray-800 rounded animate-pulse"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+                <div class="h-16 bg-gray-800 rounded animate-pulse"></div>
+                <div class="h-16 bg-gray-800 rounded animate-pulse"></div>
+                <div class="h-16 bg-gray-800 rounded animate-pulse"></div>
+                <div class="h-16 bg-gray-800 rounded animate-pulse"></div>
             </div>
         </div>
     </div>
@@ -211,6 +210,11 @@
                     <p class="text-sm text-gray-500" id="pageSubtitle">SBIR award distribution by state (2020-2024)</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                    <select id="phaseFilter" class="bg-gray-800 text-gray-300 text-xs md:text-sm border border-gray-700 px-2 md:px-3 py-1.5 md:py-2">
+                        <option value="all">All Phases</option>
+                        <option value="phase1">Phase I</option>
+                        <option value="phase2">Phase II</option>
+                    </select>
                     <select id="categoryFilter" class="bg-gray-800 text-gray-300 text-xs md:text-sm border border-gray-700 px-2 md:px-3 py-1.5 md:py-2">
                         <option value="all">All Categories</option>
                     </select>
@@ -266,57 +270,57 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
-                <div class="lg:col-span-2 content-panel " data-aos="fade-right" data-aos-delay="500">
-                    <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800/30 flex items-center justify-between">
-                        <h2 class="text-xs md:text-sm font-medium uppercase tracking-wider text-gray-500" id="mapTitle">Award Distribution Map</h2>
-                        <div id="zoomInfo" class="text-xs text-blue-400" style="display: none;">
-                            Viewing state • Click cities for details
-                        </div>
-                    </div>
-                    <div class="p-4 md:p-6">
-                        <div id="mapContainer" class="relative">
-                            <div id="zoomControls" class="zoom-controls" style="display: none;">
-                                <button onclick="zoomOut()" class="flex items-center gap-2 px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs  border border-gray-700 transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                                    </svg>
-                                    Back to US
-                                </button>
-                            </div>
-                            <svg id="usMap" viewBox="0 0 975 610" class="w-full h-auto" preserveAspectRatio="xMidYMid meet">
-                                <g id="mapGroup"></g>
-                                <g id="cityMarkers"></g>
-                            </svg>
-                        </div>
-                        <div class="flex items-center justify-center gap-2 mt-4 text-xs text-gray-500">
-                            <span>Fewer</span>
-                            <div class="flex">
-                                <div class="w-8 h-3" style="background: #1e3a5f"></div>
-                                <div class="w-8 h-3" style="background: #2563eb"></div>
-                                <div class="w-8 h-3" style="background: #3b82f6"></div>
-                                <div class="w-8 h-3" style="background: #60a5fa"></div>
-                                <div class="w-8 h-3" style="background: #93c5fd"></div>
-                            </div>
-                            <span>More</span>
-                        </div>
+            <!-- Map Section - Full Width -->
+            <div class="content-panel mb-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800/30 flex items-center justify-between">
+                    <h2 class="text-xs md:text-sm font-medium uppercase tracking-wider text-gray-500" id="mapTitle">Award Distribution Map</h2>
+                    <div id="zoomInfo" class="text-xs text-blue-400" style="display: none;">
+                        Viewing state • Click cities for details
                     </div>
                 </div>
+                <div class="p-4 md:p-6">
+                    <div id="mapContainer" class="relative">
+                        <div id="zoomControls" class="zoom-controls" style="display: none;">
+                            <button onclick="zoomOut()" class="flex items-center gap-2 px-3 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 text-xs border border-gray-700 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                                </svg>
+                                Back to US
+                            </button>
+                        </div>
+                        <svg id="usMap" viewBox="0 0 975 610" class="w-full h-auto" style="max-height: 550px;" preserveAspectRatio="xMidYMid meet">
+                            <g id="mapGroup"></g>
+                            <g id="cityMarkers"></g>
+                        </svg>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 mt-4 text-xs text-gray-500">
+                        <span>Fewer</span>
+                        <div class="flex">
+                            <div class="w-8 h-3" style="background: #1e3a5f"></div>
+                            <div class="w-8 h-3" style="background: #2563eb"></div>
+                            <div class="w-8 h-3" style="background: #3b82f6"></div>
+                            <div class="w-8 h-3" style="background: #60a5fa"></div>
+                            <div class="w-8 h-3" style="background: #93c5fd"></div>
+                        </div>
+                        <span>More</span>
+                    </div>
+                </div>
+            </div>
 
-                <div class="content-panel  flex flex-col" data-aos="fade-left" data-aos-delay="600">
-                    <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <h2 class="text-xs md:text-sm font-medium uppercase tracking-wider text-gray-500">All States</h2>
-                        <div class="flex items-center gap-2 md:gap-3">
-                            <div class="flex text-xs">
-                                <button id="sortStatesAwards" class="px-2 py-1 bg-blue-600 text-white">Awards</button>
-                                <button id="sortStatesFunding" class="px-2 py-1 bg-gray-700 text-gray-400 hover:bg-gray-600">Funding</button>
-                                <button id="sortStatesConversion" class="px-2 py-1 bg-gray-700 text-gray-400 hover:bg-gray-600">Conv %</button>
-                            </div>
-                            <span class="text-xs text-gray-600" id="stateCount">0 states</span>
+            <!-- State Rankings - Below Map -->
+            <div class="content-panel" data-aos="fade-up" data-aos-delay="600">
+                <div class="px-4 md:px-6 py-3 md:py-4 border-b border-gray-800/30 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h2 class="text-xs md:text-sm font-medium uppercase tracking-wider text-gray-500">All States</h2>
+                    <div class="flex items-center gap-2 md:gap-3">
+                        <div class="flex text-xs">
+                            <button id="sortStatesAwards" class="px-2 py-1 bg-blue-600 text-white">Awards</button>
+                            <button id="sortStatesFunding" class="px-2 py-1 bg-gray-700 text-gray-400 hover:bg-gray-600">Funding</button>
+                            <button id="sortStatesConversion" class="px-2 py-1 bg-gray-700 text-gray-400 hover:bg-gray-600">Conv %</button>
                         </div>
+                        <span class="text-xs text-gray-600" id="stateCount">0 states</span>
                     </div>
-                    <div class="divide-y divide-gray-800/30 overflow-y-auto" id="stateRankings" style="max-height: 350px;"></div>
                 </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-gray-800/30" id="stateRankings"></div>
             </div>
 
             <div id="stateDetail" class="mt-4 md:mt-6 content-panel " style="display: none;">
@@ -400,6 +404,7 @@
         let cityCoords = null;
         let currentCategory = 'all';
         let currentMetric = 'awards';
+        let currentPhase = 'all'; // 'all', 'phase1', or 'phase2'
         let selectedYears = []; // empty means all years
         let allYears = [];
         let selectedState = null;
@@ -450,7 +455,9 @@
             const yearsToUse = selectedYears.length > 0 ? selectedYears : allYears;
 
             // For conversion rate, we use overall state data (not year-filtered)
+            // Conversion only makes sense with 'all' phases
             if (metric === 'conversion') {
+                if (currentPhase !== 'all') return 0; // Conversion not applicable for single phase
                 if (category === 'all') {
                     return stateData.conversion_rate || 0;
                 }
@@ -461,7 +468,21 @@
             }
 
             if (category === 'all') {
-                // Sum across selected years
+                // Use phase-filtered totals from state level
+                if (currentPhase === 'phase1') {
+                    // Approximate funding for phase1 based on ratio
+                    if (metric === 'awards') return stateData.phase1 || 0;
+                    // Estimate Phase I funding (typically ~15% of total based on award sizes)
+                    const phase1Ratio = stateData.phase1 / (stateData.total_awards || 1);
+                    return (stateData.total_funding_millions || 0) * phase1Ratio * 0.4; // Phase I awards are smaller
+                }
+                if (currentPhase === 'phase2') {
+                    if (metric === 'awards') return stateData.phase2 || 0;
+                    // Estimate Phase II funding
+                    const phase2Ratio = stateData.phase2 / (stateData.total_awards || 1);
+                    return (stateData.total_funding_millions || 0) * phase2Ratio * 1.8; // Phase II awards are larger
+                }
+                // All phases - sum across selected years
                 let total = 0;
                 yearsToUse.forEach(year => {
                     const yearData = stateData.years[year];
@@ -472,12 +493,24 @@
                 return total;
             }
 
-            // For specific category, we need year-level category data
-            // Since we don't have that granularity, we'll approximate by scaling
+            // For specific category with phase filter
             const catData = stateData.categories[category];
             if (!catData) return 0;
 
-            // If all years selected, return full value
+            if (currentPhase === 'phase1') {
+                if (metric === 'awards') return catData.phase1 || 0;
+                // Estimate Phase I funding for category
+                const phase1Ratio = (catData.phase1 || 0) / (catData.awards || 1);
+                return (catData.funding_millions || 0) * phase1Ratio * 0.4;
+            }
+            if (currentPhase === 'phase2') {
+                if (metric === 'awards') return catData.phase2 || 0;
+                // Estimate Phase II funding for category
+                const phase2Ratio = (catData.phase2 || 0) / (catData.awards || 1);
+                return (catData.funding_millions || 0) * phase2Ratio * 1.8;
+            }
+
+            // All phases - If all years selected, return full value
             if (selectedYears.length === 0) {
                 return metric === 'awards' ? catData.awards : catData.funding_millions;
             }
@@ -550,12 +583,12 @@
                     displayValue = state.conversionValue.toFixed(1) + '% conv.';
                 }
                 return `
-                <div class="px-4 py-3 flex items-center justify-between hover:bg-gray-800 cursor-pointer" onclick="showStateDetail('${state.abbrev}')">
+                <div class="bg-gray-900/50 px-4 py-3 flex items-center justify-between hover:bg-gray-800 cursor-pointer transition-colors" onclick="showStateDetail('${state.abbrev}')">
                     <div class="flex items-center gap-3">
-                        <div class="text-xs text-gray-600 font-mono w-6">${idx + 1}</div>
-                        <div class="text-sm">${state.name}</div>
+                        <div class="text-xs text-gray-600 font-mono w-5">${idx + 1}</div>
+                        <div class="text-sm font-medium">${state.abbrev}</div>
                     </div>
-                    <div class="text-sm text-gray-400">${displayValue}</div>
+                    <div class="text-xs text-gray-400">${displayValue}</div>
                 </div>
             `}).join('');
 
@@ -585,7 +618,8 @@
             } else {
                 yearText = yearsToShow.join(', ');
             }
-            document.getElementById('pageSubtitle').textContent = `SBIR award distribution by state (${yearText})`;
+            const phaseText = currentPhase === 'phase1' ? 'Phase I ' : currentPhase === 'phase2' ? 'Phase II ' : '';
+            document.getElementById('pageSubtitle').textContent = `${phaseText}SBIR award distribution by state (${yearText})`;
 
             if (rankings.length > 0) {
                 document.getElementById('topState').textContent = rankings[0].name;
@@ -1002,6 +1036,17 @@
             }
 
             // Event listeners
+            document.getElementById('phaseFilter').addEventListener('change', (e) => {
+                currentPhase = e.target.value;
+                // If selecting a phase, disable conversion rate metric (not applicable)
+                const metricSelect = document.getElementById('metricFilter');
+                if (currentPhase !== 'all' && metricSelect.value === 'conversion') {
+                    metricSelect.value = 'awards';
+                    currentMetric = 'awards';
+                }
+                updateMap();
+            });
+
             categorySelect.addEventListener('change', (e) => {
                 currentCategory = e.target.value;
                 updateMap();
