@@ -213,7 +213,8 @@
                             const totalFunding = awards.reduce((sum, a) => sum + a.amount, 0);
                             const phase1 = awards.filter(a => a.phase === 'Phase I').length;
                             const phase2 = awards.filter(a => a.phase === 'Phase II').length;
-                            const convRate = phase1 > 0 ? Math.round(phase2 / phase1 * 100) : 0;
+                            // Cap conversion rate at 100% (can exceed if Phase II awards from before data window)
+                            const convRate = phase1 > 0 ? Math.min(100, Math.round(phase2 / phase1 * 100)) : 0;
 
                             // Funding by year
                             const fundingByYear = {};

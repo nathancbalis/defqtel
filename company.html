@@ -440,7 +440,8 @@
                     const totalFunding = companyAwards.reduce((sum, a) => sum + a.amount, 0);
                     const phase1 = companyAwards.filter(a => a.phase === 'Phase I');
                     const phase2 = companyAwards.filter(a => a.phase === 'Phase II');
-                    const conversionRate = phase1.length > 0 ? Math.round(phase2.length / phase1.length * 100) : 0;
+                    // Cap conversion rate at 100% (can exceed if Phase II awards from before data window)
+                    const conversionRate = phase1.length > 0 ? Math.min(100, Math.round(phase2.length / phase1.length * 100)) : 0;
 
                     // Get unique locations
                     const locations = [...new Set(companyAwards.map(a => `${toTitleCase(a.city)}, ${a.state}`))];
