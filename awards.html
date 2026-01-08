@@ -248,7 +248,91 @@
         </div>
     </div>
 
+    <!-- Comparison Tray -->
+    <div id="compareTray" class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 transform translate-y-full transition-transform z-50" style="display: none;">
+        <div class="max-w-7xl mx-auto px-8 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <span class="text-sm text-gray-400">Comparing:</span>
+                <div id="compareTrayList" class="flex items-center gap-2 flex-wrap"></div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="clearCompareList()" class="text-xs text-gray-500 hover:text-gray-300">Clear</button>
+                <a href="compare.html" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 transition-colors">
+                    Compare (<span id="compareCount">0</span>)
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Compare functionality
+        function getCompareList() {
+            try {
+                return JSON.parse(localStorage.getItem('compareCompanies') || '[]');
+            } catch {
+                return [];
+            }
+        }
+
+        function saveCompareList(list) {
+            localStorage.setItem('compareCompanies', JSON.stringify(list));
+            updateCompareTray();
+        }
+
+        function toggleCompare(companyName) {
+            const list = getCompareList();
+
+            if (list.includes(companyName)) {
+                saveCompareList(list.filter(c => c !== companyName));
+            } else {
+                if (list.length >= 4) {
+                    alert('Maximum 4 companies can be compared at once.');
+                    return;
+                }
+                saveCompareList([...list, companyName]);
+            }
+            // Re-render to update button states
+            filterAwards();
+        }
+
+        function removeFromCompare(name) {
+            const list = getCompareList().filter(c => c !== name);
+            saveCompareList(list);
+            filterAwards();
+        }
+
+        function clearCompareList() {
+            saveCompareList([]);
+            filterAwards();
+        }
+
+        function updateCompareTray() {
+            const list = getCompareList();
+            const tray = document.getElementById('compareTray');
+            const trayList = document.getElementById('compareTrayList');
+            const countEl = document.getElementById('compareCount');
+
+            if (list.length === 0) {
+                tray.style.display = 'none';
+                tray.classList.add('translate-y-full');
+            } else {
+                tray.style.display = 'block';
+                setTimeout(() => tray.classList.remove('translate-y-full'), 10);
+
+                trayList.innerHTML = list.map(name => `
+                    <span class="inline-flex items-center gap-1 bg-gray-800 text-gray-300 text-xs px-2 py-1">
+                        ${name.length > 25 ? name.substring(0, 25) + '...' : name}
+                        <button onclick="removeFromCompare('${name.replace(/'/g, "\\'")}')" class="text-gray-500 hover:text-red-400 ml-1">&times;</button>
+                    </span>
+                `).join('');
+
+                countEl.textContent = list.length;
+            }
+        }
+
+        // Initialize compare tray on page load
+        document.addEventListener('DOMContentLoaded', updateCompareTray);
+
         let allAwards = [];
         let filteredAwards = [];
         let displayedCount = 0;
@@ -360,6 +444,7 @@
                     `<span class="text-xs px-1.5 py-0.5 bg-purple-900/50 text-purple-300">${p}</span>`
                 ).join(' ');
 
+                const isInCompare = getCompareList().includes(award.company);
                 div.innerHTML = `
                     <div class="flex items-start justify-between gap-4">
                         <div class="flex-1 min-w-0">
@@ -367,6 +452,11 @@
                                 <a href="company.html?name=${encodeURIComponent(award.company)}"
                                    class="text-sm font-medium text-blue-400 hover:text-blue-300 truncate">${award.company}</a>
                                 <span class="text-xs px-2 py-0.5 ${award.phase === 'Phase II' ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'}">${award.phase}</span>
+                                <button onclick="toggleCompare('${award.company.replace(/'/g, "\\'")}')"
+                                    class="compare-btn text-xs px-2 py-0.5 border transition-colors ${isInCompare ? 'bg-blue-600 border-blue-600 text-white' : 'border-gray-600 text-gray-500 hover:border-gray-500 hover:text-gray-400'}"
+                                    title="${isInCompare ? 'Remove from compare' : 'Add to compare'}">
+                                    ${isInCompare ? '✓ Compare' : '+ Compare'}
+                                </button>
                             </div>
                             <div class="text-sm text-gray-300 mb-1">${award.title}</div>
                             <div class="flex flex-wrap items-center gap-1 mb-1">

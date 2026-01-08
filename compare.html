@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare SBIR award portfolios of defense contractors side-by-side.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://defqtel.com/compare.html">
+    <meta property="og:title" content="Company Comparison | DefqTel">
+    <meta property="og:description" content="Compare SBIR award portfolios of defense contractors side-by-side.">
+    <meta property="og:image" content="https://defqtel.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Company Comparison | DefqTel">
+    <meta name="twitter:description" content="Compare SBIR award portfolios of defense contractors side-by-side.">
+    <meta name="twitter:image" content="https://defqtel.com/og-image.png">
+
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Company Comparison | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .company-column { min-width: 280px; }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 sm:py-6">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <nav class="hidden md:flex items-center gap-8 text-sm">
+                    <div class="relative group">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Data ▾</a>
+                        <div class="fixed left-0 right-0 top-[65px] bg-black border-t border-b border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="max-w-7xl mx-auto px-8">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900/50 transition-colors">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                    <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                    <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                </nav>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-800">
+                <div class="flex flex-col gap-4">
+                    <div class="text-xs uppercase tracking-wider text-gray-500 mb-1">Data</div>
+                    <a href="data.html" class="text-gray-300 hover:text-white pl-3">SBIR Awards</a>
+                    <a href="geo.html" class="text-gray-300 hover:text-white pl-3">Geographic</a>
+                    <a href="awards.html" class="text-gray-300 hover:text-white pl-3">Awards Browser</a>
+                    <div class="border-t border-gray-800 my-2"></div>
+                    <a href="export.html" class="text-gray-300 hover:text-white">Export</a>
+                    <a href="methodology.html" class="text-gray-300 hover:text-white">Methodology</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white">About</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+
+    <div id="loading" class="max-w-7xl mx-auto px-8 py-6">
+        <div class="h-8 w-48 bg-gray-800 rounded animate-pulse mb-6"></div>
+        <div class="grid grid-cols-3 gap-6">
+            <div class="bg-gray-900 border border-gray-800 p-6 h-96 animate-pulse"></div>
+            <div class="bg-gray-900 border border-gray-800 p-6 h-96 animate-pulse"></div>
+            <div class="bg-gray-900 border border-gray-800 p-6 h-96 animate-pulse"></div>
+        </div>
+    </div>
+
+    <div id="emptyState" class="max-w-7xl mx-auto px-8 py-24 text-center" style="display: none;">
+        <div class="text-xl text-gray-400 mb-4">No companies selected for comparison</div>
+        <p class="text-sm text-gray-500 mb-6">Add companies to compare from the Awards Browser or Company pages.</p>
+        <a href="awards.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 text-sm transition-colors">Browse Awards</a>
+    </div>
+
+    <div id="content" style="display: none;">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-6" data-aos="fade-up">
+                <div>
+                    <h1 class="text-2xl font-light mb-1">Company Comparison</h1>
+                    <p class="text-sm text-gray-500" id="companyCount">Comparing 0 companies</p>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="clearComparison()" class="text-sm text-gray-400 hover:text-white px-4 py-2 border border-gray-700 hover:border-gray-600 transition-colors">
+                        Clear All
+                    </button>
+                    <a href="awards.html" class="text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 transition-colors">
+                        + Add Company
+                    </a>
+                </div>
+            </div>
+
+            <!-- Comparison Grid -->
+            <div class="overflow-x-auto">
+                <div id="comparisonGrid" class="flex gap-4 pb-4"></div>
+            </div>
+
+            <!-- Combined Chart -->
+            <div class="mt-8 bg-gray-900/50 border border-gray-800" data-aos="fade-up" data-aos-delay="200">
+                <div class="px-6 py-4 border-b border-gray-800">
+                    <h2 class="text-sm font-medium text-gray-200">Funding Comparison by Year</h2>
+                </div>
+                <div class="p-6">
+                    <div id="combinedChart"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 py-6">
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+                    <span>Data: SBIR.gov · 2020-2024 · AI Classification: Claude</span>
+                    <div class="flex items-center gap-4">
+                        <a href="index.html#feedback" class="hover:text-gray-400">Feedback</a>
+                        <a href="awards.html" class="hover:text-gray-400">Browse Awards</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formatAmount(amount) {
+            if (amount >= 1000000) {
+                return '$' + (amount / 1000000).toFixed(2) + 'M';
+            } else if (amount >= 1000) {
+                return '$' + (amount / 1000).toFixed(0) + 'K';
+            }
+            return '$' + amount.toFixed(0);
+        }
+
+        function toTitleCase(str) {
+            return str.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+        }
+
+        function getCompareList() {
+            try {
+                return JSON.parse(localStorage.getItem('compareCompanies') || '[]');
+            } catch {
+                return [];
+            }
+        }
+
+        function clearComparison() {
+            localStorage.setItem('compareCompanies', '[]');
+            window.location.reload();
+        }
+
+        function removeFromComparison(companyName) {
+            const list = getCompareList().filter(c => c !== companyName);
+            localStorage.setItem('compareCompanies', JSON.stringify(list));
+            window.location.reload();
+        }
+
+        // Get companies from URL or localStorage
+        const urlParams = new URLSearchParams(window.location.search);
+        let companyNames = urlParams.get('companies')?.split(',').map(c => decodeURIComponent(c)) || getCompareList();
+
+        if (companyNames.length === 0) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('emptyState').style.display = 'block';
+        } else {
+            fetch('awards_data.json')
+                .then(res => res.json())
+                .then(data => {
+                    const companies = [];
+                    const colors = ['#60a5fa', '#34d399', '#fbbf24', '#f472b6'];
+
+                    companyNames.forEach((name, idx) => {
+                        const awards = data.awards.filter(a =>
+                            a.company.toLowerCase() === name.toLowerCase()
+                        );
+
+                        if (awards.length > 0) {
+                            const totalFunding = awards.reduce((sum, a) => sum + a.amount, 0);
+                            const phase1 = awards.filter(a => a.phase === 'Phase I').length;
+                            const phase2 = awards.filter(a => a.phase === 'Phase II').length;
+                            const convRate = phase1 > 0 ? Math.round(phase2 / phase1 * 100) : 0;
+
+                            // Funding by year
+                            const fundingByYear = {};
+                            awards.forEach(a => {
+                                fundingByYear[a.year] = (fundingByYear[a.year] || 0) + a.amount;
+                            });
+
+                            // Tech categories
+                            const techCounts = {};
+                            awards.forEach(a => {
+                                (a.tech || []).forEach(t => {
+                                    techCounts[t] = (techCounts[t] || 0) + 1;
+                                });
+                            });
+                            const topTech = Object.entries(techCounts)
+                                .sort((a, b) => b[1] - a[1])
+                                .slice(0, 5);
+
+                            // Branches
+                            const branchCounts = {};
+                            awards.forEach(a => {
+                                const branch = a.branch || a.agency;
+                                branchCounts[branch] = (branchCounts[branch] || 0) + 1;
+                            });
+                            const topBranches = Object.entries(branchCounts)
+                                .sort((a, b) => b[1] - a[1])
+                                .slice(0, 3);
+
+                            // Location
+                            const location = `${toTitleCase(awards[0].city)}, ${awards[0].state}`;
+
+                            companies.push({
+                                name: awards[0].company,
+                                location,
+                                totalAwards: awards.length,
+                                totalFunding,
+                                phase1,
+                                phase2,
+                                convRate,
+                                fundingByYear,
+                                topTech,
+                                topBranches,
+                                color: colors[idx % colors.length]
+                            });
+                        }
+                    });
+
+                    if (companies.length === 0) {
+                        document.getElementById('loading').style.display = 'none';
+                        document.getElementById('emptyState').style.display = 'block';
+                        return;
+                    }
+
+                    document.getElementById('companyCount').textContent = `Comparing ${companies.length} companies`;
+
+                    // Build comparison cards
+                    const grid = document.getElementById('comparisonGrid');
+                    grid.innerHTML = companies.map((company, idx) => `
+                        <div class="company-column flex-1 bg-gray-900/50 border border-gray-800" data-aos="fade-up" data-aos-delay="${idx * 100}">
+                            <div class="px-4 py-3 border-b border-gray-800 flex items-center justify-between" style="border-top: 3px solid ${company.color}">
+                                <div>
+                                    <a href="company.html?name=${encodeURIComponent(company.name)}" class="text-sm font-medium hover:text-blue-400">${company.name}</a>
+                                    <div class="text-xs text-gray-500">${company.location}</div>
+                                </div>
+                                <button onclick="removeFromComparison('${company.name}')" class="text-gray-500 hover:text-red-400 p-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="p-4 space-y-4">
+                                <!-- Stats -->
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="bg-gray-800/50 p-3">
+                                        <div class="text-xs text-gray-500 mb-1">Awards</div>
+                                        <div class="text-xl font-light">${company.totalAwards}</div>
+                                    </div>
+                                    <div class="bg-gray-800/50 p-3">
+                                        <div class="text-xs text-gray-500 mb-1">Funding</div>
+                                        <div class="text-xl font-light">${formatAmount(company.totalFunding)}</div>
+                                    </div>
+                                    <div class="bg-gray-800/50 p-3">
+                                        <div class="text-xs text-gray-500 mb-1">Phase I / II</div>
+                                        <div class="text-lg font-light">${company.phase1} / ${company.phase2}</div>
+                                    </div>
+                                    <div class="bg-gray-800/50 p-3">
+                                        <div class="text-xs text-gray-500 mb-1">Conversion</div>
+                                        <div class="text-lg font-light">${company.convRate}%</div>
+                                    </div>
+                                </div>
+
+                                <!-- Tech Focus -->
+                                <div>
+                                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">Top Technologies</div>
+                                    <div class="space-y-1">
+                                        ${company.topTech.map(([tech, count]) => `
+                                            <div class="flex justify-between text-xs">
+                                                <span class="text-gray-400 truncate" style="max-width: 180px">${tech}</span>
+                                                <span class="text-gray-500">${count}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+
+                                <!-- Branches -->
+                                <div>
+                                    <div class="text-xs text-gray-500 uppercase tracking-wider mb-2">DoD Branches</div>
+                                    <div class="flex flex-wrap gap-1">
+                                        ${company.topBranches.map(([branch, count]) => `
+                                            <span class="text-xs px-2 py-1 bg-gray-800 text-gray-400">${branch.split(' ')[0]} (${count})</span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    // Build combined funding chart
+                    const allYears = [...new Set(companies.flatMap(c => Object.keys(c.fundingByYear)))].sort();
+
+                    const series = companies.map(company => ({
+                        name: company.name,
+                        data: allYears.map(year => Math.round((company.fundingByYear[year] || 0) / 1000000 * 100) / 100)
+                    }));
+
+                    new ApexCharts(document.getElementById('combinedChart'), {
+                        chart: {
+                            type: 'bar',
+                            height: 300,
+                            background: 'transparent',
+                            toolbar: { show: false },
+                            fontFamily: 'Inter, sans-serif'
+                        },
+                        series: series,
+                        xaxis: {
+                            categories: allYears,
+                            labels: { style: { colors: '#9ca3af', fontSize: '11px' } },
+                            axisBorder: { show: false },
+                            axisTicks: { show: false }
+                        },
+                        yaxis: {
+                            labels: {
+                                style: { colors: '#6b7280', fontSize: '10px' },
+                                formatter: (val) => '$' + val.toFixed(1) + 'M'
+                            }
+                        },
+                        colors: companies.map(c => c.color),
+                        grid: {
+                            borderColor: '#1f2937',
+                            xaxis: { lines: { show: false } }
+                        },
+                        tooltip: {
+                            theme: 'dark',
+                            y: { formatter: (val) => '$' + val.toFixed(2) + 'M' }
+                        },
+                        plotOptions: {
+                            bar: {
+                                borderRadius: 2,
+                                columnWidth: '70%'
+                            }
+                        },
+                        legend: {
+                            position: 'top',
+                            horizontalAlign: 'center',
+                            labels: { colors: '#9ca3af' }
+                        },
+                        dataLabels: { enabled: false }
+                    }).render();
+
+                    // Show content
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+
+                    setTimeout(() => {
+                        AOS.init({ once: true, duration: 600 });
+                    }, 50);
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById('loading').innerHTML = `
+                        <div class="text-sm text-red-400">Failed to load data</div>
+                    `;
+                });
+        }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
