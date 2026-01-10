@@ -201,15 +201,28 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-4 pt-4 border-t border-gray-800/30">
-                    <div class="flex gap-4">
-                        <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
-                            <input type="checkbox" id="phase1Filter" class="accent-blue-500">
-                            Phase I
-                        </label>
-                        <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
-                            <input type="checkbox" id="phase2Filter" class="accent-blue-500">
-                            Phase II
-                        </label>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex gap-3">
+                            <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
+                                <input type="checkbox" id="sbirFilter" class="accent-blue-500">
+                                SBIR
+                            </label>
+                            <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
+                                <input type="checkbox" id="sttrFilter" class="accent-blue-500">
+                                STTR
+                            </label>
+                        </div>
+                        <span class="text-gray-700">|</span>
+                        <div class="flex gap-3">
+                            <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
+                                <input type="checkbox" id="phase1Filter" class="accent-blue-500">
+                                Phase I
+                            </label>
+                            <label class="flex items-center gap-2 text-sm text-gray-400 cursor-pointer">
+                                <input type="checkbox" id="phase2Filter" class="accent-blue-500">
+                                Phase II
+                            </label>
+                        </div>
                     </div>
                     <button id="clearFilters" class="text-sm text-blue-400 hover:text-blue-300">Clear Filters</button>
                 </div>
@@ -365,6 +378,8 @@
                 tech: document.getElementById('techFilter').value,
                 platform: document.getElementById('platformFilter').value,
                 year: document.getElementById('yearFilter').value,
+                sbir: document.getElementById('sbirFilter').checked,
+                sttr: document.getElementById('sttrFilter').checked,
                 phase1: document.getElementById('phase1Filter').checked,
                 phase2: document.getElementById('phase2Filter').checked
             };
@@ -403,6 +418,12 @@
 
                 // Year filter
                 if (filters.year && award.year !== parseInt(filters.year)) return false;
+
+                // Program filter (SBIR/STTR)
+                if (filters.sbir || filters.sttr) {
+                    if (filters.sbir && !filters.sttr && award.program !== 'SBIR') return false;
+                    if (filters.sttr && !filters.sbir && award.program !== 'STTR') return false;
+                }
 
                 // Phase filter
                 if (filters.phase1 || filters.phase2) {
@@ -497,6 +518,8 @@
             document.getElementById('techFilter').value = '';
             document.getElementById('platformFilter').value = '';
             document.getElementById('yearFilter').value = '';
+            document.getElementById('sbirFilter').checked = false;
+            document.getElementById('sttrFilter').checked = false;
             document.getElementById('phase1Filter').checked = false;
             document.getElementById('phase2Filter').checked = false;
             filterAwards();
@@ -617,6 +640,8 @@
                 document.getElementById('techFilter').addEventListener('change', filterAwards);
                 document.getElementById('platformFilter').addEventListener('change', filterAwards);
                 document.getElementById('yearFilter').addEventListener('change', filterAwards);
+                document.getElementById('sbirFilter').addEventListener('change', filterAwards);
+                document.getElementById('sttrFilter').addEventListener('change', filterAwards);
                 document.getElementById('phase1Filter').addEventListener('change', filterAwards);
                 document.getElementById('phase2Filter').addEventListener('change', filterAwards);
                 document.getElementById('sortBy').addEventListener('change', filterAwards);
