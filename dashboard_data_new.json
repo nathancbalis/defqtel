@@ -1,8 +1,13 @@
 {
-  "last_updated": "2025-12-26T14:59:37.410460",
+  "last_updated": "2026-01-10T07:56:51.154171",
   "data_coverage": {
     "sbir_years": "2020-2024",
     "categorization": "Dual-dimension: Technology Type + Platform/Domain"
+  },
+  "totals": {
+    "all": 17265,
+    "sbir": 13902,
+    "sttr": 3363
   },
   "tech_trends": {
     "Artificial Intelligence": {
@@ -21,7 +26,23 @@
         "2024": 413.4
       },
       "total_awards": 2210,
-      "recent_growth": 10.3
+      "recent_growth": 10.3,
+      "sbir_counts": {
+        "2020": 404,
+        "2021": 293,
+        "2022": 313,
+        "2023": 364,
+        "2024": 393
+      },
+      "sttr_counts": {
+        "2020": 68,
+        "2021": 89,
+        "2022": 103,
+        "2023": 83,
+        "2024": 100
+      },
+      "sbir_total": 1767,
+      "sttr_total": 443
     },
     "Biotechnology & Medical": {
       "award_counts": {
@@ -39,7 +60,23 @@
         "2024": 109.6
       },
       "total_awards": 861,
-      "recent_growth": -10.0
+      "recent_growth": -10.0,
+      "sbir_counts": {
+        "2020": 142,
+        "2021": 128,
+        "2022": 150,
+        "2023": 136,
+        "2024": 103
+      },
+      "sttr_counts": {
+        "2020": 24,
+        "2021": 44,
+        "2022": 50,
+        "2023": 34,
+        "2024": 50
+      },
+      "sbir_total": 659,
+      "sttr_total": 202
     },
     "Command & Control": {
       "award_counts": {
@@ -57,7 +94,22 @@
         "2024": 9.0
       },
       "total_awards": 35,
-      "recent_growth": 60.0
+      "recent_growth": 60.0,
+      "sbir_counts": {
+        "2020": 11,
+        "2021": 8,
+        "2022": 1,
+        "2023": 2,
+        "2024": 7
+      },
+      "sttr_counts": {
+        "2021": 1,
+        "2022": 1,
+        "2023": 3,
+        "2024": 1
+      },
+      "sbir_total": 29,
+      "sttr_total": 6
     },
     "Communications": {
       "award_counts": {
@@ -75,7 +127,23 @@
         "2024": 270.6
       },
       "total_awards": 1228,
-      "recent_growth": 29.7
+      "recent_growth": 29.7,
+      "sbir_counts": {
+        "2020": 221,
+        "2021": 218,
+        "2022": 181,
+        "2023": 174,
+        "2024": 233
+      },
+      "sttr_counts": {
+        "2020": 45,
+        "2021": 46,
+        "2022": 30,
+        "2023": 38,
+        "2024": 42
+      },
+      "sbir_total": 1027,
+      "sttr_total": 201
     },
     "Computing & Software": {
       "award_counts": {
@@ -93,7 +161,23 @@
         "2024": 674.8
       },
       "total_awards": 4401,
-      "recent_growth": 10.2
+      "recent_growth": 10.2,
+      "sbir_counts": {
+        "2020": 894,
+        "2021": 700,
+        "2022": 660,
+        "2023": 647,
+        "2024": 712
+      },
+      "sttr_counts": {
+        "2020": 154,
+        "2021": 174,
+        "2022": 190,
+        "2023": 128,
+        "2024": 142
+      },
+      "sbir_total": 3613,
+      "sttr_total": 788
     },
     "Cybersecurity": {
       "award_counts": {
@@ -111,7 +195,23 @@
         "2024": 207.0
       },
       "total_awards": 1090,
-      "recent_growth": 14.6
+      "recent_growth": 14.6,
+      "sbir_counts": {
+        "2020": 196,
+        "2021": 194,
+        "2022": 141,
+        "2023": 178,
+        "2024": 194
+      },
+      "sttr_counts": {
+        "2020": 33,
+        "2021": 39,
+        "2022": 32,
+        "2023": 34,
+        "2024": 49
+      },
+      "sbir_total": 903,
+      "sttr_total": 187
     },
     "Directed Energy": {
       "award_counts": {
@@ -129,7 +229,23 @@
         "2024": 30.3
       },
       "total_awards": 212,
-      "recent_growth": 16.7
+      "recent_growth": 16.7,
+      "sbir_counts": {
+        "2020": 38,
+        "2021": 34,
+        "2022": 41,
+        "2023": 27,
+        "2024": 35
+      },
+      "sttr_counts": {
+        "2020": 5,
+        "2021": 6,
+        "2022": 10,
+        "2023": 9,
+        "2024": 7
+      },
+      "sbir_total": 175,
+      "sttr_total": 37
     },
     "Electronic Warfare": {
       "award_counts": {
@@ -147,7 +263,23 @@
         "2024": 13.7
       },
       "total_awards": 121,
-      "recent_growth": 33.3
+      "recent_growth": 33.3,
+      "sbir_counts": {
+        "2020": 23,
+        "2021": 21,
+        "2022": 17,
+        "2023": 15,
+        "2024": 26
+      },
+      "sttr_counts": {
+        "2020": 4,
+        "2021": 3,
+        "2022": 4,
+        "2023": 6,
+        "2024": 2
+      },
+      "sbir_total": 102,
+      "sttr_total": 19
     },
     "Guidance & Control": {
       "award_counts": {
@@ -165,7 +297,23 @@
         "2024": 77.6
       },
       "total_awards": 341,
-      "recent_growth": 74.5
+      "recent_growth": 74.5,
+      "sbir_counts": {
+        "2020": 55,
+        "2021": 52,
+        "2022": 44,
+        "2023": 47,
+        "2024": 79
+      },
+      "sttr_counts": {
+        "2020": 5,
+        "2021": 10,
+        "2022": 24,
+        "2023": 8,
+        "2024": 17
+      },
+      "sbir_total": 277,
+      "sttr_total": 64
     },
     "Manufacturing & Production": {
       "award_counts": {
@@ -183,7 +331,23 @@
         "2024": 100.6
       },
       "total_awards": 862,
-      "recent_growth": -13.8
+      "recent_growth": -13.8,
+      "sbir_counts": {
+        "2020": 142,
+        "2021": 143,
+        "2022": 117,
+        "2023": 126,
+        "2024": 110
+      },
+      "sttr_counts": {
+        "2020": 28,
+        "2021": 46,
+        "2022": 49,
+        "2023": 55,
+        "2024": 46
+      },
+      "sbir_total": 638,
+      "sttr_total": 224
     },
     "Materials & Structures": {
       "award_counts": {
@@ -201,7 +365,23 @@
         "2024": 232.6
       },
       "total_awards": 1964,
-      "recent_growth": -4.1
+      "recent_growth": -4.1,
+      "sbir_counts": {
+        "2020": 344,
+        "2021": 283,
+        "2022": 316,
+        "2023": 286,
+        "2024": 278
+      },
+      "sttr_counts": {
+        "2020": 96,
+        "2021": 101,
+        "2022": 105,
+        "2023": 81,
+        "2024": 74
+      },
+      "sbir_total": 1507,
+      "sttr_total": 457
     },
     "Modeling & Simulation": {
       "award_counts": {
@@ -219,7 +399,23 @@
         "2024": 109.5
       },
       "total_awards": 820,
-      "recent_growth": -7.0
+      "recent_growth": -7.0,
+      "sbir_counts": {
+        "2020": 122,
+        "2021": 126,
+        "2022": 128,
+        "2023": 132,
+        "2024": 113
+      },
+      "sttr_counts": {
+        "2020": 30,
+        "2021": 26,
+        "2022": 56,
+        "2023": 40,
+        "2024": 47
+      },
+      "sbir_total": 621,
+      "sttr_total": 199
     },
     "Navigation & PNT": {
       "award_counts": {
@@ -237,7 +433,23 @@
         "2024": 157.0
       },
       "total_awards": 704,
-      "recent_growth": 33.6
+      "recent_growth": 33.6,
+      "sbir_counts": {
+        "2020": 103,
+        "2021": 98,
+        "2022": 93,
+        "2023": 103,
+        "2024": 151
+      },
+      "sttr_counts": {
+        "2020": 20,
+        "2021": 42,
+        "2022": 49,
+        "2023": 25,
+        "2024": 20
+      },
+      "sbir_total": 548,
+      "sttr_total": 156
     },
     "Power & Energy Storage": {
       "award_counts": {
@@ -255,7 +467,23 @@
         "2024": 237.3
       },
       "total_awards": 1794,
-      "recent_growth": 12.0
+      "recent_growth": 12.0,
+      "sbir_counts": {
+        "2020": 366,
+        "2021": 262,
+        "2022": 256,
+        "2023": 267,
+        "2024": 298
+      },
+      "sttr_counts": {
+        "2020": 43,
+        "2021": 121,
+        "2022": 76,
+        "2023": 49,
+        "2024": 56
+      },
+      "sbir_total": 1449,
+      "sttr_total": 345
     },
     "Propulsion & Engines": {
       "award_counts": {
@@ -273,7 +501,23 @@
         "2024": 501.4
       },
       "total_awards": 2461,
-      "recent_growth": 18.7
+      "recent_growth": 18.7,
+      "sbir_counts": {
+        "2020": 572,
+        "2021": 305,
+        "2022": 357,
+        "2023": 353,
+        "2024": 418
+      },
+      "sttr_counts": {
+        "2020": 43,
+        "2021": 138,
+        "2022": 123,
+        "2023": 69,
+        "2024": 83
+      },
+      "sbir_total": 2005,
+      "sttr_total": 456
     },
     "Sensors & Imaging": {
       "award_counts": {
@@ -291,7 +535,23 @@
         "2024": 856.6
       },
       "total_awards": 5778,
-      "recent_growth": 4.8
+      "recent_growth": 4.8,
+      "sbir_counts": {
+        "2020": 1175,
+        "2021": 894,
+        "2022": 823,
+        "2023": 864,
+        "2024": 921
+      },
+      "sttr_counts": {
+        "2020": 165,
+        "2021": 254,
+        "2022": 263,
+        "2023": 212,
+        "2024": 207
+      },
+      "sbir_total": 4677,
+      "sttr_total": 1101
     },
     "Thermal & Environmental": {
       "award_counts": {
@@ -309,7 +569,23 @@
         "2024": 54.6
       },
       "total_awards": 444,
-      "recent_growth": -12.8
+      "recent_growth": -12.8,
+      "sbir_counts": {
+        "2020": 72,
+        "2021": 72,
+        "2022": 71,
+        "2023": 69,
+        "2024": 65
+      },
+      "sttr_counts": {
+        "2020": 14,
+        "2021": 20,
+        "2022": 19,
+        "2023": 25,
+        "2024": 17
+      },
+      "sbir_total": 349,
+      "sttr_total": 95
     },
     "Warheads & Energetics": {
       "award_counts": {
@@ -327,7 +603,22 @@
         "2024": 12.7
       },
       "total_awards": 138,
-      "recent_growth": -9.5
+      "recent_growth": -9.5,
+      "sbir_counts": {
+        "2020": 29,
+        "2021": 29,
+        "2022": 27,
+        "2023": 20,
+        "2024": 15
+      },
+      "sttr_counts": {
+        "2021": 3,
+        "2022": 10,
+        "2023": 1,
+        "2024": 4
+      },
+      "sbir_total": 120,
+      "sttr_total": 18
     }
   },
   "tech_scores": {
@@ -477,7 +768,23 @@
         "2024": 1539.0
       },
       "total_awards": 9483,
-      "recent_growth": 11.4
+      "recent_growth": 11.4,
+      "sbir_counts": {
+        "2020": 1794,
+        "2021": 1394,
+        "2022": 1407,
+        "2023": 1372,
+        "2024": 1565
+      },
+      "sttr_counts": {
+        "2020": 308,
+        "2021": 507,
+        "2022": 437,
+        "2023": 348,
+        "2024": 351
+      },
+      "sbir_total": 7532,
+      "sttr_total": 1951
     },
     "Enterprise/Infrastructure": {
       "award_counts": {
@@ -495,7 +802,23 @@
         "2024": 701.2
       },
       "total_awards": 4355,
-      "recent_growth": 6.1
+      "recent_growth": 6.1,
+      "sbir_counts": {
+        "2020": 884,
+        "2021": 724,
+        "2022": 646,
+        "2023": 642,
+        "2024": 663
+      },
+      "sttr_counts": {
+        "2020": 167,
+        "2021": 190,
+        "2022": 161,
+        "2023": 126,
+        "2024": 152
+      },
+      "sbir_total": 3559,
+      "sttr_total": 796
     },
     "Ground Vehicles": {
       "award_counts": {
@@ -513,7 +836,23 @@
         "2024": 81.7
       },
       "total_awards": 534,
-      "recent_growth": 27.6
+      "recent_growth": 27.6,
+      "sbir_counts": {
+        "2020": 102,
+        "2021": 75,
+        "2022": 73,
+        "2023": 88,
+        "2024": 117
+      },
+      "sttr_counts": {
+        "2020": 13,
+        "2021": 12,
+        "2022": 20,
+        "2023": 17,
+        "2024": 17
+      },
+      "sbir_total": 455,
+      "sttr_total": 79
     },
     "Missiles & Munitions": {
       "award_counts": {
@@ -531,7 +870,23 @@
         "2024": 80.9
       },
       "total_awards": 617,
-      "recent_growth": 18.2
+      "recent_growth": 18.2,
+      "sbir_counts": {
+        "2020": 123,
+        "2021": 114,
+        "2022": 110,
+        "2023": 87,
+        "2024": 85
+      },
+      "sttr_counts": {
+        "2020": 10,
+        "2021": 13,
+        "2022": 31,
+        "2023": 12,
+        "2024": 32
+      },
+      "sbir_total": 519,
+      "sttr_total": 98
     },
     "Naval Surface": {
       "award_counts": {
@@ -549,7 +904,23 @@
         "2024": 52.1
       },
       "total_awards": 427,
-      "recent_growth": 76.7
+      "recent_growth": 76.7,
+      "sbir_counts": {
+        "2020": 106,
+        "2021": 68,
+        "2022": 67,
+        "2023": 55,
+        "2024": 95
+      },
+      "sttr_counts": {
+        "2020": 5,
+        "2021": 8,
+        "2022": 7,
+        "2023": 5,
+        "2024": 11
+      },
+      "sbir_total": 391,
+      "sttr_total": 36
     },
     "Soldier/Dismounted": {
       "award_counts": {
@@ -567,7 +938,23 @@
         "2024": 169.8
       },
       "total_awards": 1243,
-      "recent_growth": -6.0
+      "recent_growth": -6.0,
+      "sbir_counts": {
+        "2020": 206,
+        "2021": 188,
+        "2022": 192,
+        "2023": 232,
+        "2024": 183
+      },
+      "sttr_counts": {
+        "2020": 31,
+        "2021": 61,
+        "2022": 51,
+        "2023": 33,
+        "2024": 66
+      },
+      "sbir_total": 1001,
+      "sttr_total": 242
     },
     "Space": {
       "award_counts": {
@@ -585,7 +972,23 @@
         "2024": 173.7
       },
       "total_awards": 804,
-      "recent_growth": 2.7
+      "recent_growth": 2.7,
+      "sbir_counts": {
+        "2020": 84,
+        "2021": 117,
+        "2022": 94,
+        "2023": 137,
+        "2024": 152
+      },
+      "sttr_counts": {
+        "2020": 16,
+        "2021": 19,
+        "2022": 95,
+        "2023": 50,
+        "2024": 40
+      },
+      "sbir_total": 584,
+      "sttr_total": 220
     },
     "Undersea": {
       "award_counts": {
@@ -603,7 +1006,23 @@
         "2024": 41.9
       },
       "total_awards": 475,
-      "recent_growth": 4.2
+      "recent_growth": 4.2,
+      "sbir_counts": {
+        "2020": 118,
+        "2021": 93,
+        "2022": 84,
+        "2023": 59,
+        "2024": 61
+      },
+      "sttr_counts": {
+        "2020": 10,
+        "2021": 9,
+        "2022": 14,
+        "2023": 13,
+        "2024": 14
+      },
+      "sbir_total": 415,
+      "sttr_total": 60
     }
   },
   "platform_scores": {
@@ -683,7 +1102,23 @@
         "2024": 413.4
       },
       "total_awards": 2210,
-      "recent_growth": 10.3
+      "recent_growth": 10.3,
+      "sbir_counts": {
+        "2020": 404,
+        "2021": 293,
+        "2022": 313,
+        "2023": 364,
+        "2024": 393
+      },
+      "sttr_counts": {
+        "2020": 68,
+        "2021": 89,
+        "2022": 103,
+        "2023": 83,
+        "2024": 100
+      },
+      "sbir_total": 1767,
+      "sttr_total": 443
     },
     "Biotechnology & Medical": {
       "award_counts": {
@@ -701,7 +1136,23 @@
         "2024": 109.6
       },
       "total_awards": 861,
-      "recent_growth": -10.0
+      "recent_growth": -10.0,
+      "sbir_counts": {
+        "2020": 142,
+        "2021": 128,
+        "2022": 150,
+        "2023": 136,
+        "2024": 103
+      },
+      "sttr_counts": {
+        "2020": 24,
+        "2021": 44,
+        "2022": 50,
+        "2023": 34,
+        "2024": 50
+      },
+      "sbir_total": 659,
+      "sttr_total": 202
     },
     "Command & Control": {
       "award_counts": {
@@ -719,7 +1170,22 @@
         "2024": 9.0
       },
       "total_awards": 35,
-      "recent_growth": 60.0
+      "recent_growth": 60.0,
+      "sbir_counts": {
+        "2020": 11,
+        "2021": 8,
+        "2022": 1,
+        "2023": 2,
+        "2024": 7
+      },
+      "sttr_counts": {
+        "2021": 1,
+        "2022": 1,
+        "2023": 3,
+        "2024": 1
+      },
+      "sbir_total": 29,
+      "sttr_total": 6
     },
     "Communications": {
       "award_counts": {
@@ -737,7 +1203,23 @@
         "2024": 270.6
       },
       "total_awards": 1228,
-      "recent_growth": 29.7
+      "recent_growth": 29.7,
+      "sbir_counts": {
+        "2020": 221,
+        "2021": 218,
+        "2022": 181,
+        "2023": 174,
+        "2024": 233
+      },
+      "sttr_counts": {
+        "2020": 45,
+        "2021": 46,
+        "2022": 30,
+        "2023": 38,
+        "2024": 42
+      },
+      "sbir_total": 1027,
+      "sttr_total": 201
     },
     "Computing & Software": {
       "award_counts": {
@@ -755,7 +1237,23 @@
         "2024": 674.8
       },
       "total_awards": 4401,
-      "recent_growth": 10.2
+      "recent_growth": 10.2,
+      "sbir_counts": {
+        "2020": 894,
+        "2021": 700,
+        "2022": 660,
+        "2023": 647,
+        "2024": 712
+      },
+      "sttr_counts": {
+        "2020": 154,
+        "2021": 174,
+        "2022": 190,
+        "2023": 128,
+        "2024": 142
+      },
+      "sbir_total": 3613,
+      "sttr_total": 788
     },
     "Cybersecurity": {
       "award_counts": {
@@ -773,7 +1271,23 @@
         "2024": 207.0
       },
       "total_awards": 1090,
-      "recent_growth": 14.6
+      "recent_growth": 14.6,
+      "sbir_counts": {
+        "2020": 196,
+        "2021": 194,
+        "2022": 141,
+        "2023": 178,
+        "2024": 194
+      },
+      "sttr_counts": {
+        "2020": 33,
+        "2021": 39,
+        "2022": 32,
+        "2023": 34,
+        "2024": 49
+      },
+      "sbir_total": 903,
+      "sttr_total": 187
     },
     "Directed Energy": {
       "award_counts": {
@@ -791,7 +1305,23 @@
         "2024": 30.3
       },
       "total_awards": 212,
-      "recent_growth": 16.7
+      "recent_growth": 16.7,
+      "sbir_counts": {
+        "2020": 38,
+        "2021": 34,
+        "2022": 41,
+        "2023": 27,
+        "2024": 35
+      },
+      "sttr_counts": {
+        "2020": 5,
+        "2021": 6,
+        "2022": 10,
+        "2023": 9,
+        "2024": 7
+      },
+      "sbir_total": 175,
+      "sttr_total": 37
     },
     "Electronic Warfare": {
       "award_counts": {
@@ -809,7 +1339,23 @@
         "2024": 13.7
       },
       "total_awards": 121,
-      "recent_growth": 33.3
+      "recent_growth": 33.3,
+      "sbir_counts": {
+        "2020": 23,
+        "2021": 21,
+        "2022": 17,
+        "2023": 15,
+        "2024": 26
+      },
+      "sttr_counts": {
+        "2020": 4,
+        "2021": 3,
+        "2022": 4,
+        "2023": 6,
+        "2024": 2
+      },
+      "sbir_total": 102,
+      "sttr_total": 19
     },
     "Guidance & Control": {
       "award_counts": {
@@ -827,7 +1373,23 @@
         "2024": 77.6
       },
       "total_awards": 341,
-      "recent_growth": 74.5
+      "recent_growth": 74.5,
+      "sbir_counts": {
+        "2020": 55,
+        "2021": 52,
+        "2022": 44,
+        "2023": 47,
+        "2024": 79
+      },
+      "sttr_counts": {
+        "2020": 5,
+        "2021": 10,
+        "2022": 24,
+        "2023": 8,
+        "2024": 17
+      },
+      "sbir_total": 277,
+      "sttr_total": 64
     },
     "Manufacturing & Production": {
       "award_counts": {
@@ -845,7 +1407,23 @@
         "2024": 100.6
       },
       "total_awards": 862,
-      "recent_growth": -13.8
+      "recent_growth": -13.8,
+      "sbir_counts": {
+        "2020": 142,
+        "2021": 143,
+        "2022": 117,
+        "2023": 126,
+        "2024": 110
+      },
+      "sttr_counts": {
+        "2020": 28,
+        "2021": 46,
+        "2022": 49,
+        "2023": 55,
+        "2024": 46
+      },
+      "sbir_total": 638,
+      "sttr_total": 224
     },
     "Materials & Structures": {
       "award_counts": {
@@ -863,7 +1441,23 @@
         "2024": 232.6
       },
       "total_awards": 1964,
-      "recent_growth": -4.1
+      "recent_growth": -4.1,
+      "sbir_counts": {
+        "2020": 344,
+        "2021": 283,
+        "2022": 316,
+        "2023": 286,
+        "2024": 278
+      },
+      "sttr_counts": {
+        "2020": 96,
+        "2021": 101,
+        "2022": 105,
+        "2023": 81,
+        "2024": 74
+      },
+      "sbir_total": 1507,
+      "sttr_total": 457
     },
     "Modeling & Simulation": {
       "award_counts": {
@@ -881,7 +1475,23 @@
         "2024": 109.5
       },
       "total_awards": 820,
-      "recent_growth": -7.0
+      "recent_growth": -7.0,
+      "sbir_counts": {
+        "2020": 122,
+        "2021": 126,
+        "2022": 128,
+        "2023": 132,
+        "2024": 113
+      },
+      "sttr_counts": {
+        "2020": 30,
+        "2021": 26,
+        "2022": 56,
+        "2023": 40,
+        "2024": 47
+      },
+      "sbir_total": 621,
+      "sttr_total": 199
     },
     "Navigation & PNT": {
       "award_counts": {
@@ -899,7 +1509,23 @@
         "2024": 157.0
       },
       "total_awards": 704,
-      "recent_growth": 33.6
+      "recent_growth": 33.6,
+      "sbir_counts": {
+        "2020": 103,
+        "2021": 98,
+        "2022": 93,
+        "2023": 103,
+        "2024": 151
+      },
+      "sttr_counts": {
+        "2020": 20,
+        "2021": 42,
+        "2022": 49,
+        "2023": 25,
+        "2024": 20
+      },
+      "sbir_total": 548,
+      "sttr_total": 156
     },
     "Power & Energy Storage": {
       "award_counts": {
@@ -917,7 +1543,23 @@
         "2024": 237.3
       },
       "total_awards": 1794,
-      "recent_growth": 12.0
+      "recent_growth": 12.0,
+      "sbir_counts": {
+        "2020": 366,
+        "2021": 262,
+        "2022": 256,
+        "2023": 267,
+        "2024": 298
+      },
+      "sttr_counts": {
+        "2020": 43,
+        "2021": 121,
+        "2022": 76,
+        "2023": 49,
+        "2024": 56
+      },
+      "sbir_total": 1449,
+      "sttr_total": 345
     },
     "Propulsion & Engines": {
       "award_counts": {
@@ -935,7 +1577,23 @@
         "2024": 501.4
       },
       "total_awards": 2461,
-      "recent_growth": 18.7
+      "recent_growth": 18.7,
+      "sbir_counts": {
+        "2020": 572,
+        "2021": 305,
+        "2022": 357,
+        "2023": 353,
+        "2024": 418
+      },
+      "sttr_counts": {
+        "2020": 43,
+        "2021": 138,
+        "2022": 123,
+        "2023": 69,
+        "2024": 83
+      },
+      "sbir_total": 2005,
+      "sttr_total": 456
     },
     "Sensors & Imaging": {
       "award_counts": {
@@ -953,7 +1611,23 @@
         "2024": 856.6
       },
       "total_awards": 5778,
-      "recent_growth": 4.8
+      "recent_growth": 4.8,
+      "sbir_counts": {
+        "2020": 1175,
+        "2021": 894,
+        "2022": 823,
+        "2023": 864,
+        "2024": 921
+      },
+      "sttr_counts": {
+        "2020": 165,
+        "2021": 254,
+        "2022": 263,
+        "2023": 212,
+        "2024": 207
+      },
+      "sbir_total": 4677,
+      "sttr_total": 1101
     },
     "Thermal & Environmental": {
       "award_counts": {
@@ -971,7 +1645,23 @@
         "2024": 54.6
       },
       "total_awards": 444,
-      "recent_growth": -12.8
+      "recent_growth": -12.8,
+      "sbir_counts": {
+        "2020": 72,
+        "2021": 72,
+        "2022": 71,
+        "2023": 69,
+        "2024": 65
+      },
+      "sttr_counts": {
+        "2020": 14,
+        "2021": 20,
+        "2022": 19,
+        "2023": 25,
+        "2024": 17
+      },
+      "sbir_total": 349,
+      "sttr_total": 95
     },
     "Warheads & Energetics": {
       "award_counts": {
@@ -989,7 +1679,22 @@
         "2024": 12.7
       },
       "total_awards": 138,
-      "recent_growth": -9.5
+      "recent_growth": -9.5,
+      "sbir_counts": {
+        "2020": 29,
+        "2021": 29,
+        "2022": 27,
+        "2023": 20,
+        "2024": 15
+      },
+      "sttr_counts": {
+        "2021": 3,
+        "2022": 10,
+        "2023": 1,
+        "2024": 4
+      },
+      "sbir_total": 120,
+      "sttr_total": 18
     }
   },
   "current_scores": {

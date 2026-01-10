@@ -197,15 +197,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex bg-gray-800  p-1 self-start md:self-auto">
-                    <button id="techBtn" onclick="switchDimension('tech')"
-                        class="px-3 md:px-4 py-1.5 text-xs font-medium  transition-all bg-blue-600 text-white">
-                        Technology
-                    </button>
-                    <button id="platformBtn" onclick="switchDimension('platform')"
-                        class="px-3 md:px-4 py-1.5 text-xs font-medium  transition-all text-gray-400 hover:text-white">
-                        Platform
-                    </button>
+                <div class="flex items-center gap-3 self-start md:self-auto">
+                    <div class="flex bg-gray-800 p-1">
+                        <button id="allProgramBtn" onclick="switchProgram('all')"
+                            class="px-2 md:px-3 py-1.5 text-xs font-medium transition-all bg-blue-600 text-white">
+                            All
+                        </button>
+                        <button id="sbirProgramBtn" onclick="switchProgram('sbir')"
+                            class="px-2 md:px-3 py-1.5 text-xs font-medium transition-all text-gray-400 hover:text-white">
+                            SBIR
+                        </button>
+                        <button id="sttrProgramBtn" onclick="switchProgram('sttr')"
+                            class="px-2 md:px-3 py-1.5 text-xs font-medium transition-all text-gray-400 hover:text-white">
+                            STTR
+                        </button>
+                    </div>
+                    <div class="flex bg-gray-800 p-1">
+                        <button id="techBtn" onclick="switchDimension('tech')"
+                            class="px-3 md:px-4 py-1.5 text-xs font-medium transition-all bg-blue-600 text-white">
+                            Technology
+                        </button>
+                        <button id="platformBtn" onclick="switchDimension('platform')"
+                            class="px-3 md:px-4 py-1.5 text-xs font-medium transition-all text-gray-400 hover:text-white">
+                            Platform
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -338,6 +354,7 @@
         let fullscreenChart = null;
         let visibleSeries = new Set();
         let currentDimension = 'tech';
+        let currentProgram = 'all'; // 'all', 'sbir', or 'sttr'
         let isFullscreen = false;
 
         function showOverview() {
@@ -366,10 +383,41 @@
             renderTrendsChart(globalData, dim);
         }
 
+        function switchProgram(prog) {
+            currentProgram = prog;
+
+            // Update button styles
+            const allBtn = document.getElementById('allProgramBtn');
+            const sbirBtn = document.getElementById('sbirProgramBtn');
+            const sttrBtn = document.getElementById('sttrProgramBtn');
+
+            const activeClass = 'px-2 md:px-3 py-1.5 text-xs font-medium transition-all bg-blue-600 text-white';
+            const inactiveClass = 'px-2 md:px-3 py-1.5 text-xs font-medium transition-all text-gray-400 hover:text-white';
+
+            allBtn.className = prog === 'all' ? activeClass : inactiveClass;
+            sbirBtn.className = prog === 'sbir' ? activeClass : inactiveClass;
+            sttrBtn.className = prog === 'sttr' ? activeClass : inactiveClass;
+
+            renderRankings(globalData, currentDimension);
+            renderTrendsChart(globalData, currentDimension);
+        }
+
         function renderRankings(data, dimension) {
+            const trends = dimension === 'tech' ? data.tech_trends : data.platform_trends;
             const scores = dimension === 'tech' ? data.tech_scores : data.platform_scores;
+
+            // Get count based on program filter
+            const getCount = (category) => {
+                const trend = trends[category];
+                if (!trend) return 0;
+                if (currentProgram === 'sbir') return trend.sbir_total || 0;
+                if (currentProgram === 'sttr') return trend.sttr_total || 0;
+                return trend.total_awards || 0;
+            };
+
             const sorted = Object.entries(scores)
-                .sort((a, b) => b[1].total_sbir_awards - a[1].total_sbir_awards);
+                .map(([cat, score]) => [cat, score, getCount(cat)])
+                .sort((a, b) => b[2] - a[2]);
 
             const getStatusColor = (status) => {
                 if (status === 'Strong Growth') return 'text-green-400';
@@ -378,7 +426,7 @@
                 return 'text-red-400';
             };
 
-            const rankingsHTML = sorted.map(([category, score], idx) => {
+            const rankingsHTML = sorted.map(([category, score, count], idx) => {
                 return `
                     <div class="category-row px-4 py-3 flex items-center justify-between" onclick="showDetail('${category}', '${dimension}')">
                         <div class="flex items-center gap-3 flex-1 min-w-0">
@@ -386,7 +434,7 @@
                             <div class="flex-1 min-w-0">
                                 <div class="text-sm font-medium truncate">${category}</div>
                                 <div class="text-xs text-gray-500">
-                                    ${score.total_sbir_awards.toLocaleString()} • <span class="${getStatusColor(score.status)}">${score.sbir_yoy}</span>
+                                    ${count.toLocaleString()} • <span class="${getStatusColor(score.status)}">${score.sbir_yoy}</span>
                                 </div>
                             </div>
                         </div>
@@ -402,8 +450,26 @@
             const trends = dimension === 'tech' ? data.tech_trends : data.platform_trends;
             const scores = dimension === 'tech' ? data.tech_scores : data.platform_scores;
 
+            // Get count based on program filter
+            const getYearlyCount = (category, year) => {
+                const trend = trends[category];
+                if (!trend) return 0;
+                if (currentProgram === 'sbir') return (trend.sbir_counts && trend.sbir_counts[year]) || 0;
+                if (currentProgram === 'sttr') return (trend.sttr_counts && trend.sttr_counts[year]) || 0;
+                return (trend.award_counts && trend.award_counts[year]) || 0;
+            };
+
+            const getTotalCount = (category) => {
+                const trend = trends[category];
+                if (!trend) return 0;
+                if (currentProgram === 'sbir') return trend.sbir_total || 0;
+                if (currentProgram === 'sttr') return trend.sttr_total || 0;
+                return trend.total_awards || 0;
+            };
+
             const sorted = Object.entries(scores)
-                .sort((a, b) => b[1].total_sbir_awards - a[1].total_sbir_awards);
+                .map(([cat, score]) => [cat, score, getTotalCount(cat)])
+                .sort((a, b) => b[2] - a[2]);
 
             // Show top 8 categories by default for cleaner visualization
             const topCategories = sorted.slice(0, 8).map(x => x[0]);
@@ -412,7 +478,7 @@
 
             const series = topCategories.map(cat => ({
                 name: cat,
-                data: years.map(year => (trends[cat] && trends[cat].award_counts[year]) || 0)
+                data: years.map(year => getYearlyCount(cat, year))
             }));
 
             // Premium color palette
