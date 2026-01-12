@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="LogoAircraft.png">
+    <title>Intel Brief | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .update-card { transition: all 0.2s ease; }
+        .update-card:hover { border-color: #3b82f6; }
+        .status-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .timeline-line { background: linear-gradient(to bottom, #3b82f6, transparent); }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <!-- Navigation -->
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <div class="flex items-baseline justify-between">
+                <div class="flex items-baseline gap-12">
+                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+                    <nav class="flex gap-8 text-sm">
+                        <div class="relative group">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                Data
+                            </a>
+                            <div class="absolute left-0 top-full mt-[26px] w-[720px] bg-black border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="intel.html" class="text-white">Intel Brief</a>
+                        <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="border-b border-gray-800 bg-gradient-to-b from-gray-900/50 to-transparent">
+        <div class="max-w-4xl mx-auto px-8 py-12">
+            <div class="flex items-start justify-between">
+                <div>
+                    <div class="text-xs uppercase tracking-wider text-blue-400 font-medium mb-3">Defense R&D Intelligence</div>
+                    <h1 class="text-4xl font-light mb-4">Intel Brief</h1>
+                    <p class="text-gray-400 text-lg max-w-2xl">
+                        Program updates, trend alerts, and analysis of defense innovation funding. Updated when significant changes occur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Critical Alert Banner -->
+    <div class="bg-red-950/50 border-y border-red-900/50">
+        <div class="max-w-4xl mx-auto px-8 py-6">
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                    <span class="flex h-3 w-3">
+                        <span class="status-pulse absolute inline-flex h-3 w-3 rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                </div>
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-xs font-medium uppercase tracking-wider text-red-400">Program Status</span>
+                        <span class="text-xs text-gray-500">Updated Jan 12, 2026</span>
+                    </div>
+                    <h2 class="text-xl font-medium text-red-100 mb-2">SBIR/STTR Authorization Expired</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Congressional authority for SBIR/STTR expired on <strong>September 30, 2025</strong>. No new awards can be issued until reauthorization passes. Over $4 billion in annual small business R&D funding is frozen.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-xs">
+                        <div class="bg-gray-900/80 px-3 py-2 rounded border border-gray-800">
+                            <span class="text-gray-500">Next Deadline:</span>
+                            <span class="text-white ml-1">January 30, 2026</span>
+                        </div>
+                        <div class="bg-gray-900/80 px-3 py-2 rounded border border-gray-800">
+                            <span class="text-gray-500">Blocker:</span>
+                            <span class="text-white ml-1">Sen. Ernst (R-IA) demanding reforms</span>
+                        </div>
+                        <div class="bg-gray-900/80 px-3 py-2 rounded border border-gray-800">
+                            <span class="text-gray-500">Frozen Funding:</span>
+                            <span class="text-white ml-1">$4B+ annually</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Updates Timeline -->
+    <div class="max-w-4xl mx-auto px-8 py-12">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-xl font-light">Updates</h2>
+            <div class="text-xs text-gray-500">Showing latest briefs</div>
+        </div>
+
+        <div class="space-y-6" id="updates-container">
+
+            <!-- Update: Jan 12, 2026 -->
+            <article class="update-card bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden" data-aos="fade-up">
+                <div class="px-6 py-4 border-b border-gray-800 bg-gray-900/50 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <time class="text-sm font-medium text-blue-400">January 12, 2026</time>
+                        <span class="text-xs px-2 py-1 rounded bg-red-900/50 text-red-300 border border-red-800/50">Critical</span>
+                    </div>
+                    <span class="text-xs text-gray-500">SBIR Program</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-medium mb-3">SBIR Reauthorization Standoff Continues</h3>
+                    <div class="text-sm text-gray-400 leading-relaxed space-y-3">
+                        <p>
+                            The SBIR/STTR programs remain unauthorized as Congress returns from recess. The January 30 government funding deadline represents the next realistic vehicle for reauthorization, but negotiations remain stalled.
+                        </p>
+                        <p><strong class="text-gray-300">Key developments:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-400">
+                            <li>Senator Markey introduced compromise bill in late December</li>
+                            <li>Senator Ernst continues to block any extension without reforms</li>
+                            <li>NIH has terminated all SBIR/STTR funding opportunities</li>
+                            <li>Space Force officials publicly warning about acquisition delays</li>
+                        </ul>
+                        <p><strong class="text-gray-300">What this means for DefqTel data:</strong></p>
+                        <p>
+                            Our 2020-2024 dataset represents the complete "healthy" program years. The 2025 data on SBIR.gov shows only 435 awards (vs. ~6,500/year typical) due to reporting lag and pre-expiration slowdown. We will update when/if the program resumes normal operations.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-800 flex gap-3">
+                        <a href="https://sbir.org/news/sbir-reauthorization-markey-compromise-2025" target="_blank" class="text-xs text-blue-400 hover:text-blue-300">SBIR.org Coverage</a>
+                        <span class="text-gray-700">|</span>
+                        <a href="https://spacenews.com/congresss-sbir-standoff-is-slowing-space-force-innovation-it-must-act-now/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300">SpaceNews Analysis</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Update: Launch -->
+            <article class="update-card bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="px-6 py-4 border-b border-gray-800 bg-gray-900/50 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <time class="text-sm font-medium text-blue-400">January 10, 2026</time>
+                        <span class="text-xs px-2 py-1 rounded bg-blue-900/50 text-blue-300 border border-blue-800/50">Launch</span>
+                    </div>
+                    <span class="text-xs text-gray-500">Platform</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-lg font-medium mb-3">DefqTel Public Launch</h3>
+                    <div class="text-sm text-gray-400 leading-relaxed space-y-3">
+                        <p>
+                            DefqTel is now publicly available. The platform provides AI-powered analysis of 17,265 DoD SBIR/STTR awards from 2020-2024, representing $10.8B in defense R&D funding.
+                        </p>
+                        <p><strong class="text-gray-300">What's included:</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-400">
+                            <li>Dual-dimension classification: 18 technology categories x 8 platform domains</li>
+                            <li>Velocity scoring to identify "heating up" technology areas</li>
+                            <li>Geographic analysis by state and city</li>
+                            <li>Full awards browser with search and filtering</li>
+                            <li>Data export in multiple formats</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <!-- Data Context -->
+    <div class="border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-8 py-12">
+            <h2 class="text-xl font-light mb-6">About This Data</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-sm font-medium text-gray-300 mb-2">Current Coverage</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        DefqTel tracks DoD SBIR/STTR awards from 2020-2024, totaling 17,265 awards and $10.8B in funding. This represents the complete dataset during normal program operations.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-medium text-gray-300 mb-2">Update Frequency</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        SBIR.gov data typically updates quarterly. Due to the current program lapse, new award data will be limited until Congress reauthorizes SBIR/STTR.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-8 py-8">
+            <div class="text-xs text-gray-600">
+                Data: SBIR.gov | AI Classification: Claude (Anthropic) | Coverage: 2020-2024
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            easing: 'ease-out-cubic',
+            duration: 600
+        });
+    </script>
+</body>
+</html>
