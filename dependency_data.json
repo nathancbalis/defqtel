@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-01-12T15:54:57.765907",
+  "generated_at": "2026-01-13T07:25:58.815258",
   "time_period": {
     "start_date": "2020-01-01",
     "end_date": "2024-12-31"
   },
-  "total_companies": 190,
-  "min_awards_threshold": 10,
+  "total_companies": 453,
+  "min_awards_threshold": 5,
   "summary": {
-    "highly_dependent": 107,
-    "moderately_dependent": 55,
-    "low_dependency": 28
+    "highly_dependent": 285,
+    "moderately_dependent": 101,
+    "low_dependency": 67
   },
   "companies": [
     {
@@ -20,6 +20,15 @@
       "other_federal": 0,
       "pct_sbir": 100.0,
       "award_count": 113
+    },
+    {
+      "company": "SARCOS GROUP LC",
+      "matched_name": "SARCOS GROUP LC",
+      "sbir_amount": 44405484.0,
+      "total_federal": 14815015.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
     },
     {
       "company": "ELECTRA.AERO INC.",
@@ -38,6 +47,24 @@
       "other_federal": 0,
       "pct_sbir": 100.0,
       "award_count": 10
+    },
+    {
+      "company": "ZEROEYES, INC.",
+      "matched_name": "ZEROEYES, INC.",
+      "sbir_amount": 23511260.0,
+      "total_federal": 7961961.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 12
+    },
+    {
+      "company": "ORBIT FAB, INC",
+      "matched_name": "ORBIT FAB, INC",
+      "sbir_amount": 20574306.0,
+      "total_federal": 5079245.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
     },
     {
       "company": "GIRD SYSTEMS INC",
@@ -130,6 +157,15 @@
       "award_count": 19
     },
     {
+      "company": "ASYLON INC",
+      "matched_name": "ASYLON INC",
+      "sbir_amount": 10724084.57,
+      "total_federal": 7774925.2,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
       "company": "FIGURE INC",
       "matched_name": "FIGURE INC",
       "sbir_amount": 10450508.0,
@@ -137,6 +173,15 @@
       "other_federal": 0,
       "pct_sbir": 100.0,
       "award_count": 12
+    },
+    {
+      "company": "Arkham Technology Limited",
+      "matched_name": "ARKHAM TECHNOLOGY LIMITED",
+      "sbir_amount": 9735609.0,
+      "total_federal": 8296133.16,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
     },
     {
       "company": "Battle Sight Technologies LLC",
@@ -175,6 +220,15 @@
       "award_count": 12
     },
     {
+      "company": "SYNOPTIC ENGINEERING LLC",
+      "matched_name": "SYNOPTIC ENGINEERING, LLC",
+      "sbir_amount": 9040896.0,
+      "total_federal": 4653612.96,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
       "company": "Sedaro Corporation",
       "matched_name": "SEDARO CORPORATION",
       "sbir_amount": 8828454.58,
@@ -211,6 +265,510 @@
       "award_count": 12
     },
     {
+      "company": "NINOH, INC.",
+      "matched_name": "NINOH, INC.",
+      "sbir_amount": 8455788.41,
+      "total_federal": 4795206.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "KRYPTOWIRE, LLC",
+      "matched_name": "KRYPTOWIRE, LLC",
+      "sbir_amount": 8344241.0,
+      "total_federal": 539101.76,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "COMPOUND EYE INC.",
+      "matched_name": "COMPOUND EYE INC.",
+      "sbir_amount": 8051818.36,
+      "total_federal": 6190525.11,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "HELICON CHEMICAL COMPANY LLC",
+      "matched_name": "HELICON CHEMICAL COMPANY LLC",
+      "sbir_amount": 7822230.93,
+      "total_federal": 7562946.59,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 11
+    },
+    {
+      "company": "BEACON AI INC",
+      "matched_name": "BEACON AI INC",
+      "sbir_amount": 7648935.23,
+      "total_federal": 1399938.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "SQUIRE SOLUTIONS INC",
+      "matched_name": "SQUIRE SOLUTIONS INC",
+      "sbir_amount": 7599675.0,
+      "total_federal": 3099902.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "GOODMAN TECHNOLOGIES LLC",
+      "matched_name": "GOODMAN TECHNOLOGIES LLC",
+      "sbir_amount": 7592540.61,
+      "total_federal": 7485297.09,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "Haylon Technologies",
+      "matched_name": "HAYLON TECHNOLOGIES INC.",
+      "sbir_amount": 7295015.74,
+      "total_federal": 7209452.38,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "AETHER ARGUS INC",
+      "matched_name": "AETHER ARGUS INC",
+      "sbir_amount": 7264698.0,
+      "total_federal": 5188176.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "H NU Photonics LLC",
+      "matched_name": "H NU PHOTONICS LLC",
+      "sbir_amount": 7186956.21,
+      "total_federal": 4525072.88,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 9
+    },
+    {
+      "company": "ENDURALOCK LLC",
+      "matched_name": "ENDURALOCK LLC",
+      "sbir_amount": 7183902.6,
+      "total_federal": 7183902.6,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 11
+    },
+    {
+      "company": "RTSYNC CORP",
+      "matched_name": "RTSYNC CORP",
+      "sbir_amount": 7063487.0,
+      "total_federal": 6278874.55,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 9
+    },
+    {
+      "company": "DittoLive Incorporated",
+      "matched_name": "DITTOLIVE INCORPORATED",
+      "sbir_amount": 7037496.0,
+      "total_federal": 3990295.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "Unmanned Experts Inc.",
+      "matched_name": "UNMANNED EXPERTS INC.",
+      "sbir_amount": 7008324.5,
+      "total_federal": 42112.08,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 9
+    },
+    {
+      "company": "Innoflight, Inc. ",
+      "matched_name": "INNOFLIGHT, INC.",
+      "sbir_amount": 6968159.92,
+      "total_federal": 1371867.12,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
+      "company": "NOTCH INC.",
+      "matched_name": "NOTCH INC.",
+      "sbir_amount": 6692954.23,
+      "total_federal": 5575455.23,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 10
+    },
+    {
+      "company": "MACRO-EYES INC",
+      "matched_name": "MACRO-EYES, INC.",
+      "sbir_amount": 6546112.0,
+      "total_federal": 88935.83,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 10
+    },
+    {
+      "company": "EBASE, LLC",
+      "matched_name": "EBASE, LLC",
+      "sbir_amount": 6114635.0,
+      "total_federal": 6114635.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "TrustPoint, Inc.",
+      "matched_name": "TRUSTPOINT, INC.",
+      "sbir_amount": 6055888.0,
+      "total_federal": 6055619.71,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
+      "company": "GRAFFITI ENTERPRISES LLC",
+      "matched_name": "GRAFFITI ENTERPRISES LLC",
+      "sbir_amount": 5980903.0,
+      "total_federal": 5980903.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "TayCo Brace, Inc.",
+      "matched_name": "TAYCO BRACE, INC.",
+      "sbir_amount": 5953449.0,
+      "total_federal": 5953426.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 9
+    },
+    {
+      "company": "ENIG ASSOCIATES, INC.",
+      "matched_name": "ENIG ASSOCIATES, INC.",
+      "sbir_amount": 5948609.51,
+      "total_federal": 5449412.51,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
+      "company": "MATRIXSPACE, INC",
+      "matched_name": "MATRIXSPACE, INC",
+      "sbir_amount": 5828790.99,
+      "total_federal": 5828790.99,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "r4 Technologies, Inc.",
+      "matched_name": "R4 TECHNOLOGIES, INC.",
+      "sbir_amount": 5817531.55,
+      "total_federal": 5817531.55,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 9
+    },
+    {
+      "company": "SAAZ MICRO, INC.",
+      "matched_name": "SAAZ MICRO, INC.",
+      "sbir_amount": 5689210.75,
+      "total_federal": 4966070.75,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "TRUSTED SEMICONDUCTOR SOLUTIONS INC",
+      "matched_name": "TRUSTED SEMICONDUCTOR SOLUTIONS INC",
+      "sbir_amount": 5678166.0,
+      "total_federal": 5678166.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "PORTAL SPACE SYSTEMS INC.",
+      "matched_name": "PORTAL SPACE SYSTEMS INC.",
+      "sbir_amount": 5659806.0,
+      "total_federal": 5659806.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
+      "company": "Tanner Research, Inc.",
+      "matched_name": "TANNER RESEARCH, INC.",
+      "sbir_amount": 5615731.23,
+      "total_federal": 292404.31,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 13
+    },
+    {
+      "company": "SNORKEL AI INC",
+      "matched_name": "SNORKEL AI INC",
+      "sbir_amount": 5552034.3,
+      "total_federal": 5552034.3,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 10
+    },
+    {
+      "company": "CARBONCYCLE LLC",
+      "matched_name": "CARBONCYCLE LLC",
+      "sbir_amount": 5499939.0,
+      "total_federal": 5449939.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "VIELE EXPLORATORY SUSTAINABLE SOLUTIONS LLC",
+      "matched_name": "VIELE EXPLORATORY SUSTAINABLE SOLUTIONS LLC",
+      "sbir_amount": 5498015.0,
+      "total_federal": 5498015.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 11
+    },
+    {
+      "company": "XAGE SECURITY, INC.",
+      "matched_name": "XAGE SECURITY, INC.",
+      "sbir_amount": 5486821.0,
+      "total_federal": 1735146.72,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "INTUIDEX INC",
+      "matched_name": "INTUIDEX INC",
+      "sbir_amount": 5449969.0,
+      "total_federal": 5299969.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
+      "company": "SMARTER REALITY, LLC",
+      "matched_name": "SMARTER REALITY, LLC",
+      "sbir_amount": 5428881.0,
+      "total_federal": 5428881.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 10
+    },
+    {
+      "company": "PLUS DESIGNS INC",
+      "matched_name": "PLUS DESIGNS INC",
+      "sbir_amount": 5386593.42,
+      "total_federal": 5277067.64,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "JOVE SCIENCES, INC.",
+      "matched_name": "JOVE SCIENCES, INC.",
+      "sbir_amount": 5264263.0,
+      "total_federal": 5064330.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "CLARIFAI, INC.",
+      "matched_name": "CLARIFAI, INC.",
+      "sbir_amount": 5212110.64,
+      "total_federal": 2136597.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "GEEGAH LLC",
+      "matched_name": "GEEGAH LLC",
+      "sbir_amount": 5199074.44,
+      "total_federal": 4949096.44,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "VIGILANT CYBER SYSTEMS, INC.",
+      "matched_name": "VIGILANT CYBER SYSTEMS, INC.",
+      "sbir_amount": 5194946.98,
+      "total_federal": 4944913.99,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "ARKTONICS LLC",
+      "matched_name": "ARKTONICS LLC",
+      "sbir_amount": 5150000.0,
+      "total_federal": 4550000.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "KALL MORRIS INCORPORATED",
+      "matched_name": "KALL MORRIS INCORPORATED",
+      "sbir_amount": 5072777.0,
+      "total_federal": 5072777.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
+      "company": "HIKINO ASSOCIATES, LLC",
+      "matched_name": "HIKINO ASSOCIATES, LLC",
+      "sbir_amount": 5032328.0,
+      "total_federal": 3532335.11,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "FRAYM, INC.",
+      "matched_name": "FRAYM, INC.",
+      "sbir_amount": 4998319.0,
+      "total_federal": 4949051.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "LUX SEMICONDUCTORS, INC",
+      "matched_name": "LUX SEMICONDUCTORS, INC",
+      "sbir_amount": 4996598.0,
+      "total_federal": 4246642.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "INTELLIEPI IR, INC",
+      "matched_name": "INTELLIEPI IR, INC",
+      "sbir_amount": 4919801.0,
+      "total_federal": 4807365.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 11
+    },
+    {
+      "company": "OPTOXENSE, INC.",
+      "matched_name": "OPTOXENSE, INC.",
+      "sbir_amount": 4912965.0,
+      "total_federal": 4720345.71,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 11
+    },
+    {
+      "company": "AMPHP INC",
+      "matched_name": "AMPHP INC",
+      "sbir_amount": 4867198.0,
+      "total_federal": 1773989.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 9
+    },
+    {
+      "company": "Fenix Research Corporation",
+      "matched_name": "FENIX RESEARCH CORPORATION",
+      "sbir_amount": 4861057.83,
+      "total_federal": 35230.72,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "PRIMER FEDERAL INC",
+      "matched_name": "PRIMER FEDERAL INC",
+      "sbir_amount": 4839391.39,
+      "total_federal": 4841191.39,
+      "other_federal": 1800.0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
+      "company": "PAXAURIS LLC",
+      "matched_name": "PAXAURIS LLC",
+      "sbir_amount": 4835068.6,
+      "total_federal": 4835068.58,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "LOOKING GLASS FACTORY INC.",
+      "matched_name": "LOOKING GLASS FACTORY INC.",
+      "sbir_amount": 4738425.0,
+      "total_federal": 4738425.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 8
+    },
+    {
+      "company": "UES INC",
+      "matched_name": "MISSION CEVICHE UES INC",
+      "sbir_amount": 4627241.56,
+      "total_federal": 635159.5,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 13
+    },
+    {
+      "company": "AZAK, INC.",
+      "matched_name": "AZAK, INC.",
+      "sbir_amount": 4478365.0,
+      "total_federal": 4478365.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 6
+    },
+    {
+      "company": "Certus Core, Inc.",
+      "matched_name": "CERTUS CORE, INC.",
+      "sbir_amount": 4461680.78,
+      "total_federal": 3169341.78,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 5
+    },
+    {
+      "company": "UNANIMOUS A.I., INC.",
+      "matched_name": "UNANIMOUS A.I., INC.",
+      "sbir_amount": 4443673.0,
+      "total_federal": 4443673.0,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 11
+    },
+    {
+      "company": "RESCAN INC",
+      "matched_name": "RESCAN INC",
+      "sbir_amount": 4398115.54,
+      "total_federal": 4398115.54,
+      "other_federal": 0,
+      "pct_sbir": 100.0,
+      "award_count": 7
+    },
+    {
       "company": "SECMATION LLC",
       "matched_name": "SECMATION LLC",
       "sbir_amount": 9999146.58,
@@ -229,6 +787,24 @@
       "award_count": 18
     },
     {
+      "company": "SUNRAY SCIENTIFIC INC.",
+      "matched_name": "SUNRAY SCIENTIFIC INC.",
+      "sbir_amount": 7491829.17,
+      "total_federal": 7541834.57,
+      "other_federal": 50005.4,
+      "pct_sbir": 99.3,
+      "award_count": 17
+    },
+    {
+      "company": "ZKXKZ LLC",
+      "matched_name": "ZKXKZ LLC",
+      "sbir_amount": 5520000.0,
+      "total_federal": 5593648.63,
+      "other_federal": 73648.63,
+      "pct_sbir": 98.7,
+      "award_count": 9
+    },
+    {
       "company": "IOTAI INC",
       "matched_name": "IOTAI INC",
       "sbir_amount": 10214201.33,
@@ -236,6 +812,87 @@
       "other_federal": 141485.16,
       "pct_sbir": 98.6,
       "award_count": 18
+    },
+    {
+      "company": "ALTRON, INC.",
+      "matched_name": "ALTRON, INC.",
+      "sbir_amount": 7222056.28,
+      "total_federal": 7321995.66,
+      "other_federal": 99939.38,
+      "pct_sbir": 98.6,
+      "award_count": 9
+    },
+    {
+      "company": "BIG METAL ADDITIVE LLC",
+      "matched_name": "BIG METAL ADDITIVE LLC",
+      "sbir_amount": 5481210.0,
+      "total_federal": 5559907.86,
+      "other_federal": 78697.86,
+      "pct_sbir": 98.6,
+      "award_count": 9
+    },
+    {
+      "company": "ELEMENT 119 LLC",
+      "matched_name": "ELEMENT 119 LLC",
+      "sbir_amount": 4946187.2,
+      "total_federal": 5036752.2,
+      "other_federal": 90565.0,
+      "pct_sbir": 98.2,
+      "award_count": 7
+    },
+    {
+      "company": "Atomic-6, Inc.",
+      "matched_name": "ATOMIC-6, INC.",
+      "sbir_amount": 7703181.0,
+      "total_federal": 7852729.0,
+      "other_federal": 149548.0,
+      "pct_sbir": 98.1,
+      "award_count": 12
+    },
+    {
+      "company": "PRINCETON INFRARED TECHNOLOGIES INC",
+      "matched_name": "PRINCETON INFRARED TECHNOLOGIES INC",
+      "sbir_amount": 7675973.95,
+      "total_federal": 7823584.19,
+      "other_federal": 147610.24,
+      "pct_sbir": 98.1,
+      "award_count": 12
+    },
+    {
+      "company": "ALPHASTAR TECHNOLOGY SOLUTIONS",
+      "matched_name": "ALPHASTAR TECHNOLOGY SOLUTIONS LLC",
+      "sbir_amount": 4688226.0,
+      "total_federal": 4783736.92,
+      "other_federal": 95510.92,
+      "pct_sbir": 98.0,
+      "award_count": 6
+    },
+    {
+      "company": "AVNIK DEFENSE SOLUTIONS INC",
+      "matched_name": "AVNIK DEFENSE SOLUTIONS INC",
+      "sbir_amount": 4353689.5,
+      "total_federal": 4453688.49,
+      "other_federal": 99998.99,
+      "pct_sbir": 97.8,
+      "award_count": 5
+    },
+    {
+      "company": "SCOUT SPACE INC",
+      "matched_name": "SCOUT SPACE INC",
+      "sbir_amount": 6471413.56,
+      "total_federal": 6621009.56,
+      "other_federal": 149596.0,
+      "pct_sbir": 97.7,
+      "award_count": 8
+    },
+    {
+      "company": "AMERICAN ENERGY TECHNOLOGIES CO",
+      "matched_name": "AMERICAN ENERGY TECHNOLOGIES COMPANY",
+      "sbir_amount": 6280209.0,
+      "total_federal": 6431207.43,
+      "other_federal": 150998.43,
+      "pct_sbir": 97.7,
+      "award_count": 9
     },
     {
       "company": "AROBOTICSCOMPANY, INC",
@@ -247,6 +904,24 @@
       "award_count": 12
     },
     {
+      "company": "DIGIBEAM CORPORATION",
+      "matched_name": "DIGIBEAM CORPORATION",
+      "sbir_amount": 5074464.47,
+      "total_federal": 5224272.47,
+      "other_federal": 149808.0,
+      "pct_sbir": 97.1,
+      "award_count": 8
+    },
+    {
+      "company": "MANTIS COMPOSITES INC",
+      "matched_name": "MANTIS COMPOSITES INC",
+      "sbir_amount": 6864227.0,
+      "total_federal": 7078227.0,
+      "other_federal": 214000.0,
+      "pct_sbir": 97.0,
+      "award_count": 7
+    },
+    {
       "company": "SRICO INC",
       "matched_name": "SRICO INC",
       "sbir_amount": 10532151.54,
@@ -254,6 +929,24 @@
       "other_federal": 348426.28,
       "pct_sbir": 96.8,
       "award_count": 15
+    },
+    {
+      "company": "WAVEFRONT RESEARCH, INC",
+      "matched_name": "WAVEFRONT RESEARCH, INC",
+      "sbir_amount": 4869473.94,
+      "total_federal": 5037944.55,
+      "other_federal": 168470.61,
+      "pct_sbir": 96.7,
+      "award_count": 5
+    },
+    {
+      "company": "RHOMAN AEROSPACE CORPORATION",
+      "matched_name": "RHOMAN AEROSPACE CORPORATION",
+      "sbir_amount": 5432178.0,
+      "total_federal": 5626411.0,
+      "other_federal": 194233.0,
+      "pct_sbir": 96.5,
+      "award_count": 8
     },
     {
       "company": "NEXTGEN AERONAUTICS, INC.",
@@ -265,6 +958,15 @@
       "award_count": 12
     },
     {
+      "company": "iMetalx, Inc.",
+      "matched_name": "IMETALX, INC.",
+      "sbir_amount": 4816999.0,
+      "total_federal": 5016625.0,
+      "other_federal": 199626.0,
+      "pct_sbir": 96.0,
+      "award_count": 8
+    },
+    {
       "company": "ROGUE SPACE SYSTEMS CORP",
       "matched_name": "ROGUE SPACE SYSTEMS CORP",
       "sbir_amount": 13829956.0,
@@ -272,6 +974,96 @@
       "other_federal": 601062.67,
       "pct_sbir": 95.8,
       "award_count": 22
+    },
+    {
+      "company": "WARPIV TECHNOLOGIES, INC.",
+      "matched_name": "WARPIV TECHNOLOGIES, INC.",
+      "sbir_amount": 4758989.0,
+      "total_federal": 4988955.8,
+      "other_federal": 229966.8,
+      "pct_sbir": 95.4,
+      "award_count": 6
+    },
+    {
+      "company": "BARN OWL TECH, INC.",
+      "matched_name": "BARN OWL TECH, INC.",
+      "sbir_amount": 4610642.0,
+      "total_federal": 4842813.32,
+      "other_federal": 232171.32,
+      "pct_sbir": 95.2,
+      "award_count": 6
+    },
+    {
+      "company": "TRANSWAVE PHOTONICS, LLC",
+      "matched_name": "TRANSWAVE PHOTONICS, LLC",
+      "sbir_amount": 5572992.65,
+      "total_federal": 5862999.69,
+      "other_federal": 290007.04,
+      "pct_sbir": 95.1,
+      "award_count": 16
+    },
+    {
+      "company": "FOURTH STATE COMMUNICATIONS, LLC",
+      "matched_name": "FOURTH STATE COMMUNICATIONS, LLC",
+      "sbir_amount": 5298950.66,
+      "total_federal": 5577722.86,
+      "other_federal": 278772.2,
+      "pct_sbir": 95.0,
+      "award_count": 11
+    },
+    {
+      "company": "OMBRA LLC",
+      "matched_name": "OMBRA LLC",
+      "sbir_amount": 6908085.95,
+      "total_federal": 7286732.77,
+      "other_federal": 378646.82,
+      "pct_sbir": 94.8,
+      "award_count": 22
+    },
+    {
+      "company": "PACIFIC ENGINEERING, INC.",
+      "matched_name": "PACIFIC ENGINEERING, INC.",
+      "sbir_amount": 12219464.53,
+      "total_federal": 12967559.43,
+      "other_federal": 748094.9,
+      "pct_sbir": 94.2,
+      "award_count": 9
+    },
+    {
+      "company": "SUMMIT TECHNOLOGY LABORATORY",
+      "matched_name": "SUMMIT TECHNOLOGY LABORATORY",
+      "sbir_amount": 4999520.0,
+      "total_federal": 5324536.0,
+      "other_federal": 325016.0,
+      "pct_sbir": 93.9,
+      "award_count": 7
+    },
+    {
+      "company": "ADAPTIVE DYNAMICS, INC.",
+      "matched_name": "ADAPTIVE DYNAMICS, INC.",
+      "sbir_amount": 8662933.7,
+      "total_federal": 9248196.84,
+      "other_federal": 585263.14,
+      "pct_sbir": 93.7,
+      "award_count": 9
+    },
+    {
+      "company": "ADVANCED MATERIALS & DEVICES",
+      "matched_name": "ADVANCED MATERIALS & DEVICES",
+      "sbir_amount": 4690000.0,
+      "total_federal": 5005627.77,
+      "other_federal": 315627.77,
+      "pct_sbir": 93.7,
+      "award_count": 5
+    },
+    {
+      "company": "MATREGENIX INC",
+      "matched_name": "MATREGENIX INC",
+      "sbir_amount": 4555232.0,
+      "total_federal": 4861072.0,
+      "other_federal": 305840.0,
+      "pct_sbir": 93.7,
+      "award_count": 6
     },
     {
       "company": "TRUSTED SCIENCE AND TECHNOLOGY, INC.",
@@ -301,6 +1093,15 @@
       "award_count": 10
     },
     {
+      "company": "CAMBRIAN WORKS, INC.",
+      "matched_name": "CAMBRIAN WORKS, INC.",
+      "sbir_amount": 7727887.45,
+      "total_federal": 8513867.02,
+      "other_federal": 785979.57,
+      "pct_sbir": 90.8,
+      "award_count": 8
+    },
+    {
       "company": "HEPBURN AND SONS LLC",
       "matched_name": "HEPBURN AND SONS LLC",
       "sbir_amount": 11079553.38,
@@ -308,6 +1109,24 @@
       "other_federal": 1141978.0,
       "pct_sbir": 90.7,
       "award_count": 17
+    },
+    {
+      "company": "INTRINSIC ENTERPRISES INC",
+      "matched_name": "INTRINSIC ENTERPRISES INC",
+      "sbir_amount": 8034177.0,
+      "total_federal": 8880139.56,
+      "other_federal": 845962.56,
+      "pct_sbir": 90.5,
+      "award_count": 11
+    },
+    {
+      "company": "AKITA INNOVATIONS LLC",
+      "matched_name": "AKITA INNOVATIONS LLC",
+      "sbir_amount": 5656385.9,
+      "total_federal": 6249114.62,
+      "other_federal": 592728.72,
+      "pct_sbir": 90.5,
+      "award_count": 9
     },
     {
       "company": "Ghost Robotics Corporation",
@@ -328,6 +1147,33 @@
       "award_count": 64
     },
     {
+      "company": "RENU ROBOTICS CORP",
+      "matched_name": "RENU ROBOTICS CORP",
+      "sbir_amount": 6058694.0,
+      "total_federal": 6805878.0,
+      "other_federal": 747184.0,
+      "pct_sbir": 89.0,
+      "award_count": 9
+    },
+    {
+      "company": "STRATOM, INC.",
+      "matched_name": "STRATOM, INC.",
+      "sbir_amount": 7899458.39,
+      "total_federal": 8925457.09,
+      "other_federal": 1025998.7,
+      "pct_sbir": 88.5,
+      "award_count": 11
+    },
+    {
+      "company": "American Ecotech L.C.",
+      "matched_name": "AMERICAN ECOTECH L.C.",
+      "sbir_amount": 5556220.0,
+      "total_federal": 6286221.34,
+      "other_federal": 730001.34,
+      "pct_sbir": 88.4,
+      "award_count": 9
+    },
+    {
       "company": "SIMX, INC",
       "matched_name": "SIMX, INC",
       "sbir_amount": 22441192.69,
@@ -337,6 +1183,24 @@
       "award_count": 34
     },
     {
+      "company": "NEXCEPTA INC",
+      "matched_name": "NEXCEPTA INC",
+      "sbir_amount": 4898530.79,
+      "total_federal": 5552528.0,
+      "other_federal": 653997.21,
+      "pct_sbir": 88.2,
+      "award_count": 11
+    },
+    {
+      "company": "TEXAS HIGH ENERGY MATERIALS, LLC",
+      "matched_name": "TEXAS HIGH ENERGY MATERIALS, LLC",
+      "sbir_amount": 4622230.0,
+      "total_federal": 5257229.0,
+      "other_federal": 634999.0,
+      "pct_sbir": 87.9,
+      "award_count": 8
+    },
+    {
       "company": "CLOSTRA INC",
       "matched_name": "CLOSTRA INC",
       "sbir_amount": 9965905.37,
@@ -344,6 +1208,15 @@
       "other_federal": 1491347.82,
       "pct_sbir": 87.0,
       "award_count": 16
+    },
+    {
+      "company": "DAXOR CORPORATION",
+      "matched_name": "DAXOR CORPORATION",
+      "sbir_amount": 5448565.72,
+      "total_federal": 6275889.45,
+      "other_federal": 827323.73,
+      "pct_sbir": 86.8,
+      "award_count": 5
     },
     {
       "company": "DARKHIVE INC.",
@@ -373,6 +1246,24 @@
       "award_count": 29
     },
     {
+      "company": "CAPELLA SPACE CORP",
+      "matched_name": "CAPELLA SPACE CORP",
+      "sbir_amount": 14450459.45,
+      "total_federal": 16828727.36,
+      "other_federal": 2378267.91,
+      "pct_sbir": 85.9,
+      "award_count": 6
+    },
+    {
+      "company": "AEROCINE VENTURES, INC.",
+      "matched_name": "AEROCINE VENTURES, INC.",
+      "sbir_amount": 5765540.0,
+      "total_federal": 6708445.0,
+      "other_federal": 942905.0,
+      "pct_sbir": 85.9,
+      "award_count": 6
+    },
+    {
       "company": "ATTOLLO ENGINEERING, LLC",
       "matched_name": "ATTOLLO ENGINEERING, LLC",
       "sbir_amount": 43270632.99,
@@ -380,6 +1271,42 @@
       "other_federal": 7644269.38,
       "pct_sbir": 85.0,
       "award_count": 56
+    },
+    {
+      "company": "PRODUCT INNOVATION AND ENGINEERING LLC",
+      "matched_name": "PRODUCT INNOVATION AND ENGINEERING LLC",
+      "sbir_amount": 4778491.0,
+      "total_federal": 5642893.47,
+      "other_federal": 864402.47,
+      "pct_sbir": 84.7,
+      "award_count": 9
+    },
+    {
+      "company": "TeraDar, Inc.",
+      "matched_name": "TERADAR, INC.",
+      "sbir_amount": 5173420.72,
+      "total_federal": 6126108.72,
+      "other_federal": 952688.0,
+      "pct_sbir": 84.4,
+      "award_count": 5
+    },
+    {
+      "company": "MAGIQ TECHNOLOGIES, INC.",
+      "matched_name": "MAGIQ TECHNOLOGIES, INC.",
+      "sbir_amount": 4985283.39,
+      "total_federal": 5911072.42,
+      "other_federal": 925789.03,
+      "pct_sbir": 84.3,
+      "award_count": 7
+    },
+    {
+      "company": "WALLAROO LABS INC",
+      "matched_name": "WALLAROO LABS INC",
+      "sbir_amount": 6458994.04,
+      "total_federal": 7669429.04,
+      "other_federal": 1210435.0,
+      "pct_sbir": 84.2,
+      "award_count": 11
     },
     {
       "company": "OPTIMIZATION TECHNOLOGIES, INC.",
@@ -391,6 +1318,24 @@
       "award_count": 16
     },
     {
+      "company": "RJ LEE GROUP INC",
+      "matched_name": "RJ LEE GROUP INC",
+      "sbir_amount": 7437158.57,
+      "total_federal": 8860403.86,
+      "other_federal": 1423245.29,
+      "pct_sbir": 83.9,
+      "award_count": 6
+    },
+    {
+      "company": "D'Angelo Technologies, LLC",
+      "matched_name": "D'ANGELO TECHNOLOGIES, LLC",
+      "sbir_amount": 4849686.0,
+      "total_federal": 5832129.0,
+      "other_federal": 982443.0,
+      "pct_sbir": 83.2,
+      "award_count": 6
+    },
+    {
       "company": "TURNAROUND FACTOR, INC.",
       "matched_name": "TURNAROUND FACTOR, INC.",
       "sbir_amount": 9762450.01,
@@ -398,6 +1343,24 @@
       "other_federal": 1995311.24,
       "pct_sbir": 83.0,
       "award_count": 14
+    },
+    {
+      "company": "NOVATEUR RESEARCH SOLUTIONS LLC",
+      "matched_name": "NOVATEUR RESEARCH SOLUTIONS LLC",
+      "sbir_amount": 7428663.11,
+      "total_federal": 9006413.76,
+      "other_federal": 1577750.65,
+      "pct_sbir": 82.5,
+      "award_count": 19
+    },
+    {
+      "company": "Ascend Integrated Technology Solutions, INC",
+      "matched_name": "ASCEND INTEGRATED TECHNOLOGY SOLUTIONS INC",
+      "sbir_amount": 4574759.0,
+      "total_federal": 5548758.02,
+      "other_federal": 973999.02,
+      "pct_sbir": 82.4,
+      "award_count": 7
     },
     {
       "company": "CRITICAL INNOVATIONS LLC",
@@ -409,6 +1372,42 @@
       "award_count": 18
     },
     {
+      "company": "HART SCIENTIFIC CONSULTING INTERNATIONAL L.L.C.",
+      "matched_name": "HART SCIENTIFIC CONSULTING INTERNATIONAL L.L.C.",
+      "sbir_amount": 7430283.76,
+      "total_federal": 9097160.97,
+      "other_federal": 1666877.21,
+      "pct_sbir": 81.7,
+      "award_count": 8
+    },
+    {
+      "company": "EXCELLERIX, LLC",
+      "matched_name": "EXCELLERIX, LLC",
+      "sbir_amount": 7175716.02,
+      "total_federal": 8781119.25,
+      "other_federal": 1605403.23,
+      "pct_sbir": 81.7,
+      "award_count": 6
+    },
+    {
+      "company": "ORBITAL COMPOSITES, INC.",
+      "matched_name": "ORBITAL COMPOSITES, INC.",
+      "sbir_amount": 7292209.08,
+      "total_federal": 8941204.63,
+      "other_federal": 1648995.55,
+      "pct_sbir": 81.6,
+      "award_count": 9
+    },
+    {
+      "company": "TIPD LLC",
+      "matched_name": "TIPD LLC",
+      "sbir_amount": 7823950.45,
+      "total_federal": 9606838.41,
+      "other_federal": 1782887.96,
+      "pct_sbir": 81.4,
+      "award_count": 11
+    },
+    {
       "company": "K2 SPACE CORPORATION",
       "matched_name": "K2 SPACE CORPORATION",
       "sbir_amount": 10788235.59,
@@ -416,6 +1415,60 @@
       "other_federal": 2501268.41,
       "pct_sbir": 81.2,
       "award_count": 10
+    },
+    {
+      "company": "MESODYNE INC",
+      "matched_name": "MESODYNE INC",
+      "sbir_amount": 6199194.26,
+      "total_federal": 7644065.26,
+      "other_federal": 1444871.0,
+      "pct_sbir": 81.1,
+      "award_count": 10
+    },
+    {
+      "company": "Organic Robotics Corporation",
+      "matched_name": "ORGANIC ROBOTICS CORPORATION",
+      "sbir_amount": 5339011.06,
+      "total_federal": 6587064.06,
+      "other_federal": 1248053.0,
+      "pct_sbir": 81.1,
+      "award_count": 9
+    },
+    {
+      "company": "AGNITRON TECHNOLOGY, INC.",
+      "matched_name": "AGNITRON TECHNOLOGY, INC.",
+      "sbir_amount": 5285906.0,
+      "total_federal": 6519251.0,
+      "other_federal": 1233345.0,
+      "pct_sbir": 81.1,
+      "award_count": 6
+    },
+    {
+      "company": "RESEARCH IN FLIGHT LLC",
+      "matched_name": "RESEARCH IN FLIGHT LLC",
+      "sbir_amount": 4525532.0,
+      "total_federal": 5585519.0,
+      "other_federal": 1059987.0,
+      "pct_sbir": 81.0,
+      "award_count": 11
+    },
+    {
+      "company": "STREAMLINE AUTOMATION LLC",
+      "matched_name": "STREAMLINE AUTOMATION LLC",
+      "sbir_amount": 5539002.2,
+      "total_federal": 6852090.36,
+      "other_federal": 1313088.16,
+      "pct_sbir": 80.8,
+      "award_count": 17
+    },
+    {
+      "company": "MOVIUS INTERACTIVE CORPORATION",
+      "matched_name": "MOVIUS INTERACTIVE CORPORATION",
+      "sbir_amount": 5244273.0,
+      "total_federal": 6489273.0,
+      "other_federal": 1245000.0,
+      "pct_sbir": 80.8,
+      "award_count": 6
     },
     {
       "company": "GRID RASTER INC",
@@ -436,6 +1489,24 @@
       "award_count": 32
     },
     {
+      "company": "CANOPY AEROSPACE, INC.",
+      "matched_name": "CANOPY AEROSPACE, INC.",
+      "sbir_amount": 5587529.24,
+      "total_federal": 7012805.24,
+      "other_federal": 1425276.0,
+      "pct_sbir": 79.7,
+      "award_count": 8
+    },
+    {
+      "company": "LILT INC",
+      "matched_name": "LILT INC",
+      "sbir_amount": 7975005.0,
+      "total_federal": 10020983.0,
+      "other_federal": 2045978.0,
+      "pct_sbir": 79.6,
+      "award_count": 5
+    },
+    {
       "company": "INNOVITAL SYSTEMS INC",
       "matched_name": "INNOVITAL SYSTEMS INC",
       "sbir_amount": 10034206.65,
@@ -452,6 +1523,15 @@
       "other_federal": 4172369.74,
       "pct_sbir": 78.9,
       "award_count": 23
+    },
+    {
+      "company": "ATOMOS NUCLEAR AND SPACE CORPORATION",
+      "matched_name": "ATOMOS NUCLEAR AND SPACE CORPORATION",
+      "sbir_amount": 5256774.0,
+      "total_federal": 6671849.0,
+      "other_federal": 1415075.0,
+      "pct_sbir": 78.8,
+      "award_count": 8
     },
     {
       "company": "PISON TECHNOLOGY INC",
@@ -481,6 +1561,15 @@
       "award_count": 11
     },
     {
+      "company": "AXNANO LLC",
+      "matched_name": "AXNANO LLC",
+      "sbir_amount": 4335523.51,
+      "total_federal": 5543791.51,
+      "other_federal": 1208268.0,
+      "pct_sbir": 78.2,
+      "award_count": 7
+    },
+    {
       "company": "ZYMERON CORPORATION",
       "matched_name": "ZYMERON CORPORATION",
       "sbir_amount": 14977508.93,
@@ -497,6 +1586,15 @@
       "other_federal": 3803472.41,
       "pct_sbir": 77.7,
       "award_count": 23
+    },
+    {
+      "company": "BLUERISC INC",
+      "matched_name": "BLUERISC INC",
+      "sbir_amount": 8192702.31,
+      "total_federal": 10601418.5,
+      "other_federal": 2408716.19,
+      "pct_sbir": 77.3,
+      "award_count": 11
     },
     {
       "company": "TRITON SYSTEMS, INC.",
@@ -517,6 +1615,24 @@
       "award_count": 25
     },
     {
+      "company": "410 MEDICAL, INC.",
+      "matched_name": "410 MEDICAL, INC.",
+      "sbir_amount": 4879862.0,
+      "total_federal": 6377591.0,
+      "other_federal": 1497729.0,
+      "pct_sbir": 76.5,
+      "award_count": 9
+    },
+    {
+      "company": "BALLYDEL TECHNOLOGIES INC.",
+      "matched_name": "BALLYDEL TECHNOLOGIES INC.",
+      "sbir_amount": 4327638.12,
+      "total_federal": 5659962.28,
+      "other_federal": 1332324.16,
+      "pct_sbir": 76.5,
+      "award_count": 8
+    },
+    {
       "company": "MATERIALS RESEARCH & DESIGN INC",
       "matched_name": "MATERIALS RESEARCH & DESIGN INC",
       "sbir_amount": 21051456.1,
@@ -524,6 +1640,24 @@
       "other_federal": 6524451.17,
       "pct_sbir": 76.3,
       "award_count": 29
+    },
+    {
+      "company": "NUMERICA CORPORATION",
+      "matched_name": "NUMERICA CORPORATION",
+      "sbir_amount": 23964702.73,
+      "total_federal": 31604023.56,
+      "other_federal": 7639320.83,
+      "pct_sbir": 75.8,
+      "award_count": 33
+    },
+    {
+      "company": "SABER ASTRONAUTICS, LLC",
+      "matched_name": "SABER ASTRONAUTICS, LLC",
+      "sbir_amount": 5059875.17,
+      "total_federal": 6696177.41,
+      "other_federal": 1636302.24,
+      "pct_sbir": 75.6,
+      "award_count": 7
     },
     {
       "company": "VADUM INC",
@@ -544,6 +1678,15 @@
       "award_count": 10
     },
     {
+      "company": "IRFLEX CORP",
+      "matched_name": "IRFLEX CORP",
+      "sbir_amount": 5842134.99,
+      "total_federal": 7866913.15,
+      "other_federal": 2024778.16,
+      "pct_sbir": 74.3,
+      "award_count": 11
+    },
+    {
       "company": "ATA ENGINEERING, INC.",
       "matched_name": "ATA ENGINEERING, INC.",
       "sbir_amount": 20300514.76,
@@ -551,6 +1694,24 @@
       "other_federal": 7100719.71,
       "pct_sbir": 74.1,
       "award_count": 28
+    },
+    {
+      "company": "HILL ENGINEERING LLC",
+      "matched_name": "HILL ENGINEERING, LLC",
+      "sbir_amount": 6509666.0,
+      "total_federal": 8796310.0,
+      "other_federal": 2286644.0,
+      "pct_sbir": 74.0,
+      "award_count": 10
+    },
+    {
+      "company": "AQWEST, LLC",
+      "matched_name": "AQWEST, LLC",
+      "sbir_amount": 6346934.55,
+      "total_federal": 8579687.99,
+      "other_federal": 2232753.44,
+      "pct_sbir": 74.0,
+      "award_count": 7
     },
     {
       "company": "POLARIS SENSOR TECHNOLOGIES INC",
@@ -562,6 +1723,24 @@
       "award_count": 31
     },
     {
+      "company": "Exo-Atmospheric Technologies LLC",
+      "matched_name": "EXO-ATMOSPHERIC TECHNOLOGIES LLC",
+      "sbir_amount": 6995577.79,
+      "total_federal": 9492244.54,
+      "other_federal": 2496666.75,
+      "pct_sbir": 73.7,
+      "award_count": 13
+    },
+    {
+      "company": "Fuceltech Inc",
+      "matched_name": "FUCELTECH INC",
+      "sbir_amount": 4560841.7,
+      "total_federal": 6220395.88,
+      "other_federal": 1659554.18,
+      "pct_sbir": 73.3,
+      "award_count": 6
+    },
+    {
       "company": "COLVIN RUN NETWORKS, INC",
       "matched_name": "COLVIN RUN NETWORKS, INC",
       "sbir_amount": 10867521.33,
@@ -569,6 +1748,15 @@
       "other_federal": 4003678.88,
       "pct_sbir": 73.1,
       "award_count": 19
+    },
+    {
+      "company": "SIVANANTHAN LABORATORIES, INC.",
+      "matched_name": "SIVANANTHAN LABORATORIES, INC.",
+      "sbir_amount": 8036624.38,
+      "total_federal": 11123920.14,
+      "other_federal": 3087295.76,
+      "pct_sbir": 72.2,
+      "award_count": 15
     },
     {
       "company": "Kaney Aerospace, Inc.",
@@ -589,6 +1777,33 @@
       "award_count": 11
     },
     {
+      "company": "WILDER SYSTEMS INC.",
+      "matched_name": "WILDER SYSTEMS INC.",
+      "sbir_amount": 8235341.0,
+      "total_federal": 11516907.74,
+      "other_federal": 3281566.74,
+      "pct_sbir": 71.5,
+      "award_count": 12
+    },
+    {
+      "company": "KINNAMI SOFTWARE CORPORATION",
+      "matched_name": "KINNAMI SOFTWARE CORPORATION",
+      "sbir_amount": 4874519.0,
+      "total_federal": 6825705.0,
+      "other_federal": 1951186.0,
+      "pct_sbir": 71.4,
+      "award_count": 10
+    },
+    {
+      "company": "PERFUSION MEDICAL LLC",
+      "matched_name": "PERFUSION MEDICAL LLC",
+      "sbir_amount": 5120883.0,
+      "total_federal": 7177344.93,
+      "other_federal": 2056461.93,
+      "pct_sbir": 71.3,
+      "award_count": 6
+    },
+    {
       "company": "BOSTON ENGINEERING CORPORATION",
       "matched_name": "BOSTON ENGINEERING CORPORATION",
       "sbir_amount": 13716422.16,
@@ -596,6 +1811,69 @@
       "other_federal": 5552852.16,
       "pct_sbir": 71.2,
       "award_count": 19
+    },
+    {
+      "company": "PHYSICS, MATERIALS, AND APPLIED MATHEMATICS RESEARCH L.L.C.",
+      "matched_name": "PHYSICS, MATERIALS, AND APPLIED MATHEMATICS RESEARCH L.L.C.",
+      "sbir_amount": 7862219.13,
+      "total_federal": 11080809.04,
+      "other_federal": 3218589.91,
+      "pct_sbir": 71.0,
+      "award_count": 9
+    },
+    {
+      "company": "CIRCLE OPTICS INC",
+      "matched_name": "CIRCLE OPTICS INC",
+      "sbir_amount": 7114611.05,
+      "total_federal": 10025719.35,
+      "other_federal": 2911108.3,
+      "pct_sbir": 71.0,
+      "award_count": 15
+    },
+    {
+      "company": "ABL SPACE SYSTEMS COMPANY",
+      "matched_name": "ABL SPACE SYSTEMS COMPANY",
+      "sbir_amount": 15899940.0,
+      "total_federal": 22449940.0,
+      "other_federal": 6550000.0,
+      "pct_sbir": 70.8,
+      "award_count": 5
+    },
+    {
+      "company": "SEQUENT LOGIC LLC",
+      "matched_name": "SEQUENT LOGIC LLC",
+      "sbir_amount": 8576352.68,
+      "total_federal": 12157452.68,
+      "other_federal": 3581100.0,
+      "pct_sbir": 70.5,
+      "award_count": 9
+    },
+    {
+      "company": "VR REHAB INC",
+      "matched_name": "VR REHAB INC",
+      "sbir_amount": 4846558.36,
+      "total_federal": 6896397.83,
+      "other_federal": 2049839.47,
+      "pct_sbir": 70.3,
+      "award_count": 12
+    },
+    {
+      "company": "GLOBAL AIR LOGISTICS AND TRAINING, INC.",
+      "matched_name": "GLOBAL AIR LOGISTICS AND TRAINING, INC.",
+      "sbir_amount": 7179391.0,
+      "total_federal": 10223126.57,
+      "other_federal": 3043735.57,
+      "pct_sbir": 70.2,
+      "award_count": 5
+    },
+    {
+      "company": "NU-TREK, INC.",
+      "matched_name": "NU-TREK, INC.",
+      "sbir_amount": 5866597.52,
+      "total_federal": 8362109.96,
+      "other_federal": 2495512.44,
+      "pct_sbir": 70.2,
+      "award_count": 14
     },
     {
       "company": "HUMAN SYSTEMS INTEGRATION INC",
@@ -607,6 +1885,24 @@
       "award_count": 15
     },
     {
+      "company": "QUNAV LLC",
+      "matched_name": "QUNAV LLC",
+      "sbir_amount": 5806697.43,
+      "total_federal": 8318781.57,
+      "other_federal": 2512084.14,
+      "pct_sbir": 69.8,
+      "award_count": 11
+    },
+    {
+      "company": "ELEMENTUM 3D, INC.",
+      "matched_name": "ELEMENTUM 3D, INC.",
+      "sbir_amount": 4944997.0,
+      "total_federal": 7103754.09,
+      "other_federal": 2158757.09,
+      "pct_sbir": 69.6,
+      "award_count": 7
+    },
+    {
       "company": "IERUS TECHNOLOGIES INC",
       "matched_name": "IERUS TECHNOLOGIES INC",
       "sbir_amount": 29524257.95,
@@ -614,6 +1910,60 @@
       "other_federal": 12941936.15,
       "pct_sbir": 69.5,
       "award_count": 46
+    },
+    {
+      "company": "TAI-YANG RESEARCH COMPANY",
+      "matched_name": "TAI-YANG RESEARCH COMPANY",
+      "sbir_amount": 5151215.0,
+      "total_federal": 7423687.64,
+      "other_federal": 2272472.64,
+      "pct_sbir": 69.4,
+      "award_count": 8
+    },
+    {
+      "company": "SPARTA SOFTWARE CORP",
+      "matched_name": "SPARTA SOFTWARE CORP",
+      "sbir_amount": 6616257.0,
+      "total_federal": 9621894.21,
+      "other_federal": 3005637.21,
+      "pct_sbir": 68.8,
+      "award_count": 15
+    },
+    {
+      "company": "MOBIUS LOGIC, INC",
+      "matched_name": "MOBIUS LOGIC, INC",
+      "sbir_amount": 6476682.0,
+      "total_federal": 9415244.0,
+      "other_federal": 2938562.0,
+      "pct_sbir": 68.8,
+      "award_count": 7
+    },
+    {
+      "company": "DIGITAL OPTICS TECHNOLOGIES INC",
+      "matched_name": "DIGITAL OPTICS TECHNOLOGIES INC",
+      "sbir_amount": 4423699.39,
+      "total_federal": 6426973.44,
+      "other_federal": 2003274.05,
+      "pct_sbir": 68.8,
+      "award_count": 9
+    },
+    {
+      "company": "RX BANDZ, INC.",
+      "matched_name": "RX BANDZ, INC.",
+      "sbir_amount": 6990569.04,
+      "total_federal": 10223650.04,
+      "other_federal": 3233081.0,
+      "pct_sbir": 68.4,
+      "award_count": 12
+    },
+    {
+      "company": "SURFACE OPTICS CORPORATION",
+      "matched_name": "SURFACE OPTICS CORPORATION",
+      "sbir_amount": 4872879.13,
+      "total_federal": 7128670.05,
+      "other_federal": 2255790.92,
+      "pct_sbir": 68.4,
+      "award_count": 10
     },
     {
       "company": "QORTEK INC",
@@ -634,6 +1984,24 @@
       "award_count": 14
     },
     {
+      "company": "SENSING STRATEGIES INC",
+      "matched_name": "SENSING STRATEGIES, INC.",
+      "sbir_amount": 5144229.17,
+      "total_federal": 7666570.0,
+      "other_federal": 2522340.83,
+      "pct_sbir": 67.1,
+      "award_count": 9
+    },
+    {
+      "company": "ADVANCED CERAMICS MANUFACTURING, LLC",
+      "matched_name": "ADVANCED CERAMICS MANUFACTURING, LLC",
+      "sbir_amount": 4770225.0,
+      "total_federal": 7122790.71,
+      "other_federal": 2352565.71,
+      "pct_sbir": 67.0,
+      "award_count": 8
+    },
+    {
       "company": "PRAESES, LLC",
       "matched_name": "PRAESES, LLC",
       "sbir_amount": 17571114.0,
@@ -650,6 +2018,15 @@
       "other_federal": 5390221.48,
       "pct_sbir": 66.5,
       "award_count": 13
+    },
+    {
+      "company": "CORSHA, INC",
+      "matched_name": "CORSHA, INC",
+      "sbir_amount": 5402674.92,
+      "total_federal": 8189711.6,
+      "other_federal": 2787036.68,
+      "pct_sbir": 66.0,
+      "award_count": 7
     },
     {
       "company": "LUNA INNOVATIONS INCORPORATED",
@@ -670,6 +2047,15 @@
       "award_count": 26
     },
     {
+      "company": "PSEUDOLITHIC INC.",
+      "matched_name": "PSEUDOLITHIC INC.",
+      "sbir_amount": 4786737.0,
+      "total_federal": 7386931.36,
+      "other_federal": 2600194.36,
+      "pct_sbir": 64.8,
+      "award_count": 6
+    },
+    {
       "company": "ARCHARITHMS INC",
       "matched_name": "ARCHARITHMS INC",
       "sbir_amount": 9625991.35,
@@ -679,6 +2065,15 @@
       "award_count": 18
     },
     {
+      "company": "Innoveering, LLC",
+      "matched_name": "INNOVEERING LLC",
+      "sbir_amount": 7428962.73,
+      "total_federal": 11539328.22,
+      "other_federal": 4110365.49,
+      "pct_sbir": 64.4,
+      "award_count": 11
+    },
+    {
       "company": "TEXAS RESEARCH INSTITUTE , AUSTIN, INC.",
       "matched_name": "TEXAS RESEARCH INSTITUTE , AUSTIN, INC.",
       "sbir_amount": 35011590.74,
@@ -686,6 +2081,15 @@
       "other_federal": 19522697.38,
       "pct_sbir": 64.2,
       "award_count": 55
+    },
+    {
+      "company": "ARES SECURITY CORPORATION",
+      "matched_name": "ARES SECURITY CORPORATION",
+      "sbir_amount": 7068036.0,
+      "total_federal": 11033454.9,
+      "other_federal": 3965418.9,
+      "pct_sbir": 64.1,
+      "award_count": 10
     },
     {
       "company": "XANALYTIX SYSTEMS LLC",
@@ -733,6 +2137,60 @@
       "award_count": 26
     },
     {
+      "company": "SCIENTIFIC TOOLWORKS INC.",
+      "matched_name": "SCIENTIFIC TOOLWORKS INC.",
+      "sbir_amount": 5073111.0,
+      "total_federal": 8100982.0,
+      "other_federal": 3027871.0,
+      "pct_sbir": 62.6,
+      "award_count": 5
+    },
+    {
+      "company": "WECOSO, INC.",
+      "matched_name": "WECOSO, INC.",
+      "sbir_amount": 6638213.0,
+      "total_federal": 10620149.0,
+      "other_federal": 3981936.0,
+      "pct_sbir": 62.5,
+      "award_count": 5
+    },
+    {
+      "company": "ADROIT MATERIALS, INC.",
+      "matched_name": "ADROIT MATERIALS, INC.",
+      "sbir_amount": 5855217.68,
+      "total_federal": 9362916.84,
+      "other_federal": 3507699.16,
+      "pct_sbir": 62.5,
+      "award_count": 8
+    },
+    {
+      "company": "MTI SYSTEMS, INC.",
+      "matched_name": "MTI SYSTEMS, INC.",
+      "sbir_amount": 4621729.0,
+      "total_federal": 7438369.9,
+      "other_federal": 2816640.9,
+      "pct_sbir": 62.1,
+      "award_count": 5
+    },
+    {
+      "company": "ZIVA CORPORATION",
+      "matched_name": "ZIVA CORPORATION",
+      "sbir_amount": 6809804.66,
+      "total_federal": 11111789.37,
+      "other_federal": 4301984.71,
+      "pct_sbir": 61.3,
+      "award_count": 6
+    },
+    {
+      "company": "CAMX Power LLC",
+      "matched_name": "CAMX POWER LLC",
+      "sbir_amount": 7182412.29,
+      "total_federal": 11812197.76,
+      "other_federal": 4629785.47,
+      "pct_sbir": 60.8,
+      "award_count": 10
+    },
+    {
       "company": "Nanovox, LLC",
       "matched_name": "NANOVOX, LLC",
       "sbir_amount": 9848298.21,
@@ -758,6 +2216,15 @@
       "other_federal": 5703693.9,
       "pct_sbir": 60.6,
       "award_count": 10
+    },
+    {
+      "company": "AVIATION RESOURCES AND CONSULTING SERVICES, LLC",
+      "matched_name": "AVIATION RESOURCES AND CONSULTING SERVICES, LLC",
+      "sbir_amount": 5094872.52,
+      "total_federal": 8424979.45,
+      "other_federal": 3330106.93,
+      "pct_sbir": 60.5,
+      "award_count": 7
     },
     {
       "company": "MODUS OPERANDI, INC.",
@@ -814,6 +2281,15 @@
       "award_count": 37
     },
     {
+      "company": "TRIMER TECHNOLOGIES LLC",
+      "matched_name": "TRIMER TECHNOLOGIES LLC",
+      "sbir_amount": 4681885.69,
+      "total_federal": 8031442.19,
+      "other_federal": 3349556.5,
+      "pct_sbir": 58.3,
+      "award_count": 7
+    },
+    {
       "company": "INTELLIGENT FIBER OPTIC SYSTEMS CORP",
       "matched_name": "INTELLIGENT FIBER OPTIC SYSTEMS CORPORATION",
       "sbir_amount": 10899402.62,
@@ -830,6 +2306,51 @@
       "other_federal": 14682980.12,
       "pct_sbir": 58.0,
       "award_count": 45
+    },
+    {
+      "company": "ELECTRONINKS INCORPORATED",
+      "matched_name": "ELECTRONINKS INCORPORATED",
+      "sbir_amount": 6214138.5,
+      "total_federal": 10757175.5,
+      "other_federal": 4543037.0,
+      "pct_sbir": 57.8,
+      "award_count": 14
+    },
+    {
+      "company": "ADA TECHNOLOGIES, INC.",
+      "matched_name": "ADA TECHNOLOGIES, INC.",
+      "sbir_amount": 8134683.11,
+      "total_federal": 14108534.15,
+      "other_federal": 5973851.04,
+      "pct_sbir": 57.7,
+      "award_count": 14
+    },
+    {
+      "company": "MACHINA LABS INC",
+      "matched_name": "MACHINA LABS INC",
+      "sbir_amount": 5094418.0,
+      "total_federal": 8823771.0,
+      "other_federal": 3729353.0,
+      "pct_sbir": 57.7,
+      "award_count": 6
+    },
+    {
+      "company": "COLORADO ENGINEERING INC.",
+      "matched_name": "COLORADO ENGINEERING INC.",
+      "sbir_amount": 4743786.98,
+      "total_federal": 8248474.62,
+      "other_federal": 3504687.64,
+      "pct_sbir": 57.5,
+      "award_count": 9
+    },
+    {
+      "company": "MECHANICAL SOLUTIONS INC",
+      "matched_name": "MICRON AIR & MECHANICAL SOLUTIONS INC",
+      "sbir_amount": 7179411.0,
+      "total_federal": 12671296.8,
+      "other_federal": 5491885.8,
+      "pct_sbir": 56.7,
+      "award_count": 7
     },
     {
       "company": "SPECTRAL ENERGIES LLC",
@@ -895,6 +2416,51 @@
       "award_count": 16
     },
     {
+      "company": "REACTION SYSTEMS, INC.",
+      "matched_name": "REACTION SYSTEMS, INC.",
+      "sbir_amount": 4841306.03,
+      "total_federal": 8783151.98,
+      "other_federal": 3941845.95,
+      "pct_sbir": 55.1,
+      "award_count": 9
+    },
+    {
+      "company": "M4 ENGINEERING, INC.",
+      "matched_name": "M4 ENGINEERING, INC.",
+      "sbir_amount": 6009917.07,
+      "total_federal": 10984853.26,
+      "other_federal": 4974936.19,
+      "pct_sbir": 54.7,
+      "award_count": 11
+    },
+    {
+      "company": "VCOM3D INC",
+      "matched_name": "VCOM3D INC",
+      "sbir_amount": 5347964.97,
+      "total_federal": 9809944.08,
+      "other_federal": 4461979.11,
+      "pct_sbir": 54.5,
+      "award_count": 6
+    },
+    {
+      "company": "QUANTUM VENTURA INC",
+      "matched_name": "QUANTUM VENTURA INC",
+      "sbir_amount": 4580969.49,
+      "total_federal": 8443774.26,
+      "other_federal": 3862804.77,
+      "pct_sbir": 54.3,
+      "award_count": 15
+    },
+    {
+      "company": "BRIGHT SILICON TECHNOLOGIES, INC.",
+      "matched_name": "BRIGHT SILICON TECHNOLOGIES, INC.",
+      "sbir_amount": 4511696.46,
+      "total_federal": 8321618.41,
+      "other_federal": 3809921.95,
+      "pct_sbir": 54.2,
+      "award_count": 5
+    },
+    {
       "company": "ILLUMINATION WORKS, LLC",
       "matched_name": "ILLUMINATION WORKS, LLC",
       "sbir_amount": 10534343.39,
@@ -902,6 +2468,15 @@
       "other_federal": 8970889.77,
       "pct_sbir": 54.0,
       "award_count": 15
+    },
+    {
+      "company": "ALPHACORE INC",
+      "matched_name": "ALPHACORE INC",
+      "sbir_amount": 22527079.46,
+      "total_federal": 41763844.94,
+      "other_federal": 19236765.48,
+      "pct_sbir": 53.9,
+      "award_count": 49
     },
     {
       "company": "ANDRO COMPUTATIONAL SOLUTIONS LLC",
@@ -940,6 +2515,15 @@
       "award_count": 16
     },
     {
+      "company": "Lambda Science, Inc.",
+      "matched_name": "LAMBDA SCIENCE, INC.",
+      "sbir_amount": 6840219.0,
+      "total_federal": 13021984.96,
+      "other_federal": 6181765.96,
+      "pct_sbir": 52.5,
+      "award_count": 13
+    },
+    {
       "company": "TURION SPACE CORP",
       "matched_name": "TURION SPACE CORP",
       "sbir_amount": 9271613.07,
@@ -958,6 +2542,15 @@
       "award_count": 17
     },
     {
+      "company": "COGNITIVE SPACE, INC",
+      "matched_name": "COGNITIVE SPACE, INC",
+      "sbir_amount": 4821005.0,
+      "total_federal": 9420047.0,
+      "other_federal": 4599042.0,
+      "pct_sbir": 51.2,
+      "award_count": 6
+    },
+    {
       "company": "OPTO-KNOWLEDGE SYSTEMS INC",
       "matched_name": "OPTO-KNOWLEDGE SYSTEMS INC",
       "sbir_amount": 22865808.81,
@@ -974,6 +2567,24 @@
       "other_federal": 10661331.03,
       "pct_sbir": 50.5,
       "award_count": 15
+    },
+    {
+      "company": "OPTERUS RESEARCH AND DEVELOPMENT, INC",
+      "matched_name": "OPTERUS RESEARCH AND DEVELOPMENT, INC",
+      "sbir_amount": 5634638.0,
+      "total_federal": 11239032.0,
+      "other_federal": 5604394.0,
+      "pct_sbir": 50.1,
+      "award_count": 10
+    },
+    {
+      "company": "CENITH INNOVATIONS LLC",
+      "matched_name": "CENITH INNOVATIONS LLC",
+      "sbir_amount": 4352726.76,
+      "total_federal": 8751159.09,
+      "other_federal": 4398432.33,
+      "pct_sbir": 49.7,
+      "award_count": 7
     },
     {
       "company": "NANOHMICS INC",
@@ -1003,6 +2614,24 @@
       "award_count": 18
     },
     {
+      "company": "STRUCTURED MATERIALS INDUSTRIES, INC.",
+      "matched_name": "STRUCTURED MATERIALS INDUSTRIES, INC.",
+      "sbir_amount": 4410027.99,
+      "total_federal": 8956358.22,
+      "other_federal": 4546330.23,
+      "pct_sbir": 49.2,
+      "award_count": 9
+    },
+    {
+      "company": "TRUSTED SPACE INC",
+      "matched_name": "TRUSTED SPACE INC",
+      "sbir_amount": 5629463.0,
+      "total_federal": 11466152.58,
+      "other_federal": 5836689.58,
+      "pct_sbir": 49.1,
+      "award_count": 7
+    },
+    {
       "company": "MENTIS SCIENCES INC",
       "matched_name": "MENTIS SCIENCES INC",
       "sbir_amount": 13984655.0,
@@ -1021,6 +2650,15 @@
       "award_count": 23
     },
     {
+      "company": "RELIACOAT TECHNOLOGIES, LLC",
+      "matched_name": "RELIACOAT TECHNOLOGIES, LLC",
+      "sbir_amount": 5824353.7,
+      "total_federal": 12132200.71,
+      "other_federal": 6307847.01,
+      "pct_sbir": 48.0,
+      "award_count": 7
+    },
+    {
       "company": "CORNERSTONE RESEARCH GROUP INC",
       "matched_name": "CORNERSTONE RESEARCH GROUP INC",
       "sbir_amount": 54996853.39,
@@ -1037,6 +2675,33 @@
       "other_federal": 30841368.52,
       "pct_sbir": 47.7,
       "award_count": 42
+    },
+    {
+      "company": "LUNAR RESOURCES, INC.",
+      "matched_name": "LUNAR RESOURCES, INC.",
+      "sbir_amount": 5674941.08,
+      "total_federal": 11931721.08,
+      "other_federal": 6256780.0,
+      "pct_sbir": 47.6,
+      "award_count": 10
+    },
+    {
+      "company": "TRANS ASTRONAUTICA CORPORATION",
+      "matched_name": "TRANS ASTRONAUTICA CORPORATION",
+      "sbir_amount": 5364607.0,
+      "total_federal": 11411361.76,
+      "other_federal": 6046754.76,
+      "pct_sbir": 47.0,
+      "award_count": 8
+    },
+    {
+      "company": "UNITED PROTECTIVE TECHNOLOGIES, LLC",
+      "matched_name": "UNITED PROTECTIVE TECHNOLOGIES, LLC",
+      "sbir_amount": 7402967.66,
+      "total_federal": 15912107.83,
+      "other_federal": 8509140.17,
+      "pct_sbir": 46.5,
+      "award_count": 14
     },
     {
       "company": "COMBUSTION RESEARCH & FLOW TECHNOLOGY INC",
@@ -1064,6 +2729,24 @@
       "other_federal": 11913233.6,
       "pct_sbir": 45.9,
       "award_count": 19
+    },
+    {
+      "company": "CITY LABS, INC.",
+      "matched_name": "CITY LABS, INC.",
+      "sbir_amount": 5626250.0,
+      "total_federal": 12269618.64,
+      "other_federal": 6643368.64,
+      "pct_sbir": 45.9,
+      "award_count": 8
+    },
+    {
+      "company": "SPORIAN MICROSYSTEMS, INC",
+      "matched_name": "SPORIAN MICROSYSTEMS, INC",
+      "sbir_amount": 4528403.22,
+      "total_federal": 9915649.15,
+      "other_federal": 5387245.93,
+      "pct_sbir": 45.7,
+      "award_count": 10
     },
     {
       "company": "MAINSTREAM ENGINEERING CORP",
@@ -1102,6 +2785,24 @@
       "award_count": 12
     },
     {
+      "company": "FREEDOM FLIGHT WORKS, INC.",
+      "matched_name": "FREEDOM FLIGHT WORKS, INC.",
+      "sbir_amount": 4548300.0,
+      "total_federal": 10578205.9,
+      "other_federal": 6029905.9,
+      "pct_sbir": 43.0,
+      "award_count": 9
+    },
+    {
+      "company": "APPLIED OCEAN SCIENCES, LLC",
+      "matched_name": "APPLIED OCEAN SCIENCES, LLC",
+      "sbir_amount": 4450154.0,
+      "total_federal": 10375243.88,
+      "other_federal": 5925089.88,
+      "pct_sbir": 42.9,
+      "award_count": 12
+    },
+    {
       "company": "ENGENIUSMICRO LLC",
       "matched_name": "ENGENIUSMICRO LLC",
       "sbir_amount": 10355073.72,
@@ -1120,6 +2821,15 @@
       "award_count": 20
     },
     {
+      "company": "EXQUADRUM INC",
+      "matched_name": "EXQUADRUM INC",
+      "sbir_amount": 6042755.45,
+      "total_federal": 14202577.19,
+      "other_federal": 8159821.74,
+      "pct_sbir": 42.5,
+      "award_count": 9
+    },
+    {
       "company": "MRL MATERIALS RESOURCES LLC",
       "matched_name": "MRL MATERIALS RESOURCES LLC",
       "sbir_amount": 9529270.76,
@@ -1127,6 +2837,15 @@
       "other_federal": 13011342.93,
       "pct_sbir": 42.3,
       "award_count": 19
+    },
+    {
+      "company": "COOLCAD ELECTRONICS, INC.",
+      "matched_name": "COOLCAD ELECTRONICS, INC.",
+      "sbir_amount": 5213587.44,
+      "total_federal": 12314367.17,
+      "other_federal": 7100779.73,
+      "pct_sbir": 42.3,
+      "award_count": 8
     },
     {
       "company": "SPECTRAL SCIENCES, INC",
@@ -1174,6 +2893,33 @@
       "award_count": 27
     },
     {
+      "company": "HY-TEK MANUFACTURING CO., INC.",
+      "matched_name": "HY-TEK MANUFACTURING CO., INC.",
+      "sbir_amount": 5978270.46,
+      "total_federal": 14774445.64,
+      "other_federal": 8796175.18,
+      "pct_sbir": 40.5,
+      "award_count": 5
+    },
+    {
+      "company": "EMPIRICAL SYSTEMS AEROSPACE INC",
+      "matched_name": "EMPIRICAL SYSTEMS AEROSPACE INC",
+      "sbir_amount": 6619632.0,
+      "total_federal": 16397212.73,
+      "other_federal": 9777580.73,
+      "pct_sbir": 40.4,
+      "award_count": 13
+    },
+    {
+      "company": "SKYNANO LLC",
+      "matched_name": "SKYNANO LLC",
+      "sbir_amount": 5114999.0,
+      "total_federal": 12725602.0,
+      "other_federal": 7610603.0,
+      "pct_sbir": 40.2,
+      "award_count": 7
+    },
+    {
       "company": "FIRST RF CORPORATION",
       "matched_name": "FIRST RF CORPORATION",
       "sbir_amount": 15356612.84,
@@ -1201,6 +2947,33 @@
       "award_count": 22
     },
     {
+      "company": "CAPESYM INC",
+      "matched_name": "CAPESYM INC",
+      "sbir_amount": 7876768.34,
+      "total_federal": 19905334.08,
+      "other_federal": 12028565.74,
+      "pct_sbir": 39.6,
+      "award_count": 13
+    },
+    {
+      "company": "MAP LARGE, INC.",
+      "matched_name": "MAP LARGE, INC.",
+      "sbir_amount": 7758538.8,
+      "total_federal": 19607683.88,
+      "other_federal": 11849145.08,
+      "pct_sbir": 39.6,
+      "award_count": 11
+    },
+    {
+      "company": "INNOSYS, INC.",
+      "matched_name": "INNOSYS, INC.",
+      "sbir_amount": 5863337.3,
+      "total_federal": 14840574.79,
+      "other_federal": 8977237.49,
+      "pct_sbir": 39.5,
+      "award_count": 10
+    },
+    {
       "company": "CHARLES RIVER ANALYTICS, INC.",
       "matched_name": "CHARLES RIVER ANALYTICS, INC.",
       "sbir_amount": 81179217.23,
@@ -1208,6 +2981,42 @@
       "other_federal": 124745426.9,
       "pct_sbir": 39.4,
       "award_count": 135
+    },
+    {
+      "company": "THE NAVSYS CORPORATION",
+      "matched_name": "THE NAVSYS CORPORATION",
+      "sbir_amount": 5851103.0,
+      "total_federal": 14847490.68,
+      "other_federal": 8996387.68,
+      "pct_sbir": 39.4,
+      "award_count": 7
+    },
+    {
+      "company": "OZARK INTEGRATED CIRCUITS INC",
+      "matched_name": "OZARK INTEGRATED CIRCUITS INC",
+      "sbir_amount": 7806053.46,
+      "total_federal": 19867309.46,
+      "other_federal": 12061256.0,
+      "pct_sbir": 39.3,
+      "award_count": 9
+    },
+    {
+      "company": "QUADRUS CORPORATION",
+      "matched_name": "QUADRUS CORPORATION",
+      "sbir_amount": 4850327.88,
+      "total_federal": 12327637.05,
+      "other_federal": 7477309.17,
+      "pct_sbir": 39.3,
+      "award_count": 7
+    },
+    {
+      "company": "ENVISION TECHNOLOGY, LLC",
+      "matched_name": "ENVISION TECHNOLOGY, LLC",
+      "sbir_amount": 5122820.99,
+      "total_federal": 13158073.99,
+      "other_federal": 8035253.0,
+      "pct_sbir": 38.9,
+      "award_count": 8
     },
     {
       "company": "Faraday Technology, Inc.",
@@ -1226,6 +3035,15 @@
       "other_federal": 16572552.42,
       "pct_sbir": 37.7,
       "award_count": 19
+    },
+    {
+      "company": "PROTECTION ENGINEERING CONSULTANTS LLC",
+      "matched_name": "PROTECTION ENGINEERING CONSULTANTS LLC",
+      "sbir_amount": 4331536.4,
+      "total_federal": 11600214.7,
+      "other_federal": 7268678.3,
+      "pct_sbir": 37.3,
+      "award_count": 8
     },
     {
       "company": "CREARE LLC",
@@ -1273,6 +3091,60 @@
       "award_count": 10
     },
     {
+      "company": "STARFIRE INDUSTRIES, LLC",
+      "matched_name": "STARFIRE INDUSTRIES LLC",
+      "sbir_amount": 7873627.52,
+      "total_federal": 21471561.75,
+      "other_federal": 13597934.23,
+      "pct_sbir": 36.7,
+      "award_count": 6
+    },
+    {
+      "company": "NEAR EARTH AUTONOMY, INC",
+      "matched_name": "NEAR EARTH AUTONOMY, INC",
+      "sbir_amount": 6705286.79,
+      "total_federal": 18526171.1,
+      "other_federal": 11820884.31,
+      "pct_sbir": 36.2,
+      "award_count": 12
+    },
+    {
+      "company": "BLADE DIAGNOSTICS CORPORATION",
+      "matched_name": "BLADE DIAGNOSTICS CORPORATION",
+      "sbir_amount": 4657432.0,
+      "total_federal": 12940881.47,
+      "other_federal": 8283449.47,
+      "pct_sbir": 36.0,
+      "award_count": 6
+    },
+    {
+      "company": "TRENCHANT ANALYTICS LLC",
+      "matched_name": "TRENCHANT ANALYTICS LLC",
+      "sbir_amount": 4596448.05,
+      "total_federal": 12798901.02,
+      "other_federal": 8202452.97,
+      "pct_sbir": 35.9,
+      "award_count": 7
+    },
+    {
+      "company": "COMPASS TECHNOLOGY GROUP, LLC",
+      "matched_name": "COMPASS TECHNOLOGY GROUP, INC.",
+      "sbir_amount": 10492657.23,
+      "total_federal": 29370712.16,
+      "other_federal": 18878054.93,
+      "pct_sbir": 35.7,
+      "award_count": 9
+    },
+    {
+      "company": "ZONE 5 TECHNOLOGIES, LLC",
+      "matched_name": "ZONE 5 TECHNOLOGIES, LLC",
+      "sbir_amount": 5608605.79,
+      "total_federal": 15741131.79,
+      "other_federal": 10132526.0,
+      "pct_sbir": 35.6,
+      "award_count": 6
+    },
+    {
       "company": "REAL-TIME INNOVATIONS, INC.",
       "matched_name": "REAL-TIME INNOVATIONS, INC.",
       "sbir_amount": 10094366.56,
@@ -1280,6 +3152,15 @@
       "other_federal": 18370822.21,
       "pct_sbir": 35.5,
       "award_count": 18
+    },
+    {
+      "company": "Twinleaf LLC",
+      "matched_name": "TWINLEAF LLC",
+      "sbir_amount": 4493616.0,
+      "total_federal": 12676235.64,
+      "other_federal": 8182619.64,
+      "pct_sbir": 35.4,
+      "award_count": 5
     },
     {
       "company": "Gotenna, Inc.",
@@ -1291,6 +3172,24 @@
       "award_count": 14
     },
     {
+      "company": "BLACKSKY GEOSPATIAL SOLUTIONS, LLC",
+      "matched_name": "BLACKSKY GEOSPATIAL SOLUTIONS, LLC",
+      "sbir_amount": 6578431.14,
+      "total_federal": 18843677.0,
+      "other_federal": 12265245.86,
+      "pct_sbir": 34.9,
+      "award_count": 7
+    },
+    {
+      "company": "VESCENT TECHNOLOGIES INC.",
+      "matched_name": "VESCENT TECHNOLOGIES INC.",
+      "sbir_amount": 6416367.42,
+      "total_federal": 18444520.67,
+      "other_federal": 12028153.25,
+      "pct_sbir": 34.8,
+      "award_count": 10
+    },
+    {
       "company": "OCEANIT LABORATORIES INC",
       "matched_name": "OCEANIT LABORATORIES INC",
       "sbir_amount": 38550533.34,
@@ -1298,6 +3197,42 @@
       "other_federal": 75157149.05,
       "pct_sbir": 33.9,
       "award_count": 55
+    },
+    {
+      "company": "ADVENTIUM ENTERPRISES, LLC",
+      "matched_name": "ADVENTIUM ENTERPRISES, LLC",
+      "sbir_amount": 5780926.21,
+      "total_federal": 17070668.46,
+      "other_federal": 11289742.25,
+      "pct_sbir": 33.9,
+      "award_count": 9
+    },
+    {
+      "company": "REBELLION DEFENSE INC",
+      "matched_name": "REBELLION DEFENSE INC",
+      "sbir_amount": 4849834.0,
+      "total_federal": 14329769.0,
+      "other_federal": 9479935.0,
+      "pct_sbir": 33.8,
+      "award_count": 5
+    },
+    {
+      "company": "VIVONICS INC",
+      "matched_name": "VIVONICS INC",
+      "sbir_amount": 6493564.68,
+      "total_federal": 19309170.05,
+      "other_federal": 12815605.37,
+      "pct_sbir": 33.6,
+      "award_count": 10
+    },
+    {
+      "company": "STOTTLER HENKE ASSOCIATES, INC",
+      "matched_name": "STOTTLER HENKE ASSOCIATES, INC",
+      "sbir_amount": 22880728.08,
+      "total_federal": 68677049.78,
+      "other_federal": 45796321.7,
+      "pct_sbir": 33.3,
+      "award_count": 47
     },
     {
       "company": "GRAF RESEARCH CORPORATION",
@@ -1327,6 +3262,15 @@
       "award_count": 11
     },
     {
+      "company": "STREET SMARTS VR INC",
+      "matched_name": "STREET SMARTS VR INC",
+      "sbir_amount": 6239828.0,
+      "total_federal": 19647741.99,
+      "other_federal": 13407913.99,
+      "pct_sbir": 31.8,
+      "award_count": 11
+    },
+    {
       "company": "BARRON ASSOCIATES, INC.",
       "matched_name": "BARRON ASSOCIATES, INC.",
       "sbir_amount": 9474717.03,
@@ -1334,6 +3278,24 @@
       "other_federal": 20963142.75,
       "pct_sbir": 31.1,
       "award_count": 19
+    },
+    {
+      "company": "SIGNAL SYSTEMS CORPORATION",
+      "matched_name": "SIGNAL SYSTEMS CORPORATION",
+      "sbir_amount": 7544580.0,
+      "total_federal": 24450616.79,
+      "other_federal": 16906036.79,
+      "pct_sbir": 30.9,
+      "award_count": 13
+    },
+    {
+      "company": "DISCOVERY MACHINE INC",
+      "matched_name": "DISCOVERY MACHINE INC",
+      "sbir_amount": 6699074.28,
+      "total_federal": 21667889.77,
+      "other_federal": 14968815.49,
+      "pct_sbir": 30.9,
+      "award_count": 6
     },
     {
       "company": "TDA RESEARCH, INC.",
@@ -1352,6 +3314,15 @@
       "other_federal": 26755203.06,
       "pct_sbir": 30.7,
       "award_count": 14
+    },
+    {
+      "company": "BEACON INTERACTIVE SYSTEMS LLC",
+      "matched_name": "BEACON INTERACTIVE SYSTEMS LLC",
+      "sbir_amount": 8512264.18,
+      "total_federal": 27898298.17,
+      "other_federal": 19386033.99,
+      "pct_sbir": 30.5,
+      "award_count": 8
     },
     {
       "company": "CORVID TECHNOLOGIES, LLC",
@@ -1390,6 +3361,15 @@
       "award_count": 37
     },
     {
+      "company": "ELEVAN LLC",
+      "matched_name": "ELEVAN LLC",
+      "sbir_amount": 5995484.4,
+      "total_federal": 21165057.09,
+      "other_federal": 15169572.69,
+      "pct_sbir": 28.3,
+      "award_count": 12
+    },
+    {
       "company": "ARETE ASSOCIATES",
       "matched_name": "ARETE ASSOCIATES",
       "sbir_amount": 71669770.0,
@@ -1397,6 +3377,15 @@
       "other_federal": 184720950.24,
       "pct_sbir": 28.0,
       "award_count": 97
+    },
+    {
+      "company": "ADVANCED SCIENTIFIC CONCEPTS, LLC",
+      "matched_name": "ADVANCED SCIENTIFIC CONCEPTS, LLC",
+      "sbir_amount": 6376494.73,
+      "total_federal": 22759889.23,
+      "other_federal": 16383394.5,
+      "pct_sbir": 28.0,
+      "award_count": 12
     },
     {
       "company": "SOAR TECHNOLOGY, LLC",
@@ -1444,6 +3433,15 @@
       "award_count": 12
     },
     {
+      "company": "QUALTECH SYSTEMS, INC.",
+      "matched_name": "QUALTECH SYSTEMS, INC.",
+      "sbir_amount": 5707674.0,
+      "total_federal": 22078710.37,
+      "other_federal": 16371036.37,
+      "pct_sbir": 25.9,
+      "award_count": 8
+    },
+    {
       "company": "SLINGSHOT AEROSPACE INC",
       "matched_name": "SLINGSHOT AEROSPACE INC",
       "sbir_amount": 10621711.5,
@@ -1451,6 +3449,15 @@
       "other_federal": 31079511.94,
       "pct_sbir": 25.5,
       "award_count": 11
+    },
+    {
+      "company": "SPECTRAL LABS INCORPORATED",
+      "matched_name": "SPECTRAL LABS INCORPORATED",
+      "sbir_amount": 6659533.69,
+      "total_federal": 26149101.23,
+      "other_federal": 19489567.54,
+      "pct_sbir": 25.5,
+      "award_count": 10
     },
     {
       "company": "IMSAR LLC",
@@ -1471,6 +3478,15 @@
       "award_count": 12
     },
     {
+      "company": "TEAMWORX SECURITY, INC.",
+      "matched_name": "TEAMWORX SECURITY, INC.",
+      "sbir_amount": 5270969.0,
+      "total_federal": 20884626.24,
+      "other_federal": 15613657.24,
+      "pct_sbir": 25.2,
+      "award_count": 6
+    },
+    {
       "company": "RADIABEAM TECHNOLOGIES, LLC",
       "matched_name": "RADIABEAM TECHNOLOGIES, LLC",
       "sbir_amount": 12782845.55,
@@ -1478,6 +3494,24 @@
       "other_federal": 38507278.15,
       "pct_sbir": 24.9,
       "award_count": 12
+    },
+    {
+      "company": "CONTINUUM DYNAMICS INC",
+      "matched_name": "CONTINUUM DYNAMICS INC",
+      "sbir_amount": 5074658.97,
+      "total_federal": 20653563.06,
+      "other_federal": 15578904.09,
+      "pct_sbir": 24.6,
+      "award_count": 12
+    },
+    {
+      "company": "ANNO.AI, INC.",
+      "matched_name": "ANNO.AI, INC.",
+      "sbir_amount": 5780171.54,
+      "total_federal": 23721465.25,
+      "other_federal": 17941293.71,
+      "pct_sbir": 24.4,
+      "award_count": 7
     },
     {
       "company": "VECTOR ATOMIC INC",
@@ -1498,6 +3532,15 @@
       "award_count": 26
     },
     {
+      "company": "Applied Systems Engineering Incorporated",
+      "matched_name": "APPLIED SYSTEMS ENGINEERING INCORPORATED",
+      "sbir_amount": 7184248.83,
+      "total_federal": 31373421.6,
+      "other_federal": 24189172.77,
+      "pct_sbir": 22.9,
+      "award_count": 5
+    },
+    {
       "company": "MAKAI OCEAN ENGINEERING INC",
       "matched_name": "MAKAI OCEAN ENGINEERING INC",
       "sbir_amount": 11737510.99,
@@ -1505,6 +3548,42 @@
       "other_federal": 40141761.73,
       "pct_sbir": 22.6,
       "award_count": 18
+    },
+    {
+      "company": "TANGRAM FLEX INC",
+      "matched_name": "TANGRAM FLEX INC",
+      "sbir_amount": 6381820.44,
+      "total_federal": 28244447.29,
+      "other_federal": 21862626.85,
+      "pct_sbir": 22.6,
+      "award_count": 16
+    },
+    {
+      "company": "SIMETRI, INC.",
+      "matched_name": "SIMETRI, INC.",
+      "sbir_amount": 7335772.64,
+      "total_federal": 32761958.99,
+      "other_federal": 25426186.35,
+      "pct_sbir": 22.4,
+      "award_count": 9
+    },
+    {
+      "company": "RENAISSANCE SERVICES INC",
+      "matched_name": "RENAISSANCE SOCIAL SERVICES INC",
+      "sbir_amount": 5156470.25,
+      "total_federal": 23967368.0,
+      "other_federal": 18810897.75,
+      "pct_sbir": 21.5,
+      "award_count": 6
+    },
+    {
+      "company": "MATERIALS ENGINEERING AND TECHNICAL SUPPORT SERVICES CORP.",
+      "matched_name": "MATERIALS ENGINEERING AND TECHNICAL SUPPORT SERVICES CORP.",
+      "sbir_amount": 6022627.51,
+      "total_federal": 29081690.49,
+      "other_federal": 23059062.98,
+      "pct_sbir": 20.7,
+      "award_count": 16
     },
     {
       "company": "PC KRAUSE & ASSOCIATES INC",
@@ -1534,6 +3613,15 @@
       "award_count": 19
     },
     {
+      "company": "BUSEK CO., INC.",
+      "matched_name": "BUSEK CO., INC.",
+      "sbir_amount": 7498889.21,
+      "total_federal": 38498607.28,
+      "other_federal": 30999718.07,
+      "pct_sbir": 19.5,
+      "award_count": 17
+    },
+    {
       "company": "PHASE SENSITIVE INNOVATIONS INC",
       "matched_name": "PHASE SENSITIVE INNOVATIONS INC",
       "sbir_amount": 12744424.6,
@@ -1543,6 +3631,78 @@
       "award_count": 21
     },
     {
+      "company": "QUESTEK INNOVATIONS LLC",
+      "matched_name": "QUESTEK INNOVATIONS LLC",
+      "sbir_amount": 7711719.23,
+      "total_federal": 41334305.42,
+      "other_federal": 33622586.19,
+      "pct_sbir": 18.7,
+      "award_count": 16
+    },
+    {
+      "company": "INFINITY LABS LLC",
+      "matched_name": "INFINITY LABS LLC",
+      "sbir_amount": 7710001.48,
+      "total_federal": 41253281.65,
+      "other_federal": 33543280.17,
+      "pct_sbir": 18.7,
+      "award_count": 18
+    },
+    {
+      "company": "VIRTUALITICS INC",
+      "matched_name": "VIRTUALITICS INC",
+      "sbir_amount": 7218311.44,
+      "total_federal": 39681546.17,
+      "other_federal": 32463234.73,
+      "pct_sbir": 18.2,
+      "award_count": 15
+    },
+    {
+      "company": "Resolution Imagery LLC",
+      "matched_name": "RESOLUTION IMAGERY LLC",
+      "sbir_amount": 4346277.0,
+      "total_federal": 23877931.93,
+      "other_federal": 19531654.93,
+      "pct_sbir": 18.2,
+      "award_count": 9
+    },
+    {
+      "company": "SCIENCE ENGINEERING MANAGEMENT SOLUTIONS LLC",
+      "matched_name": "SCIENCE ENGINEERING MANAGEMENT SOLUTIONS LLC",
+      "sbir_amount": 5806138.0,
+      "total_federal": 32877894.0,
+      "other_federal": 27071756.0,
+      "pct_sbir": 17.7,
+      "award_count": 6
+    },
+    {
+      "company": "EXOANALYTIC SOLUTIONS INC",
+      "matched_name": "EXOANALYTIC SOLUTIONS INC",
+      "sbir_amount": 7334373.59,
+      "total_federal": 42827203.96,
+      "other_federal": 35492830.37,
+      "pct_sbir": 17.1,
+      "award_count": 19
+    },
+    {
+      "company": "SHIPCOM FEDERAL SOLUTIONS LLC",
+      "matched_name": "SHIPCOM FEDERAL SOLUTIONS LLC",
+      "sbir_amount": 6416834.29,
+      "total_federal": 37502061.99,
+      "other_federal": 31085227.7,
+      "pct_sbir": 17.1,
+      "award_count": 6
+    },
+    {
+      "company": "Lunar Outpost Inc",
+      "matched_name": "LUNAR OUTPOST INC",
+      "sbir_amount": 8603102.0,
+      "total_federal": 51457359.35,
+      "other_federal": 42854257.35,
+      "pct_sbir": 16.7,
+      "award_count": 9
+    },
+    {
       "company": "STELLAR SCIENCE LTD. CO.",
       "matched_name": "STELLAR SCIENCE LTD. CO.",
       "sbir_amount": 8421966.19,
@@ -1550,6 +3710,33 @@
       "other_federal": 42003473.8,
       "pct_sbir": 16.7,
       "award_count": 17
+    },
+    {
+      "company": "FORWARD EDGE AI INC",
+      "matched_name": "FORWARD EDGE AI INC",
+      "sbir_amount": 5733466.37,
+      "total_federal": 34242998.69,
+      "other_federal": 28509532.32,
+      "pct_sbir": 16.7,
+      "award_count": 9
+    },
+    {
+      "company": "VIVSOFT TECHNOLOGIES LLC",
+      "matched_name": "VIVSOFT TECHNOLOGIES LLC",
+      "sbir_amount": 7774011.26,
+      "total_federal": 47173072.95,
+      "other_federal": 39399061.69,
+      "pct_sbir": 16.5,
+      "award_count": 7
+    },
+    {
+      "company": "PENDAR TECHNOLOGIES LLC",
+      "matched_name": "PENDAR TECHNOLOGIES LLC",
+      "sbir_amount": 6296246.66,
+      "total_federal": 39000090.14,
+      "other_federal": 32703843.48,
+      "pct_sbir": 16.1,
+      "award_count": 12
     },
     {
       "company": "METRON INCORPORATED",
@@ -1579,6 +3766,42 @@
       "award_count": 29
     },
     {
+      "company": "MATRIX RESEARCH INC",
+      "matched_name": "MATRIX RESEARCH INC",
+      "sbir_amount": 9576227.45,
+      "total_federal": 63497979.17,
+      "other_federal": 53921751.72,
+      "pct_sbir": 15.1,
+      "award_count": 6
+    },
+    {
+      "company": "TECHNICAL DATA ANALYSIS, INC.",
+      "matched_name": "TECHNICAL DATA ANALYSIS, INC.",
+      "sbir_amount": 6337723.0,
+      "total_federal": 44687510.41,
+      "other_federal": 38349787.41,
+      "pct_sbir": 14.2,
+      "award_count": 11
+    },
+    {
+      "company": "VRC Metal Systems, LLC",
+      "matched_name": "VRC METAL SYSTEMS, LLC",
+      "sbir_amount": 5543767.0,
+      "total_federal": 39883250.29,
+      "other_federal": 34339483.29,
+      "pct_sbir": 13.9,
+      "award_count": 12
+    },
+    {
+      "company": "GENEVA TECHNOLOGIES, INC.",
+      "matched_name": "GENEVA TECHNOLOGIES, INC.",
+      "sbir_amount": 5880568.0,
+      "total_federal": 42612213.58,
+      "other_federal": 36731645.58,
+      "pct_sbir": 13.8,
+      "award_count": 5
+    },
+    {
       "company": "GALOIS, INC.",
       "matched_name": "GALOIS, INC.",
       "sbir_amount": 19626246.72,
@@ -1586,6 +3809,24 @@
       "other_federal": 140117779.56,
       "pct_sbir": 12.3,
       "award_count": 21
+    },
+    {
+      "company": "BEAST CODE LLC",
+      "matched_name": "BEAST CODE LLC",
+      "sbir_amount": 4519740.62,
+      "total_federal": 36887716.42,
+      "other_federal": 32367975.8,
+      "pct_sbir": 12.3,
+      "award_count": 5
+    },
+    {
+      "company": "NAVMAR APPLIED SCIENCES CORP",
+      "matched_name": "NAVMAR APPLIED SCIENCES CORP",
+      "sbir_amount": 6866049.0,
+      "total_federal": 56226681.69,
+      "other_federal": 49360632.69,
+      "pct_sbir": 12.2,
+      "award_count": 5
     },
     {
       "company": "Integrated Solutions for Systems, Inc.",
@@ -1615,6 +3856,15 @@
       "award_count": 11
     },
     {
+      "company": "GRAMMATECH INC",
+      "matched_name": "GRAMMATECH, INC.",
+      "sbir_amount": 6276811.0,
+      "total_federal": 70475943.79,
+      "other_federal": 64199132.79,
+      "pct_sbir": 8.9,
+      "award_count": 8
+    },
+    {
       "company": "DIGNITAS TECHNOLOGIES, LLC",
       "matched_name": "DIGNITAS TECHNOLOGIES, LLC",
       "sbir_amount": 8580476.31,
@@ -1622,6 +3872,15 @@
       "other_federal": 90865472.71,
       "pct_sbir": 8.6,
       "award_count": 13
+    },
+    {
+      "company": "VISION SYSTEMS INC",
+      "matched_name": "VISION POINT SYSTEMS, INC.",
+      "sbir_amount": 7493601.39,
+      "total_federal": 91610580.33,
+      "other_federal": 84116978.94,
+      "pct_sbir": 8.2,
+      "award_count": 12
     },
     {
       "company": "OMNI FED LLC",
@@ -1642,6 +3901,33 @@
       "award_count": 13
     },
     {
+      "company": "DIVERSIFIED TECHNOLOGIES, INC.",
+      "matched_name": "DIVERSIFIED TECHNOLOGIES, INC.",
+      "sbir_amount": 7629435.0,
+      "total_federal": 106467774.09,
+      "other_federal": 98838339.09,
+      "pct_sbir": 7.2,
+      "award_count": 15
+    },
+    {
+      "company": "ADVANCED TECHNOLOGY AND RESEARCH CORPORATION",
+      "matched_name": "ADVANCED TECHNOLOGY AND RESEARCH CORPORATION",
+      "sbir_amount": 4508584.0,
+      "total_federal": 62892310.14,
+      "other_federal": 58383726.14,
+      "pct_sbir": 7.2,
+      "award_count": 7
+    },
+    {
+      "company": "COHERENT TECHNICAL SERVICES, INC.",
+      "matched_name": "COHERENT TECHNICAL SERVICES, INC.",
+      "sbir_amount": 7984027.13,
+      "total_federal": 116384355.13,
+      "other_federal": 108400328.0,
+      "pct_sbir": 6.9,
+      "award_count": 10
+    },
+    {
       "company": "PacMar Technologies LLC",
       "matched_name": "PACMAR TECHNOLOGIES LLC",
       "sbir_amount": 12775417.09,
@@ -1660,6 +3946,42 @@
       "award_count": 28
     },
     {
+      "company": "SCITEC INC",
+      "matched_name": "SCITEC INC",
+      "sbir_amount": 5092443.29,
+      "total_federal": 95321862.55,
+      "other_federal": 90229419.26,
+      "pct_sbir": 5.3,
+      "award_count": 8
+    },
+    {
+      "company": "FUSE INTEGRATION, INC.",
+      "matched_name": "FUSE INTEGRATION, INC.",
+      "sbir_amount": 4997003.0,
+      "total_federal": 98203074.75,
+      "other_federal": 93206071.75,
+      "pct_sbir": 5.1,
+      "award_count": 8
+    },
+    {
+      "company": "UNMANNED SYSTEMS INCORPORATED",
+      "matched_name": "TELEDYNE FLIR UNMANNED GROUND SYSTEMS, INC",
+      "sbir_amount": 4510445.0,
+      "total_federal": 91890980.41,
+      "other_federal": 87380535.41,
+      "pct_sbir": 4.9,
+      "award_count": 6
+    },
+    {
+      "company": "SOLID STATE SCIENTIFIC CORPORATION",
+      "matched_name": "SOLID STATE SCIENTIFIC CORPORATION",
+      "sbir_amount": 5874508.09,
+      "total_federal": 129216973.59,
+      "other_federal": 123342465.5,
+      "pct_sbir": 4.5,
+      "award_count": 7
+    },
+    {
       "company": "SIMVENTIONS INC",
       "matched_name": "SIMVENTIONS INC",
       "sbir_amount": 14142928.91,
@@ -1667,6 +3989,15 @@
       "other_federal": 320595665.52,
       "pct_sbir": 4.2,
       "award_count": 13
+    },
+    {
+      "company": "BLACK RIVER SYSTEMS COMPANY, INC.",
+      "matched_name": "BLACK RIVER SYSTEMS COMPANY, INC.",
+      "sbir_amount": 7035774.97,
+      "total_federal": 189877351.05,
+      "other_federal": 182841576.08,
+      "pct_sbir": 3.7,
+      "award_count": 11
     },
     {
       "company": "SONALYSTS INC",
@@ -1696,6 +4027,24 @@
       "award_count": 34
     },
     {
+      "company": "NEXTGEN FEDERAL SYSTEMS LLC",
+      "matched_name": "NEXTGEN FEDERAL SYSTEMS LLC",
+      "sbir_amount": 5543059.96,
+      "total_federal": 185659201.18,
+      "other_federal": 180116141.22,
+      "pct_sbir": 3.0,
+      "award_count": 7
+    },
+    {
+      "company": "SEED INNOVATIONS, LLC",
+      "matched_name": "SEED INNOVATIONS, LLC",
+      "sbir_amount": 4515731.8,
+      "total_federal": 151155155.25,
+      "other_federal": 146639423.45,
+      "pct_sbir": 3.0,
+      "award_count": 7
+    },
+    {
       "company": "ASSURED INFORMATION SECURITY, INC.",
       "matched_name": "ASSURED INFORMATION SECURITY, INC.",
       "sbir_amount": 16431271.69,
@@ -1703,6 +4052,15 @@
       "other_federal": 605733766.56,
       "pct_sbir": 2.6,
       "award_count": 17
+    },
+    {
+      "company": "MARITIME APPLIED PHYSICS CORPORATION",
+      "matched_name": "MARITIME APPLIED PHYSICS CORPORATION",
+      "sbir_amount": 4471295.23,
+      "total_federal": 199077954.32,
+      "other_federal": 194606659.09,
+      "pct_sbir": 2.2,
+      "award_count": 8
     },
     {
       "company": "TECHNOLOGY SERVICE CORP",
@@ -1721,6 +4079,15 @@
       "other_federal": 1449763374.1,
       "pct_sbir": 0.9,
       "award_count": 18
+    },
+    {
+      "company": "NOVI ",
+      "matched_name": "NOVITAS SOLUTIONS, INC.",
+      "sbir_amount": 7181206.4,
+      "total_federal": 1240463724.47,
+      "other_federal": 1233282518.07,
+      "pct_sbir": 0.6,
+      "award_count": 6
     }
   ]
 }
