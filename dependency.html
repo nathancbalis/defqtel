@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="LogoAircraft.png">
+    <title>SBIR Dependency | DefqTel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .company-row { transition: all 0.15s; }
+        .company-row:hover { background: rgba(59, 130, 246, 0.05); }
+        .bar-sbir { background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); }
+        .bar-other { background: linear-gradient(90deg, #374151 0%, #4b5563 100%); }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+
+    <!-- Navigation -->
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-6">
+            <div class="flex items-baseline justify-between">
+                <div class="flex items-baseline gap-12">
+                    <a href="index.html" class="text-xl font-light tracking-tight">DefqTel</a>
+                    <nav class="flex gap-8 text-sm">
+                        <div class="relative group">
+                            <a href="#" class="text-white">
+                                Data
+                            </a>
+                            <div class="absolute left-0 top-full mt-[26px] w-[720px] bg-black border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <div class="grid grid-cols-3 divide-x divide-gray-800">
+                                    <a href="data.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">SBIR Awards</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Category rankings, funding trends, and year-over-year growth rates.</p>
+                                    </a>
+                                    <a href="geo.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Geographic</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">State-by-state award distribution and regional analysis.</p>
+                                    </a>
+                                    <a href="awards.html" class="block p-8 hover:bg-gray-900 transition-colors border-b-2 border-transparent hover:border-blue-500">
+                                        <div class="text-xl text-white font-light mb-3">Awards Browser</div>
+                                        <p class="text-sm text-gray-400 leading-relaxed">Search and filter all 17,265 individual awards.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="intel.html" class="text-gray-400 hover:text-white transition-colors">Intel Brief</a>
+                        <a href="export.html" class="text-gray-400 hover:text-white transition-colors">Export</a>
+                        <a href="methodology.html" class="text-gray-400 hover:text-white transition-colors">Methodology</a>
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="border-b border-gray-800 bg-gradient-to-b from-gray-900/50 to-transparent">
+        <div class="max-w-7xl mx-auto px-8 py-12">
+            <div class="text-xs uppercase tracking-wider text-blue-400 font-medium mb-3">Federal Funding Analysis</div>
+            <h1 class="text-4xl font-light mb-4">SBIR Dependency</h1>
+            <p class="text-gray-400 text-lg max-w-3xl">
+                What fraction of a company's federal revenue comes from SBIR awards? Cross-referenced with
+                <a href="https://usaspending.gov" target="_blank" class="text-blue-400 hover:text-blue-300">USAspending.gov</a>
+                to show total federal contract spending.
+            </p>
+        </div>
+    </div>
+
+    <!-- Stats Summary -->
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <div class="grid grid-cols-4 gap-6" id="summaryStats">
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-light mb-1" id="totalCompanies">-</div>
+                    <div class="text-sm text-gray-500">Companies Analyzed</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-light text-red-400 mb-1" id="highlyDependent">-</div>
+                    <div class="text-sm text-gray-500">Highly Dependent (50%+)</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-light text-yellow-400 mb-1" id="moderatelyDependent">-</div>
+                    <div class="text-sm text-gray-500">Moderate (25-50%)</div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl font-light text-green-400 mb-1" id="lowDependent">-</div>
+                    <div class="text-sm text-gray-500">Low Dependency (&lt;25%)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-4">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <label class="text-sm text-gray-400">Filter:</label>
+                    <select id="filterDependency" class="bg-gray-900 border border-gray-700 rounded px-3 py-1.5 text-sm">
+                        <option value="all">All Companies</option>
+                        <option value="high">Highly Dependent (50%+)</option>
+                        <option value="moderate">Moderate (25-50%)</option>
+                        <option value="low">Low (&lt;25%)</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2">
+                    <label class="text-sm text-gray-400">Sort by:</label>
+                    <select id="sortBy" class="bg-gray-900 border border-gray-700 rounded px-3 py-1.5 text-sm">
+                        <option value="pct_sbir">% SBIR Dependency</option>
+                        <option value="sbir_amount">SBIR Amount</option>
+                        <option value="total_federal">Total Federal</option>
+                        <option value="award_count">Award Count</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2">
+                    <label class="text-sm text-gray-400">Search:</label>
+                    <input type="text" id="searchInput" placeholder="Company name..."
+                        class="bg-gray-900 border border-gray-700 rounded px-3 py-1.5 text-sm w-48">
+                </div>
+                <div class="text-sm text-gray-500 ml-auto" id="resultCount">-</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company List -->
+    <div class="max-w-7xl mx-auto px-8 py-6">
+        <div class="bg-gray-900/30 border border-gray-800 rounded-lg overflow-hidden">
+            <!-- Header -->
+            <div class="grid grid-cols-12 gap-4 px-6 py-3 border-b border-gray-800 bg-gray-900/50 text-xs uppercase tracking-wider text-gray-500">
+                <div class="col-span-4">Company</div>
+                <div class="col-span-5">Federal Revenue Breakdown</div>
+                <div class="col-span-1 text-right">SBIR</div>
+                <div class="col-span-1 text-right">Total Fed</div>
+                <div class="col-span-1 text-right">% SBIR</div>
+            </div>
+            <!-- Rows -->
+            <div id="companyList" class="divide-y divide-gray-800/50 max-h-[600px] overflow-y-auto">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Methodology Note -->
+    <div class="border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <div class="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+                <h3 class="text-sm font-medium text-gray-300 mb-2">How This Works</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Companies with 10+ DoD SBIR awards (2020-2024) are cross-referenced with USAspending.gov to find their total federal contract obligations
+                    for the same period. SBIR Dependency = SBIR Awards / Total Federal Contracts. Companies at 100% either have <em>only</em> SBIR funding
+                    or their non-SBIR contracts weren't matched (name variations, subcontracts, etc.).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <div class="text-xs text-gray-600">
+                Data: SBIR.gov + USAspending.gov | Coverage: 2020-2024 | Companies with 10+ SBIR awards
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        let allData = [];
+
+        function formatMoney(amount) {
+            if (amount >= 1e9) return '$' + (amount / 1e9).toFixed(1) + 'B';
+            if (amount >= 1e6) return '$' + (amount / 1e6).toFixed(1) + 'M';
+            if (amount >= 1e3) return '$' + (amount / 1e3).toFixed(0) + 'K';
+            return '$' + amount.toFixed(0);
+        }
+
+        function getDependencyClass(pct) {
+            if (pct >= 50) return 'text-red-400';
+            if (pct >= 25) return 'text-yellow-400';
+            return 'text-green-400';
+        }
+
+        function renderCompanies(companies) {
+            const container = document.getElementById('companyList');
+
+            if (companies.length === 0) {
+                container.innerHTML = '<div class="px-6 py-8 text-center text-gray-500">No companies match your filters</div>';
+                return;
+            }
+
+            container.innerHTML = companies.map(c => {
+                const sbirPct = Math.min(c.pct_sbir, 100);
+                const otherPct = 100 - sbirPct;
+
+                return `
+                    <div class="company-row grid grid-cols-12 gap-4 px-6 py-4 items-center">
+                        <div class="col-span-4">
+                            <div class="font-medium text-sm">${c.company}</div>
+                            <div class="text-xs text-gray-500">${c.award_count} SBIR awards</div>
+                        </div>
+                        <div class="col-span-5">
+                            <div class="flex h-4 rounded overflow-hidden bg-gray-800">
+                                <div class="bar-sbir" style="width: ${sbirPct}%" title="SBIR: ${formatMoney(c.sbir_amount)}"></div>
+                                <div class="bar-other" style="width: ${otherPct}%" title="Other Federal: ${formatMoney(c.other_federal)}"></div>
+                            </div>
+                            <div class="flex justify-between text-xs mt-1">
+                                <span class="text-blue-400">SBIR</span>
+                                <span class="text-gray-500">Other Federal</span>
+                            </div>
+                        </div>
+                        <div class="col-span-1 text-right text-sm">${formatMoney(c.sbir_amount)}</div>
+                        <div class="col-span-1 text-right text-sm text-gray-400">${formatMoney(c.total_federal)}</div>
+                        <div class="col-span-1 text-right text-sm font-medium ${getDependencyClass(c.pct_sbir)}">${c.pct_sbir.toFixed(0)}%</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function applyFilters() {
+            const filterVal = document.getElementById('filterDependency').value;
+            const sortVal = document.getElementById('sortBy').value;
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+
+            let filtered = [...allData];
+
+            // Filter by dependency level
+            if (filterVal === 'high') filtered = filtered.filter(c => c.pct_sbir >= 50);
+            else if (filterVal === 'moderate') filtered = filtered.filter(c => c.pct_sbir >= 25 && c.pct_sbir < 50);
+            else if (filterVal === 'low') filtered = filtered.filter(c => c.pct_sbir < 25);
+
+            // Search
+            if (searchVal) {
+                filtered = filtered.filter(c => c.company.toLowerCase().includes(searchVal));
+            }
+
+            // Sort
+            filtered.sort((a, b) => b[sortVal] - a[sortVal]);
+
+            document.getElementById('resultCount').textContent = `${filtered.length} companies`;
+            renderCompanies(filtered);
+        }
+
+        // Load data
+        fetch('dependency_data.json')
+            .then(res => res.json())
+            .then(data => {
+                allData = data.companies;
+
+                // Update summary stats
+                document.getElementById('totalCompanies').textContent = data.total_companies;
+                document.getElementById('highlyDependent').textContent = data.summary.highly_dependent;
+                document.getElementById('moderatelyDependent').textContent = data.summary.moderately_dependent;
+                document.getElementById('lowDependent').textContent = data.summary.low_dependency;
+
+                // Initial render
+                applyFilters();
+
+                // Set up event listeners
+                document.getElementById('filterDependency').addEventListener('change', applyFilters);
+                document.getElementById('sortBy').addEventListener('change', applyFilters);
+                document.getElementById('searchInput').addEventListener('input', applyFilters);
+            })
+            .catch(err => {
+                document.getElementById('companyList').innerHTML =
+                    '<div class="px-6 py-8 text-center text-red-400">Error loading data</div>';
+            });
+
+        AOS.init({ once: true, duration: 600 });
+    </script>
+</body>
+</html>
