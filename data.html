@@ -811,10 +811,16 @@
             const grid = document.getElementById('programGrid');
             grid.innerHTML = programs.map(p => {
                 const colors = programColors[p.Program_Label] || programColors['DoD'];
+                const yoy = p.yoy_growth || 0;
+                const yoyColor = yoy >= 0 ? 'text-green-400' : 'text-red-400';
+                const yoySign = yoy >= 0 ? '+' : '';
                 return `
                     <a href="awards.html?program=${encodeURIComponent(p.Program_Label)}"
                        class="block ${colors.bg} border ${colors.border} p-4 hover:bg-opacity-50 transition-colors">
-                        <div class="text-lg font-medium ${colors.text} mb-2">${p.Program_Label}</div>
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="text-lg font-medium ${colors.text}">${p.Program_Label}</div>
+                            <div class="text-xs ${yoyColor}">${yoySign}${yoy}%</div>
+                        </div>
                         <div class="text-2xl font-light text-white mb-1">${p.award_count.toLocaleString()}</div>
                         <div class="text-xs text-gray-500">awards</div>
                         <div class="mt-3 pt-3 border-t border-gray-800/50">

@@ -226,10 +226,19 @@
                     <p class="text-sm text-gray-500" id="pageSubtitle">SBIR award distribution by state (2020-2024)</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                    <select id="innovationFilter" class="bg-gray-800 text-gray-300 text-xs md:text-sm border border-gray-700 px-2 md:px-3 py-1.5 md:py-2">
+                        <option value="all">All Innovation Programs</option>
+                        <option value="AFWERX">AFWERX</option>
+                        <option value="NavalX">NavalX</option>
+                        <option value="xTech">xTech</option>
+                        <option value="DARPA">DARPA</option>
+                        <option value="SpaceWERX">SpaceWERX</option>
+                        <option value="DoD">Other DoD</option>
+                    </select>
                     <select id="programFilter" class="bg-gray-800 text-gray-300 text-xs md:text-sm border border-gray-700 px-2 md:px-3 py-1.5 md:py-2">
-                        <option value="all">All Programs</option>
-                        <option value="sbir">SBIR</option>
-                        <option value="sttr">STTR</option>
+                        <option value="all">SBIR & STTR</option>
+                        <option value="sbir">SBIR Only</option>
+                        <option value="sttr">STTR Only</option>
                     </select>
                     <select id="phaseFilter" class="bg-gray-800 text-gray-300 text-xs md:text-sm border border-gray-700 px-2 md:px-3 py-1.5 md:py-2">
                         <option value="all">All Phases</option>
@@ -423,9 +432,11 @@
     <script>
         let geoData = null;
         let cityCoords = null;
+        let awardsData = null; // Raw awards for innovation program filtering
         let currentCategory = 'all';
         let currentMetric = 'awards';
         let currentProgram = 'all'; // 'all', 'sbir', or 'sttr'
+        let currentInnovation = 'all'; // 'all', 'AFWERX', 'NavalX', etc.
         let currentPhase = 'all'; // 'all', 'phase1', or 'phase2'
         let selectedYears = []; // empty means all years
         let allYears = [];
@@ -652,7 +663,8 @@
             }
             const programText = currentProgram === 'sbir' ? 'SBIR' : currentProgram === 'sttr' ? 'STTR' : 'SBIR/STTR';
             const phaseText = currentPhase === 'phase1' ? ' Phase I' : currentPhase === 'phase2' ? ' Phase II' : '';
-            document.getElementById('pageSubtitle').textContent = `${programText}${phaseText} award distribution by state (${yearText})`;
+            const innovationText = currentInnovation !== 'all' ? currentInnovation : programText;
+            document.getElementById('pageSubtitle').textContent = `${innovationText}${phaseText} award distribution by state (${yearText})`;
 
             if (rankings.length > 0) {
                 document.getElementById('topState').textContent = rankings[0].name;
@@ -922,15 +934,97 @@
             '55': 'WI', '56': 'WY', '72': 'PR'
         };
 
+        // Aggregate awards by state for innovation filter
+        function aggregateByState(awards) {
+            const stateMap = {};
+            const stateNames = {
+                'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
+                'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'DC': 'District of Columbia',
+                'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois',
+                'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana',
+                'ME': 'Maine', 'MD': 'Maryland', 'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota',
+                'MS': 'Mississippi', 'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada',
+                'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York',
+                'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon',
+                'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota',
+                'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont', 'VA': 'Virginia',
+                'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming', 'PR': 'Puerto Rico'
+            };
+
+            awards.forEach(a => {
+                const abbrev = a.state;
+                if (!abbrev) return;
+                if (!stateMap[abbrev]) {
+                    stateMap[abbrev] = {
+                        abbrev: abbrev,
+                        name: stateNames[abbrev] || abbrev,
+                        total_awards: 0,
+                        total_funding_millions: 0,
+                        phase1: 0,
+                        phase2: 0,
+                        sbir: 0,
+                        sttr: 0,
+                        categories: {},
+                        years: {},
+                        top_companies: []
+                    };
+                }
+                const state = stateMap[abbrev];
+                state.total_awards++;
+                state.total_funding_millions += a.amount / 1000000;
+                if (a.phase === 'Phase I') state.phase1++;
+                if (a.phase === 'Phase II') state.phase2++;
+                if (a.program === 'SBIR') state.sbir++;
+                if (a.program === 'STTR') state.sttr++;
+
+                // Years
+                if (!state.years[a.year]) {
+                    state.years[a.year] = { awards: 0, funding_millions: 0 };
+                }
+                state.years[a.year].awards++;
+                state.years[a.year].funding_millions += a.amount / 1000000;
+
+                // Categories
+                (a.tech || []).forEach(cat => {
+                    if (!state.categories[cat]) {
+                        state.categories[cat] = { awards: 0, funding_millions: 0, phase1: 0, phase2: 0 };
+                    }
+                    state.categories[cat].awards++;
+                    state.categories[cat].funding_millions += a.amount / 1000000;
+                    if (a.phase === 'Phase I') state.categories[cat].phase1++;
+                    if (a.phase === 'Phase II') state.categories[cat].phase2++;
+                });
+            });
+
+            // Calculate conversion rates and build company lists
+            Object.values(stateMap).forEach(state => {
+                state.conversion_rate = state.phase1 > 0 ? Math.round(state.phase2 / state.phase1 * 100) : 0;
+            });
+
+            // Sort by awards and add ranks
+            const sorted = Object.values(stateMap).sort((a, b) => b.total_awards - a.total_awards);
+            sorted.forEach((state, idx) => {
+                state.rank_awards = idx + 1;
+            });
+            const sortedByFunding = [...sorted].sort((a, b) => b.total_funding_millions - a.total_funding_millions);
+            sortedByFunding.forEach((state, idx) => {
+                state.rank_funding = idx + 1;
+            });
+
+            return { states: stateMap, categories: [], years: allYears };
+        }
+
         // Initialize
         Promise.all([
             fetch('geo_data.json').then(res => res.json()),
             fetch(US_MAP_URL).then(res => res.json()),
-            fetch('city_coords.json').then(res => res.json()).catch(() => ({}))
+            fetch('city_coords.json').then(res => res.json()).catch(() => ({})),
+            fetch('awards_data.json').then(res => res.json())
         ])
-        .then(([data, us, cities]) => {
+        .then(([data, us, cities, awards]) => {
             geoData = data;
             cityCoords = cities;
+            awardsData = awards;
             document.getElementById('loading').style.display = 'none';
             document.getElementById('content').style.display = 'block';
 
@@ -1069,6 +1163,21 @@
             }
 
             // Event listeners
+            document.getElementById('innovationFilter').addEventListener('change', (e) => {
+                currentInnovation = e.target.value;
+                if (currentInnovation === 'all') {
+                    // Use original geo data
+                    geoData = data;
+                } else {
+                    // Filter awards by innovation program and aggregate
+                    const filteredAwards = awardsData.awards.filter(a => a.program_label === currentInnovation);
+                    geoData = aggregateByState(filteredAwards);
+                    geoData.categories = data.categories; // Keep original categories list
+                    geoData.years = data.years;
+                }
+                updateMap();
+            });
+
             document.getElementById('programFilter').addEventListener('change', (e) => {
                 currentProgram = e.target.value;
                 updateMap();

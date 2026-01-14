@@ -131,9 +131,21 @@
     <!-- Filters -->
     <div class="border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-8 py-4">
-            <div class="flex items-center gap-6">
+            <div class="flex flex-wrap items-center gap-4 md:gap-6">
                 <div class="flex items-center gap-2">
-                    <label class="text-sm text-gray-400">Filter:</label>
+                    <label class="text-sm text-gray-400">Program:</label>
+                    <select id="programFilter" class="bg-gray-900 border border-gray-700 rounded px-3 py-1.5 text-sm">
+                        <option value="all">All Programs</option>
+                        <option value="AFWERX">AFWERX</option>
+                        <option value="NavalX">NavalX</option>
+                        <option value="xTech">xTech</option>
+                        <option value="DARPA">DARPA</option>
+                        <option value="SpaceWERX">SpaceWERX</option>
+                        <option value="DoD">Other DoD</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2">
+                    <label class="text-sm text-gray-400">Dependency:</label>
                     <select id="filterDependency" class="bg-gray-900 border border-gray-700 rounded px-3 py-1.5 text-sm">
                         <option value="all">All Companies</option>
                         <option value="high">Highly Dependent (50%+)</option>
@@ -209,6 +221,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         let allData = [];
+        let companyPrograms = {}; // Map of company -> Set of programs
+        let currentProgramFilter = 'all';
 
         function formatMoney(amount) {
             if (amount >= 1e9) return '$' + (amount / 1e9).toFixed(1) + 'B';
@@ -260,11 +274,20 @@
         }
 
         function applyFilters() {
+            const programVal = document.getElementById('programFilter').value;
             const filterVal = document.getElementById('filterDependency').value;
             const sortVal = document.getElementById('sortBy').value;
             const searchVal = document.getElementById('searchInput').value.toLowerCase();
 
             let filtered = [...allData];
+
+            // Filter by program (company must have at least one award from that program)
+            if (programVal !== 'all') {
+                filtered = filtered.filter(c => {
+                    const programs = companyPrograms[c.company.toUpperCase()];
+                    return programs && programs.has(programVal);
+                });
+            }
 
             // Filter by dependency level
             if (filterVal === 'high') filtered = filtered.filter(c => c.pct_sbir >= 50);
@@ -279,31 +302,47 @@
             // Sort
             filtered.sort((a, b) => b[sortVal] - a[sortVal]);
 
-            document.getElementById('resultCount').textContent = `${filtered.length} companies`;
+            const programLabel = programVal !== 'all' ? ` (${programVal})` : '';
+            document.getElementById('resultCount').textContent = `${filtered.length} companies${programLabel}`;
             renderCompanies(filtered);
         }
 
         // Load data
-        fetch('dependency_data.json')
-            .then(res => res.json())
-            .then(data => {
-                allData = data.companies;
+        Promise.all([
+            fetch('dependency_data.json').then(res => res.json()),
+            fetch('awards_data.json').then(res => res.json())
+        ])
+            .then(([depData, awardsData]) => {
+                allData = depData.companies;
+
+                // Build company -> programs mapping from awards data
+                awardsData.awards.forEach(a => {
+                    const key = a.company.toUpperCase();
+                    if (!companyPrograms[key]) {
+                        companyPrograms[key] = new Set();
+                    }
+                    if (a.program_label) {
+                        companyPrograms[key].add(a.program_label);
+                    }
+                });
 
                 // Update summary stats
-                document.getElementById('totalCompanies').textContent = data.total_companies;
-                document.getElementById('highlyDependent').textContent = data.summary.highly_dependent;
-                document.getElementById('moderatelyDependent').textContent = data.summary.moderately_dependent;
-                document.getElementById('lowDependent').textContent = data.summary.low_dependency;
+                document.getElementById('totalCompanies').textContent = depData.total_companies;
+                document.getElementById('highlyDependent').textContent = depData.summary.highly_dependent;
+                document.getElementById('moderatelyDependent').textContent = depData.summary.moderately_dependent;
+                document.getElementById('lowDependent').textContent = depData.summary.low_dependency;
 
                 // Initial render
                 applyFilters();
 
                 // Set up event listeners
+                document.getElementById('programFilter').addEventListener('change', applyFilters);
                 document.getElementById('filterDependency').addEventListener('change', applyFilters);
                 document.getElementById('sortBy').addEventListener('change', applyFilters);
                 document.getElementById('searchInput').addEventListener('input', applyFilters);
             })
             .catch(err => {
+                console.error(err);
                 document.getElementById('companyList').innerHTML =
                     '<div class="px-6 py-8 text-center text-red-400">Error loading data</div>';
             });

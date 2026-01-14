@@ -5,42 +5,176 @@
       "total_funding": 4925729590.03,
       "award_count": 8226,
       "avg_award": 598800.1,
-      "company_count": 3049
+      "company_count": 3049,
+      "yearly_awards": {
+        "2024": {
+          "awards": 1653,
+          "funding": 1341227546.9400008
+        },
+        "2023": {
+          "awards": 1678,
+          "funding": 1220571678.1400003
+        },
+        "2022": {
+          "awards": 1567,
+          "funding": 1023409874.64
+        },
+        "2021": {
+          "awards": 1742,
+          "funding": 632887314.2600003
+        },
+        "2020": {
+          "awards": 1586,
+          "funding": 707633176.05
+        }
+      },
+      "yoy_growth": -1.5
     },
     {
       "Program_Label": "NavalX",
       "total_funding": 2159885297.97,
       "award_count": 3777,
       "avg_award": 571852.08,
-      "company_count": 1097
+      "company_count": 1097,
+      "yearly_awards": {
+        "2024": {
+          "awards": 773,
+          "funding": 430528273.01000005
+        },
+        "2023": {
+          "awards": 622,
+          "funding": 315128602.96000004
+        },
+        "2022": {
+          "awards": 624,
+          "funding": 426422586.0
+        },
+        "2021": {
+          "awards": 764,
+          "funding": 483551990.0
+        },
+        "2020": {
+          "awards": 994,
+          "funding": 504253846.0
+        }
+      },
+      "yoy_growth": 24.3
     },
     {
       "Program_Label": "DoD",
       "total_funding": 1651473883.74,
       "award_count": 2455,
       "avg_award": 672698.12,
-      "company_count": 907
+      "company_count": 907,
+      "yearly_awards": {
+        "2024": {
+          "awards": 471,
+          "funding": 304166767.3
+        },
+        "2023": {
+          "awards": 392,
+          "funding": 298698709.8400002
+        },
+        "2022": {
+          "awards": 660,
+          "funding": 447955875.81000006
+        },
+        "2021": {
+          "awards": 483,
+          "funding": 314661468.47999996
+        },
+        "2020": {
+          "awards": 449,
+          "funding": 285991062.3100001
+        }
+      },
+      "yoy_growth": 20.2
     },
     {
       "Program_Label": "xTech",
       "total_funding": 1263701881.99,
       "award_count": 2143,
       "avg_award": 589688.23,
-      "company_count": 911
+      "company_count": 911,
+      "yearly_awards": {
+        "2024": {
+          "awards": 405,
+          "funding": 387017406.4500001
+        },
+        "2023": {
+          "awards": 336,
+          "funding": 285082987.9499997
+        },
+        "2022": {
+          "awards": 318,
+          "funding": 177127502.5300001
+        },
+        "2021": {
+          "awards": 362,
+          "funding": 166074331.81000012
+        },
+        "2020": {
+          "awards": 722,
+          "funding": 248399653.25000018
+        }
+      },
+      "yoy_growth": 20.5
     },
     {
       "Program_Label": "DARPA",
       "total_funding": 729348986.43,
       "award_count": 568,
       "avg_award": 1284065.12,
-      "company_count": 326
+      "company_count": 326,
+      "yearly_awards": {
+        "2024": {
+          "awards": 82,
+          "funding": 138913951.73999998
+        },
+        "2023": {
+          "awards": 114,
+          "funding": 176824874.78999996
+        },
+        "2022": {
+          "awards": 143,
+          "funding": 188970047.70000005
+        },
+        "2021": {
+          "awards": 127,
+          "funding": 122125802.99000002
+        },
+        "2020": {
+          "awards": 102,
+          "funding": 102514309.21
+        }
+      },
+      "yoy_growth": -28.1
     },
     {
       "Program_Label": "SpaceWERX",
       "total_funding": 188533052.33,
       "award_count": 96,
       "avg_award": 1963885.96,
-      "company_count": 73
+      "company_count": 73,
+      "yearly_awards": {
+        "2024": {
+          "awards": 38,
+          "funding": 129554746.51
+        },
+        "2023": {
+          "awards": 22,
+          "funding": 28976762.28
+        },
+        "2022": {
+          "awards": 32,
+          "funding": 27520850.54
+        },
+        "2021": {
+          "awards": 4,
+          "funding": 2480693.0
+        }
+      },
+      "yoy_growth": 72.7
     }
   ],
   "total_awards": 17265,

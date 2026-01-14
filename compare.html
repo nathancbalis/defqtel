@@ -151,6 +151,15 @@
                     <p class="text-sm text-gray-500" id="companyCount">Comparing 0 companies</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
+                    <select id="programFilter" class="bg-gray-800 border border-gray-700 px-3 py-2 text-sm text-gray-200">
+                        <option value="">All Programs</option>
+                        <option value="AFWERX">AFWERX</option>
+                        <option value="NavalX">NavalX</option>
+                        <option value="xTech">xTech</option>
+                        <option value="DARPA">DARPA</option>
+                        <option value="SpaceWERX">SpaceWERX</option>
+                        <option value="DoD">Other DoD</option>
+                    </select>
                     <div class="relative">
                         <input type="text" id="companySearch" placeholder="Add another company..."
                             class="w-full sm:w-64 bg-gray-800 border border-gray-700 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-blue-500"
@@ -240,6 +249,8 @@
 
         // All unique companies (populated after data loads)
         let allCompanies = [];
+        let allAwardsData = null;
+        let currentProgramFilter = '';
 
         function setupSearch(inputId, resultsId) {
             const input = document.getElementById(inputId);
@@ -291,6 +302,8 @@
         fetch('awards_data.json')
             .then(res => res.json())
             .then(data => {
+                allAwardsData = data;
+
                 // Build company list for search
                 const companyMap = {};
                 data.awards.forEach(a => {
@@ -305,6 +318,17 @@
                 // Setup search handlers
                 setupSearch('companySearchEmpty', 'searchResultsEmpty');
                 setupSearch('companySearch', 'searchResults');
+
+                // Setup program filter
+                const programFilter = document.getElementById('programFilter');
+                if (programFilter) {
+                    programFilter.addEventListener('change', function() {
+                        currentProgramFilter = this.value;
+                        if (allAwardsData && companyNames.length > 0) {
+                            processComparisonData(allAwardsData);
+                        }
+                    });
+                }
 
                 // Populate popular companies in empty state
                 const popularDiv = document.getElementById('popularCompanies');
@@ -340,9 +364,14 @@
             const colors = ['#60a5fa', '#34d399', '#fbbf24', '#f472b6'];
 
             companyNames.forEach((name, idx) => {
-                const awards = data.awards.filter(a =>
+                let awards = data.awards.filter(a =>
                     a.company.toLowerCase() === name.toLowerCase()
                 );
+
+                // Apply program filter if set
+                if (currentProgramFilter) {
+                    awards = awards.filter(a => a.program_label === currentProgramFilter);
+                }
 
                 if (awards.length > 0) {
                     const totalFunding = awards.reduce((sum, a) => sum + a.amount, 0);
@@ -403,7 +432,8 @@
                 return;
             }
 
-            document.getElementById('companyCount').textContent = `Comparing ${companies.length} companies`;
+            const programLabel = currentProgramFilter ? ` (${currentProgramFilter} only)` : '';
+            document.getElementById('companyCount').textContent = `Comparing ${companies.length} companies${programLabel}`;
 
             // Build comparison cards
             const grid = document.getElementById('comparisonGrid');
