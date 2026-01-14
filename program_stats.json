@@ -1,0 +1,49 @@
+{
+  "programs": [
+    {
+      "Program_Label": "AFWERX",
+      "total_funding": 4925729590.03,
+      "award_count": 8226,
+      "avg_award": 598800.1,
+      "company_count": 3049
+    },
+    {
+      "Program_Label": "NavalX",
+      "total_funding": 2159885297.97,
+      "award_count": 3777,
+      "avg_award": 571852.08,
+      "company_count": 1097
+    },
+    {
+      "Program_Label": "DoD",
+      "total_funding": 1651473883.74,
+      "award_count": 2455,
+      "avg_award": 672698.12,
+      "company_count": 907
+    },
+    {
+      "Program_Label": "xTech",
+      "total_funding": 1263701881.99,
+      "award_count": 2143,
+      "avg_award": 589688.23,
+      "company_count": 911
+    },
+    {
+      "Program_Label": "DARPA",
+      "total_funding": 729348986.43,
+      "award_count": 568,
+      "avg_award": 1284065.12,
+      "company_count": 326
+    },
+    {
+      "Program_Label": "SpaceWERX",
+      "total_funding": 188533052.33,
+      "award_count": 96,
+      "avg_award": 1963885.96,
+      "company_count": 73
+    }
+  ],
+  "total_awards": 17265,
+  "total_funding": 10918672692.49,
+  "total_companies": 4480
+}

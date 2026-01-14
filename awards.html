@@ -175,6 +175,18 @@
                             class="w-full bg-gray-800/50 border border-gray-700/50 px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-blue-500/50">
                     </div>
                     <div>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Program</label>
+                        <select id="programFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
+                            <option value="">All Programs</option>
+                            <option value="AFWERX">AFWERX</option>
+                            <option value="NavalX">NavalX</option>
+                            <option value="xTech">xTech</option>
+                            <option value="DARPA">DARPA</option>
+                            <option value="SpaceWERX">SpaceWERX</option>
+                            <option value="DoD">Other DoD</option>
+                        </select>
+                    </div>
+                    <div>
                         <label class="text-xs text-gray-500 uppercase tracking-wider mb-1 block">Branch</label>
                         <select id="branchFilter" class="w-full bg-gray-800/50 border border-gray-700/50 px-2 md:px-3 py-2 text-sm text-gray-300">
                             <option value="">All Branches</option>
@@ -383,6 +395,7 @@
         function getFilters() {
             return {
                 search: document.getElementById('searchInput').value.toLowerCase(),
+                program: document.getElementById('programFilter').value,
                 branch: document.getElementById('branchFilter').value,
                 state: document.getElementById('stateFilter').value,
                 city: document.getElementById('cityFilter').value,
@@ -405,6 +418,9 @@
                     const searchText = `${award.company} ${award.title} ${award.city || ''}`.toLowerCase();
                     if (!searchText.includes(filters.search)) return false;
                 }
+
+                // Program filter (AFWERX, NavalX, etc.)
+                if (filters.program && award.program_label !== filters.program) return false;
 
                 // Branch filter
                 if (filters.branch && award.branch !== filters.branch) return false;
@@ -482,13 +498,23 @@
                 ).join(' ');
 
                 const isInCompare = getCompareList().includes(award.company);
+                const programColors = {
+                    'AFWERX': 'bg-sky-900/50 text-sky-300 border-sky-800/50',
+                    'NavalX': 'bg-indigo-900/50 text-indigo-300 border-indigo-800/50',
+                    'xTech': 'bg-amber-900/50 text-amber-300 border-amber-800/50',
+                    'DARPA': 'bg-red-900/50 text-red-300 border-red-800/50',
+                    'SpaceWERX': 'bg-violet-900/50 text-violet-300 border-violet-800/50',
+                    'DoD': 'bg-gray-800/50 text-gray-400 border-gray-700/50'
+                };
+                const programClass = programColors[award.program_label] || programColors['DoD'];
                 div.innerHTML = `
                     <div class="flex items-start justify-between gap-4">
                         <div class="flex-1 min-w-0">
-                            <div class="flex items-center gap-2 mb-1">
+                            <div class="flex items-center gap-2 mb-1 flex-wrap">
                                 <a href="company.html?name=${encodeURIComponent(award.company)}"
                                    class="text-sm font-medium text-blue-400 hover:text-blue-300 truncate">${award.company}</a>
                                 <span class="text-xs px-2 py-0.5 ${award.phase === 'Phase II' ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'}">${award.phase}</span>
+                                <span class="text-xs px-2 py-0.5 border ${programClass}">${award.program_label || 'DoD'}</span>
                                 <button onclick="toggleCompare('${award.company.replace(/'/g, "\\'")}')"
                                     class="compare-btn text-xs px-2 py-0.5 border transition-colors ${isInCompare ? 'bg-blue-600 border-blue-600 text-white' : 'border-gray-600 text-gray-500 hover:border-gray-500 hover:text-gray-400'}"
                                     title="${isInCompare ? 'Remove from compare' : 'Add to compare'}">
@@ -522,6 +548,7 @@
 
         function clearFilters() {
             document.getElementById('searchInput').value = '';
+            document.getElementById('programFilter').value = '';
             document.getElementById('branchFilter').value = '';
             document.getElementById('stateFilter').value = '';
             document.getElementById('cityFilter').value = '';
@@ -621,6 +648,9 @@
                 if (urlParams.has('company')) {
                     document.getElementById('searchInput').value = urlParams.get('company');
                 }
+                if (urlParams.has('program')) {
+                    document.getElementById('programFilter').value = urlParams.get('program');
+                }
                 if (urlParams.has('branch')) {
                     document.getElementById('branchFilter').value = urlParams.get('branch');
                 }
@@ -642,6 +672,7 @@
 
                 // Event listeners
                 document.getElementById('searchInput').addEventListener('input', debounce(filterAwards, 300));
+                document.getElementById('programFilter').addEventListener('change', filterAwards);
                 document.getElementById('branchFilter').addEventListener('change', filterAwards);
                 document.getElementById('stateFilter').addEventListener('change', function() {
                     updateCityDropdown(this.value);
