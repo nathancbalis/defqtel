@@ -431,12 +431,14 @@
 
     <script>
         let geoData = null;
+        let originalGeoData = null; // Keep original for resetting
         let cityCoords = null;
         let awardsData = null; // Raw awards for innovation program filtering
         let currentCategory = 'all';
         let currentMetric = 'awards';
         let currentProgram = 'all'; // 'all', 'sbir', or 'sttr'
         let currentInnovation = 'all'; // 'all', 'AFWERX', 'NavalX', etc.
+        let isInnovationFiltered = false; // Flag to use simplified value calculation
         let currentPhase = 'all'; // 'all', 'phase1', or 'phase2'
         let selectedYears = []; // empty means all years
         let allYears = [];
@@ -485,6 +487,19 @@
         }
 
         function getStateValue(stateData, category, metric) {
+            // Simplified path when innovation filter is active
+            if (isInnovationFiltered) {
+                if (metric === 'conversion') {
+                    return stateData.conversion_rate || 0;
+                }
+                if (category === 'all') {
+                    return metric === 'awards' ? (stateData.total_awards || 0) : (stateData.total_funding_millions || 0);
+                }
+                const catData = stateData.categories ? stateData.categories[category] : null;
+                if (!catData) return 0;
+                return metric === 'awards' ? (catData.awards || 0) : (catData.funding_millions || 0);
+            }
+
             const yearsToUse = selectedYears.length > 0 ? selectedYears : allYears;
 
             // For conversion rate, we use overall state data (not year-filtered)
@@ -1162,18 +1177,23 @@
                 updateMap();
             }
 
+            // Store original geo data for resetting
+            originalGeoData = data;
+
             // Event listeners
             document.getElementById('innovationFilter').addEventListener('change', (e) => {
                 currentInnovation = e.target.value;
                 if (currentInnovation === 'all') {
                     // Use original geo data
-                    geoData = data;
+                    geoData = originalGeoData;
+                    isInnovationFiltered = false;
                 } else {
                     // Filter awards by innovation program and aggregate
                     const filteredAwards = awardsData.awards.filter(a => a.program_label === currentInnovation);
                     geoData = aggregateByState(filteredAwards);
-                    geoData.categories = data.categories; // Keep original categories list
-                    geoData.years = data.years;
+                    geoData.categories = originalGeoData.categories; // Keep original categories list
+                    geoData.years = originalGeoData.years;
+                    isInnovationFiltered = true;
                 }
                 updateMap();
             });
