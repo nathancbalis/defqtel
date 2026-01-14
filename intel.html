@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="LogoAircraft.png">
+    <link rel="alternate" type="application/rss+xml" title="DefqTel Intel Brief" href="https://defqtel.com/rss.xml">
     <title>Intel Brief | DefqTel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -67,6 +68,22 @@
                     <p class="text-gray-400 text-lg max-w-2xl">
                         Program updates, trend alerts, and analysis of defense innovation funding. Updated when significant changes occur.
                     </p>
+                </div>
+            </div>
+            <!-- Newsletter Signup -->
+            <div class="mt-8 p-6 bg-gray-900/50 border border-gray-800 rounded-lg">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                    <div class="flex-1">
+                        <div class="text-sm font-medium text-gray-200 mb-1">Get updates delivered</div>
+                        <div class="text-xs text-gray-500">Email when new Intel Briefs are published.</div>
+                    </div>
+                    <form action="https://buttondown.email/api/emails/embed-subscribe/defqtel" method="post" target="_blank" class="flex gap-2">
+                        <input type="email" name="email" placeholder="you@email.com" required
+                            class="px-4 py-2 bg-gray-800 border border-gray-700 rounded text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 w-48">
+                        <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DefqTel Intel Brief</title>
+    <description>Defense R&amp;D intelligence updates - SBIR/STTR program news, funding trends, and analysis.</description>
+    <link>https://defqtel.com/intel.html</link>
+    <atom:link href="https://defqtel.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Jan 2026 12:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>SBIR Reauthorization Standoff Continues</title>
+      <link>https://defqtel.com/intel.html#2026-01-12</link>
+      <guid>https://defqtel.com/intel.html#2026-01-12</guid>
+      <pubDate>Sun, 12 Jan 2026 12:00:00 GMT</pubDate>
+      <description>The SBIR/STTR programs remain unauthorized as Congress returns from recess. The January 30 government funding deadline represents the next realistic vehicle for reauthorization, but negotiations remain stalled. Senator Markey introduced compromise bill in late December. Senator Ernst continues to block any extension without reforms.</description>
+    </item>
+
+    <item>
+      <title>DefqTel Public Launch</title>
+      <link>https://defqtel.com/intel.html#2026-01-10</link>
+      <guid>https://defqtel.com/intel.html#2026-01-10</guid>
+      <pubDate>Fri, 10 Jan 2026 12:00:00 GMT</pubDate>
+      <description>DefqTel is now publicly available. The platform provides AI-powered analysis of 17,265 DoD SBIR/STTR awards from 2020-2024, representing $10.8B in defense R&amp;D funding.</description>
+    </item>
+
+  </channel>
+</rss>
