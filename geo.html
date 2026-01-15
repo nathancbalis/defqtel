@@ -676,10 +676,7 @@
             } else {
                 yearText = yearsToShow.join(', ');
             }
-            const programText = currentProgram === 'sbir' ? 'SBIR' : currentProgram === 'sttr' ? 'STTR' : 'SBIR/STTR';
-            const phaseText = currentPhase === 'phase1' ? ' Phase I' : currentPhase === 'phase2' ? ' Phase II' : '';
-            const innovationText = currentInnovation !== 'all' ? currentInnovation : programText;
-            document.getElementById('pageSubtitle').textContent = `${innovationText}${phaseText} award distribution by state (${yearText})`;
+            document.getElementById('pageSubtitle').textContent = `Award distribution by state (2020-2024)`;
 
             if (rankings.length > 0) {
                 document.getElementById('topState').textContent = rankings[0].name;
@@ -965,9 +962,15 @@
                 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont', 'VA': 'Virginia',
                 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming', 'PR': 'Puerto Rico'
             };
+            // Reverse lookup: full name -> abbreviation
+            const nameToAbbrev = {};
+            Object.entries(stateNames).forEach(([abbrev, name]) => {
+                nameToAbbrev[name] = abbrev;
+            });
 
             awards.forEach(a => {
-                const abbrev = a.state;
+                // Convert full state name to abbreviation
+                const abbrev = nameToAbbrev[a.state] || a.state;
                 if (!abbrev) return;
                 if (!stateMap[abbrev]) {
                     stateMap[abbrev] = {
